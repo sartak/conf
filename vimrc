@@ -203,7 +203,8 @@ autocmd FileType perl setlocal errorformat=%f:%l:%m
 autocmd FileType perl setlocal keywordprg=perldoc\ -f
 "}}}
 " Syntax hilighting {{{
-autocmd BufRead,BufNewFile ~/work/3.8/share/html/* set syn=mason
+" Primarily for RT and Hiveminder
+autocmd BufRead,BufNewFile share/html/* set syn=mason
 " }}}
 "}}}
 " Insert-mode remappings/abbreviations {{{
