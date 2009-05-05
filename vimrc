@@ -312,7 +312,7 @@ vmap <silent> <Leader>p :<C-U>call <SID>nopaste(1)<CR>
 " }}}
 "}}}
 " Plugin settings {{{
-" Rainbow {{
+" Rainbow {{{
 let g:rainbow = 1
 let g:rainbow_paren = 1
 let g:rainbow_brace = 1
