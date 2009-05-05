@@ -4,7 +4,7 @@
 " Miscellaneous {{{
 set nocompatible
 
-" indentation FTW.. also plugins FTW! heh
+" indentation and plugins
 filetype indent plugin on
 
 " automatically flush to disk when using :make, etc.
