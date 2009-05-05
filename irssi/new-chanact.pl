@@ -31,7 +31,6 @@ sub expand {
     my $format = shift;
     my %args   = @_;
 
-    # Perl 6 ternary for the win
     $format =~ s[{\$(.+?)\?\?(.*?)!!(.*?)}][
         length $args{$1} ? $2 : $3
     ]eg;
