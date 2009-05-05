@@ -215,9 +215,6 @@ inoremap <silent> <C-a> <ESC>u:set paste<CR>.:set nopaste<CR>gi
 iabbrev lamdba lambda
 iabbrev dvice device
 "}}}
-" shortcuts {{{
-imap \tbl local $Test::Builder::Level = $Test::Builder::Level + 1;
-" }}}
 " }}}
 " Normal-mode remappings {{{
 " spacebar (in command mode) inserts a single character before the cursor
