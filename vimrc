@@ -330,4 +330,8 @@ let g:Textobj_arg_enable = 1
 " Supertab {{{
 let g:SuperTabDefaultCompletionType = 'context'
 " }}}
+" Enhanced Commentify {{{
+let g:EnhCommentifyBindInInsert = 'No'
+let g:EnhCommentifyRespectIndent = 'Yes'
+" }}}
 " }}}
