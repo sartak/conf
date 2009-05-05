@@ -312,6 +312,16 @@ vmap <silent> <Leader>p :<C-U>call <SID>nopaste(1)<CR>
 " }}}
 "}}}
 " Plugin settings {{{
+" Rainbow {{
+let g:rainbow = 1
+let g:rainbow_paren = 1
+let g:rainbow_brace = 1
+" just loading this directly from the plugin directory fails because language
+" syntax files override the highlighting
+" using BufWinEnter because that is run after modelines are run (so it catches
+" modelines which update highlighting)
+autocmd BufWinEnter * runtime plugin/rainbow_paren.vim
+" }}}
 " Textobj {{{
 let g:Textobj_regex_enable = 1
 let g:Textobj_fold_enable = 1
