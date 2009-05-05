@@ -1,0 +1,1 @@
+/Users/sartak/devel/moose-dev-utils/vim/moose_snippets.vim
