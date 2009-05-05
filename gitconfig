@@ -1,0 +1,16 @@
+[user]
+	name = Shawn M Moore
+	email = sartak@gmail.com
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	ui = auto
+[alias]
+	up = pull --rebase
+	st = status
+	record = !git add -p && git commit
+	co = checkout
+    br = branch
+[github]
+	user = sartak
