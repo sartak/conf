@@ -293,14 +293,6 @@ vmap <silent> \p :<C-U>call <SID>nopaste(1)<CR>
 " }}}
 "}}}
 " Functions {{{
-fun DarcsUpdate()
-    try
-        silent !cd /home/sartak/devel/conf/ && darcs record && darcs push
-    finally
-        redraw!
-    endtry
-endfun
-
 fun Modulify(replace)
     exec "/Foo"
     silent :.s#Foo#\=expand("%")#
