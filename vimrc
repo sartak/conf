@@ -291,21 +291,6 @@ endfunction
 nmap <silent> \p :call <SID>nopaste(0)<CR>
 vmap <silent> \p :<C-U>call <SID>nopaste(1)<CR>
 " }}}
-" Painless spell checking (F11) {{{
-function s:spell()
-    if !exists("s:spell_check") || s:spell_check == 0
-        echo "Spell check on"
-        let s:spell_check = 1
-        setlocal spell spelllang=en_us
-    else
-        echo "Spell check off"
-        let s:spell_check = 0
-        setlocal spell spelllang=
-    endif
-endfunction
-map <F11> :call <SID>spell()<CR>
-imap <F11> <C-o>:call <SID>spell()<CR>
-"}}}
 "}}}
 " Functions {{{
 fun DarcsUpdate()
