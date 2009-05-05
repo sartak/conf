@@ -139,6 +139,9 @@ set confirm
 
 " 50 milliseconds for escape timeout instead of 1000
 set ttimeoutlen=50
+
+" send more data to the terminal in a way that makes the screen update faster
+set ttyfast
 "}}}
 " Indentation {{{
 " no-longer skinny tabs!
@@ -171,7 +174,8 @@ set foldclose=all
 "}}}
 "}}}
 " Colors {{{
-" miscellaneous {{{
+" default colorscheme {{{
+" I hate the bright colors that go with bg=dark, even though my bg is black
 set bg=light
 " }}}
 " word completion menu {{{
