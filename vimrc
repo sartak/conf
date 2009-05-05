@@ -264,9 +264,6 @@ nmap <Left>  :bp<CR>
 vnoremap < <gv
 vnoremap > >gv
 
-" gw will swap this word and the next, even if there weird characters between
-nmap <silent> gw "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<cr><c-o><c-l>:nohl<CR>
-
 " now search commands will re-center the screen
 nmap n nzz
 nmap N Nzz
