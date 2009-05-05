@@ -319,6 +319,8 @@ let g:SuperTabDefaultCompletionType = 'context'
 " }}}
 " }}}
 " Config for custom patches {{{
+" undo persistence {{{
 set udf
+" }}}
 " }}}
 
