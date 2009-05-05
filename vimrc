@@ -234,9 +234,6 @@ nmap \ss :syntax sync fromstart<CR>
 nmap \sm :set syn=mason<CR>:syntax sync fromstart<CR>
 nmap \sp :set syn=perl<CR>:syntax sync fromstart<CR>
 
-" remove EOL whitespace
-nmap ds :%s/\s\+$//<CR>
-
 " make help easier to navigate
 autocmd FileType help nnoremap <buffer> <CR> <C-]>
 autocmd FileType help nnoremap <buffer> <BS> <C-T>
