@@ -15,6 +15,17 @@ set autoread
 
 " everything needs to be unicode. EVERYTHING
 set encoding=utf8
+
+" always join with just one space, even between sentences
+set nojoinspaces
+
+" vim has pretty nice mouse support, in terminals that support it
+if has('mouse')
+    set mouse=a
+endif
+
+" don't move the cursor to the start of the line when changing buffers
+set nostartofline
 "}}}
 " Display {{{
 " color!
@@ -69,6 +80,8 @@ set nomore
 " only show a menu for completion, never a preview window or things like that
 set completeopt=menuone
 
+" hide the mouse in the gui while typing
+set mousehide
 " Language specific features {{{
 " Perl {{{
 " highlight advanced perl vars inside strings
@@ -106,6 +119,9 @@ set isfname+=:
 
 " tab completion stuff for the command line
 set wildmode=longest,list,full
+
+" always make the help window cover the entire screen
+set helpheight=9999
 
 if exists("+undofile")
     set undofile
