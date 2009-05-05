@@ -318,9 +318,6 @@ let g:Foldtext_perl_enable = 1
 let g:SuperTabDefaultCompletionType = 'context'
 " }}}
 " }}}
-" icfp {{{
-au BufNewFile,BufReadPost *.asl set ft=ruby
-" }}}
 " Config for custom patches {{{
 set udf
 " }}}
