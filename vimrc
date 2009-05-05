@@ -311,16 +311,6 @@ nmap <silent> <Leader>p :call <SID>nopaste(0)<CR>
 vmap <silent> <Leader>p :<C-U>call <SID>nopaste(1)<CR>
 " }}}
 "}}}
-" Functions {{{
-fun Modulify(replace)
-    exec "/Foo"
-    silent :.s#Foo#\=expand("%")#
-    silent :.s#\.pm;#;#
-    silent :.s#lib/##e
-    silent :.s# /# #e
-    silent :.s#/#\=a:replace#ge
-endfun
-" }}}
 " Plugin settings {{{
 " Textobj {{{
 let g:Textobj_regex_enable = 1
