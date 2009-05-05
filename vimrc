@@ -181,19 +181,6 @@ autocmd BufReadPost *
 \    exe "normal g`\"" |
 \  endif
 "}}}
-" Skeletons {{{
-autocmd BufNewFile *.pm silent 0read ~/.vim/skeletons/perl.pm | silent call Modulify('::') | normal G6k
-
-autocmd BufNewFile *.pl silent 0read ~/.vim/skeletons/perl.pl | normal G
-autocmd BufNewFile *.t silent 0read ~/.vim/skeletons/test.t | normal G
-autocmd BufNewFile Makefile.PL silent undo | silent 0read ~/.vim/skeletons/Makefile.PL | normal gg
-autocmd BufNewFile dist.ini silent 0read ~/.vim/skeletons/dist.ini | normal gg$x
-autocmd BufNewFile .gitignore silent 0read ~/.vim/skeletons/gitignore | normal G
-
-autocmd BufNewFile *.c  silent 0read ~/.vim/skeletons/c.c | normal 4j$
-
-autocmd BufReadPost *.smc set bin | set noeol
-"}}}
 " Auto +x {{{
 au BufWritePost *.{sh,pl} silent exe "!chmod +x %"
 "}}}
