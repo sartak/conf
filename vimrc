@@ -295,12 +295,6 @@ let g:Textobj_regex_enable = 1
 let g:Textobj_fold_enable = 1
 let g:Textobj_arg_enable = 1
 " }}}
-" Foldtext {{{
-let g:Foldtext_enable = 1
-let g:Foldtext_tex_enable = 1
-let g:Foldtext_cpp_enable = 1
-let g:Foldtext_perl_enable = 1
-" }}}
 " Supertab {{{
 let g:SuperTabDefaultCompletionType = 'context'
 " }}}
