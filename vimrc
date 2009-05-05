@@ -106,6 +106,10 @@ set isfname+=:
 
 " tab completion stuff for the command line
 set wildmode=longest,list,full
+
+if exists("+undofile")
+    set undofile
+endif
 "}}}
 " Make vim less whiny {{{
 " :bn with a change in the current buffer? no prob!
@@ -299,9 +303,3 @@ let g:Textobj_arg_enable = 1
 let g:SuperTabDefaultCompletionType = 'context'
 " }}}
 " }}}
-" Config for custom patches {{{
-" undo persistence {{{
-set udf
-" }}}
-" }}}
-
