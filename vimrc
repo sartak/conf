@@ -197,18 +197,6 @@ autocmd BufReadPost *.smc set bin | set noeol
 " Auto +x {{{
 au BufWritePost *.{sh,pl} silent exe "!chmod +x %"
 "}}}
-" Automatically invoke darcs record on writing conf {{{
-" this sorely needs a refactor..
-autocmd BufWritePost ~/devel/conf/* call DarcsUpdate()
-
-autocmd BufWritePost ~/.vim/* call DarcsUpdate()
-
-autocmd BufWritePost ~/.vimrc call DarcsUpdate()
-autocmd BufWritePost ~/.zshrc call DarcsUpdate()
-autocmd BufWritePost ~/.screenrc call DarcsUpdate()
-autocmd BufWritePost ~/.re.pl/repl.rc call DarcsUpdate()
-autocmd BufWritePost ~/.zshcomplete call DarcsUpdate()
-"}}}
 " Perl :make does a syntax check {{{
 autocmd FileType perl setlocal makeprg=$VIMRUNTIME/tools/efm_perl.pl\ -c\ %\ $*
 autocmd FileType perl setlocal errorformat=%f:%l:%m
