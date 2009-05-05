@@ -328,6 +328,7 @@ let g:Textobj_fold_enable = 1
 let g:Textobj_arg_enable = 1
 " }}}
 " Supertab {{{
+let g:SuperTabMidWordCompletion = 0
 let g:SuperTabDefaultCompletionType = 'context'
 " }}}
 " Enhanced Commentify {{{
