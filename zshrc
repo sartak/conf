@@ -87,7 +87,6 @@ alias ghc='ghc-6.10.1'
 alias ghci='ghci-6.10.1'
 alias linein='nohup /Applications/LineIn.app/Contents/MacOS/LineIn &'
 alias moose="perl -Moose -e"
-alias s='screen'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
