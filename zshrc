@@ -1,7 +1,8 @@
 # my silly prompt {{{
-precmd () {
+function shell_prompt_precmd() {
     PROMPT=`shell-prompt`
 }
+precmd_functions+=(shell_prompt_precmd)
 
 RPS1='[%*]'
 # }}}
