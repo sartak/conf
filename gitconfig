@@ -8,9 +8,10 @@
 	ui = auto
 [alias]
 	up = pull --rebase
+	ci = !git stash >/dev/null && git svn dcommit && git stash apply >/dev/null
 	st = status
 	record = !git add -p && git commit
 	co = checkout
-    br = branch
+	br = branch
 [github]
 	user = sartak
