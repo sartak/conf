@@ -16,3 +16,5 @@ exec "Snippet fore for my \$".st."var".et." (@".st."array".et.") {<CR>".st.et."<
 exec "Snippet fori for (my \$".st."var".et." = 0; \$".st."var".et." < ".st."expression".et."; ++\$".st."var".et.") {<CR>".st.et."<CR>}<CR>"
 exec "Snippet eval eval {<CR>".st.et."<CR>};<CR><CR>if ($@) {<CR>".st.et."<CR>}<CR>"
 exec "Snippet st map { $_->[0] }<CR>sort { $a->[1] ".st."cmp".et." $b->[1] }<CR>map { [$_, ".st."function".et."] }<CR>".st."list".et
+exec "Snippet t use strict;<CR>use warnings;<CR>use Test::More tests => ".st."1".et.";<CR>"
+
