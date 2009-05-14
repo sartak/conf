@@ -295,13 +295,11 @@ function s:nopaste(visual)
     endif
  
     if a:visual
-        silent exe "normal gv!nopaste\<CR>"
+        silent exe "normal gv!nopaste -x\<CR>"
     else
         let pos = getpos('.')
-        silent exe "normal gg!Gnopaste\<CR>"
+        silent exe "normal gg!Gnopaste -x\<CR>"
     endif
-    silent normal "+yy
-    let @* = @+
     silent undo
     if a:visual
         normal gv
@@ -309,7 +307,6 @@ function s:nopaste(visual)
         call setpos('.', pos)
     endif
     let $NOPASTE_SERVICES = nopaste_services
-    echo @+
 endfunction
 nmap <silent> <Leader>p :call <SID>nopaste(0)<CR>
 vmap <silent> <Leader>p :<C-U>call <SID>nopaste(1)<CR>
