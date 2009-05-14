@@ -271,6 +271,10 @@ nmap <Leader>dB  :execute "w <bar> :execute '!darcs unrevert %' <bar> :silent ex
 nmap <Right> :bn<CR>
 nmap <Left>  :bp<CR>
 
+" up and down move by virtual line
+nmap <Up>   gk
+nmap <Down> gj
+
 " damnit cbus, you've won me over (keep visual selection on in/out-dent)
 vnoremap < <gv
 vnoremap > >gv
