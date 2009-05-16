@@ -279,8 +279,8 @@ nmap <Up>   gk
 nmap <Down> gj
 
 " damnit cbus, you've won me over (keep visual selection on in/out-dent)
-vnoremap < <gv
-vnoremap > >gv
+xnoremap < <gv
+xnoremap > >gv
 
 " now search commands will re-center the screen
 nmap n nzz
@@ -312,7 +312,7 @@ function s:nopaste(visual)
     let $NOPASTE_SERVICES = nopaste_services
 endfunction
 nmap <silent> <Leader>p :call <SID>nopaste(0)<CR>
-vmap <silent> <Leader>p :<C-U>call <SID>nopaste(1)<CR>
+xmap <silent> <Leader>p :<C-U>call <SID>nopaste(1)<CR>
 " }}}
 "}}}
 " Plugin settings {{{
