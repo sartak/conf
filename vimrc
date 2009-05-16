@@ -226,6 +226,9 @@ inoremap <silent> <C-a> <ESC>u:set paste<CR>.:set nopaste<CR>gi
 iabbrev lamdba lambda
 iabbrev dvice device
 "}}}
+" Shortcut abbreviations {{{
+iabbrev MUTC Moose::Util::TypeConstraints
+" }}}
 " }}}
 " Normal-mode remappings {{{
 " spacebar (in command mode) inserts a single character before the cursor
