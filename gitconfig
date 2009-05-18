@@ -14,5 +14,6 @@
 	record = !git add -p && git commit
 	co = checkout
 	br = branch
+    exclude = git ls-files --others > .git/info/exclude
 [github]
 	user = sartak
