@@ -13,7 +13,6 @@ use Scalar::Util qw(blessed weaken isweak tainted);
 use Scalar::Defer qw(lazy defer force);
 use File::Slurp qw(slurp);
 use IO::All;
-use Carp::Clan qw(verbose Devel::REPL:: Moose:: Class::MOP:: Lexical::Persistence::);
 
 *fold = \&reduce;
 
