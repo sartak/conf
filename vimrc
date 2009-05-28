@@ -92,6 +92,9 @@ let perl_include_pod=1
 
 " perl needs lots of syncing...
 let perl_sync_dist=1000
+
+" Improve qw() and friends
+let perl_string_as_statement=1
 " }}}
 " }}}
 "}}}
