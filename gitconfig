@@ -18,3 +18,5 @@
     ignore = !git ls-files --others --exclude-from=.gitignore >> .gitignore
 [github]
 	user = sartak
+[push]
+	default = matching
