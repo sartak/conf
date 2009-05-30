@@ -92,6 +92,11 @@ alias moose="perl -Moose -e"
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
+
+# Edits the files whose contents match the regular expression
+vack() {
+    vim `ack -la -- "$@"`
+}
 # }}}
 # darcs shortcuts {{{
 alias dwn="darcs whatsnew"
