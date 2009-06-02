@@ -131,6 +131,7 @@ alias -g H='|& head'
 alias -g T='|& tail'
 alias -g W='|& wc'
 alias -g P='|& nopaste -x'
+alias -g ackla='ack -la --'
 # }}}
 # zen {{{
 fpath=(
