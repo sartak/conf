@@ -12,6 +12,12 @@ use List::MoreUtils ':all';
 use Scalar::Util qw(blessed weaken isweak tainted);
 use Scalar::Defer qw(lazy defer force);
 use File::Slurp qw(slurp);
+
+# Silence complaints about redefining 'io'
+BEGIN {
+    no strict 'refs';
+    delete ${__PACKAGE__.'::'}{io};
+}
 use IO::All;
 
 *fold = \&reduce;
