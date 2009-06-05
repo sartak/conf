@@ -116,6 +116,9 @@ alias drb="darcs rollback"
 # }}}
 # git shortcuts {{{
 alias gr="git record"
+alias gc="git commit"
+alias gca="git commit --amend"
+alias gcall="git commit --all"
 # }}}
 # work shortcuts {{{
 alias rt='PERL5LIB=/opt/rt3/lib:/opt/rt3/lib:$PERL5LIB RT_DBA_USER=postgres RT_DBA_PASSWORD='' '
