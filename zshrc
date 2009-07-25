@@ -76,6 +76,8 @@ alias rax="ssh sartak.org"
 alias home='ssh $HOMEIP'
 alias alt='ssh alt.org'
 alias hm='ssh hiveminder.com'
+alias irc='rax -t "screen -dr irssi"'
+alias wm='diesel -t "screen -dr mutt"'
 # }}}
 # shortcuts {{{
 alias i='sudo port install'
