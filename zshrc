@@ -128,6 +128,7 @@ alias rtp='rt prove -rl -I/opt/rt3/lib'
 alias rtversion="rt perl -MRT -le 'print \$RT::VERSION'"
 alias unrt="ps aux -ww | egrep 'standalone|rt-server' | grep -v grep | perl -lane 'print \$_; system(qq{sudo kill \$F[1]})'"
 alias rert="unrt && (cd ~; sudo /opt/rt3/bin/standalone_httpd)"
+alias mmirt="mmi; sudo chown -R sartak:sartak /opt/rt3*"
 # }}}
 # global shortcuts (don't need to be in the command position) {{{
 alias -g L='|& vimpager'
