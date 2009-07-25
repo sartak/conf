@@ -228,6 +228,8 @@ inoremap <silent> <C-a> <ESC>u:set paste<CR>.:set nopaste<CR>gi
 " Words I misspell.. {{{
 iabbrev lamdba lambda
 iabbrev dvice device
+iabbrev emdash mdash
+iabbrev endash ndash
 "}}}
 " Shortcut abbreviations {{{
 iabbrev MUTC Moose::Util::TypeConstraints
