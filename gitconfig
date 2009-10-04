@@ -16,6 +16,7 @@
 	br = branch
     exclude = !git ls-files --others > .git/info/exclude
     ignore = !git ls-files --others --exclude-from=.gitignore >> .gitignore
+	git = !git
 [github]
 	user = sartak
 [push]
