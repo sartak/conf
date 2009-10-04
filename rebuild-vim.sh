@@ -5,7 +5,7 @@ svn up
 cd src
 curl http://jordanlewis.org/code/persistent_undo.diff | patch -p0
 cd ..
-./configure --without-x --disable-gui --disable-xim --disable-darwin --enable-perlinterp
+./configure --without-x --disable-gui --disable-xim --disable-darwin --enable-perlinterp --enable-multibyte
 make
 sudo make install
 
