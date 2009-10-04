@@ -14,7 +14,7 @@ set autowrite
 set autoread
 
 " everything needs to be unicode. EVERYTHING
-set encoding=utf8
+set encoding=utf-8
 
 " always join with just one space, even between sentences
 set nojoinspaces
