@@ -18,6 +18,7 @@
     ignore = !git ls-files --others --exclude-from=.gitignore >> .gitignore
 	git = !git
     amend = commit --amend -a -C HEAD
+	obliterate = !git reset --hard && git clean -fd
 [github]
 	user = sartak
 [push]
