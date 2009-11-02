@@ -17,6 +17,7 @@
     exclude = !git ls-files --others > .git/info/exclude
     ignore = !git ls-files --others --exclude-from=.gitignore >> .gitignore
 	git = !git
+    amend = commit --amend -a -C HEAD
 [github]
 	user = sartak
 [push]
