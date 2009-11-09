@@ -129,7 +129,7 @@ alias rtversion="rt perl -MRT -le 'print \$RT::VERSION'"
 alias unrt="ps aux -ww | egrep 'standalone|rt-server' | grep -v grep | perl -lane 'print \$_; system(qq{sudo kill \$F[1]})'"
 alias rert="unrt && (cd ~; sudo /opt/rt3/bin/standalone_httpd)"
 alias mmirt="mmi; sudo chown -R sartak:sartak /opt/rt3*"
-alias ec2="prove -l -j4 --harness TAP::Harness::Remote::EC2 --state=save,slow"
+alias ec2="prove -lr -j4 --harness TAP::Harness::Remote::EC2 --state=save,slow"
 # }}}
 # global shortcuts (don't need to be in the command position) {{{
 alias -g L='|& vimpager'
