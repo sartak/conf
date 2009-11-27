@@ -230,6 +230,7 @@ iabbrev lamdba lambda
 iabbrev dvice device
 iabbrev emdash mdash
 iabbrev endash ndash
+iabbrev priviledge privilege
 "}}}
 " Shortcut abbreviations {{{
 iabbrev MUTC Moose::Util::TypeConstraints
