@@ -123,6 +123,12 @@ alias gr="git record"
 alias gc="git commit"
 alias gca="git add -p && git commit --amend"
 alias gcall="git commit --all"
+alias gbg="git bisect good"
+alias gbb="git bisect bad"
+alias good="git bisect good"
+alias bad="git bisect bad"
+alias gbs="git bisect skip"
+alias gbr="git bisect reset"
 # }}}
 # work shortcuts {{{
 alias rt='PERL5LIB=/opt/rt3/lib:/opt/rt3/lib:$PERL5LIB RT_DBA_USER=postgres RT_DBA_PASSWORD='' '
