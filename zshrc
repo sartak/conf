@@ -80,7 +80,7 @@ alias irc='rax -t "screen -dr irssi"'
 # }}}
 # shortcuts {{{
 alias i='sudo port install'
-alias ci='sudo cpan -i'
+alias ci='cpan -i'
 alias less='less -R'
 alias p='prove -lr'
 alias pp='prove -lr --state=hot,new,save -j10'
