@@ -117,7 +117,6 @@ alias dB="darcs unrecord"
 alias drb="darcs rollback"
 # }}}
 # git shortcuts {{{
-alias git="hub" # http://github.com/defunkt/hub
 alias gr="git record"
 alias gc="git commit"
 alias gca="git add -p && git commit --amend"
