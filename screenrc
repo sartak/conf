@@ -7,9 +7,6 @@ escape ^Bb
 # no more "bell in window 1", Crassworm!!
 bell_msg ""
 
-# avoid logging in a new user for every term (thanks toft)
-deflogin off
-
 # lines of scrollback!
 defscrollback 20000
 
