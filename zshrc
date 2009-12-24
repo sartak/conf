@@ -155,7 +155,4 @@ fpath=(
         /Users/sartak/.zen/zsh/zle )
 autoload -U zen
 # }}}
-# other scripts {{{
-source ~/.bin/j.sh
-# }}}
 
