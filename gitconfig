@@ -20,6 +20,7 @@
     amend = commit --amend -a -C HEAD
 	obliterate = !git reset --hard && git clean -fd
     unstage = reset HEAD
+    reword = commit --amend
 [github]
 	user = sartak
 [push]
