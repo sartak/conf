@@ -1,4 +1,4 @@
-cd ~/app/vim7
+cd ~/devel/vim7
 make distclean
 svn revert --recursive *
 svn up
