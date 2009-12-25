@@ -35,7 +35,7 @@ OPTIONS=!hp_monitor
 # last minor:     compatibility with the new nethack.alt.org's GNU (not POSIX)
 #                   regex library
 
-OPTIONS=!menucolors
+OPTIONS=menucolors
 
 #########
 # B/U/C #
