@@ -220,16 +220,13 @@ autocmd BufRead,BufNewFile share/html/* set syn=mason
 " Hit <C-a> in insert mode after a bad paste (thanks absolon) {{{
 inoremap <silent> <C-a> <ESC>u:set paste<CR>.:set nopaste<CR>gi
 "}}}
-" Words I misspell.. {{{
+" Words I misspell.. (don't laugh) {{{
 iabbrev lamdba lambda
 iabbrev dvice device
 iabbrev emdash mdash
 iabbrev endash ndash
 iabbrev priviledge privilege
 "}}}
-" Shortcut abbreviations {{{
-iabbrev MUTC Moose::Util::TypeConstraints
-" }}}
 " }}}
 " Normal-mode remappings {{{
 " spacebar (in command mode) inserts a single character before the cursor
