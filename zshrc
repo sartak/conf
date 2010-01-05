@@ -50,7 +50,6 @@ bindkey "\e[3~" delete-char          # Enable delete
 bindkey -M vicmd v edit-command-line # v in vi mode opens line in $EDITOR
 # }}}
 # replace default utilities {{{
-alias man="man -P vimmanpager"
 #alias top="htop"
 # }}}
 # add color to some things {{{
