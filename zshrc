@@ -138,7 +138,7 @@ alias mmirt="mmi; sudo chown -R sartak:sartak /opt/rt3*"
 alias ec2="prove -lr -j4 --harness TAP::Harness::Remote::EC2 --state=save,slow"
 # }}}
 # global shortcuts (don't need to be in the command position) {{{
-alias -g L='|& vimpager'
+alias -g L='|& less'
 alias -g G='|& ack'
 alias -g H='|& head'
 alias -g T='|& tail'
