@@ -47,7 +47,11 @@ bindkey "^Y" copy-earlier-word       # Pretty self-explanatory name!
 bindkey "^T" transpose-chars         # Transposes adjacent chars (xp in vim)
 bindkey " " magic-space              # Expands from hist (!vim )
 bindkey "\e[3~" delete-char          # Enable delete
+
 bindkey -M vicmd v edit-command-line # v in vi mode opens line in $EDITOR
+bindkey -M viins '' backward-delete-char
+bindkey -M viins '' backward-delete-char
+
 # }}}
 # replace default utilities {{{
 #alias top="htop"
