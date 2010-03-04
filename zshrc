@@ -140,6 +140,7 @@ alias unrt="ps aux -ww | egrep 'standalone|rt-server' | grep -v grep | perl -lan
 alias rert="unrt && (cd ~; /opt/rt3/bin/standalone_httpd 8888)"
 alias mmirt="mmi; sudo chown -R sartak:sartak /opt/rt3*"
 alias ec2="prove -lr -j4 --harness TAP::Harness::Remote::EC2 --state=save,slow"
+alias rtxi="perl Makefile.PL; make install; rert"
 # }}}
 # global shortcuts (don't need to be in the command position) {{{
 alias -g L='|& less'
