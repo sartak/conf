@@ -54,7 +54,7 @@ bindkey -M viins '' backward-delete-char
 
 # }}}
 # replace default utilities {{{
-#alias top="htop"
+alias top="htop"
 # }}}
 # add color to some things {{{
 alias ls='ls -G'
