@@ -319,4 +319,9 @@ let g:SuperTabDefaultCompletionType = 'context'
 let g:EnhCommentifyBindInInsert = 'No'
 let g:EnhCommentifyRespectIndent = 'Yes'
 " }}}
+" FuzzyFinder {{{
+nmap <leader>o :FufFileRecursive<CR>
+let g:fuf_dir_exclude = '\v(^|[/\\])\.(hg|git|bzr)($|[/\\])'
+let g:fuf_mrufile_exclude = '\v\~$|\.(bak|sw[mnop])$|^(\/\/|\\\\|\/mnt\/|\/media\/)'
+" }}}
 " }}}
