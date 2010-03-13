@@ -324,4 +324,7 @@ nmap <leader>o :FufFileRecursive<CR>
 let g:fuf_dir_exclude = '\v(^|[/\\])\.(hg|git|bzr)($|[/\\])'
 let g:fuf_mrufile_exclude = '\v\~$|\.(bak|sw[mnop])$|^(\/\/|\\\\|\/mnt\/|\/media\/)'
 " }}}
+" Ragtag {{{
+let g:ragtag_global_maps = 1
+" }}}
 " }}}
