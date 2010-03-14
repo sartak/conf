@@ -327,4 +327,8 @@ let g:fuf_mrufile_exclude = '\v\~$|\.(bak|sw[mnop])$|^(\/\/|\\\\|\/mnt\/|\/media
 " Ragtag {{{
 let g:ragtag_global_maps = 1
 " }}}
+" XPTemplate {{{
+let g:xptemplate_vars="$author=Shawn M Moore"
+let g:xptemplate_vars="$email=sartak@gmail.com"
+" }}}
 " }}}
