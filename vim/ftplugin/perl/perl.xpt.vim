@@ -31,6 +31,8 @@ XPTinclude
 XPTinclude
       \ _loops/c.while.like
 
+XPTinclude
+      \ _moose/moose
 
 " ========================= Function and Variables =============================
 
