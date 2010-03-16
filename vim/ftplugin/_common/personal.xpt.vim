@@ -6,6 +6,9 @@
 " You can also set personal variables with 'g:xptemplate_vars' in your .vimrc.
 XPTemplate priority=personal
 
-XPTvar $author Shawn M Moore
-XPTvar $email  sartak@gmail.com
+XPTvar $author  Shawn M Moore
+XPTvar $email   sartak@gmail.com
+
+XPTvar $githubuser sartak
+XPTvar $rtemail    sartak@bestpractical.com
 
