@@ -1,0 +1,1 @@
+/Users/sartak/devel/xptemplates/moose.xpt.vim
