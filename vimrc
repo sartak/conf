@@ -215,6 +215,9 @@ autocmd FileType perl setlocal keywordprg=perldoc\ -f
 " Primarily for RT and Hiveminder
 autocmd BufRead,BufNewFile share/html/* set syn=mason
 " }}}
+" Skeletons {{{
+au BufNewFile Makefile.PL exec feedkeys("imi")
+" }}}
 "}}}
 " Insert-mode remappings/abbreviations {{{
 " Hit <C-a> in insert mode after a bad paste (thanks absolon) {{{
