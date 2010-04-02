@@ -75,6 +75,7 @@ alias arcane="ssh 66.41.105.165"
 alias jsn="ssh noway.ratry.ru"
 alias akrasiac="ssh henzell@crawl.akrasiac.org"
 alias diesel="ssh diesel.bestpractical.com"
+alias booth="ssh shell.bestpractical.com"
 alias rax="ssh sartak.org"
 alias home='ssh $HOMEIP'
 alias alt='ssh alt.org'
@@ -160,4 +161,3 @@ fpath=(
         /Users/sartak/.zen/zsh/zle )
 autoload -U zen
 # }}}
-
