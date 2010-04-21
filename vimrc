@@ -221,6 +221,12 @@ au BufNewFile Makefile.PL exec feedkeys("imi")
 au BufRead,BufNewFile .gitignore set filetype=gitignore
 au BufNewFile .gitignore exec feedkeys("igitignore")
 " }}}
+" Always quit out of swap warnings {{{
+augroup NoSimultaneousEdits
+    autocmd!
+    autocmd  SwapExists  *  :let v:swapchoice = 'q'
+augroup END
+" }}}
 "}}}
 " Insert-mode remappings/abbreviations {{{
 " Hit <C-a> in insert mode after a bad paste (thanks absolon) {{{
