@@ -243,14 +243,14 @@ nmap Y y$
 
 " miscellaneous commands I use a lot, so deserve quick shortcuts
 nnoremap \\ \
-nmap \/ :nohl<CR>
-nmap \n :set invnumber<CR>
+nmap <silent> \/ :nohl<CR>
+nmap <silent> \n :set invnumber<CR>
 nmap \c :make<CR>
 
 " syntax coloring
-nmap \ss :syntax sync fromstart<CR>
-nmap \sm :set syn=mason<CR>:syntax sync fromstart<CR>
-nmap \sp :set syn=perl<CR>:syntax sync fromstart<CR>
+nmap <silent> \ss :syntax sync fromstart<CR>
+nmap <silent> \sm :set syn=mason<CR>:syntax sync fromstart<CR>
+nmap <silent> \sp :set syn=perl<CR>:syntax sync fromstart<CR>
 
 " make help easier to navigate
 autocmd FileType help nnoremap <buffer> <CR> <C-]>
