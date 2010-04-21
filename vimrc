@@ -227,6 +227,30 @@ augroup NoSimultaneousEdits
     autocmd  SwapExists  *  :let v:swapchoice = 'q'
 augroup END
 " }}}
+" Prompt to create directories if they don't exist {{{
+augroup AutoMkdir
+    autocmd!
+    autocmd  BufNewFile  *  :call EnsureDirExists()
+augroup END
+function! EnsureDirExists ()
+    let required_dir = expand("%:h")
+    if !isdirectory(required_dir)
+        call AskQuit("Directory '" . required_dir . "' doesn't exist.", "&Create it?")
+
+        try
+            call mkdir( required_dir, 'p' )
+        catch
+            call AskQuit("Can't create '" . required_dir . "'", "&Continue anyway?")
+        endtry
+    endif
+endfunction
+
+function! AskQuit (msg, proposed_action)
+    if confirm(a:msg, "&Quit?\n" . a:proposed_action) == 2
+        exit
+    endif
+endfunction
+" }}}
 "}}}
 " Insert-mode remappings/abbreviations {{{
 " Hit <C-a> in insert mode after a bad paste (thanks absolon) {{{
