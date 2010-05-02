@@ -246,7 +246,7 @@ function! EnsureDirExists ()
 endfunction
 
 function! AskQuit (msg, proposed_action)
-    if confirm(a:msg, "&Quit?\n" . a:proposed_action) == 2
+    if confirm(a:msg, "&Quit?\n" . a:proposed_action) == 1
         exit
     endif
 endfunction
