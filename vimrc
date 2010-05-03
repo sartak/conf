@@ -281,6 +281,7 @@ nmap \c :make<CR>
 nmap <silent> \ss :syntax sync fromstart<CR>
 nmap <silent> \sm :set syn=mason<CR>:syntax sync fromstart<CR>
 nmap <silent> \sp :set syn=perl<CR>:syntax sync fromstart<CR>
+nmap <silent> \sj :set syn=javascript<CR>:syntax sync fromstart<CR>
 
 " make help easier to navigate
 autocmd FileType help nnoremap <buffer> <CR> <C-]>
