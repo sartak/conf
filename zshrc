@@ -85,6 +85,7 @@ alias irc='autossh -M20000 sartak.org -t "screen -dr irssi"'
 # shortcuts {{{
 alias i='sudo port install'
 alias ci='cpanm'
+alias c.='cpanm -v .'
 alias less='less -R'
 alias p='prove -lr'
 alias pp='prove -lr --state=hot,new,save -j10'
