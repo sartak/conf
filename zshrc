@@ -106,22 +106,6 @@ vack() {
     vim `ack -la -- "$@"`
 }
 # }}}
-# darcs shortcuts {{{
-alias dwn="darcs whatsnew"
-alias darcsify="darcs init && darcs add \$(darcs whatsnew -ls | awk '/^a\ / {print \$2}') && darcs record -a -m'Initial import'"
-alias dpl="darcs pull"
-alias dps="darcs push"
-alias dpa="darcs push --all"
-alias dp="darcs pull && darcs push"
-alias dr="rlwrap --no-warnings darcs record"
-alias dar="rlwrap --no-warnings darcs amend-record"
-alias db="darcs revert"
-alias dqm="darcs query manifest"
-alias dun="darcs unpull"
-alias dur="darcs unrecord"
-alias dB="darcs unrecord"
-alias drb="darcs rollback"
-# }}}
 # git shortcuts {{{
 alias gr="git record"
 alias gc="git commit"
