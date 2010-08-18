@@ -346,6 +346,11 @@ endfunction
 
 nmap <silent>  \=  :call AlignAssignments()<CR>
 " }}}
+" Command-mode remappings (: and /) {{{
+" Make ^A and ^E work like in a shell
+cnoremap <C-A> <Home>
+cnoremap <C-E> <End>
+" }}}
 "}}}
 " Plugin settings {{{
 " Rainbow {{{
