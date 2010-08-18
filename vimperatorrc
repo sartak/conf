@@ -1,0 +1,3 @@
+javascript liberator.beep = function() { return false; }
+
+map U :viewsource<CR>
