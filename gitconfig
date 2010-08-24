@@ -11,7 +11,7 @@
 	ci = !git stash >/dev/null && git svn dcommit && git stash pop >/dev/null
     u = !git stash >/dev/null && git svn rebase && git stash pop >/dev/null
 	st = status
-	record = !git add -p && git commit
+	record = !git add -p && git commit -v
 	co = checkout
 	br = branch
     exclude = !git ls-files --others > .git/info/exclude
