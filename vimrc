@@ -199,7 +199,7 @@ hi EOLWS ctermbg=red
 " Autocommands {{{
 " When editing a file, always jump to the last cursor position {{{
 autocmd BufReadPost *
-\  if line("'\"") > 0 && line("'\"") <= line("$") |
+\  if stridx(expand("<afile>"), ".git/COMMIT_EDITMSG") && line("'\"") > 0 && line("'\"") <= line("$") |
 \    exe "normal g`\"" |
 \  endif
 "}}}
