@@ -119,12 +119,12 @@ alias gbs="git bisect skip"
 alias gbr="git bisect reset"
 # }}}
 # work shortcuts {{{
-alias rt='PERL5LIB=/opt/rt3/lib:/opt/rt3/lib:$PERL5LIB RT_DBA_USER=postgres RT_DBA_PASSWORD='' '
-alias rtp='rt prove -wrl -I/opt/rt3/lib'
+alias rt='PERL5LIB=~/opt/rt3/lib:~/opt/rt3/lib:$PERL5LIB RT_DBA_USER=sartak RT_DBA_PASSWORD='' '
+alias rtp='rt prove -wrl -I~/opt/rt3/lib'
 alias rtversion="rt perl -MRT -le 'print \$RT::VERSION'"
 alias unrt="ps aux -ww | egrep 'standalone|rt-server' | grep -v grep | perl -lane 'print \$_; system(qq{sudo kill \$F[1]})'"
-alias rert="unrt && (cd ~; /opt/rt3/bin/standalone_httpd 8888)"
-alias mmirt="mmi; sudo chown -R sartak:sartak /opt/rt3*"
+alias rert="unrt && (cd ~; ~/opt/rt3/bin/standalone_httpd 8888)"
+alias mmirt="mmi; sudo chown -R sartak:sartak ~/opt/rt3*"
 alias ec2="prove -wlr -j4 --harness TAP::Harness::Remote::EC2 --state=save,slow"
 alias rtxi="perl Makefile.PL && make install && rert"
 # }}}
