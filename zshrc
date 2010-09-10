@@ -80,7 +80,7 @@ alias rax="ssh sartak.org"
 alias home='ssh $HOMEIP'
 alias alt='ssh alt.org'
 alias hm='ssh hiveminder.com'
-alias irc='autossh -M20000 sartak.org -t "screen -dr irssi"'
+alias irc='ssh sartak.org -t "screen -dr irssi"'
 # }}}
 # shortcuts {{{
 alias i='sudo port install'
