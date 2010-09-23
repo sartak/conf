@@ -121,9 +121,9 @@ set wildmode=longest,list,full
 " always make the help window cover the entire screen
 set helpheight=9999
 
-if exists("+undofile")
-    set undofile
-endif
+" persistent undo
+set undofile
+set undodir=~/.vim/undo
 "}}}
 " Make vim less whiny {{{
 " :bn with a change in the current buffer? no prob!
@@ -199,7 +199,7 @@ hi EOLWS ctermbg=red
 " Autocommands {{{
 " When editing a file, always jump to the last cursor position {{{
 autocmd BufReadPost *
-\  if stridx(expand("<afile>"), ".git/COMMIT_EDITMSG") && line("'\"") > 0 && line("'\"") <= line("$") |
+\  if line("'\"") > 0 && line("'\"") <= line("$") |
 \    exe "normal g`\"" |
 \  endif
 "}}}

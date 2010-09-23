@@ -30,3 +30,5 @@
 	denyCurrentBranch = ignore
 [branch]
     autosetupmerge = true
+[core]
+    editor = vim -c ':normal gg'
