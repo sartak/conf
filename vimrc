@@ -122,8 +122,10 @@ set wildmode=longest,list,full
 set helpheight=9999
 
 " persistent undo
-set undofile
-set undodir=~/.vim/undo
+if exists("+undofile")
+    set undofile
+    set undodir=~/.vim/undo
+endif
 "}}}
 " Make vim less whiny {{{
 " :bn with a change in the current buffer? no prob!
