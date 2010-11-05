@@ -22,6 +22,7 @@
     unstage = reset HEAD
     reword = commit --amend
     review = "!f() { for rev in $(git rev-list --reverse \"$@\"); do git show $rev; done; }; f"
+    top = !pwd
 [github]
 	user = sartak
 [push]
