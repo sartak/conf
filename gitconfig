@@ -23,6 +23,7 @@
     reword = commit --amend
     review = "!f() { for rev in $(git rev-list --reverse \"$@\"); do git show $rev; done; }; f"
     top = !pwd
+    unamend = reset HEAD@{1}
 [github]
 	user = sartak
 [push]
