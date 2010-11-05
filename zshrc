@@ -125,7 +125,7 @@ alias rtversion="rt perl -MRT -le 'print \$RT::VERSION'"
 alias unrt="ps aux -ww | egrep 'standalone|rt-server' | grep -v grep | perl -lane 'print \$_; system(qq{sudo kill \$F[1]})'"
 alias rert="unrt && (cd ~; /opt/rt3/bin/standalone_httpd 8888)"
 alias mmirt="mmi; sudo chown -R sartak:sartak /opt/rt3*"
-alias ec2="prove -wlr -j4 --harness TAP::Harness::Remote::EC2 --state=save,slow"
+alias ec2="prove -wlr -j4 --timer --harness TAP::Harness::Remote::EC2 --state=save,slow"
 alias rtxi="perl Makefile.PL && make install && rert"
 # }}}
 # global shortcuts (don't need to be in the command position) {{{
