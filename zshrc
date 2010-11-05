@@ -120,7 +120,7 @@ alias gbr="git bisect reset"
 # }}}
 # work shortcuts {{{
 alias rt='PERL5LIB=/opt/rt3/lib:$PERL5LIB'
-alias rtp='rt prove -wlr -j 4 --state=slow,save'
+alias rtp='rt prove -wlr -j 4 --timer --state=slow,save'
 alias rtversion="rt perl -MRT -le 'print \$RT::VERSION'"
 alias unrt="ps aux -ww | egrep 'standalone|rt-server' | grep -v grep | perl -lane 'print \$_; system(qq{sudo kill \$F[1]})'"
 alias rert="unrt && (cd ~; /opt/rt3/bin/standalone_httpd 8888)"
