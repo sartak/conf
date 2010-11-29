@@ -7,7 +7,7 @@
 	branch = auto
 	ui = auto
 [alias]
-	up = pull --rebase
+	up = !git fetch --all --tags --prune && git pull --rebase
 	ci = !git stash >/dev/null && git svn dcommit && git stash pop >/dev/null
     u = !git stash >/dev/null && git svn rebase && git stash pop >/dev/null
 	st = status
