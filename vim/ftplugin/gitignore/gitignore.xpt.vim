@@ -8,13 +8,15 @@ XPTinclude
 XPTemplateDef
 
 XPT gitignore hint=gitignore
-META.yml
-Makefile
-blib/
-inc/
-*.sw[po]
-pm_to_blib
 MANIFEST
 MANIFEST.bak
+META.yml
+Makefile
+Makefile.old
 SIGNATURE
+blib/
+inc/
+pm_to_blib
+.prove
+*.sw[po]
 cover_db/
