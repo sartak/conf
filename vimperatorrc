@@ -1,3 +1,5 @@
 javascript liberator.beep = function() { return false; }
 
 map U :viewsource<CR>
+
+command pin open pin
