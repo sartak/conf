@@ -90,28 +90,16 @@ alias hm='ssh hiveminder.com'
 alias irc='ssh sartak.org -t "screen -dr irssi"'
 # }}}
 # shortcuts {{{
-alias i='sudo port install'
 alias ci='cpanm'
-alias c.='cpanm -v .'
 alias less='less -R'
 alias p='prove -wlr --timer'
 alias pp='prove -wlr --timer --state=hot,new,save -j10'
-alias mmi='make; sudo make install'
-alias pmmi='cpan .'
-alias ptmmi='cpan .'
-alias ghc='ghc-6.10.1'
-alias ghci='ghci-6.10.1'
 alias linein='nohup /Applications/LineIn.app/Contents/MacOS/LineIn &'
 alias moose="perl -Moose -e"
 alias vi="vim"
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
-
-# Edits the files whose contents match the regular expression
-vack() {
-    vim `ack -la -- "$@"`
-}
 # }}}
 # git shortcuts {{{
 alias gr="git record"
