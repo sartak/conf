@@ -16,6 +16,8 @@ export LC_ALL=en_US.UTF-8
 
 export PERL_PREFER_CPAN_CLIENT=cpanm
 
+export PERL_CPANM_OPT='--prompt'
+
 # site-specific environment variables
 . ~/.zshenv.local
 
