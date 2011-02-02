@@ -15,8 +15,8 @@ export NYTPROF=addpid=1
 export LC_ALL=en_US.UTF-8
 
 export PERL_PREFER_CPAN_CLIENT=cpanm
-
 export PERL_CPANM_OPT='--prompt'
+export PERL5LIB='lib'
 
 # site-specific environment variables
 . ~/.zshenv.local
