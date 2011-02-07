@@ -21,7 +21,7 @@
 	obliterate = !git reset --hard && git clean -fd
     unstage = reset HEAD
     reword = commit --amend
-    review = "!f() { for rev in $(git rev-list --reverse \"$@\"); do git show $rev; done; }; f"
+    review = "!f() { for rev in $(git rev-list --reverse \"$@\"); do git show $rev; done; }; LESS='-QRc' f"
     top = !pwd
     unamend = reset HEAD@{1}
 [github]
