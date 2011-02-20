@@ -34,7 +34,7 @@ my @plugins = (
     'Nopaste',                    # paste session with #nopaste
     'PPI',                        # PPI dumping of Perl code
     'MultiLine::PPI',             # allow multiple lines
-    'LoadClass',                  # automatically load unloaded classes
+    #'LoadClass',                  # automatically load unloaded classes
 
     'Completion',
     'CompletionDriver::Keywords', # substr, while, etc
