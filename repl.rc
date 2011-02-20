@@ -46,8 +46,8 @@ my @plugins = (
 );
 
 $_REPL->load_plugin($_) for @plugins;
-$_REPL->fancy_prompt(sub { '> ' } );
-$_REPL->fancy_continuation_prompt(sub { '> ' . ('    ' x $_[0]->line_depth) });
+$_REPL->fancy_prompt(sub { '-> ' } );
+$_REPL->fancy_continuation_prompt(sub { $_[0]->line_depth . '> ' });
 
 # if at ~/work/foo/bar, load ~/.re.pl/work-foo-bar as well!
 my $cd = $ENV{PWD};
