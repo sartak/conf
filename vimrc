@@ -294,7 +294,7 @@ nnoremap ' `
 nnoremap ` '
 
 " Nopaste \p {{{
-function s:nopaste(visual)
+function! s:nopaste(visual)
     let nopaste_services = $NOPASTE_SERVICES
     if &filetype == 'tex'
         let $NOPASTE_SERVICES = "Mathbin ".$NOPASTE_SERVICES
