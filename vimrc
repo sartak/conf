@@ -206,9 +206,6 @@ autocmd BufReadPost *
 \    exe "normal g`\"" |
 \  endif
 "}}}
-" Auto +x {{{
-au BufWritePost *.{sh,pl} silent exe "!chmod +x %"
-"}}}
 " Perl :make does a syntax check {{{
 autocmd FileType perl setlocal makeprg=$VIMRUNTIME/tools/efm_perl.pl\ -c\ %\ $*
 autocmd FileType perl setlocal errorformat=%f:%l:%m
@@ -217,12 +214,6 @@ autocmd FileType perl setlocal keywordprg=perldoc\ -f
 " Syntax hilight Mason files {{{
 " Primarily for RT and Hiveminder
 autocmd BufRead,BufNewFile share/html/* set syn=mason
-" }}}
-" Always quit out of swap warnings {{{
-augroup NoSimultaneousEdits
-    autocmd!
-    autocmd  SwapExists  *  :let v:swapchoice = 'q'
-augroup END
 " }}}
 "}}}
 " Insert-mode remappings/abbreviations {{{
@@ -248,7 +239,6 @@ nmap Y y$
 nnoremap \\ \
 nmap <silent> \/ :nohl<CR>
 nmap <silent> \n :set invnumber<CR>
-nmap \c :make<CR>
 
 " syntax coloring
 nmap <silent> \ss :syntax sync fromstart<CR>
