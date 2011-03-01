@@ -2,6 +2,7 @@
 
 " General options {{{
 " Miscellaneous {{{
+" stop using vi defaults, this is 2011
 set nocompatible
 
 " indentation and plugins
@@ -10,7 +11,7 @@ filetype indent plugin on
 " automatically flush to disk when using :make, etc.
 set autowrite
 
-" automatically read in external changes if we haven't modified the buffer
+" automatically read in external changes if we haven't yet modified the buffer
 set autoread
 
 " everything needs to be unicode. EVERYTHING
@@ -35,10 +36,10 @@ set rulerformat=%40(%=%t%h%m%r%w%<\ (%n)\ %4.7l,%-7.(%c%V%)\ %P%)
 " current mode in status line
 set showmode
 
-" display the number of (characters|lines) in visual mode, also cur command
+" display the number of (characters|lines) in visual mode, also current command
 set showcmd
 
-" a - terse messages (like [+] instead of [Modified]
+" a - terse messages (like [+] instead of [Modified])
 " o - don't show both reading and writing messages if both occur at once
 " t - truncate file names
 " T - truncate messages rather than prompting to press enter
@@ -59,14 +60,14 @@ set scrolloff=3
 " don't redraw the screen during macros etc (NetHack's runmode:teleport)
 set lazyredraw
 
-" highlight all matches, we'll see if this works with a different hilight
+" highlight search matches
 set hlsearch
 
 " highlight matching parens for .1s
 set showmatch
 set matchtime=1
 
-" threshold for reporting number of lines changed
+" threshold for reporting number of lines changed in an s/// etc
 set report=0
 
 " I generally don't want to have to space through things.. :)
@@ -77,7 +78,7 @@ set completeopt=menuone
 
 " hide the mouse in the gui while typing
 set mousehide
-" Language specific features {{{
+" Language specific display {{{
 " Perl {{{
 " highlight advanced perl vars inside strings
 let perl_extended_vars=1
@@ -97,7 +98,7 @@ let perl_string_as_statement=1
 " incremental search!
 set incsearch
 
-" make tilde (flip case) an operator
+" make tilde (flip case) an operator instead of always operating on the next char
 set tildeop
 
 " backspace over autoindent, end of line (to join lines), and preexisting test
@@ -213,7 +214,7 @@ autocmd FileType perl setlocal makeprg=$VIMRUNTIME/tools/efm_perl.pl\ -c\ %\ $*
 autocmd FileType perl setlocal errorformat=%f:%l:%m
 autocmd FileType perl setlocal keywordprg=perldoc\ -f
 "}}}
-" Syntax hilighting {{{
+" Syntax hilight Mason files {{{
 " Primarily for RT and Hiveminder
 autocmd BufRead,BufNewFile share/html/* set syn=mason
 " }}}
@@ -267,7 +268,7 @@ nmap <Left>  :bp<CR>
 nmap <Up>   gk
 nmap <Down> gj
 
-" damnit cbus, you've won me over (keep visual selection on in/out-dent)
+" keep visual selection on in/out-dent
 xnoremap < <gv
 xnoremap > >gv
 
@@ -303,6 +304,7 @@ endfunction
 nmap <silent> <Leader>p :call <SID>nopaste(0)<CR>
 xmap <silent> <Leader>p :<C-U>call <SID>nopaste(1)<CR>
 " }}}
+" AlignAssignments \= {{{
 function! AlignAssignments ()
     " Patterns needed to locate assignment operators...
     let ASSIGN_OP   = '[-+*/%|&]\?=\@<!=[=~]\@!'
@@ -342,12 +344,12 @@ endfunction
 
 nmap <silent>  \=  :call AlignAssignments()<CR>
 " }}}
+" }}}
 " Command-mode remappings (: and /) {{{
 " Make ^A and ^E work like in a shell
 cnoremap <C-A> <Home>
 cnoremap <C-E> <End>
 " }}}
-"}}}
 " Plugin settings {{{
 " Textobj {{{
 let g:Textobj_regex_enable = 1
@@ -357,6 +359,5 @@ let g:Textobj_arg_enable = 1
 " Supertab {{{
 let g:SuperTabMidWordCompletion = 0
 let g:SuperTabDefaultCompletionType = 'context'
-" }}}
 " }}}
 " }}}
