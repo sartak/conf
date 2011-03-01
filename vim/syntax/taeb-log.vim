@@ -1,1 +1,0 @@
-/Users/sartak/devel/TAEB/etc/vim/syntax/taeb-log.vim
