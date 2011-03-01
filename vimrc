@@ -264,7 +264,6 @@ nmap Y y$
 " miscellaneous commands I use a lot, so deserve quick shortcuts
 nnoremap \\ \
 nmap <silent> \/ :nohl<CR>
-nmap <silent> \n :set invnumber<CR>
 
 " syntax coloring
 nmap <silent> \ss :syntax sync fromstart<CR>
