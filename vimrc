@@ -24,9 +24,6 @@ set nojoinspaces
 set nostartofline
 "}}}
 " Display {{{
-" color!
-syntax on
-
 " lines, cols in status line
 set ruler
 
@@ -93,6 +90,34 @@ let perl_sync_dist=1000
 let perl_string_as_statement=1
 " }}}
 " }}}
+" Colors {{{
+" syntax highlighting {{{
+syntax on
+" }}}
+" default colorscheme {{{
+" I hate the bright colors that go with bg=dark, even though my bg is black
+set bg=light
+" }}}
+" word completion menu {{{
+highlight Pmenu      ctermfg=grey  ctermbg=darkblue
+highlight PmenuSel   ctermfg=red   ctermbg=darkblue
+highlight PmenuSbar  ctermbg=cyan
+highlight PmenuThumb ctermfg=red
+
+highlight WildMenu ctermfg=grey ctermbg=darkblue
+"}}}
+" folding {{{
+highlight Folded     ctermbg=black ctermfg=darkgreen
+"}}}
+" hlsearch {{{
+highlight Search NONE ctermfg=lightred
+"}}}
+" color end of line whitespace {{{
+autocmd InsertEnter * syn clear EOLWS | syn match EOLWS excludenl /\s\+\%#\@!$/
+autocmd InsertLeave * syn clear EOLWS | syn match EOLWS excludenl /\s\+$/
+hi EOLWS ctermbg=red
+" }}}
+"}}}
 "}}}
 " Improve power of commands {{{
 " incremental search!
@@ -173,31 +198,6 @@ set foldmethod=marker
 " close a fold when I leave it
 set foldclose=all
 "}}}
-"}}}
-" Colors {{{
-" default colorscheme {{{
-" I hate the bright colors that go with bg=dark, even though my bg is black
-set bg=light
-" }}}
-" word completion menu {{{
-highlight Pmenu      ctermfg=grey  ctermbg=darkblue
-highlight PmenuSel   ctermfg=red   ctermbg=darkblue
-highlight PmenuSbar  ctermbg=cyan
-highlight PmenuThumb ctermfg=red
-
-highlight WildMenu ctermfg=grey ctermbg=darkblue
-"}}}
-" folding {{{
-highlight Folded     ctermbg=black ctermfg=darkgreen
-"}}}
-" hlsearch {{{
-highlight Search NONE ctermfg=lightred
-"}}}
-" color end of line whitespace {{{
-autocmd InsertEnter * syn clear EOLWS | syn match EOLWS excludenl /\s\+\%#\@!$/
-autocmd InsertLeave * syn clear EOLWS | syn match EOLWS excludenl /\s\+$/
-hi EOLWS ctermbg=red
-" }}}
 "}}}
 " Autocommands {{{
 " When editing a file, always jump to the last cursor position {{{
