@@ -238,6 +238,9 @@ autocmd BufRead,BufNewFile share/html/* set syn=mason
 autocmd BufWritePost .vimrc source ~/.vimrc
 autocmd BufWritePost  vimrc source ~/.vimrc
 " }}}
+" when I wander away, save (I use version control, no big deal) {{{
+autocmd FocusLost * :wa
+" }}}
 "}}}
 " Insert-mode remappings/abbreviations {{{
 " Hit <C-a> in insert mode after a bad paste (thanks absolon) {{{
