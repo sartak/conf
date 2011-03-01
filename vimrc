@@ -262,16 +262,6 @@ nmap <Space> i <Esc>r
 " have Y behave analogously to D rather than to dd
 nmap Y y$
 
-" miscellaneous commands I use a lot, so deserve quick shortcuts
-nnoremap \\ \
-nmap <silent> \/ :nohl<CR>
-
-" syntax coloring
-nmap <silent> \ss :syntax sync fromstart<CR>
-nmap <silent> \sm :set syn=mason<CR>:syntax sync fromstart<CR>
-nmap <silent> \sp :set syn=perl<CR>:syntax sync fromstart<CR>
-nmap <silent> \sj :set syn=javascript<CR>:syntax sync fromstart<CR>
-
 " make help easier to navigate
 autocmd FileType help nnoremap <buffer> <CR> <C-]>
 autocmd FileType help nnoremap <buffer> <BS> <C-T>
@@ -299,6 +289,20 @@ nmap g# g#zz
 " Swap ` (preserves which column the cursor was in) and ' (which does not)
 nnoremap ' `
 nnoremap ` '
+
+" leader commands {{{
+" \w strip trailing whitespace
+nmap <leader>w :%s/\s\+$//<CR>:let @/=''<CR>
+
+" \/ turn off highlighting after a search
+nmap <silent> \/ :nohl<CR>
+
+" \s syntax coloring
+nmap <silent> \ss :syntax sync fromstart<CR>
+nmap <silent> \sm :set syn=mason<CR>\ss
+nmap <silent> \sh :set syn=html<CR>\ss
+nmap <silent> \sp :set syn=perl<CR>\ss
+nmap <silent> \sj :set syn=javascript<CR>\ss
 
 " Nopaste \p {{{
 function! s:nopaste(visual)
@@ -363,6 +367,7 @@ function! AlignAssignments ()
 endfunction
 
 nmap <silent>  \=  :call AlignAssignments()<CR>
+" }}}
 " }}}
 " }}}
 " Command-mode remappings (: and /) {{{
