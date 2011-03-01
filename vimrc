@@ -1,5 +1,14 @@
 " vim:foldmethod=marker commentstring="%s
 
+" I configure vim with:
+"   ./configure
+"               --without-x
+"               --disable-gui
+"               --disable-xim
+"               --disable-darwin
+"               --enable-perlinterp
+"               --enable-multibyte
+
 " General options {{{
 " Miscellaneous {{{
 " stop using vi defaults, this is 2011
