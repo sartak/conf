@@ -62,9 +62,9 @@ set lazyredraw
 " highlight all matches, we'll see if this works with a different hilight
 set hlsearch
 
-" highlight matching parens for .2s
+" highlight matching parens for .1s
 set showmatch
-set matchtime=2
+set matchtime=1
 
 " threshold for reporting number of lines changed
 set report=0
