@@ -7,6 +7,7 @@
 "               --disable-xim
 "               --disable-darwin
 "               --enable-perlinterp
+"               --enable-rubyinterp
 "               --enable-multibyte
 
 " General options {{{
