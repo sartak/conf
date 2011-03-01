@@ -130,7 +130,7 @@ highlight Search NONE ctermfg=lightred
 " color end of line whitespace unobnoxiously {{{
 autocmd InsertEnter * syn clear EOLWS | syn match EOLWS excludenl /\s\+\%#\@!$/
 autocmd InsertLeave * syn clear EOLWS | syn match EOLWS excludenl /\s\+$/
-hi EOLWS ctermbg=red
+highlight EOLWS ctermbg=red guibg=red
 " }}}
 " conflict markers {{{
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
