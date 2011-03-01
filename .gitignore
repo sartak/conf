@@ -2,3 +2,9 @@ vim/undo
 vim/record
 vim/spell
 vim/.netrwhist
+
+vim/bundle/command-t/ext.bundle
+vim/bundle/command-t/ext.o
+vim/bundle/command-t/match.o
+vim/bundle/command-t/matcher.o
+vim/bundle/command-t/mkmf.log
