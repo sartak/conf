@@ -15,7 +15,11 @@
 " stop using vi defaults, this is 2011
 set nocompatible
 
-" indentation and plugins
+" filetype-specific functionality
+" see also http://tammersaleh.com/posts/the-modern-vim-config-with-pathogen
+filetype off
+call pathogen#helptags()
+call pathogen#runtime_append_all_bundles()
 filetype indent plugin on
 
 " automatically flush to disk when using :make, etc.
