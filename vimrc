@@ -184,6 +184,9 @@ set vb t_vb=
 " if you :q with changes it asks you if you want to continue or not
 set confirm
 
+" or better yet, just :w for me
+set autowriteall
+
 " 50 milliseconds for escape timeout instead of 1000
 set ttimeoutlen=50
 
