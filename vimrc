@@ -217,12 +217,6 @@ autocmd FileType perl setlocal keywordprg=perldoc\ -f
 " Primarily for RT and Hiveminder
 autocmd BufRead,BufNewFile share/html/* set syn=mason
 " }}}
-" Skeletons {{{
-au BufNewFile Makefile.PL exec feedkeys("imi")
-
-au BufRead,BufNewFile .gitignore set filetype=gitignore
-au BufNewFile .gitignore exec feedkeys("igitignore")
-" }}}
 " Always quit out of swap warnings {{{
 augroup NoSimultaneousEdits
     autocmd!
