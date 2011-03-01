@@ -171,7 +171,7 @@ set gdefault
 " persistent undo
 if exists("+undofile")
     set undofile
-    set undodir=~/.vim/undo
+    set undodir=~/tmp/undo
 endif
 "}}}
 " Make vim less whiny {{{
