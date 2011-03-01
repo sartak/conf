@@ -24,6 +24,7 @@ set autowrite
 set autoread
 
 " everything needs to be unicode. EVERYTHING
+set termencoding=utf-8
 set encoding=utf-8
 
 " always join with just one space, even between sentences
@@ -126,6 +127,9 @@ autocmd InsertEnter * syn clear EOLWS | syn match EOLWS excludenl /\s\+\%#\@!$/
 autocmd InsertLeave * syn clear EOLWS | syn match EOLWS excludenl /\s\+$/
 hi EOLWS ctermbg=red
 " }}}
+" conflict markers {{{
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
+" }}}
 "}}}
 "}}}
 " Improve power of commands {{{
@@ -156,6 +160,9 @@ set wildmode=longest,list,full
 " always make the help window cover the entire screen
 set helpheight=9999
 
+" for s///, make /g the default (use s///gg to disable)
+set gdefault
+
 " persistent undo
 if exists("+undofile")
     set undofile
@@ -177,6 +184,9 @@ set ttimeoutlen=50
 
 " send more data to the terminal in a way that makes the screen update faster
 set ttyfast
+
+" swapfiles have been nothing but a nuisance to me
+set noswapfile
 "}}}
 " Indentation {{{
 " no-longer skinny tabs!
@@ -279,13 +289,17 @@ nmap # #zz
 nmap g* g*zz
 nmap g# g#zz
 
+" Swap ` (preserves which column the cursor was in) and ' (which does not)
+nnoremap ' `
+nnoremap ` '
+
 " Nopaste \p {{{
 function s:nopaste(visual)
     let nopaste_services = $NOPASTE_SERVICES
     if &filetype == 'tex'
         let $NOPASTE_SERVICES = "Mathbin ".$NOPASTE_SERVICES
     endif
- 
+
     if a:visual
         silent exe "normal gv!nopaste -x\<CR>"
     else
@@ -348,6 +362,9 @@ nmap <silent>  \=  :call AlignAssignments()<CR>
 " Make ^A and ^E work like in a shell
 cnoremap <C-A> <Home>
 cnoremap <C-E> <End>
+
+" Sudo to write
+cmap w!! w !sudo tee % >/dev/null
 " }}}
 " Plugin settings {{{
 " Textobj {{{
