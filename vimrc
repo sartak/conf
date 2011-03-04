@@ -298,9 +298,6 @@ nnoremap ' `
 nnoremap ` '
 
 " leader commands {{{
-" \w strip trailing whitespace
-nmap <leader>w :%s/\s\+$//<CR>:let @/=''<CR>
-
 " \/ turn off highlighting after a search
 nmap <silent> \/ :nohl<CR>
 
@@ -374,6 +371,20 @@ function! AlignAssignments ()
 endfunction
 
 nmap <silent>  \=  :call AlignAssignments()<CR>
+" }}}
+" StripTrailingWhitespace \<space> {{{
+function! <SID>StripTrailingWhitespace()
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
+nmap <silent> <Leader><space> :call <SID>StripTrailingWhitespace()<CR>
 " }}}
 " }}}
 " }}}
