@@ -406,4 +406,7 @@ let g:Textobj_arg_enable = 1
 let g:SuperTabMidWordCompletion = 0
 let g:SuperTabDefaultCompletionType = 'context'
 " }}}
+" YankRing {{{
+let g:yankring_history_dir = '~/.vim/'
+" }}}
 " }}}
