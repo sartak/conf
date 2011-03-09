@@ -1,4 +1,4 @@
-javascript liberator.beep = function() { return false; }
+javascript dactyl.beep = function() { return false; }
 
 command pin open pin
 command instapaper open instapaper
