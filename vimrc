@@ -307,6 +307,7 @@ nmap <silent> <leader>sm :set syn=mason<CR>\ss
 nmap <silent> <leader>sh :set syn=html<CR>\ss
 nmap <silent> <leader>sp :set syn=perl<CR>\ss
 nmap <silent> <leader>sj :set syn=javascript<CR>\ss
+nmap <silent> <leader>st :setf text<CR>:set tw=72<CR>:set spell spelllang=en_us<CR>
 
 " Nopaste \p {{{
 function! s:nopaste(visual)
