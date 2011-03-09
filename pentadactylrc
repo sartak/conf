@@ -6,3 +6,5 @@ command instapaper open instapaper
 " spiraling out from g
 set hintkeys='ghytrfvbnmjuedckiwsxloqazp'
 
+" show hints in uppercase
+highlight Hint -append text-transform: uppercase;
