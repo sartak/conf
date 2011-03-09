@@ -47,3 +47,7 @@ map `` `p
 
 " always show the command line so : has less visual jitter
 set guioptions+=c
+
+" highlight other instances of search patterns
+set hlfind
+nmap <leader>/ :nohlfind<CR>
