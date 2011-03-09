@@ -299,14 +299,14 @@ nnoremap ` '
 
 " leader commands {{{
 " \/ turn off highlighting after a search
-nmap <silent> \/ :nohl<CR>
+nmap <silent> <leader>/ :nohl<CR>
 
 " \s syntax coloring
-nmap <silent> \ss :syntax sync fromstart<CR>
-nmap <silent> \sm :set syn=mason<CR>\ss
-nmap <silent> \sh :set syn=html<CR>\ss
-nmap <silent> \sp :set syn=perl<CR>\ss
-nmap <silent> \sj :set syn=javascript<CR>\ss
+nmap <silent> <leader>ss :syntax sync fromstart<CR>
+nmap <silent> <leader>sm :set syn=mason<CR>\ss
+nmap <silent> <leader>sh :set syn=html<CR>\ss
+nmap <silent> <leader>sp :set syn=perl<CR>\ss
+nmap <silent> <leader>sj :set syn=javascript<CR>\ss
 
 " Nopaste \p {{{
 function! s:nopaste(visual)
@@ -370,7 +370,7 @@ function! AlignAssignments ()
     endfor
 endfunction
 
-nmap <silent>  \=  :call AlignAssignments()<CR>
+nmap <silent> <leader>= :call AlignAssignments()<CR>
 " }}}
 " StripTrailingWhitespace \<space> {{{
 function! <SID>StripTrailingWhitespace()
