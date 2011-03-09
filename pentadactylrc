@@ -8,3 +8,26 @@ set hintkeys='ghytrfvbnmjuedckiwsxloqazp'
 
 " show hints in uppercase
 highlight Hint -append text-transform: uppercase;
+
+"hide some contextmenu
+style -name contextmenu chrome://* <<EOM
+#context-openlink,
+#context-bookmarklink,
+#hBookmark-menu-addlink,
+#hBookmark-menu-showlink,
+#hBookmark-menu-showcomment,
+#context-savelink,
+#context-sendlink,
+#context-sep-viewbgimage,
+#context-sendimage,
+#context-setDesktopBackground,
+#context-blockimage,
+#context-bookmarkpage,
+#hBookmark-menu-addentry,
+#hBookmark-menu-showentry,
+#context-savepage,
+#context-sendpage {
+  visibility: collapse;
+}
+EOM
+
