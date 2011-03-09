@@ -51,3 +51,6 @@ set guioptions+=c
 " highlight other instances of search patterns
 set hlfind
 nmap <leader>/ :nohlfind<CR>
+
+" make <:cookies host> list cookies instead of the weird default of allowing them for the session
+set cookies=list
