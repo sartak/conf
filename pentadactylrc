@@ -1,5 +1,7 @@
+" don't beep at me
 javascript dactyl.beep = function() { return false; }
 
+" quick bookmarks
 command pin open pin
 command instapaper open instapaper
 
@@ -9,7 +11,7 @@ set hintkeys='ghytrfvbnmjuedckiwsxloqazp'
 " show hints in uppercase
 highlight Hint -append text-transform: uppercase;
 
-"hide some contextmenu
+" hide some contextmenu
 style -name contextmenu chrome://* <<EOM
 #context-openlink,
 #context-bookmarklink,
@@ -31,5 +33,5 @@ style -name contextmenu chrome://* <<EOM
 }
 EOM
 
-" Open Firebug with :firebug
+" open Firebug with :firebug
 command firebug -nargs=0 -description 'Open Firebug' emenu ツール.Firebug.Firebug を開く
