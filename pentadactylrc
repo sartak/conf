@@ -39,3 +39,9 @@ EOM
 
 " open Firebug with :firebug
 command firebug -nargs=0 -description 'Open Firebug' emenu ツール.Firebug.Firebug を開く
+
+" reactivate `` - can't actually use ` mark since pentadactyl wants letter registers only
+noremap gg mpgg
+noremap G mpG
+map `` `p
+
