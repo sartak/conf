@@ -31,3 +31,5 @@ style -name contextmenu chrome://* <<EOM
 }
 EOM
 
+" Open Firebug with :firebug
+command firebug -nargs=0 -description 'Open Firebug' emenu ツール.Firebug.Firebug を開く
