@@ -45,3 +45,5 @@ noremap gg mpgg
 noremap G mpG
 map `` `p
 
+" always show the command line so : has less visual jitter
+set guioptions+=c
