@@ -1,3 +1,6 @@
+" don't add "- Pentadactyl" to the title bar
+set titlestring=''
+
 " don't beep at me
 javascript dactyl.beep = function() { return false; }
 
