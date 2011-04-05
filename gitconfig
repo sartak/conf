@@ -33,3 +33,4 @@
     autosetupmerge = true
 [core]
     editor = vim -c ':normal gg'
+	excludesfile = ~/.gitignore
