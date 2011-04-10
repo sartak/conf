@@ -18,6 +18,8 @@ export PERL_PREFER_CPAN_CLIENT=cpanm
 export PERL_CPANM_OPT='--prompt'
 export PERL5LIB='lib'
 
+export HEISIG_LEARNED=1400
+
 # site-specific environment variables
 . ~/.zshenv.local
 
