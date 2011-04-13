@@ -173,6 +173,10 @@ if exists("+undofile")
     set undofile
     set undodir=~/tmp/undo
 endif
+
+" lowercase search strings are case insensitive
+set ignorecase
+set smartcase
 "}}}
 " Make vim less whiny {{{
 " :bn with a change in the current buffer? no prob!
