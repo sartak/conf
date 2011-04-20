@@ -66,7 +66,6 @@ alias top="htop"
 # add color to some things {{{
 alias ls='ls -G'
 alias grep='grep --color=auto'
-alias ack='ack --color'
 export ACK_COLOR_FILENAME=clear
 export ACK_COLOR_MATCH=red
 # }}}
