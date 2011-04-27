@@ -413,5 +413,10 @@ let g:SuperTabDefaultCompletionType = 'context'
 " }}}
 " YankRing {{{
 let g:yankring_history_dir = '~/.vim/'
+
+" 'nmap Y y$' doesn't actually work with yankring
+function! YRRunAfterMaps()
+    nnoremap <silent> Y :<C-U>YRYankCount 'y$'<CR>
+endfunction
 " }}}
 " }}}
