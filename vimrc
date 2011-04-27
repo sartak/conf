@@ -307,10 +307,10 @@ nmap <silent> <leader>/ :nohl<CR>
 
 " \s syntax coloring
 nmap <silent> <leader>ss :syntax sync fromstart<CR>
-nmap <silent> <leader>sm :setf mason<CR>
-nmap <silent> <leader>sh :setf html<CR>
-nmap <silent> <leader>sp :setf perl<CR>
-nmap <silent> <leader>sj :setf javascript<CR>
+nmap <silent> <leader>sm :setf mason<CR>\ss
+nmap <silent> <leader>sh :setf html<CR>\ss
+nmap <silent> <leader>sp :setf perl<CR>\ss
+nmap <silent> <leader>sj :setf javascript<CR>\ss
 nmap <silent> <leader>st :setf text<CR>:set tw=72<CR>:set spell spelllang=en_us<CR>
 
 " Nopaste \p {{{
