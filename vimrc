@@ -177,6 +177,9 @@ endif
 " lowercase search strings are case insensitive
 set ignorecase
 set smartcase
+
+" better gq
+set formatprg=par
 "}}}
 " Make vim less whiny {{{
 " :bn with a change in the current buffer? no prob!
