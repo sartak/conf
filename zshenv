@@ -23,3 +23,4 @@ export HEISIG_LEARNED=1400
 # site-specific environment variables
 . ~/.zshenv.local
 
+. ~/.perl/etc/bashrc
