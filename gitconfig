@@ -34,3 +34,5 @@
 [core]
     editor = vim -c ':normal gg'
 	excludesfile = ~/.gitignore
+[rerere]
+	enabled = 1
