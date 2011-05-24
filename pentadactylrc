@@ -8,8 +8,8 @@ javascript dactyl.beep = function() { return false; }
 command pin open pin
 command instapaper open instapaper
 
-" spiraling out from g
-set hintkeys='ghytrfvbnmjuedckiwsxloqazp'
+" lots more letters than numbers
+set hintkeys='abcdefghijklmnopqrstuvwxyz'
 
 " show hints in uppercase
 highlight Hint -append text-transform: uppercase;
