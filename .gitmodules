@@ -1,0 +1,21 @@
+[submodule "vim/bundle/perl"]
+	path = vim/bundle/perl
+	url = https://github.com/petdance/vim-perl.git
+[submodule "vim/bundle/textobj"]
+	path = vim/bundle/textobj
+	url = https://github.com/doy/vim-textobj.git
+[submodule "vim/bundle/yankring"]
+	path = vim/bundle/yankring
+	url = https://github.com/chrismetcalf/vim-yankring.git
+[submodule "vim/bundle/supertab"]
+	path = vim/bundle/supertab
+	url = https://github.com/tsaleh/vim-supertab.git
+[submodule "vim/bundle/speeddating"]
+	path = vim/bundle/speeddating
+	url = https://github.com/tpope/vim-speeddating.git
+[submodule "vim/bundle/repeat"]
+	path = vim/bundle/repeat
+	url = https://github.com/tpope/vim-repeat.git
+[submodule "vim/bundle/unimpaired"]
+	path = vim/bundle/unimpaired
+	url = https://github.com/tpope/vim-unimpaired.git
