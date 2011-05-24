@@ -20,14 +20,14 @@ OPTIONS=pickup_burden:unencumbered
 OPTIONS=monsters:abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@X'&;:~]
 
 # stuff not in vanilla follows
-OPTIONS=showscore
-OPTIONS=sortloot:full
-OPTIONS=showborn
-OPTIONS=use_darkgray
-OPTIONS=paranoid_remove
+#OPTIONS=showscore
+#OPTIONS=sortloot:full
+#OPTIONS=showborn
+#OPTIONS=use_darkgray
+#OPTIONS=paranoid_remove
 
 # interhack does this for me
-OPTIONS=!hp_monitor
+#OPTIONS=!hp_monitor
 
 # I encourage people to use my menucolors! It's why I have a version and date.
 
@@ -35,7 +35,7 @@ OPTIONS=!hp_monitor
 # last minor:     compatibility with the new nethack.alt.org's GNU (not POSIX)
 #                   regex library
 
-OPTIONS=menucolors
+#OPTIONS=menucolors
 
 #########
 # B/U/C #
