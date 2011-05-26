@@ -179,7 +179,7 @@ set ignorecase
 set smartcase
 
 " better gq
-set formatprg=par
+set formatprg=fmt
 "}}}
 " Make vim less whiny {{{
 " :bn with a change in the current buffer? no prob!
