@@ -6,13 +6,6 @@ precmd_functions+=(shell_prompt_precmd)
 
 RPS1='[%*]'
 # }}}
-# z {{{
-. ~/devel/z/z.sh
-function z_precmd () {
-    z --add "$(pwd -P)"
-}
-precmd_functions+=(z_precmd)
-# }}}
 # completion {{{
 . ~/.zshcomplete
 # }}}
