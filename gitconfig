@@ -23,6 +23,7 @@
     reword = commit --amend
     top = !pwd
     unamend = reset HEAD@{1}
+    freebase = rebase -i @{u}
 [github]
 	user = sartak
 [push]
