@@ -88,6 +88,7 @@ alias p='prove -wlr --timer'
 alias pp='prove -wlr --timer --state=hot,new,save -j10'
 alias linein='nohup /Applications/LineIn.app/Contents/MacOS/LineIn &'
 alias moose="perl -Moose -E"
+function perldoc(){cpandoc "$@"}
 alias vi="vim"
 alias ..='cd ..'
 alias ...='cd ../..'
