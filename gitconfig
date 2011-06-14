@@ -24,6 +24,7 @@
     top = !pwd
     unamend = reset HEAD@{1}
     freebase = rebase -i @{u}
+    nopaste = !git format-patch --stdout @{u} | nopaste 
 [github]
 	user = sartak
 [push]
