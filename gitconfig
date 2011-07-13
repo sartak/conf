@@ -25,6 +25,7 @@
     unamend = reset HEAD@{1}
     freebase = rebase -i @{u}
     nopaste = !git format-patch --stdout @{u} | nopaste 
+    fix-commit-dates = filter-branch -f --env-filter 'export GIT_COMMITTER_DATE=$GIT_AUTHOR_DATE'
 [github]
 	user = sartak
 [push]
