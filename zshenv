@@ -19,6 +19,8 @@ export PERL_CPANM_OPT='--prompt'
 
 export HEISIG_LEARNED=1400
 
+export ANKI_DECK=~/Documents/Anki/Japanese.anki
+
 # site-specific environment variables
 . ~/.zshenv.local
 
