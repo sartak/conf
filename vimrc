@@ -314,6 +314,7 @@ nmap <silent> <leader>sm :setf mason<CR>\ss
 nmap <silent> <leader>sh :setf html<CR>\ss
 nmap <silent> <leader>sp :setf perl<CR>\ss
 nmap <silent> <leader>sj :setf javascript<CR>\ss
+nmap <silent> <leader>s2 :setf tt2html<CR>\ss
 nmap <silent> <leader>st :setf text<CR>:set tw=72<CR>:set spell spelllang=en_us<CR>
 
 " Nopaste \p {{{
