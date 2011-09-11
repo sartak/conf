@@ -23,6 +23,8 @@ export HEISIG_LEARNED=1856
 export ANKI_DECK=~/Documents/Anki/Japanese.anki
 export ANKI_CORPUS=~/.ankicorpus.sqlite
 
+export CATALYST_CONFIG_LOCAL_SUFFIX=dev
+
 # site-specific environment variables
 . ~/.zshenv.local
 
