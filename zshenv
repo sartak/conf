@@ -9,6 +9,7 @@ export NOPASTE_SSH_DOCROOT=www/tmp/paste
 export NOPASTE_SSH_WEBPATH=http://sartak.org/tmp/paste
 export NOPASTE_SSH_MODE=0644
 export NOPASTE_SERVICES=ssh
+export NOPASTE_SSH_USE_DESCRIPTION=0
 
 export NYTPROF=addpid=1
 
