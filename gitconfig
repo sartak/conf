@@ -18,7 +18,7 @@
     ignore = !git ls-files --others --exclude-from=.gitignore >> .gitignore
 	git = !git
     amend = commit --amend -a -C HEAD
-	obliterate = !git reset --hard && git clean -fdx
+	obliterate = !git reset --hard && git clean -fd
     unstage = reset HEAD
     reword = commit --amend
     top = !pwd
