@@ -79,7 +79,7 @@ alias rax="ssh sartak.org"
 alias home='ssh $HOMEIP'
 alias alt='ssh alt.org'
 alias hm='ssh hiveminder.com'
-alias irc='ssh sartak.org -t "screen -dr irssi"'
+alias irc='flushdns; ssh sartak.org -t "screen -dr irssi"'
 # }}}
 # shortcuts {{{
 alias ci='cpanm'
@@ -91,6 +91,7 @@ alias moose="perl -Moose -E"
 alias dzilinstall='dzil install --install-command="cpanm ."'
 function perldoc(){cpandoc "$@"}
 alias vi="vim"
+alias flushdns="dscacheutil -flushcache"
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
