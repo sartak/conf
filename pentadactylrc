@@ -4,11 +4,6 @@ set titlestring=''
 " don't beep at me
 javascript dactyl.beep = function() { return false; }
 
-" quick bookmarks
-command pin open pin
-command instapaper open instapaper
-command ato open ato
-
 " lots more letters than numbers
 set hintkeys='abcdefghijklmnopqrstuvwxyz'
 
