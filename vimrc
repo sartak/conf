@@ -284,6 +284,9 @@ autocmd FileType help nnoremap <buffer> <BS> <C-T>
 nmap <Right> :bn<CR>
 nmap <Left>  :bp<CR>
 
+" visualize and navigate the undo information superhighway
+nmap gu :silent GundoToggle<CR>
+
 " up and down move by virtual line
 nmap <Up>   gk
 nmap <Down> gj
