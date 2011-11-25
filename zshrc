@@ -88,7 +88,7 @@ alias p='prove -wlr --timer'
 alias pp='prove -wlr --timer --state=hot,new,save -j10'
 alias linein='nohup /Applications/LineIn.app/Contents/MacOS/LineIn &'
 alias moose="perl -Moose -E"
-alias dzilinstall='dzil install --install-command="cpanm ."'
+alias dzilinstall='dzil install --install-command="cpanm --verbose ."'
 function perldoc(){cpandoc "$@"}
 alias vi="vim"
 alias flushdns="dscacheutil -flushcache"
