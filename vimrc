@@ -245,9 +245,9 @@ autocmd FileType perl setlocal makeprg=$VIMRUNTIME/tools/efm_perl.pl\ -c\ %\ $*
 autocmd FileType perl setlocal errorformat=%f:%l:%m
 autocmd FileType perl setlocal keywordprg=perldoc\ -f
 "}}}
-" Syntax hilight Mason files {{{
-" Primarily for RT and Hiveminder
+" Syntax highlighting hints {{{
 autocmd BufRead,BufNewFile share/html/* set syn=mason
+autocmd BufRead,BufNewFile *.md set syn=markdown
 " }}}
 " Source vimrc after editing {{{
 autocmd BufWritePost .vimrc source ~/.vimrc
