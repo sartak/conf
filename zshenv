@@ -23,6 +23,8 @@ export HEISIG_LEARNED=2042
 export ANKI_DECK=~/Documents/Anki/Japanese.anki
 export ANKI_CORPUS=~/.ankicorpus.sqlite
 
+export NODE_PATH=~/.brew/lib/node_modules
+
 # site-specific environment variables
 . ~/.zshenv.local
 
