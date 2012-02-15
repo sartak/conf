@@ -1,24 +1,24 @@
 [user]
-	name = Shawn M Moore
-	email = sartak@gmail.com
+    name = Shawn M Moore
+    email = sartak@gmail.com
 [color]
-	diff = auto
-	status = auto
-	branch = auto
-	ui = auto
+    diff = auto
+    status = auto
+    branch = auto
+    ui = auto
 [alias]
-	up = !git fetch --all --tags --prune && git pull --rebase
-	ci = !git stash >/dev/null && git svn dcommit && git stash pop >/dev/null
+    up = !git fetch --all --tags --prune && git pull --rebase
+    ci = !git stash >/dev/null && git svn dcommit && git stash pop >/dev/null
     u = !git stash >/dev/null && git svn rebase && git stash pop >/dev/null
-	st = awesome-status
-	record = !git add -p && git commit -v
-	co = checkout
-	br = branch
+    st = awesome-status
+    record = !git add -p && git commit -v
+    co = checkout
+    br = branch
     exclude = !git ls-files --others > .git/info/exclude
     ignore = !git ls-files --others --exclude-from=.gitignore >> .gitignore
-	git = !git
+    git = !git
     amend = commit --amend -a -C HEAD
-	obliterate = !git reset --hard && git clean -fd
+    obliterate = !git reset --hard && git clean -fd
     unstage = reset HEAD
     reword = commit --amend
     top = !pwd
@@ -27,15 +27,15 @@
     nopaste = !git format-patch --stdout @{u} | nopaste 
     fix-commit-dates = filter-branch -f --env-filter 'export GIT_COMMITTER_DATE=$GIT_AUTHOR_DATE'
 [github]
-	user = sartak
+    user = sartak
 [push]
-	default = tracking
+    default = tracking
 [receive]
-	denyCurrentBranch = ignore
+    denyCurrentBranch = ignore
 [branch]
     autosetupmerge = true
 [core]
     editor = vim -c ':normal gg'
-	excludesfile = ~/.gitignore
+    excludesfile = ~/.gitignore
 [rerere]
-	enabled = 1
+    enabled = 1
