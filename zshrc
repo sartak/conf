@@ -79,7 +79,7 @@ alias rax="ssh sartak.org"
 alias home='ssh $HOMEIP'
 alias alt='ssh alt.org'
 alias hm='ssh hiveminder.com'
-alias irc='flushdns; ssh sartak.org -t "screen -dr irssi"'
+alias irc='flushdns; ssh -qt sartak.org "screen -dr irssi"'
 # }}}
 # shortcuts {{{
 alias ci='cpanm'
