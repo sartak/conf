@@ -99,6 +99,7 @@ alias ....='cd ../../..'
 # git shortcuts {{{
 function git(){hub "$@"}
 alias gr="git record"
+alias gs="git awesome-status"
 alias gca="git add -p && git commit --amend --verbose"
 # }}}
 # work shortcuts {{{
