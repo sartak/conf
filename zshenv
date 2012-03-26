@@ -14,6 +14,7 @@ export PERL_CPANM_OPT='--prompt'
 
 export ANKI_DECK=~/Documents/Anki/Japanese.anki
 export ANKI_CORPUS=~/.ankicorpus.sqlite
+export MECAB_USERDIC=~/.mecab-user.dict
 
 # site-specific environment variables
 . ~/.zshenv.local
