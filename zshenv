@@ -1,5 +1,4 @@
 export PERLBREW_ROOT=~/.perl
-source $PERLBREW_ROOT/etc/bashrc
 
 export NOPASTE_SSH_SERVER=sartak.org
 export NOPASTE_SSH_DOCROOT=www/tmp/paste
@@ -18,4 +17,4 @@ export ANKI_CORPUS=~/.ankicorpus.sqlite
 
 # site-specific environment variables
 . ~/.zshenv.local
-
+source $PERLBREW_ROOT/etc/bashrc
