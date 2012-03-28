@@ -4,6 +4,9 @@ ZSH=$HOME/.oh-my-zsh
 COMPLETION_WAITING_DOTS="true"
 ZSH_THEME=sartak
 
+source $ZSH/oh-my-zsh.sh
+source ~/.zshenv
+
 # my silly prompt {{{
 #function shell_prompt_precmd() {
 #    PROMPT=`shell-prompt`
@@ -67,8 +70,6 @@ alias gca="git add -p && git commit --amend --verbose"
 alias cs="perl script/*_server.pl -d -r"
 # }}}
 
-source $ZSH/oh-my-zsh.sh
-source ~/.zshenv
 
 unsetopt correct_all
 
