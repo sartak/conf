@@ -67,7 +67,7 @@ alias gr="git record"
 alias gs="git awesome-status"
 alias gca="git add -p && git commit --amend --verbose"
 
-alias cs="perl script/*_server.pl -d -r"
+alias cs="perl script/*_server.pl -d"
 # }}}
 
 
