@@ -347,7 +347,7 @@ xmap <silent> <Leader>p :<C-U>call <SID>nopaste(1)<CR>
 " AlignAssignments \= {{{
 function! AlignAssignments ()
     " Patterns needed to locate assignment operators...
-    let ASSIGN_OP   = '[-+*/%|&]\?=\@<!=[=~]\@!'
+    let ASSIGN_OP   = '[-+*/%|&]\?[=:]\@<![=:][=~]\@!'
     let ASSIGN_LINE = '^\(.\{-}\)\s*\(' . ASSIGN_OP . '\)\(.*\)$'
 
     " Locate block of code to be considered (same indentation, no blanks)
