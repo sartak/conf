@@ -68,6 +68,10 @@ alias gs="git awesome-status"
 alias gca="git add -p && git commit --amend --verbose"
 
 alias cs="perl script/*_server.pl -d"
+
+alias -g L='|& less'
+alias -g H='|& head'
+alias -g T='|& tail'
 # }}}
 
 
