@@ -16,6 +16,8 @@ export ANKI_DECK=~/Documents/Anki/Japanese.anki
 export ANKI_CORPUS=~/.ankicorpus.sqlite
 export MECAB_USERDIC=~/.mecab-user.dict
 
+export RT_FIX_DEPS_CMD=cpanm
+
 # site-specific environment variables
 . ~/.zshenv.local
 source $PERLBREW_ROOT/etc/bashrc
