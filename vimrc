@@ -430,5 +430,6 @@ endfunction
 let g:CommandTMinHeight = 3
 let g:CommandTMaxHeight = 3
 nmap <silent> <C-T> :CommandT<CR>
+nmap <silent> t :CommandT<CR>
 " }}}
 " }}}
