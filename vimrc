@@ -426,4 +426,9 @@ function! YRRunAfterMaps()
     nnoremap <silent> Y :<C-U>YRYankCount 'y$'<CR>
 endfunction
 " }}}
+" command-t {{{
+let g:CommandTMinHeight = 3
+let g:CommandTMaxHeight = 3
+nmap <silent> <C-T> :CommandT<CR>
+" }}}
 " }}}
