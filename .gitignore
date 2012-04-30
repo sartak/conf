@@ -8,5 +8,3 @@ vim/bundle/command-t/ext.o
 vim/bundle/command-t/match.o
 vim/bundle/command-t/matcher.o
 vim/bundle/command-t/mkmf.log
-
-vim/bundle/speeddating/doc/tags
