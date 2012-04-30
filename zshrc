@@ -50,8 +50,8 @@ bindkey -M viins '' backward-delete-char
 
 # }}}
 # aliases {{{
-alias rax="ssh sartak.org"
-alias irc='flushdns; ssh -qt sartak.org "screen -dr irssi"'
+alias buzz="ssh buzzell"
+alias irc='flushdns; mosh buzzell -- screen -dr ir'
 
 alias ci='cpanm'
 alias less='less -R'
