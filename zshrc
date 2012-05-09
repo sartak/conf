@@ -3,6 +3,7 @@ ZSH=$HOME/.oh-my-zsh
 
 COMPLETION_WAITING_DOTS="true"
 ZSH_THEME=sartak
+DISABLE_AUTO_UPDATE="true"
 
 source $ZSH/oh-my-zsh.sh
 source ~/.zshenv
