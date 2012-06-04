@@ -1,5 +1,5 @@
 OPTIONS=hilite_pet
-OPTIONS=fruit:カレー
+OPTIONS=fruit:curry
 OPTIONS=autopickup,pickup_types:$!/="+?
 OPTIONS=disclose:+iagcv
 OPTIONS=!cmdassist,!help,!legacy,!news,suppress_alert:3.4.3
