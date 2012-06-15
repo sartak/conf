@@ -64,7 +64,7 @@ alias flushdns="dscacheutil -flushcache"
 
 function git(){hub "$@"}
 alias gr="git record"
-alias gs="git awesome-status"
+alias gs="git-status-tackle"
 alias gca="git add -p && git commit --amend --verbose"
 
 alias cs="perl script/*_server.pl -d"
