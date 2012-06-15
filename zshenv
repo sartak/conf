@@ -1,7 +1,7 @@
 export PERLBREW_ROOT=~/.perl
 
 export NOPASTE_SSH_SERVER=sartak.org
-export NOPASTE_SSH_DOCROOT=www/tmp/paste
+export NOPASTE_SSH_DOCROOT=sartak.org/tmp/paste
 export NOPASTE_SSH_WEBPATH=http://sartak.org/tmp/paste
 export NOPASTE_SSH_MODE=0644
 export NOPASTE_SERVICES=ssh
