@@ -256,6 +256,9 @@ autocmd BufWritePost  vimrc source ~/.vimrc
 " when I wander away, save (I use version control, no big deal) {{{
 autocmd FocusLost * :wa
 " }}}
+" jslint on write {{{
+autocmd BufWritePost,FileWritePost *.js silent !jsl -process <afile> -nologo -nosummary -nofilelisting
+" }}}
 "}}}
 " Insert-mode remappings/abbreviations {{{
 " Hit <C-a> in insert mode after a bad paste (thanks absolon) {{{
