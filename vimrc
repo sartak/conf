@@ -435,4 +435,7 @@ let g:CommandTMaxHeight = 3
 nmap <silent> <C-T> :CommandT<CR>
 nmap <silent> t :CommandT<CR>
 " }}}
+" easymotion {{{
+let g:EasyMotion_leader_key = '_'
+" }}}
 " }}}
