@@ -58,7 +58,7 @@ alias ci='cpanm'
 alias less='less -R'
 alias moose="perl -Moose -E"
 alias dzilinstall='dzil install --install-command="cpanm --verbose ."'
-function perldoc(){cpandoc "$@"}
+function perldoc(){cpandoc -o text "$@"}
 alias vi="vim"
 alias flushdns="dscacheutil -flushcache"
 
