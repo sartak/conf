@@ -269,6 +269,9 @@ iabbrev emdash mdash
 iabbrev endash ndash
 iabbrev priviledge privilege
 "}}}
+" I need proper snippets {{{
+iabbrev bdeparse use B::Deparse; warn B::Deparse->new("-p", "-sC")->coderef2text();
+" }}}
 " }}}
 " Normal-mode remappings {{{
 " spacebar (in command mode) inserts a single character before the cursor
