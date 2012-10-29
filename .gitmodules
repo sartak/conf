@@ -1,9 +1,6 @@
 [submodule "vim/bundle/perl"]
 	path = vim/bundle/perl
 	url = https://github.com/petdance/vim-perl.git
-[submodule "vim/bundle/textobj"]
-	path = vim/bundle/textobj
-	url = https://github.com/doy/vim-textobj.git
 [submodule "vim/bundle/yankring"]
 	path = vim/bundle/yankring
 	url = https://github.com/chrismetcalf/vim-yankring.git
