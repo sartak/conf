@@ -2,7 +2,7 @@ export PERLBREW_ROOT=~/.perl
 
 export NOPASTE_SSH_SERVER=buzz
 export NOPASTE_SSH_DOCROOT=sartak.org/tmp/paste
-export NOPASTE_SSH_WEBPATH=http://sartak.org/tmp/paste
+export NOPASTE_SSH_WEBPATH=http://paste.sartak.org
 export NOPASTE_SSH_MODE=0644
 export NOPASTE_SERVICES=ssh
 export NOPASTE_SSH_USE_DESCRIPTION=0
