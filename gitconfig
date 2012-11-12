@@ -26,6 +26,7 @@
     freebase = rebase -i @{u}
     nopaste = !git format-patch --stdout @{u} | nopaste 
     fix-commit-dates = filter-branch -f --env-filter 'export GIT_COMMITTER_DATE=$GIT_AUTHOR_DATE'
+    chainsaw = "!git branch -r | perl -nle 'next if /HEAD|master/; chomp($sha = `git rev-parse $_`); print if `git branch --contains $sha` =~ /master/'"
 [github]
     user = sartak
 [push]
