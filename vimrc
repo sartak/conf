@@ -271,6 +271,7 @@ iabbrev priviledge privilege
 "}}}
 " I need proper snippets {{{
 iabbrev bdeparse use B::Deparse; warn B::Deparse->new("-p", "-sC")->coderef2text();
+iabbrev lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a ornare metus. In justo metus, auctor nec semper in, laoreet porttitor augue. Maecenas tortor libero, dignissim vel placerat sit amet, malesuada ut quam. Curabitur vitae velit lacus, sed imperdiet sapien. Sed posuere, odio nec pharetra adipiscing
 " }}}
 " }}}
 " Normal-mode remappings {{{
