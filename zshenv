@@ -19,6 +19,8 @@ export MECAB_USERDIC=~/.mecab-user.dict
 
 export RT_FIX_DEPS_CMD=cpanm
 
+export XSLATE_CACHE_LEVEL=1
+
 # site-specific environment variables
 . ~/.zshenv.local
 source $PERLBREW_ROOT/etc/bashrc
