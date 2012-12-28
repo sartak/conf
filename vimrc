@@ -252,6 +252,7 @@ autocmd FileType perl setlocal keywordprg=perldoc\ -f
 autocmd BufRead,BufNewFile share/html/* set syn=mason
 autocmd BufRead,BufNewFile *.md set syn=markdown
 autocmd BufRead,BufNewFile *.psgi set syn=perl
+autocmd BufRead,BufNewFile *.less set syn=css
 " }}}
 " Source vimrc after editing {{{
 autocmd BufWritePost .vimrc source ~/.vimrc
