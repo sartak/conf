@@ -106,7 +106,10 @@ let perl_string_as_statement=1
 " }}}
 " }}}
 " Colors {{{
-" syntax highlighting {{{
+" 256 color support
+set t_Co=256
+
+" syntax highlighting
 syntax on
 " }}}
 " default colorscheme {{{
