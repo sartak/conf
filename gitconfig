@@ -40,3 +40,5 @@
     excludesfile = ~/.gitignore
 [rerere]
     enabled = 1
+[merge]
+	conflictstyle = diff3
