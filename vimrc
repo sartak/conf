@@ -111,11 +111,10 @@ set t_Co=256
 
 " syntax highlighting
 syntax on
-" }}}
-" default colorscheme {{{
+
 " I hate the bright colors that go with bg=dark, even though my bg is black
 set bg=light
-" }}}
+
 " word completion menu {{{
 highlight Pmenu      ctermfg=grey  ctermbg=darkblue
 highlight PmenuSel   ctermfg=red   ctermbg=darkblue
