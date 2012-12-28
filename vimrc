@@ -112,8 +112,8 @@ set t_Co=256
 " syntax highlighting
 syntax on
 
-" I hate the bright colors that go with bg=dark, even though my bg is black
-set bg=light
+" color scheme
+colorscheme inkpot
 
 " word completion menu {{{
 highlight Pmenu      ctermfg=grey  ctermbg=darkblue

@@ -31,3 +31,6 @@
 [submodule "vim/bundle/vim-less"]
 	path = vim/bundle/vim-less
 	url = https://github.com/groenewege/vim-less.git
+[submodule "vim/bundle/inkpot"]
+	path = vim/bundle/inkpot
+	url = git://github.com/vim-scripts/inkpot.git
