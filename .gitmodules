@@ -40,3 +40,6 @@
 [submodule "vim/bundle/sumi"]
 	path = vim/bundle/sumi
 	url = git://github.com/sartak/sumi.git
+[submodule "vim/bundle/hilinktrace"]
+	path = vim/bundle/hilinktrace
+	url = git://github.com/gerw/vim-HiLinkTrace.git
