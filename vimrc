@@ -113,7 +113,7 @@ set t_Co=256
 syntax on
 
 " color scheme
-colorscheme inkpot
+colorscheme sumi
 
 " word completion menu {{{
 highlight Pmenu      ctermfg=grey  ctermbg=darkblue
