@@ -1,4 +1,4 @@
-" vim:foldmethod=marker commentstring="%s
+" vim:commentstring="%s
 
 " I configure vim with:
 "   ./configure
@@ -226,13 +226,6 @@ set autoindent
 
 " braces affect autoindentation
 set smartindent
-"}}}
-" Folding {{{
-" fold only when I ask for it damnit!
-set foldmethod=marker
-
-" close a fold when I leave it
-set foldclose=all
 "}}}
 "}}}
 " Autocommands {{{
