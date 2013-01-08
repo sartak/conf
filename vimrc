@@ -248,9 +248,9 @@ autocmd FileType perl setlocal errorformat=%f:%l:%m
 autocmd FileType perl setlocal keywordprg=perldoc\ -f
 "}}}
 " Syntax highlighting hints {{{
-autocmd BufRead,BufNewFile share/html/* set syn=mason
-autocmd BufRead,BufNewFile *.md set syn=markdown
-autocmd BufRead,BufNewFile *.psgi set syn=perl
+autocmd BufRead,BufNewFile share/html/* setf mason
+autocmd BufRead,BufNewFile *.md setf markdown
+autocmd BufRead,BufNewFile *.psgi setf perl
 " }}}
 " Source vimrc after editing {{{
 autocmd BufWritePost .vimrc source ~/.vimrc
