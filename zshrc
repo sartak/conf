@@ -56,6 +56,8 @@ alias irc='flushdns; mosh buzzell -- screen -dr ir'
 
 alias ci='cpanm'
 alias less='less -R'
+alias top='top -o cpu'
+alias rename='rename -i'
 alias moose="perl -Moose -E"
 alias dzilinstall='dzil install --install-command="cpanm --verbose ."'
 function perldoc(){cpandoc -o text "$@"}
