@@ -71,6 +71,12 @@ alias gca="git add -p && git commit --amend --verbose"
 
 alias cs="perl script/*_server.pl -d"
 
+alias ack="echo use ag instead"
+alias viack="echo use viag instead"
+
+alias ag="ag -S"
+alias viag="viag -S"
+
 alias -g L='|& less'
 alias -g H='|& head'
 alias -g T='|& tail'
