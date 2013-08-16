@@ -10,3 +10,5 @@ zstyle :compinstall filename '/Users/sartak/.zshcomplete'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+
+fpath=(/usr/local/share/zsh-completions $fpath)
