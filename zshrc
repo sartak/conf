@@ -52,7 +52,7 @@ bindkey -M viins '' backward-delete-char
 # }}}
 # aliases {{{
 alias buzz="ssh buzzell"
-alias irc='flushdns; mosh buzzell -- screen -dr ir'
+alias irc='mosh buzzell -- screen -dr ir'
 
 alias ci='cpanm'
 alias less='less -R'
@@ -62,7 +62,6 @@ alias moose="perl -Moose -E"
 alias dzilinstall='dzil install --install-command="cpanm --verbose ."'
 function perldoc(){cpandoc -o text "$@"}
 alias vi="vim"
-alias flushdns="dscacheutil -flushcache"
 
 function git(){hub "$@"}
 alias gr="git record"
