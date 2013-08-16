@@ -28,6 +28,7 @@
     fix-commit-dates = filter-branch -f --env-filter 'export GIT_COMMITTER_DATE=$GIT_AUTHOR_DATE'
     chainsaw = "!git branch -r | perl -nle 'next if /HEAD|master/; chomp($sha = `git rev-parse $_`); print if `git branch --contains $sha` =~ /master/'"
     cop = checkout -p
+    review = log --reverse -p
 [github]
     user = sartak
 [push]
