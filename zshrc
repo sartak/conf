@@ -77,6 +77,7 @@ alias viack="echo use viag instead"
 alias ag="ag -S"
 alias viag="viag -S"
 
+alias jnethack="cocot -t UTF-8 -p EUC-JP jnethack"
 alias -g L='|& less'
 alias -g H='|& head'
 alias -g T='|& tail'
