@@ -240,6 +240,7 @@ autocmd FileType perl setlocal keywordprg=perldoc\ -f
 " Syntax highlighting hints {{{
 autocmd BufRead,BufNewFile share/html/* setf mason
 autocmd BufRead,BufNewFile *.md setf markdown
+autocmd BufRead,BufNewFile *.md set filetype=markdown
 autocmd BufRead,BufNewFile *.psgi setf perl
 autocmd BufRead,BufNewFile *.ts setf javascript
 autocmd BufRead,BufNewFile *.ts set filetype=javascript
