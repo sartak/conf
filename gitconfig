@@ -1,0 +1,7 @@
+[user]
+    name = Shawn M Moore
+    email = code@sartak.org
+
+[core]
+    whitespace=-blank-at-eof
+
