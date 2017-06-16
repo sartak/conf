@@ -5,3 +5,5 @@
 [core]
     whitespace=-blank-at-eof
 
+[commit]
+    verbose=true
