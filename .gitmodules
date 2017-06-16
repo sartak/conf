@@ -1,0 +1,3 @@
+[submodule "vim/bundle/sumi"]
+	path = vim/bundle/sumi
+	url = git://github.com/sartak/sumi.git
