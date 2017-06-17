@@ -1,0 +1,391 @@
+OPTIONS=hilite_pet
+OPTIONS=fruit:brain
+OPTIONS=autopickup,pickup_types:$!/="+?
+OPTIONS=disclose:+iagcv
+OPTIONS=!cmdassist,!help,!legacy,!news,suppress_alert:3.4.3
+OPTIONS=autodig,!prayconfirm,lootabc
+
+OPTIONS=msg_window:reverse,msghistory:1000
+OPTIONS=lit_corridor,color
+OPTIONS=showrace
+OPTIONS=!sparkle
+OPTIONS=showexp,time
+OPTIONS=runmode:teleport,!rest_on_space
+OPTIONS=number_pad:0
+OPTIONS=boulder:0
+OPTIONS=scores:10 top/3 around/own
+OPTIONS=pickup_burden:unencumbered
+
+# turn ghosts and shades into 'X' - great with telepathy for bones detection
+# turn ] mimics into 'm'
+OPTIONS=monsters:abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@X'&;:~m
+
+# turn water/lava into ~ so it looks nicer and is more distinct from fountains
+OPTIONS=dungeon: |--------||.-|++##.##<><>_|\\#{~.~..## #}
+
+# stuff not in vanilla follows
+OPTIONS=showscore
+OPTIONS=sortloot:full
+OPTIONS=showborn
+OPTIONS=use_darkgray
+OPTIONS=paranoid_remove
+OPTIONS=paranoid_hit
+OPTIONS=hilite_hidden_stairs
+OPTIONS=hilite_obj_piles
+
+# stth++
+MONSTERCOLOR=floating eye:lightgreen
+
+OPTIONS=statuscolors
+
+STATUSCOLOR=HP%99:green,HP%75:brown,HP%50:red,HP%25:orange
+#  prayer threshold (<= 1/7 of maxHP) (stth++)
+STATUSCOLOR=HP%14:lightmagenta&inverse
+
+STATUSCOLOR=Pw%99:cyan&bold,Pw%75:cyan,Pw%50:magenta,Pw%25:magenta&bold
+
+STATUSCOLOR=Satiated:green,Hungry:brown,Weak:red,Fainting:orange&inverse,Fainted:orange&inverse,Starved:orange&inverse
+STATUSCOLOR=Burdened:orange,Stressed:orange,Strained:orange,Overtaxed:orange,Overloaded:orange
+STATUSCOLOR=Blind:red,Stun:brown,Conf:brown,Hallu:brown
+STATUSCOLOR=Ill:red&inverse,FoodPois:red&inverse,Slime:red&inverse
+
+# taken from https://github.com/majutsushi/etc/blob/master/nethackrc and stth
+OPTIONS=msgtype_regex
+
+# delayed instadeaths
+MSGTYPE=stop "^The couatl swings itself around you!$"
+MSGTYPE=stop "^The electric eel swings itself around you!$"
+MSGTYPE=stop "^The giant eel swings itself around you!$"
+MSGTYPE=stop "^The kraken swings itself around you!$"
+MSGTYPE=stop "^The python grabs you!$"
+MSGTYPE=stop "^You don't feel very well.$"
+MSGTYPE=stop "^You are turning a little green.$"
+MSGTYPE=stop "^Your limbs are getting oozy.$"
+MSGTYPE=stop "^Your skin begins to peel away.$"
+MSGTYPE=stop "^You are turning into a green slime.$"
+MSGTYPE=stop "^You are slowing down.$"
+MSGTYPE=stop "^Your limbs are stiffening.$"
+MSGTYPE=stop "^It constricts your throat!$"
+MSGTYPE=stop "^You find it hard to breathe.$"
+MSGTYPE=stop "^You're gasping for air.$"
+MSGTYPE=stop "^Your blood is having trouble reaching your brain.$"
+MSGTYPE=stop "^You can no longer breathe.$"
+MSGTYPE=stop "^You're turning blue.$"
+MSGTYPE=stop "^Your consciousness is fading.$"
+MSGTYPE=stop "^You feel deathly sick.$"
+MSGTYPE=stop "^You feel much worse.$"
+MSGTYPE=stop "^You feel even worse.$"
+
+# vibrating square
+MSGTYPE=stop "You feel a strange vibration beneath *."
+MSGTYPE=stop "You feel a strange vibration under your *."
+
+# #enhance
+MSGTYPE=stop "^You feel more confident "
+
+# status effects
+MSGTYPE=stop "You feel hungry."
+MSGTYPE=stop "You are beginning to feel hungry."
+MSGTYPE=stop "You are getting the munchies."
+MSGTYPE=stop "You feel weak now."
+MSGTYPE=stop "You still have the munchies."
+MSGTYPE=stop "You feel weak."
+MSGTYPE=stop "You are beginning to feel weak."
+MSGTYPE=stop "The munchies are interfering with your motor capabilities."
+MSGTYPE=stop "* needs food, badly!"
+MSGTYPE=stop "You only feel hungry now."
+MSGTYPE=stop "You now have a lesser case of the munchies."
+MSGTYPE=stop "You faint from lack of food."
+MSGTYPE=stop "You regain consciousness."
+MSGTYPE=stop "You die from starvation."
+MSGTYPE=stop "You die from hunger and exhaustion."
+MSGTYPE=stop "You feel deathly sick."
+MSGTYPE=stop "You feel even worse."
+MSGTYPE=stop "You feel much worse."
+MSGTYPE=stop "You die from your illness."
+
+#  (potential) inventory cursing
+MSGTYPE=stop "You feel a malignant aura surround the magic-absorbing blade."
+MSGTYPE=stop "You feel a malignant aura surround you."
+
+#  near-death
+MSGTYPE=stop "You hear the howling of the CwnAnnwn..."
+MSGTYPE=stop "*, your life force is running out."
+MSGTYPE=stop "*, all your powers will be lost..."
+MSGTYPE=stop "You hear the wailing of the Banshee..."
+MSGTYPE=stop "* is about to die."
+
+# noise
+MSGTYPE=hide "With great effort you move the boulder."          #  boulder pushing
+MSGTYPE=hide "[HP:*(+*)]"                                       #  hp_notify healing
+MSGTYPE=hide "Your armor is rather cumbersome..."               #  monk wearing body armor
+MSGTYPE=hide "You displaced *."                                 #  pet displacement
+
+# make plane of fire less tedious
+MSGTYPE=hide "^The fire doesn't seem to burn the .*!"
+MSGTYPE=hide "^A tower of flame erupts from the floor under the "
+MSGTYPE=hide "^The .* is already on fire!"
+MSGTYPE=hide "^The fire doesn't seem to burn the .*!"
+MSGTYPE=hide "^The .* is mildly warmed\."
+MSGTYPE=hide "^The .* is uninjured\."
+MSGTYPE=hide "^The .* is on fire!"
+MSGTYPE=hide "^The .* is being roasted!"
+
+
+
+# I encourage people to use my menucolors! It's why I have a version and date.
+# And a repository! https://github.com/sartak/Eidocolors
+
+# eidocolors 1.14.0, 2013-06-29
+# last minor:
+#   fix forgotten spell (thanks rsarson)
+#   additional menus that shouldn't be colored (thanks rsarson)
+#   improve food colors (Eidolos)
+#   hilight cursed tin of spinach as red
+
+OPTIONS=menucolors
+
+#########
+# B/U/C #
+#########
+#MENUCOLOR="^[a-zA-Z$] - "=white #may want to enable this if regularly playing priest.. (priests don't see the 'uncursed')
+MENUCOLOR=" !C"=white
+MENUCOLOR=" !B"=white
+MENUCOLOR=" !UC"=white
+MENUCOLOR=" uncursed| UC?($| )"=white
+MENUCOLOR=" \([-0-9]+:[-0-9]+\)"=white #nethack doesn't display "uncursed" if charges are known
+MENUCOLOR=" [+-][0-9]"=white
+
+MENUCOLOR=" blessed| B($| )"=cyan
+MENUCOLOR=" cursed| C($| )"=red
+
+################
+# WATER SPORTS #
+################
+MENUCOLOR=" holy water"=cyan&bold
+MENUCOLOR=" blessed clear potion"=cyan&bold
+MENUCOLOR=" blessed potions? called water"=cyan&bold
+MENUCOLOR=" clear potions? named (holy|blessed|B)($| )"=cyan&bold
+MENUCOLOR=" potions? of water named (holy|blessed|B)($| )"=cyan&bold
+MENUCOLOR=" potions? called water named (holy|blessed|B)($| )"=cyan&bold
+MENUCOLOR=" unholy water"=orange
+MENUCOLOR=" cursed clear potion"=orange
+MENUCOLOR=" cursed potions? called water"=orange
+MENUCOLOR=" potions? called water named (unholy|cursed|C)($| )"=orange
+
+#################
+# FOOD CONDUCTS # thanks, teabing!
+#################
+# vegan
+MENUCOLOR="(food |cram |K-|C-)ration|gunyoki"=green&bold
+MENUCOLOR="lembas wafer|melon|carrot|tins? .* spinach"=green&bold
+MENUCOLOR=" oranges?( named.*)?$"=green&bold # avoid coloring orange DSM
+MENUCOLOR=" pears?( named.*)?$"=green&bold # avoid coloring pearl rings
+MENUCOLOR=" (apple|banana|kelp|eucalyptus|garlic|wolfsbane)"=green&bold
+MENUCOLOR=" (slime mold|brain)"=green&bold  ## YOUR FRUIT HERE
+MENUCOLOR="(tins? of )?(gelatinous cube|acid blob|quivering blob)( corpse)?"=green&bold
+MENUCOLOR="(tins? of )?(blue|spotted|ochre) jelly( corpse)?"=green&bold
+MENUCOLOR="(tins? of )?lichen|shrieker|violet fungus|(brown|yellow|green|red) mold( corpse)?"=green&bold
+
+# vegetarian
+MENUCOLOR="egg|pancake|fortune cookie|candy bar|royal jelly|cream pie|candle"=green
+MENUCOLOR="(tin of )?brown pudding|gray ooze( corpse)?"=green
+
+###########
+# GOODIES #
+###########
+MENUCOLOR=" bag .* holding"=magenta
+MENUCOLOR=" luck(stone)?($| )"=magenta
+MENUCOLOR=" wand .* wish(ing)?($| )"=magenta
+MENUCOLOR=" wand .* tele(port(ation)?)?($| )"=magenta
+MENUCOLOR=" wand .* polymorph"=magenta
+MENUCOLOR=" wand .* death"=magenta
+MENUCOLOR=" gain level"=magenta
+MENUCOLOR=" full healing"=magenta
+MENUCOLOR=" magic marker"=magenta
+MENUCOLOR=" magic lamp|lamp .* magic"=magenta
+MENUCOLOR=" unicorn horn[^[]*$"=magenta #this doesn't color the #enhance unicorn
+MENUCOLOR=" tinning kit"=magenta
+MENUCOLOR=" ring .* regen(eration)?($| )"=magenta
+MENUCOLOR=" ring .* conflict"=magenta
+MENUCOLOR=" ring .* (FA|free action)($| )"=magenta
+MENUCOLOR=" ring .* (TC|teleport control)($| )"=magenta
+MENUCOLOR=" ring .* lev(itation)?($| )"=magenta
+MENUCOLOR=" scrolls? .* genocide($| )"=magenta
+MENUCOLOR=" scrolls? .* charging($| )"=magenta
+MENUCOLOR=" scrolls? .* identify($| )"=magenta
+MENUCOLOR=" amulet .* (life ?saving|LS)($| )"=magenta
+MENUCOLOR=" amulet .* ref(lection)?($| )"=magenta
+MENUCOLOR=" c(o|hi)ckatrice (corpse|egg)"=magenta
+MENUCOLOR=" egg .* cockatrice"=magenta
+MENUCOLOR=" stethoscope"=magenta
+
+#instruments
+MENUCOLOR="tooled horn|fire horn|frost horn|horn .* (tooled|fire|frost)"=magenta
+MENUCOLOR=" harp"=magenta
+MENUCOLOR=" bugle"=magenta
+MENUCOLOR=" flute"=magenta
+
+# unidentified magic armor
+MENUCOLOR="piece of cloth|opera cloak|ornamental cope|tattered cape"=magenta
+MENUCOLOR="plumed helmet|etched helmet|crested helmet|visored helmet"=magenta
+MENUCOLOR="(old|padded|riding|fencing) gloves"=magenta
+MENUCOLOR="(mud|buckled|riding|snow|hiking|combat|jungle) boots"=magenta
+
+#############
+# ARTIFACTS #
+#############
+#unaligned
+MENUCOLOR=" (Dragonbane|Fire Brand|Frost Brand|Ogresmasher|Trollsbane|Werebane)"=lightgreen
+
+#lawful normal, quest
+MENUCOLOR=" (Demonbane|Excalibur|Grayswandir|Snickersnee|Sunsword)"=lightgreen
+MENUCOLOR=" (Orb of Detection|Sceptre of Might|Magic Mirror of Merlin|Mitre of Holiness|Tsurugi of Muramasa)"=lightgreen
+
+#neutral normal, quest
+MENUCOLOR=" (Cleaver|Giantslayer|Magicbane|Mjollnir|Vorpal Blade)"=lightgreen
+MENUCOLOR=" (Heart of Ahriman|Staff of Aesculapius|Eyes of the Overworld|Platinum Yendorian Express Card|Orb of Fate|Eye of the Aethiopica)"=lightgreen
+
+#chaotic normal, quest
+MENUCOLOR=" (Grimtooth|Orcrist|Sting|Stormbringer)"=lightgreen
+MENUCOLOR=" (Longbow of Diana|Master Key of Thievery)"=lightgreen
+
+#invocation items
+MENUCOLOR=" (Bell of Opening|silver bell|Candelabrum of Invocation|candelabrum|Book of the Dead|papyrus spellbook)"=magenta&bold
+
+#raison d'etre
+MENUCOLOR=" Amulet of Yendor named"=magenta&bold&underline
+
+##################
+# CURSED GOODIES #
+##################
+MENUCOLOR=" cursed.* bag .* holding"=red&bold
+MENUCOLOR=" cursed.* luck(stone)?($| )"=red&bold
+MENUCOLOR=" cursed.* unicorn horn"=red&bold
+MENUCOLOR=" cursed.* (Bell of Opening|silver bell|Candelabrum of Invocation|candelabrum|Book of the Dead|papyrus spellbook)"=red&bold
+MENUCOLOR="cursed tins? .* spinach|tins? .* spinach .* (cursed|C($| ))"=red
+
+#############
+# BAD STUFF #
+#############
+MENUCOLOR=" load(stone)?($| )"=red&underline
+
+##############################
+# WATCH OUT, BAG OF HOLDING! #
+##############################
+MENUCOLOR=" bag .* tricks"=blue&underline
+MENUCOLOR=" wand .*[^!]canc"=blue&underline
+MENUCOLOR=" wand .* vanish"=blue&underline
+
+################
+# SHINY THINGS #
+################
+MENUCOLOR=" gold piece"=yellow
+MENUCOLOR=" valuable"=brown
+MENUCOLOR=" gems? .* hard"=yellow
+
+#soft gems
+MENUCOLOR=" ([0-9]+|an?|gems? .*) (uncursed |cursed |blessed )?(dilithium|opal|garnet|jasper|agate|jet|obsidian|jade|citrine|chrysoberyl|amber|amethyst|fluorite|turquoise)(e?s)?( stones?| gems?| crystals?)?( named .*)?$"=brown
+
+#hard gems
+MENUCOLOR=" ([0-9]+|an?|gems?.*) (uncursed |cursed |blessed )?(diamond|rub(y|ies)|jacinth|sapphire|black opal|emerald|topaz|aquamarine)(e?s)?( stones?| gems?)?( named .*)?$"=yellow
+
+#######################
+# SPELL FAILURE RATES #
+#######################
+MENUCOLOR=" 0%"=white
+MENUCOLOR=" [1-9]%"=cyan
+MENUCOLOR=" [12][0-9]%"=cyan
+MENUCOLOR=" [3-6][0-9]%"=yellow
+MENUCOLOR=" 7[0-5]%"=yellow
+MENUCOLOR=" 7[6-9]%"=orange
+MENUCOLOR=" 8[0-9]%"=orange
+MENUCOLOR=" 9[0-9]%"=red
+MENUCOLOR=" 100%"=red
+
+###################
+# FORGOTTEN SPELL # thanks, Stevie, rsarson
+###################
+MENUCOLOR="[a-zA-Z ]+ [0-9]\*   [a-z]+ +[0-9]+%"=magenta
+
+############
+# #ENHANCE # thanks itsblah
+############
+MENUCOLOR="^ +[a-z -]+ +\[(Unskilled|Basic|Skilled|Expert|Master|Grand Master)\]$"=none           # normal
+MENUCOLOR="^ *[a-z] - +[a-z -]+ +\[(Unskilled|Basic|Skilled|Expert|Master|Grand Master)\]$"=white # ready to enhance
+MENUCOLOR="^ +\* +[a-z -]+ +\[(Unskilled|Basic|Skilled|Expert|Master|Grand Master)\]$"=white      # enhanceable if more skill slots
+MENUCOLOR="^ +# +[a-z -]+ +\[(Unskilled|Basic|Skilled|Expert|Master|Grand Master)\]$"=none        # enhanceable if more potential
+
+################
+# FORCE COLORS #
+################
+# Some of these are subject to change !
+
+MENUCOLOR="\{R\}"=red
+MENUCOLOR="\{B\}"=blue
+MENUCOLOR="\{C\}"=cyan
+MENUCOLOR="\{G\}"=green
+MENUCOLOR="\{Y\}"=yellow
+MENUCOLOR="\{[MP]\}"=magenta
+MENUCOLOR="\{O\}"=orange
+MENUCOLOR="\{W\}"=white
+MENUCOLOR="\{L\}"=black
+MENUCOLOR="\{y\}"=gray
+MENUCOLOR="\{g\}"=lightgreen
+MENUCOLOR="\{b\}"=lightblue
+MENUCOLOR="\{[mp]\}"=lightmagenta
+MENUCOLOR="\{c\}"=lightcyan
+MENUCOLOR="\{N\}"=none
+MENUCOLOR="\{X\}"=bold
+MENUCOLOR="\{x\}"=dim
+MENUCOLOR="\{U\}"=underline
+MENUCOLOR="\{I\}"=inverse
+MENUCOLOR="\{K\}"=blink
+
+######################
+# FIX ORDINARY MENUS #
+######################
+MENUCOLOR=" is empty. Do what?"=none
+MENUCOLOR="Put something into .*"=none
+MENUCOLOR="Take something out of .*"=none
+
+MENUCOLOR="unicorn horn.*(Unskilled|Basic|Skilled|Expert)"=none
+MENUCOLOR="Info on what a given key does."=none
+MENUCOLOR="Full list of keyboard commands."=none
+MENUCOLOR="altkeyhandler"=none
+MENUCOLOR="fruit.*\["=none
+
+###########################################################################
+# autopickup exceptions
+
+# autopickup items that have [,] in their name
+autopickup_exception="<* named *[,]*"
+autopickup_exception="<* called *[,]*"
+
+# never autopickup items that have [!,] in their name
+autopickup_exception="* named *[!,]*"
+autopickup_exception="* called *[!,]*"
+
+# crappy items
+autopickup_exception="* named* empty*"
+autopickup_exception="* named* crap*"
+autopickup_exception="* named* junk*"
+autopickup_exception="* named* worthless*"
+
+# we might want to autopickup food, but never corpses
+autopickup_exception="* corpse*"
+
+# really good items I don't normally autopickup
+autopickup_exception="<*magic marker*"
+autopickup_exception="<*magic lamp*"
+autopickup_exception="<*lamp called magic"
+autopickup_exception="<*silver bell*"
+autopickup_exception="<*Bell of Opening*"
+autopickup_exception="<*candelabrum*"
+autopickup_exception="<*Candelabrum*"
+autopickup_exception="<*Book of the Dead*"
+autopickup_exception="<*papyrus spellbook*"
+
+# Due to a bug in virus, you have to :wq immediately after pasting. If you want
+# to edit, then you can reopen your rcfile. If you edit after pasting, virus
+# crashes. Sorry :)
