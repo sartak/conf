@@ -6,5 +6,6 @@ fi
 
 ssh $1 'git clone https://github.com/sartak/bindir.git ~/.bin'
 ssh $1 'command -v fish >/dev/null 2>&1 || { echo >&2 "fish absent"; exit 1; }; grep `which fish` /etc/shells || { echo >&2 "fish not in shells"; exit 1; }; chsh -s `which fish`'
-rsync -Lrz ~/.vimrc ~/.vim ~/.gitconfig $1:
+
+(cd ~; rsync -LRrz .vimrc .vim .gitconfig .config/fish/config.fish $1:)
 
