@@ -22,8 +22,17 @@ else {
     @rsync_command = ('rsync');
 }
 
-system(@ssh_command, 'git clone https://github.com/sartak/bindir.git ~/.bin');
-system(@ssh_command, 'command -v fish >/dev/null 2>&1 || { echo >&2 "fish absent"; exit 1; }; grep `which fish` /etc/shells || { echo >&2 "fish not in shells"; exit 1; }; chsh -s `which fish`');
+system(@ssh_command, q[bash -c '
+if [ ! -e ~/.bin ]; then
+    git clone https://github.com/sartak/bindir.git ~/.bin;
+fi;
+
+command -v fish >/dev/null 2>&1 || { echo >&2 "fish absent"; exit 1; };
+grep -q `which fish` /etc/shells || { echo >&2 `which fish` "not in shells"; exit 1; };
+if [ `getent passwd $LOGNAME | cut -d: -f7` != `which fish` ]; then
+    chsh -s `which fish`;
+fi;
+']);
 
 chdir $ENV{HOME};
 system(@rsync_command,
