@@ -1,11 +1,36 @@
-#!/bin/bash
-if [ "$#" -ne 1 ]; then
-    echo "Usage: $0 [user@]hostname";
-    exit 1;
-fi
+#!/usr/bin/env perl
+use strict;
+use warnings;
 
-ssh $1 'git clone https://github.com/sartak/bindir.git ~/.bin'
-ssh $1 'command -v fish >/dev/null 2>&1 || { echo >&2 "fish absent"; exit 1; }; grep `which fish` /etc/shells || { echo >&2 "fish not in shells"; exit 1; }; chsh -s `which fish`'
+die "usage: $0 [user@]hostname" unless @ARGV == 1;
+my $host = shift;
+my @ssh_command;
+my @rsync_command;
 
-(cd ~; rsync -LRrz .vimrc .vim .gitconfig .config/fish/config.fish $1:)
+if ($host eq '.') { # vagrant
+    die "Not in a Vagrant directory" unless -e "Vagrantfile";
 
+    @ssh_command = ('vagrant', 'ssh', '-c');
+
+    my $ssh_config = `vagrant ssh-config`;
+    my $ssh_args = join " ", map { s/^  (\w+)\s+(.+)$/-o $1=$2/r } grep { /^\s+\S/ } split /\n/, $ssh_config;
+
+    @rsync_command = ("rsync", "-e", "ssh $ssh_args");
+}
+else {
+    @ssh_command = ('ssh', $host);
+    @rsync_command = ('rsync');
+}
+
+system(@ssh_command, 'git clone https://github.com/sartak/bindir.git ~/.bin');
+system(@ssh_command, 'command -v fish >/dev/null 2>&1 || { echo >&2 "fish absent"; exit 1; }; grep `which fish` /etc/shells || { echo >&2 "fish not in shells"; exit 1; }; chsh -s `which fish`');
+
+chdir $ENV{HOME};
+system(@rsync_command,
+    "-LRrz",
+    ".vimrc",
+    ".vim",
+    ".gitconfig",
+    ".config/fish/config.fish",
+    "$host:",
+);
