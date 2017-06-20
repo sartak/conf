@@ -23,7 +23,9 @@ else {
 }
 
 system(@ssh_command, q[bash -c '
-if [ ! -e ~/.bin ]; then
+if [ -e ~/.bin ]; then
+    (cd ~/.bin; git pull --quiet)
+else
     git clone https://github.com/sartak/bindir.git ~/.bin;
 fi;
 
