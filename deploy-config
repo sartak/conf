@@ -19,12 +19,16 @@ if ($host eq '.') { # vagrant
     @rsync_command = ("rsync", "-e", "ssh $ssh_args");
 }
 else {
-    @ssh_command = ('ssh', $host);
+    @ssh_command = ('ssh', '-t', $host);
     @rsync_command = ('rsync');
 }
 
 if ($ARGV{ssh}) {
     system('ssh-copy-id', $host);
+}
+
+if ($ARGV{apt}) {
+    system(@ssh_command, q[sudo apt-get install git-core fish silversearcher-ag]);
 }
 
 system(@ssh_command, q[bash -c '
