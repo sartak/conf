@@ -19,7 +19,7 @@ if ($host eq '.') { # vagrant
     @rsync_command = ("rsync", "-e", "ssh $ssh_args");
 }
 else {
-    @ssh_command = ('ssh', '-t', $host);
+    @ssh_command = ('ssh', '-qt', $host);
     @rsync_command = ('rsync');
 }
 
