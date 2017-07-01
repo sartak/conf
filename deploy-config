@@ -52,5 +52,6 @@ system(@rsync_command,
     ".vim",
     ".gitconfig",
     ".config/fish/config.fish",
+    ".config/fish/functions",
     "$host:",
 );
