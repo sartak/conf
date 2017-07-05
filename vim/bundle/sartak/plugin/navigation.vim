@@ -14,4 +14,3 @@ autocmd BufReadPost *
 \    exe "normal g`\"" |
 \  endif
 
-autocmd BufReadPost */.git/COMMIT_EDITMSG execute "normal gg" | startinsert
