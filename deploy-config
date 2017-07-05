@@ -6,17 +6,18 @@ use Getopt::Whatever;
 die "usage: $0 [user@]hostname" unless @ARGV == 1;
 my $host = shift;
 my @ssh_command;
+my @post_ssh_command;
 my @rsync_command;
 
 if ($host eq '.') { # vagrant
     die "Not in a Vagrant directory" unless -e "Vagrantfile";
 
-    @ssh_command = ('vagrant', 'ssh', '-c');
-
     my $ssh_config = `vagrant ssh-config`;
-    my $ssh_args = join " ", map { s/^  (\w+)\s+(.+)$/-o $1=$2/r } grep { /^\s+\S/ } split /\n/, $ssh_config;
+    my @ssh_args = map { s/^  (\w+)\s+(.+)$/-o $1=$2/r } grep { /^\s+\S/ } split /\n/, $ssh_config;
 
-    @rsync_command = ("rsync", "-e", "ssh $ssh_args");
+    @ssh_command = ('vagrant', 'ssh', '-c');
+    @post_ssh_command = ('--', '-q');
+    @rsync_command = ("rsync", "-e", (join " ", "ssh", @ssh_args));
 }
 else {
     @ssh_command = ('ssh', '-qt', $host);
@@ -28,7 +29,7 @@ if ($ARGV{ssh}) {
 }
 
 if ($ARGV{apt}) {
-    system(@ssh_command, q[sudo apt-get install git-core fish silversearcher-ag]);
+    system(@ssh_command, q[sudo apt-get install git-core fish silversearcher-ag], @post_ssh_command);
 }
 
 system(@ssh_command, q[bash -c '
@@ -43,7 +44,7 @@ grep -q `which fish` /etc/shells || { echo >&2 `which fish` "not in shells"; exi
 if [ `getent passwd $LOGNAME | cut -d: -f7` != `which fish` ]; then
     chsh -s `which fish`;
 fi;
-']);
+'], @post_ssh_command);
 
 chdir $ENV{HOME};
 system(@rsync_command,
