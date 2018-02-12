@@ -7,3 +7,15 @@
 [submodule "vim/bundle/gundo"]
 	path = vim/bundle/gundo
 	url = http://github.com/sjl/gundo.vim.git
+[submodule "vim/bundle/vim-javascript"]
+	path = vim/bundle/vim-javascript
+	url = https://github.com/pangloss/vim-javascript.git
+[submodule "vim/bundle/vim-jsx"]
+	path = vim/bundle/vim-jsx
+	url = https://github.com/mxw/vim-jsx.git
+[submodule "vim/bundle/jsx"]
+	path = vim/bundle/jsx
+	url = https://github.com/mxw/vim-jsx.git
+[submodule "vim/bundle/scss-syntax"]
+	path = vim/bundle/scss-syntax
+	url = https://github.com/cakebaker/scss-syntax.vim.git
