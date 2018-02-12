@@ -7,6 +7,10 @@ if test -e ~/.bin
     set -x fish_user_paths ~/.bin $fish_user_paths
 end
 
+if test -e ~/.config/fish/local.fish
+    . ~/.config/fish/local.fish
+end
+
 set fish_greeting ""
 
 function jnethack
