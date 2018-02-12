@@ -30,8 +30,6 @@ function fish_prompt
         set_color B300FF
       case gammu buzzell junction tleilax
         set_color FFB400
-      case booth morelax bloc
-        set_color 00A6ED
       case vagrant
         set_color 2E00E6
       case '*'
