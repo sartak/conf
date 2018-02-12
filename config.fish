@@ -38,6 +38,10 @@ function fish_prompt
         set_color F6511D
     end
 
+    if [ "$HOST_OVERRIDE" != "" ]
+        set host $HOST_OVERRIDE
+    end
+
     echo -n (whoami)'@'$host' '
 
     set_color $fish_color_cwd

@@ -46,6 +46,12 @@ if [ `getent passwd $LOGNAME | cut -d: -f7` != `which fish` ]; then
 fi;
 '], @post_ssh_command);
 
+if ($ARGV{host}) {
+    system(@ssh_command, qq[
+        fish -c "set -Ux HOST_OVERRIDE '$ARGV{host}'"
+    ], @post_ssh_command);
+}
+
 chdir $ENV{HOME};
 system(@rsync_command,
     "-LRrz",
