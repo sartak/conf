@@ -1,3 +1,4 @@
+let g:airline_powerline_fonts = 1
 let g:airline_theme='deus'
 
 let g:gitgutter_override_sign_column_highlight = 0
@@ -10,3 +11,13 @@ endif
 " the same as airline
 highlight SignColumn ctermbg=234
 
+highlight GitGutterAdd ctermfg=2 ctermbg=234
+highlight GitGutterChange ctermfg=3 ctermbg=234
+highlight GitGutterChangeDelete ctermfg=3 ctermbg=234
+highlight GitGutterDelete ctermfg=1 ctermbg=234
+
+let g:gitgutter_sign_added = '・'
+let g:gitgutter_sign_modified = '・'
+let g:gitgutter_sign_removed = '・'
+let g:gitgutter_sign_removed_first_line = '・'
+let g:gitgutter_sign_modified_removed = '・'

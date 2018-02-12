@@ -1,4 +1,5 @@
-let g:airline_powerline_fonts = 1
+" has to be done early
+source vim/bundle/sartak/plugin/ide.vim
 
 execute pathogen#infect()
 
