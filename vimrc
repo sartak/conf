@@ -1,5 +1,5 @@
 " has to be done early
-source vim/bundle/sartak/plugin/ide.vim
+source ~/.vim/bundle/sartak/plugin/ide.vim
 
 execute pathogen#infect()
 
