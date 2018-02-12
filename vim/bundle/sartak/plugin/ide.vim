@@ -14,10 +14,10 @@ highlight SignColumn ctermbg=234
 highlight ALEErrorSign ctermfg=1 ctermbg=234
 highlight ALEWarningSign ctermfg=3 ctermbg=234
 
-highlight GitGutterAdd ctermfg=2 ctermbg=234
-highlight GitGutterChange ctermfg=3 ctermbg=234
-highlight GitGutterChangeDelete ctermfg=3 ctermbg=234
-highlight GitGutterDelete ctermfg=1 ctermbg=234
+highlight GitGutterAdd ctermfg=5 ctermbg=234
+highlight GitGutterChange ctermfg=5 ctermbg=234
+highlight GitGutterChangeDelete ctermfg=5 ctermbg=234
+highlight GitGutterDelete ctermfg=5 ctermbg=234
 
 let g:ale_sign_error = '！'
 let g:ale_sign_warning = '？'
