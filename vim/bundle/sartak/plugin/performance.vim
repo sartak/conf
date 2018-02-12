@@ -4,3 +4,5 @@ set ttimeoutlen=50
 " don't redraw the screen during macros etc (NetHack's runmode:teleport)
 set lazyredraw
 
+" for gitgutter
+set updatetime=100
