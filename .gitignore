@@ -1,7 +1,7 @@
 vim/record
 vim/spell
 vim/.netrwhist
-vim/yankring_history_v2.txt
+vim/YankRing/
 
 vim/bundle/command-t/ext.bundle
 vim/bundle/command-t/ext.o

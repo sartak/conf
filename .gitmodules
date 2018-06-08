@@ -37,3 +37,12 @@
 [submodule "vim/bundle/YouCompleteMe"]
 	path = vim/bundle/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe
+[submodule "vim/bundle/ultisnips"]
+	path = vim/bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips
+[submodule "vim/bundle/YankRing"]
+	path = vim/bundle/YankRing
+	url = git@github.com:vim-scripts/YankRing.vim.git
+[submodule "vim/bundle/closetag"]
+	path = vim/bundle/closetag
+	url = git@github.com:alvan/vim-closetag.git

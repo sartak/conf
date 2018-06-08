@@ -1,0 +1,33 @@
+snippet #! "shebang"
+#!/usr/bin/env node
+endsnippet
+
+snippet class "React Component class" b
+class ${1:Name} extends Component {
+  render() {
+    $0
+  }
+}
+endsnippet
+
+snippet constructor "React constructor" b
+constructor(props) {
+  super(props);
+  this.state = $0;
+}
+
+endsnippet
+
+snippet componentDidMount
+componentDidMount() {
+  $0
+}
+
+endsnippet
+
+snippet componentWillUnmount
+componentWillUnmount() {
+  $0
+}
+
+endsnippet
