@@ -57,6 +57,6 @@ function fish_prompt
 end
 
 function fish_title
-    echo -n ' '
+    echo -n '　'
 end
 
