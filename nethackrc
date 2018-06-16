@@ -50,86 +50,86 @@ STATUSCOLOR=Blind:red,Stun:brown,Conf:brown,Hallu:brown
 STATUSCOLOR=Ill:red&inverse,FoodPois:red&inverse,Slime:red&inverse
 
 # taken from https://github.com/majutsushi/etc/blob/master/nethackrc and stth
-OPTIONS=msgtype_regex
+#OPTIONS=msgtype_regex
 
 # delayed instadeaths
-MSGTYPE=stop "^The couatl swings itself around you!$"
-MSGTYPE=stop "^The electric eel swings itself around you!$"
-MSGTYPE=stop "^The giant eel swings itself around you!$"
-MSGTYPE=stop "^The kraken swings itself around you!$"
-MSGTYPE=stop "^The python grabs you!$"
-MSGTYPE=stop "^You don't feel very well.$"
-MSGTYPE=stop "^You are turning a little green.$"
-MSGTYPE=stop "^Your limbs are getting oozy.$"
-MSGTYPE=stop "^Your skin begins to peel away.$"
-MSGTYPE=stop "^You are turning into a green slime.$"
-MSGTYPE=stop "^You are slowing down.$"
-MSGTYPE=stop "^Your limbs are stiffening.$"
-MSGTYPE=stop "^It constricts your throat!$"
-MSGTYPE=stop "^You find it hard to breathe.$"
-MSGTYPE=stop "^You're gasping for air.$"
-MSGTYPE=stop "^Your blood is having trouble reaching your brain.$"
-MSGTYPE=stop "^You can no longer breathe.$"
-MSGTYPE=stop "^You're turning blue.$"
-MSGTYPE=stop "^Your consciousness is fading.$"
-MSGTYPE=stop "^You feel deathly sick.$"
-MSGTYPE=stop "^You feel much worse.$"
-MSGTYPE=stop "^You feel even worse.$"
-
-# vibrating square
-MSGTYPE=stop "You feel a strange vibration beneath *."
-MSGTYPE=stop "You feel a strange vibration under your *."
-
-# #enhance
-MSGTYPE=stop "^You feel more confident "
-
-# status effects
-MSGTYPE=stop "You feel hungry."
-MSGTYPE=stop "You are beginning to feel hungry."
-MSGTYPE=stop "You are getting the munchies."
-MSGTYPE=stop "You feel weak now."
-MSGTYPE=stop "You still have the munchies."
-MSGTYPE=stop "You feel weak."
-MSGTYPE=stop "You are beginning to feel weak."
-MSGTYPE=stop "The munchies are interfering with your motor capabilities."
-MSGTYPE=stop "* needs food, badly!"
-MSGTYPE=stop "You only feel hungry now."
-MSGTYPE=stop "You now have a lesser case of the munchies."
-MSGTYPE=stop "You faint from lack of food."
-MSGTYPE=stop "You regain consciousness."
-MSGTYPE=stop "You die from starvation."
-MSGTYPE=stop "You die from hunger and exhaustion."
-MSGTYPE=stop "You feel deathly sick."
-MSGTYPE=stop "You feel even worse."
-MSGTYPE=stop "You feel much worse."
-MSGTYPE=stop "You die from your illness."
-
-#  (potential) inventory cursing
-MSGTYPE=stop "You feel a malignant aura surround the magic-absorbing blade."
-MSGTYPE=stop "You feel a malignant aura surround you."
-
-#  near-death
-MSGTYPE=stop "You hear the howling of the CwnAnnwn..."
-MSGTYPE=stop "*, your life force is running out."
-MSGTYPE=stop "*, all your powers will be lost..."
-MSGTYPE=stop "You hear the wailing of the Banshee..."
-MSGTYPE=stop "* is about to die."
-
-# noise
-MSGTYPE=hide "With great effort you move the boulder."          #  boulder pushing
-MSGTYPE=hide "[HP:*(+*)]"                                       #  hp_notify healing
-MSGTYPE=hide "Your armor is rather cumbersome..."               #  monk wearing body armor
-MSGTYPE=hide "You displaced *."                                 #  pet displacement
-
-# make plane of fire less tedious
-MSGTYPE=hide "^The fire doesn't seem to burn the .*!"
-MSGTYPE=hide "^A tower of flame erupts from the floor under the "
-MSGTYPE=hide "^The .* is already on fire!"
-MSGTYPE=hide "^The fire doesn't seem to burn the .*!"
-MSGTYPE=hide "^The .* is mildly warmed\."
-MSGTYPE=hide "^The .* is uninjured\."
-MSGTYPE=hide "^The .* is on fire!"
-MSGTYPE=hide "^The .* is being roasted!"
+#MSGTYPE=stop "^The couatl swings itself around you!$"
+#MSGTYPE=stop "^The electric eel swings itself around you!$"
+#MSGTYPE=stop "^The giant eel swings itself around you!$"
+#MSGTYPE=stop "^The kraken swings itself around you!$"
+#MSGTYPE=stop "^The python grabs you!$"
+#MSGTYPE=stop "^You don't feel very well.$"
+#MSGTYPE=stop "^You are turning a little green.$"
+#MSGTYPE=stop "^Your limbs are getting oozy.$"
+#MSGTYPE=stop "^Your skin begins to peel away.$"
+#MSGTYPE=stop "^You are turning into a green slime.$"
+#MSGTYPE=stop "^You are slowing down.$"
+#MSGTYPE=stop "^Your limbs are stiffening.$"
+#MSGTYPE=stop "^It constricts your throat!$"
+#MSGTYPE=stop "^You find it hard to breathe.$"
+#MSGTYPE=stop "^You're gasping for air.$"
+#MSGTYPE=stop "^Your blood is having trouble reaching your brain.$"
+#MSGTYPE=stop "^You can no longer breathe.$"
+#MSGTYPE=stop "^You're turning blue.$"
+#MSGTYPE=stop "^Your consciousness is fading.$"
+#MSGTYPE=stop "^You feel deathly sick.$"
+#MSGTYPE=stop "^You feel much worse.$"
+#MSGTYPE=stop "^You feel even worse.$"
+#
+## vibrating square
+#MSGTYPE=stop "You feel a strange vibration beneath *."
+#MSGTYPE=stop "You feel a strange vibration under your *."
+#
+## #enhance
+#MSGTYPE=stop "^You feel more confident "
+#
+## status effects
+#MSGTYPE=stop "You feel hungry."
+#MSGTYPE=stop "You are beginning to feel hungry."
+#MSGTYPE=stop "You are getting the munchies."
+#MSGTYPE=stop "You feel weak now."
+#MSGTYPE=stop "You still have the munchies."
+#MSGTYPE=stop "You feel weak."
+#MSGTYPE=stop "You are beginning to feel weak."
+#MSGTYPE=stop "The munchies are interfering with your motor capabilities."
+#MSGTYPE=stop "* needs food, badly!"
+#MSGTYPE=stop "You only feel hungry now."
+#MSGTYPE=stop "You now have a lesser case of the munchies."
+#MSGTYPE=stop "You faint from lack of food."
+#MSGTYPE=stop "You regain consciousness."
+#MSGTYPE=stop "You die from starvation."
+#MSGTYPE=stop "You die from hunger and exhaustion."
+#MSGTYPE=stop "You feel deathly sick."
+#MSGTYPE=stop "You feel even worse."
+#MSGTYPE=stop "You feel much worse."
+#MSGTYPE=stop "You die from your illness."
+#
+##  (potential) inventory cursing
+#MSGTYPE=stop "You feel a malignant aura surround the magic-absorbing blade."
+#MSGTYPE=stop "You feel a malignant aura surround you."
+#
+##  near-death
+#MSGTYPE=stop "You hear the howling of the CwnAnnwn..."
+#MSGTYPE=stop "*, your life force is running out."
+#MSGTYPE=stop "*, all your powers will be lost..."
+#MSGTYPE=stop "You hear the wailing of the Banshee..."
+#MSGTYPE=stop "* is about to die."
+#
+## noise
+#MSGTYPE=hide "With great effort you move the boulder."          #  boulder pushing
+#MSGTYPE=hide "[HP:*(+*)]"                                       #  hp_notify healing
+#MSGTYPE=hide "Your armor is rather cumbersome..."               #  monk wearing body armor
+#MSGTYPE=hide "You displaced *."                                 #  pet displacement
+#
+## make plane of fire less tedious
+#MSGTYPE=hide "^The fire doesn't seem to burn the .*!"
+#MSGTYPE=hide "^A tower of flame erupts from the floor under the "
+#MSGTYPE=hide "^The .* is already on fire!"
+#MSGTYPE=hide "^The fire doesn't seem to burn the .*!"
+#MSGTYPE=hide "^The .* is mildly warmed\."
+#MSGTYPE=hide "^The .* is uninjured\."
+#MSGTYPE=hide "^The .* is on fire!"
+#MSGTYPE=hide "^The .* is being roasted!"
 
 
 
