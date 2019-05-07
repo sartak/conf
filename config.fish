@@ -28,7 +28,7 @@ function fish_prompt
     switch $host
       case giedi-prime
         set_color B300FF
-      case gammu buzzell junction tleilax
+      case gammu buzzell junction tleilax newyork paris
         set_color FFB400
       case vagrant
         set_color 2E00E6
