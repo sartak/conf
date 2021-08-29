@@ -1,3 +1,6 @@
+" backspace
+set backspace=2
+
 " always join with just one space, even between sentences
 set nojoinspaces
 
