@@ -12,6 +12,9 @@ else
   let g:gitgutter_sign_column_always = 1
 endif
 
+let g:yankring_history_dir = '~/.vim/YankRing/'
+let g:yankring_history_file = 'history.txt'
+
 " the same as airline
 highlight SignColumn ctermbg=233
 
