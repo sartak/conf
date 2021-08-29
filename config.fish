@@ -60,3 +60,6 @@ function fish_title
     echo -n '　'
 end
 
+if not status --is-interactive
+  set PATH /usr/local/bin $PATH
+end
