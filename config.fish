@@ -24,11 +24,11 @@ set __fish_git_prompt_char_stagedstate '→'
 function fish_prompt
     set -l last_status $status
 
-    set -l host (hostname | sed 's/\.local//' | sed 's/^\(vagrant\).\+/\1/')
+    set -l host (hostname | sed 's/\.local//' | sed 's/\.home\.shawn\.dev//' | sed 's/-ethernet//' | sed 's/-wifi//' | sed 's/^caldigit$/giedi-prime/' | sed 's/^livingroom-dongle[0-9]*$/giedi-prime/' | sed 's/.cable.rcn.com//' | sed 's/^\(vagrant\).\+/\1/')
     switch $host
-      case giedi-prime
+      case giedi-prime mana
         set_color B300FF
-      case gammu buzzell junction tleilax newyork paris
+      case newyork paris maui hongkong junction phuket waikiki miami
         set_color FFB400
       case vagrant
         set_color 2E00E6
