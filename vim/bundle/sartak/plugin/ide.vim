@@ -35,7 +35,7 @@ let g:gitgutter_sign_modified_removed = '・'
 let g:ale_fixers = {'javascript': ['eslint'], 'json': ['prettier'], 'scss': ['prettier'], 'css': ['prettier']}
 let g:ale_fix_on_save = 1
 
-let g:UltiSnipsUsePythonVersion = 2
+"let g:UltiSnipsUsePythonVersion = 2
 let g:UltiSnipsSnippetsDir = "~/.vim/UltiSnips"
 
 let g:closetag_filenames = "*.html,*.xhtml,*.js,*.jsx"
