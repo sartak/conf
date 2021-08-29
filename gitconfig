@@ -10,3 +10,6 @@
 
 [alias]
     freebase = rebase -i @{u}
+[pull]
+	rebase = false
+	ff = only
