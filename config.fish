@@ -4,7 +4,7 @@ if test -e ~/.perl/etc/perlbrew.fish
 end
 
 if test -e ~/.bin
-    set -x fish_user_paths ~/.bin $fish_user_paths
+    set -x fish_user_paths ~/.bin
 end
 
 if test -e ~/.config/fish/local.fish
