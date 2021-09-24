@@ -1,1 +1,3 @@
-autocmd FileType gitcommit setlocal tw=72 | execute "normal gg" | startinsert
+autocmd FileType gitcommit setlocal tw=72
+autocmd FileType gitcommit if getline(1) == "" | startinsert
+" see also navigation.vim
