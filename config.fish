@@ -26,7 +26,7 @@ function fish_prompt
 
     set -l host (hostname | sed 's/\.local//' | sed 's/\.home\.shawn\.dev//' | sed 's/-ethernet//' | sed 's/-wifi//' | sed 's/^caldigit$/giedi-prime/' | sed 's/^livingroom-dongle[0-9]*$/giedi-prime/' | sed 's/.cable.rcn.com//' | sed 's/^\(vagrant\).\+/\1/')
     switch $host
-      case giedi-prime mana
+      case giedi-prime mana hydra
         set_color B300FF
       case newyork paris maui hongkong junction phuket waikiki miami
         set_color FFB400
