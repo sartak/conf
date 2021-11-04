@@ -3,19 +3,11 @@ if test -e ~/.perl/etc/perlbrew.fish
     . ~/.perl/etc/perlbrew.fish
 end
 
-if test -e ~/.bin
-    set -x fish_user_paths ~/.bin
-end
-
 if test -e ~/.config/fish/local.fish
     . ~/.config/fish/local.fish
 end
 
 set fish_greeting ""
-
-function jnethack
-    cocot -t UTF-8 -p EUC-JP -- jnethack $argv;
-end
 
 set __fish_git_prompt_show_informative_status 'yes'
 set __fish_git_prompt_char_dirtystate '⚡'
@@ -24,7 +16,7 @@ set __fish_git_prompt_char_stagedstate '→'
 function fish_prompt
     set -l last_status $status
 
-    set -l host (hostname | sed 's/\.local//' | sed 's/\.home\.shawn\.dev//' | sed 's/-ethernet//' | sed 's/-wifi//' | sed 's/^caldigit$/giedi-prime/' | sed 's/^livingroom-dongle[0-9]*$/giedi-prime/' | sed 's/.cable.rcn.com//' | sed 's/^\(vagrant\).\+/\1/')
+    set -l host (hostname | sed 's/\.local//')
     switch $host
       case giedi-prime mana hydra
         set_color B300FF
