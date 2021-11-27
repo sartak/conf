@@ -16,7 +16,7 @@ set __fish_git_prompt_char_stagedstate '→'
 function fish_prompt
     set -l last_status $status
 
-    set -l host (hostname | sed 's/\.local//')
+    set -l host (hostname | sed 's/\.local//' | sed 's/\.home\.shawn\.dev//')
     switch $host
       case giedi-prime mana hydra
         set_color B300FF
