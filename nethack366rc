@@ -19,38 +19,9 @@ OPTIONS=boulder:0
 OPTIONS=scores:10 top/3 around/own
 OPTIONS=pickup_burden:unencumbered
 
-# turn ghosts and shades into 'X' - great with telepathy for bones detection
-# turn ] mimics into 'm'
-OPTIONS=monsters:abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@X'&;:~m
-
-# turn water/lava into ~ so it looks nicer and is more distinct from fountains
-OPTIONS=dungeon: |--------||.-|++##.##<><>_|\\#{~.~..## #}
-
-# stuff not in vanilla follows
 OPTIONS=showscore
 OPTIONS=sortloot:full
-OPTIONS=showborn
 OPTIONS=use_darkgray
-OPTIONS=paranoid_remove
-OPTIONS=paranoid_hit
-OPTIONS=hilite_hidden_stairs
-OPTIONS=hilite_obj_piles
-
-# stth++
-MONSTERCOLOR=floating eye:lightgreen
-
-OPTIONS=statuscolors
-
-STATUSCOLOR=HP%99:green,HP%75:brown,HP%50:red,HP%25:orange
-#  prayer threshold (<= 1/7 of maxHP) (stth++)
-STATUSCOLOR=HP%14:lightmagenta&inverse
-
-STATUSCOLOR=Pw%99:cyan&bold,Pw%75:cyan,Pw%50:magenta,Pw%25:magenta&bold
-
-STATUSCOLOR=Satiated:green,Hungry:brown,Weak:red,Fainting:orange&inverse,Fainted:orange&inverse,Starved:orange&inverse
-STATUSCOLOR=Burdened:orange,Stressed:orange,Strained:orange,Overtaxed:orange,Overloaded:orange
-STATUSCOLOR=Blind:red,Stun:brown,Conf:brown,Hallu:brown
-STATUSCOLOR=Ill:red&inverse,FoodPois:red&inverse,Slime:red&inverse
 
 # taken from https://github.com/majutsushi/etc/blob/master/nethackrc and stth
 #OPTIONS=msgtype_regex
@@ -151,12 +122,12 @@ OPTIONS=menucolors
 #########
 # B/U/C #
 #########
-#MENUCOLOR="^[a-zA-Z$] - "=white #may want to enable this if regularly playing priest.. (priests don't see the 'uncursed')
+#MENUCOLOR="^[a-zA-Z$] - "=white
 MENUCOLOR=" !C"=white
 MENUCOLOR=" !B"=white
 MENUCOLOR=" !UC"=white
 MENUCOLOR=" uncursed| UC?($| )"=white
-MENUCOLOR=" \([-0-9]+:[-0-9]+\)"=white #nethack doesn't display "uncursed" if charges are known
+MENUCOLOR=" \([-0-9]+:[-0-9]+\)"=white
 MENUCOLOR=" [+-][0-9]"=white
 
 MENUCOLOR=" blessed| B($| )"=cyan
@@ -182,10 +153,10 @@ MENUCOLOR=" potions? called water named (unholy|cursed|C)($| )"=orange
 # vegan
 MENUCOLOR="(food |cram |K-|C-)ration|gunyoki"=green&bold
 MENUCOLOR="lembas wafer|melon|carrot|tins? .* spinach"=green&bold
-MENUCOLOR=" oranges?( named.*)?$"=green&bold # avoid coloring orange DSM
-MENUCOLOR=" pears?( named.*)?$"=green&bold # avoid coloring pearl rings
+MENUCOLOR=" oranges?( named.*)?$"=green&bold
+MENUCOLOR=" pears?( named.*)?$"=green&bold
 MENUCOLOR=" (apple|banana|kelp|eucalyptus|garlic|wolfsbane)"=green&bold
-MENUCOLOR=" (slime mold|brain)"=green&bold  ## YOUR FRUIT HERE
+MENUCOLOR=" (slime mold|brain)"=green&bold
 MENUCOLOR="(tins? of )?(gelatinous cube|acid blob|quivering blob)( corpse)?"=green&bold
 MENUCOLOR="(tins? of )?(blue|spotted|ochre) jelly( corpse)?"=green&bold
 MENUCOLOR="(tins? of )?lichen|shrieker|violet fungus|(brown|yellow|green|red) mold( corpse)?"=green&bold
@@ -207,7 +178,7 @@ MENUCOLOR=" gain level"=magenta
 MENUCOLOR=" full healing"=magenta
 MENUCOLOR=" magic marker"=magenta
 MENUCOLOR=" magic lamp|lamp .* magic"=magenta
-MENUCOLOR=" unicorn horn[^[]*$"=magenta #this doesn't color the #enhance unicorn
+MENUCOLOR=" unicorn horn[^[]*$"=magenta
 MENUCOLOR=" tinning kit"=magenta
 MENUCOLOR=" ring .* regen(eration)?($| )"=magenta
 MENUCOLOR=" ring .* conflict"=magenta
@@ -257,7 +228,7 @@ MENUCOLOR=" (Longbow of Diana|Master Key of Thievery)"=lightgreen
 MENUCOLOR=" (Bell of Opening|silver bell|Candelabrum of Invocation|candelabrum|Book of the Dead|papyrus spellbook)"=magenta&bold
 
 #raison d'etre
-MENUCOLOR=" Amulet of Yendor named"=magenta&bold&underline
+MENUCOLOR=" Amulet of Yendor named"=magenta&bold
 
 ##################
 # CURSED GOODIES #
@@ -314,10 +285,10 @@ MENUCOLOR="[a-zA-Z ]+ [0-9]\*   [a-z]+ +[0-9]+%"=magenta
 ############
 # #ENHANCE # thanks itsblah
 ############
-MENUCOLOR="^ +[a-z -]+ +\[(Unskilled|Basic|Skilled|Expert|Master|Grand Master)\]$"=none           # normal
-MENUCOLOR="^ *[a-z] - +[a-z -]+ +\[(Unskilled|Basic|Skilled|Expert|Master|Grand Master)\]$"=white # ready to enhance
-MENUCOLOR="^ +\* +[a-z -]+ +\[(Unskilled|Basic|Skilled|Expert|Master|Grand Master)\]$"=white      # enhanceable if more skill slots
-MENUCOLOR="^ +# +[a-z -]+ +\[(Unskilled|Basic|Skilled|Expert|Master|Grand Master)\]$"=none        # enhanceable if more potential
+MENUCOLOR="^ +[a-z -]+ +\[(Unskilled|Basic|Skilled|Expert|Master|Grand Master)\]$"=gray
+MENUCOLOR="^ *[a-z] - +[a-z -]+ +\[(Unskilled|Basic|Skilled|Expert|Master|Grand Master)\]$"=white
+MENUCOLOR="^ +\* +[a-z -]+ +\[(Unskilled|Basic|Skilled|Expert|Master|Grand Master)\]$"=white
+MENUCOLOR="^ +# +[a-z -]+ +\[(Unskilled|Basic|Skilled|Expert|Master|Grand Master)\]$"=gray
 
 ################
 # FORCE COLORS #
@@ -338,57 +309,17 @@ MENUCOLOR="\{g\}"=lightgreen
 MENUCOLOR="\{b\}"=lightblue
 MENUCOLOR="\{[mp]\}"=lightmagenta
 MENUCOLOR="\{c\}"=lightcyan
-MENUCOLOR="\{N\}"=none
-MENUCOLOR="\{X\}"=bold
-MENUCOLOR="\{x\}"=dim
-MENUCOLOR="\{U\}"=underline
-MENUCOLOR="\{I\}"=inverse
-MENUCOLOR="\{K\}"=blink
+MENUCOLOR="\{N\}"=gray
 
 ######################
 # FIX ORDINARY MENUS #
 ######################
-MENUCOLOR=" is empty. Do what?"=none
-MENUCOLOR="Put something into .*"=none
-MENUCOLOR="Take something out of .*"=none
+MENUCOLOR=" is empty. Do what?"=gray
+MENUCOLOR="Put something into .*"=gray
+MENUCOLOR="Take something out of .*"=gray
 
-MENUCOLOR="unicorn horn.*(Unskilled|Basic|Skilled|Expert)"=none
-MENUCOLOR="Info on what a given key does."=none
-MENUCOLOR="Full list of keyboard commands."=none
-MENUCOLOR="altkeyhandler"=none
-MENUCOLOR="fruit.*\["=none
-
-###########################################################################
-# autopickup exceptions
-
-# autopickup items that have [,] in their name
-autopickup_exception="<* named *[,]*"
-autopickup_exception="<* called *[,]*"
-
-# never autopickup items that have [!,] in their name
-autopickup_exception="* named *[!,]*"
-autopickup_exception="* called *[!,]*"
-
-# crappy items
-autopickup_exception="* named* empty*"
-autopickup_exception="* named* crap*"
-autopickup_exception="* named* junk*"
-autopickup_exception="* named* worthless*"
-
-# we might want to autopickup food, but never corpses
-autopickup_exception="* corpse*"
-
-# really good items I don't normally autopickup
-autopickup_exception="<*magic marker*"
-autopickup_exception="<*magic lamp*"
-autopickup_exception="<*lamp called magic"
-autopickup_exception="<*silver bell*"
-autopickup_exception="<*Bell of Opening*"
-autopickup_exception="<*candelabrum*"
-autopickup_exception="<*Candelabrum*"
-autopickup_exception="<*Book of the Dead*"
-autopickup_exception="<*papyrus spellbook*"
-
-# Due to a bug in virus, you have to :wq immediately after pasting. If you want
-# to edit, then you can reopen your rcfile. If you edit after pasting, virus
-# crashes. Sorry :)
+MENUCOLOR="unicorn horn.*(Unskilled|Basic|Skilled|Expert)"=gray
+MENUCOLOR="Info on what a given key does."=gray
+MENUCOLOR="Full list of keyboard commands."=gray
+MENUCOLOR="altkeyhandler"=gray
+MENUCOLOR="fruit.*\["=gray

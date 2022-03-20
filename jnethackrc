@@ -1,0 +1,27 @@
+OPTIONS=windowtype:tty
+OPTIONS=name:sartak
+
+OPTIONS=hilite_pet
+OPTIONS=fruit:brain
+OPTIONS=autopickup,pickup_types:$!/="+?
+OPTIONS=disclose:+iagcv
+OPTIONS=!cmdassist,!help,!legacy,!news,suppress_alert:3.4.3
+OPTIONS=autodig,!prayconfirm,lootabc
+
+OPTIONS=msg_window:reverse,msghistory:1000
+OPTIONS=lit_corridor,color
+OPTIONS=showrace
+OPTIONS=!sparkle
+OPTIONS=showexp,time
+OPTIONS=runmode:teleport,!rest_on_space
+OPTIONS=number_pad:0
+OPTIONS=boulder:0
+OPTIONS=scores:10 top/3 around/own
+OPTIONS=pickup_burden:unencumbered
+
+# turn ghosts and shades into 'X' - great with telepathy for bones detection
+# turn ] mimics into 'm'
+OPTIONS=monsters:abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@X'&;:~m
+
+# turn water/lava into ~ so it looks nicer and is more distinct from fountains
+OPTIONS=dungeon: |--------||.-|++##.##<><>_|\\#{~.~..## #}
