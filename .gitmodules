@@ -10,3 +10,12 @@
 [submodule "vim/bundle/coc"]
 	path = vim/bundle/coc
 	url = git@github.com:neoclide/coc.nvim.git
+[submodule "vim/bundle/typescript-vim"]
+	path = vim/bundle/typescript-vim
+	url = git@github.com:leafgarland/typescript-vim.git
+[submodule "vim/bundle/vim-jsx-pretty"]
+	path = vim/bundle/vim-jsx-pretty
+	url = git@github.com:MaxMEllon/vim-jsx-pretty.git
+[submodule "vim/bundle/vim-js"]
+	path = vim/bundle/vim-js
+	url = git@github.com:yuezk/vim-js.git
