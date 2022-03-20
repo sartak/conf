@@ -7,9 +7,6 @@
 [submodule "vim/bundle/molokai"]
 	path = vim/bundle/molokai
 	url = git@github.com:tomasr/molokai.git
-[submodule "vim/bundle/rust"]
-	path = vim/bundle/rust
-	url = git@github.com:rust-lang/rust.vim.git
 [submodule "vim/bundle/coc"]
 	path = vim/bundle/coc
 	url = git@github.com:neoclide/coc.nvim.git
