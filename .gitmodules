@@ -4,3 +4,6 @@
 [submodule "vim/bundle/airline-themes"]
 	path = vim/bundle/airline-themes
 	url = git@github.com:vim-airline/vim-airline-themes
+[submodule "vim/bundle/molokai"]
+	path = vim/bundle/molokai
+	url = git@github.com:tomasr/molokai.git
