@@ -12,4 +12,5 @@ autocmd FocusLost * :wa
 
 " swapfiles have been nothing but a nuisance to me
 set noswapfile
-
+set nobackup
+set nowritebackup
