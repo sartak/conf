@@ -1,9 +1,4 @@
-" has to be done early
-source ~/.vim/bundle/sartak/plugin/ide.vim
+filetype plugin indent on
+syntax on
 
 execute pathogen#infect()
-
-" see vim/bundle/sartak/plugin/*.vim
-
-autocmd BufRead,BufNewFile *.map setlocal nowrap
-

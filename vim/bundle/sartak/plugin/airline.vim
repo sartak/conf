@@ -2,50 +2,6 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme='deus'
 let g:airline#extensions#whitespace#enabled = 0
 
-let g:gitgutter_eager = 0
-let g:gitgutter_realtime = 0
-let g:gitgutter_enabled = 0
-let g:gitgutter_override_sign_column_highlight = 0
-if exists('&signcolumn')
-  set signcolumn=yes
-else
-  let g:gitgutter_sign_column_always = 1
-endif
-
-let g:yankring_history_dir = '~/.vim/YankRing/'
-let g:yankring_history_file = 'history.txt'
-
-" the same as airline
-highlight SignColumn ctermbg=233
-
-highlight ALEErrorSign ctermfg=1 ctermbg=233
-highlight ALEWarningSign ctermfg=3 ctermbg=233
-
-highlight GitGutterAdd ctermfg=5 ctermbg=233
-highlight GitGutterChange ctermfg=5 ctermbg=233
-highlight GitGutterChangeDelete ctermfg=5 ctermbg=233
-highlight GitGutterDelete ctermfg=5 ctermbg=233
-
-let g:ale_sign_error = '！'
-let g:ale_sign_warning = '？'
-
-let g:gitgutter_sign_added = '・'
-let g:gitgutter_sign_modified = '・'
-let g:gitgutter_sign_removed = '・'
-let g:gitgutter_sign_removed_first_line = '・'
-let g:gitgutter_sign_modified_removed = '・'
-
-let g:ale_fixers = {'javascript': ['eslint'], 'json': ['prettier'], 'scss': ['prettier'], 'css': ['prettier']}
-let g:ale_fix_on_save = 1
-
-"let g:UltiSnipsUsePythonVersion = 2
-let g:UltiSnipsSnippetsDir = "~/.vim/UltiSnips"
-
-let g:closetag_filenames = "*.html,*.xhtml,*.js,*.jsx"
-let g:closetag_xhtml_filenames = '*.xhtml,*.js,*.jsx,*.erb'
-let g:closetag_emptyTags_caseSensitive = 1
-let g:closetag_shortcut = '>'
-
 function! AirlineInit()
       " let g:airline_skip_empty_sections = 1
  
