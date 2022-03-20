@@ -1,3 +1,6 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": ["*"]
+  "coc.preferences.formatOnSaveFiletypes": ["*"],
+  "sql.formatOptions": {
+    "linesBetweenQueries": 2
+  }
 }
