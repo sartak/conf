@@ -1,21 +1,21 @@
 [submodule "vim/bundle/airline"]
 	path = vim/bundle/airline
-	url = git@github.com:vim-airline/vim-airline
+	url = https://github.com/vim-airline/vim-airline.git
 [submodule "vim/bundle/airline-themes"]
 	path = vim/bundle/airline-themes
-	url = git@github.com:vim-airline/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes.git
 [submodule "vim/bundle/molokai"]
 	path = vim/bundle/molokai
-	url = git@github.com:tomasr/molokai.git
+	url = https://github.com/tomasr/molokai.git
 [submodule "vim/bundle/coc"]
 	path = vim/bundle/coc
-	url = git@github.com:neoclide/coc.nvim.git
+	url = https://github.com/neoclide/coc.nvim.git
 [submodule "vim/bundle/typescript-vim"]
 	path = vim/bundle/typescript-vim
-	url = git@github.com:leafgarland/typescript-vim.git
+	url = https://github.com/leafgarland/typescript-vim.git
 [submodule "vim/bundle/vim-jsx-pretty"]
 	path = vim/bundle/vim-jsx-pretty
-	url = git@github.com:MaxMEllon/vim-jsx-pretty.git
+	url = https://github.com/MaxMEllon/vim-jsx-pretty.git
 [submodule "vim/bundle/vim-js"]
 	path = vim/bundle/vim-js
-	url = git@github.com:yuezk/vim-js.git
+	url = https://github.com/yuezk/vim-js.git
