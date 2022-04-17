@@ -20,7 +20,7 @@ function fish_prompt
     switch $host
       case giedi-prime mana hydra
         set_color B300FF
-      case newyork maui hongkong junction phuket waikiki miami shiver
+      case newyork maui hongkong junction phuket waikiki miami shiver meteor nova
         set_color FFB400
       case vagrant
         set_color 2E00E6
