@@ -19,3 +19,6 @@
 [submodule "vim/bundle/vim-js"]
 	path = vim/bundle/vim-js
 	url = https://github.com/yuezk/vim-js.git
+[submodule "vim/bundle/vim-graphql"]
+	path = vim/bundle/vim-graphql
+	url = https://github.com/jparise/vim-graphql.git
