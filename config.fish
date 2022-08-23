@@ -55,3 +55,8 @@ end
 if not status --is-interactive
   set PATH /usr/local/bin $PATH
 end
+
+function nvm
+  bass source (brew --prefix nvm)/nvm.sh --no-use ';' nvm $argv
+end
+nvm use default --silent
