@@ -5,5 +5,11 @@
   },
   "javascript.suggest.autoImports": true,
   "typescript.suggest.autoImports": true,
-  "eslint.autoFixOnSave": true
+  "eslint.autoFixOnSave": true,
+  "snippets.extends": {
+    "javascriptreact": ["javascript"],
+    "typescript": ["javascript"],
+    "typescriptreact": ["typescript", "javascriptreact"]
+  },
+  "snippets.excludePatterns": ["$HOME/.config/coc/extensions/node_modules/**"]
 }
