@@ -17,4 +17,4 @@
 [init]
 	defaultBranch = master
 [merge]
-	conflictstyle = diff3
+	conflictstyle = zdiff3
