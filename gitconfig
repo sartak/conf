@@ -10,6 +10,7 @@
 
 [alias]
     freebase = rebase -i @{u}
+    ship = "!git push -fu origin HEAD && perl -e '$origin = `git remote get-url origin`; $origin =~ s!^git\\@github.com:(.*)\\.git$!! or exit; $branch = `git rev-parse --abbrev-ref HEAD`; system qq{open https://github.com/$1/pull/new/$branch}'"
 [pull]
 	rebase = false
 	ff = only
