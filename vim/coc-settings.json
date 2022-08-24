@@ -11,5 +11,6 @@
     "typescript": ["javascript"],
     "typescriptreact": ["typescript", "javascriptreact"]
   },
-  "snippets.excludePatterns": ["$HOME/.config/coc/extensions/node_modules/**"]
+  "snippets.excludePatterns": ["$HOME/.config/coc/extensions/node_modules/**"],
+  "coc.preferences.snippetHighlight": true
 }
