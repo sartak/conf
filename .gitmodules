@@ -49,3 +49,6 @@
 [submodule "vim/bundle/vim-textobj-user"]
 	path = vim/bundle/vim-textobj-user
 	url = git@github.com:kana/vim-textobj-user.git
+[submodule "vim/bundle/vim-textobj-variable-segment"]
+	path = vim/bundle/vim-textobj-variable-segment
+	url = git@github.com:Julian/vim-textobj-variable-segment.git
