@@ -58,3 +58,6 @@
 [submodule "vim/bundle/vim-space"]
 	path = vim/bundle/vim-space
 	url = git@github.com:vim-utils/vim-space.git
+[submodule "vim/bundle/textobj-word-column.vim"]
+	path = vim/bundle/textobj-word-column.vim
+	url = git@github.com:coderifous/textobj-word-column.vim.git
