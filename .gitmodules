@@ -64,3 +64,6 @@
 [submodule "vim/bundle/vim-indent-object"]
 	path = vim/bundle/vim-indent-object
 	url = git@github.com:michaeljsmith/vim-indent-object.git
+[submodule "vim/bundle/vim-easy-align"]
+	path = vim/bundle/vim-easy-align
+	url = git@github.com:junegunn/vim-easy-align.git
