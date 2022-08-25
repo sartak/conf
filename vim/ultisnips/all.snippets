@@ -57,3 +57,11 @@ endglobal
 snippet todo "TODO comment" bw
 `!p snip.rv=get_comment_format()[0]` TODO(shawn, `!v strftime('%Y-%m-%d')`): $0
 endsnippet
+
+snippet today "Today (YYYY-MM-DD)" bw
+`!v strftime('%Y-%m-%d')`
+endsnippet
+
+snippet now "Now (YYYY-MM-DD HH:MM:SS)" bw
+`!v strftime('%Y-%m-%d %H:%M:%S')`
+endsnippet
