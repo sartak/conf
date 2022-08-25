@@ -34,3 +34,6 @@
 [submodule "vim/bundle/vim-surround"]
 	path = vim/bundle/vim-surround
 	url = git@github.com:tpope/vim-surround.git
+[submodule "vim/bundle/vim-jdaddy"]
+	path = vim/bundle/vim-jdaddy
+	url = git@github.com:tpope/vim-jdaddy.git
