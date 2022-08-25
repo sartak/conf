@@ -55,3 +55,6 @@
 [submodule "vim/bundle/vim-pairs"]
 	path = vim/bundle/vim-pairs
 	url = git@github.com:kurkale6ka/vim-pairs.git
+[submodule "vim/bundle/vim-space"]
+	path = vim/bundle/vim-space
+	url = git@github.com:vim-utils/vim-space.git
