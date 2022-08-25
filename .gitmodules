@@ -37,3 +37,6 @@
 [submodule "vim/bundle/vim-jdaddy"]
 	path = vim/bundle/vim-jdaddy
 	url = git@github.com:tpope/vim-jdaddy.git
+[submodule "vim/bundle/vim-swap"]
+	path = vim/bundle/vim-swap
+	url = git@github.com:machakann/vim-swap.git
