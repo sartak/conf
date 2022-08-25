@@ -52,9 +52,6 @@
 [submodule "vim/bundle/vim-textobj-variable-segment"]
 	path = vim/bundle/vim-textobj-variable-segment
 	url = git@github.com:Julian/vim-textobj-variable-segment.git
-[submodule "vim/bundle/vim-pairs"]
-	path = vim/bundle/vim-pairs
-	url = git@github.com:kurkale6ka/vim-pairs.git
 [submodule "vim/bundle/vim-space"]
 	path = vim/bundle/vim-space
 	url = git@github.com:vim-utils/vim-space.git
@@ -70,3 +67,6 @@
 [submodule "vim/bundle/vim-better-whitespace"]
 	path = vim/bundle/vim-better-whitespace
 	url = git@github.com:ntpeters/vim-better-whitespace.git
+[submodule "vim/bundle/vim-pairs"]
+	path = vim/bundle/vim-pairs
+	url = git@github.com:sartak/vim-pairs.git
