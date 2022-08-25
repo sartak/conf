@@ -22,3 +22,6 @@
 [submodule "vim/bundle/vim-graphql"]
 	path = vim/bundle/vim-graphql
 	url = https://github.com/jparise/vim-graphql.git
+[submodule "vim/bundle/vim-matchit"]
+	path = vim/bundle/vim-matchit
+	url = git@github.com:adelarsq/vim-matchit.git
