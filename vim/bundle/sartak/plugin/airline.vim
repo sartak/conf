@@ -1,4 +1,4 @@
-let g:airline_theme='deus'
+let g:airline_theme='deusfork'
 let g:airline#extensions#whitespace#enabled = 0
 
 function! AirlineInit()
