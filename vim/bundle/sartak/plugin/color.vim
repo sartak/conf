@@ -20,3 +20,5 @@ hi String cterm=none ctermfg=215 guifg=#ffaf5f ctermbg=234 guibg=#1c1c1c
 hi CocSnippetVisual ctermfg=206 guifg=#ff5fd7
 
 hi SneakLabel ctermfg=15 guifg=#161616 ctermbg=161 guibg=#d7005f
+
+hi FloatermBorder guibg=#000000 guifg=#222222

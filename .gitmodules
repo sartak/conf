@@ -67,3 +67,6 @@
 [submodule "vim/bundle/vim-pairs"]
 	path = vim/bundle/vim-pairs
 	url = git@github.com:sartak/vim-pairs.git
+[submodule "vim/bundle/vim-floaterm"]
+	path = vim/bundle/vim-floaterm
+	url = git@github.com:voldikss/vim-floaterm.git

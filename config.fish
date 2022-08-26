@@ -16,36 +16,39 @@ set __fish_git_prompt_char_stagedstate '→'
 function fish_prompt
     set -l last_status $status
 
-    set -l host (hostname | sed 's/\..*//')
-    switch $host
-      case giedi-prime mana hydra
-        set_color B300FF
-      case newyork maui hongkong junction phuket waikiki miami shiver meteor nova
-        set_color FFB400
-      case vagrant
-        set_color 2E00E6
-      case '*'
-        set_color F6511D
+    if test -z "$VIM_TERMINAL"
+      set -l host (hostname | sed 's/\..*//')
+      switch $host
+        case giedi-prime mana hydra
+          set_color B300FF
+        case newyork maui hongkong junction phuket waikiki miami shiver meteor nova
+          set_color FFB400
+        case vagrant
+          set_color 2E00E6
+        case '*'
+          set_color F6511D
+      end
+
+      if [ "$HOST_OVERRIDE" != "" ]
+          set host $HOST_OVERRIDE
+      end
+
+      echo -n (whoami)'@'$host' '
+
+      set_color $fish_color_cwd
+      echo -n (prompt_pwd)
+
+      set_color -o yellow
+      echo -n (__fish_git_prompt)
+      echo -n ' '
     end
-
-    if [ "$HOST_OVERRIDE" != "" ]
-        set host $HOST_OVERRIDE
-    end
-
-    echo -n (whoami)'@'$host' '
-
-    set_color $fish_color_cwd
-    echo -n (prompt_pwd)
-
-    set_color -o yellow
-    echo -n (__fish_git_prompt)
 
     set_color normal
 
     if not [ $last_status -eq 0 ]
         set_color $fish_color_error
     end
-    echo -n ' $ '
+    echo -n '$ '
 end
 
 function fish_title
