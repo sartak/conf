@@ -13,5 +13,6 @@
   },
   "snippets.excludePatterns": ["$HOME/.config/coc/extensions/node_modules/**"],
   "coc.preferences.snippetHighlight": true,
-  "css.completion.completePropertyWithSemicolon": false
+  "css.completion.completePropertyWithSemicolon": false,
+  "colors.filetypes": ["*"]
 }
