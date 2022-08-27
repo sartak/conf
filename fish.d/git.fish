@@ -88,6 +88,8 @@ function git --wraps=git
 end
 
 function gs --wraps='git-number --column' --description 'git status'
+  set -l GIT (which git)
+  $GIT log -1 --format='format:%C(Yellow)%h%Creset %s'
   git-number -uall $argv
 end
 
