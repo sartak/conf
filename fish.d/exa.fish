@@ -1,7 +1,7 @@
 function ls --wraps=exa
   if not set -q argv[1]
     exa
-  else if [ "$argv[1]" = "-l" ]
+  else if test "$argv[1]" = "-l"; or test "$argv[1]" = "-la"
     echo -n "use " 1>&2
     set_color -o yellow
     echo -n "ll" 1>&2
