@@ -22,6 +22,9 @@ function git --wraps=git
     set_color -o yellow
     echo -n "gc" 1>&2
     set_color -o normal
+    echo -n " or " 1>&2
+    echo -n "gca" 1>&2
+    set_color -o normal
     echo " instead" 1>&2
     return 1
   end
@@ -49,6 +52,15 @@ function gc --wraps='git commit' --description 'alias gc=git commit'
     $GIT commit
   else
     $GIT commit -m "$argv"
+  end
+end
+
+function gca --wraps='git commit --amend' --description 'alias gca=git commit --amend'
+  set -l GIT (which git)
+  if not set -q argv[1]
+    $GIT commit --amend
+  else
+    $GIT commit --amend -m "$argv"
   end
 end
 
