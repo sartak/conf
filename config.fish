@@ -10,6 +10,7 @@ end
 set fish_greeting ""
 
 set __fish_git_prompt_show_informative_status 'yes'
+set __fish_git_prompt_showuntrackedfiles 'yes'
 set __fish_git_prompt_char_dirtystate '⚡'
 set __fish_git_prompt_char_stagedstate '→'
 
