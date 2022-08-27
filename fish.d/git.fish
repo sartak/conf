@@ -23,7 +23,12 @@ function git --wraps=git
     echo -n "gc" 1>&2
     set_color -o normal
     echo -n " or " 1>&2
+    set_color -o yellow
     echo -n "gca" 1>&2
+    set_color -o normal
+    echo -n " or " 1>&2
+    set_color -o yellow
+    echo -n "gcan" 1>&2
     set_color -o normal
     echo " instead" 1>&2
     return 1
@@ -87,6 +92,24 @@ function gca --wraps='git commit --amend' --description 'alias gca=git commit --
     $GIT commit --amend
   else
     $GIT commit --amend -m "$argv"
+  end
+end
+
+function gcan --wraps='git commit --amend --no-edit' --description 'alias gcan=git commit --amend --no-edit'
+  set -l GIT (which git)
+  if not set -q argv[1]
+    $GIT commit --amend --no-edit
+  else
+    echo -n "use " 1>&2
+    set_color -o yellow
+    echo -n "gc" 1>&2
+    set_color -o normal
+    echo -n " or " 1>&2
+    set_color -o yellow
+    echo -n "gca" 1>&2
+    set_color -o normal
+    echo " instead" 1>&2
+    return 1
   end
 end
 
