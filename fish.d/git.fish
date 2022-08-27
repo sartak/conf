@@ -130,6 +130,7 @@ end
 function gcn --wraps='git commit --amend --no-edit' --description 'alias gcn=git commit --amend --no-edit'
   set -l GIT (which git)
   if not set -q argv[1]
+    $GIT add -p
     $GIT commit --amend --no-edit
   else
     echo -n "use " 1>&2
