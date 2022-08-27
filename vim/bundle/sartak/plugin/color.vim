@@ -25,3 +25,14 @@ hi CocSnippetVisual ctermfg=206 guifg=#ff5fd7
 hi SneakLabel ctermfg=15 guifg=#161616 ctermbg=161 guibg=#d7005f
 
 hi FloatermBorder guibg=#000000 guifg=#222222
+
+" fix gui blue for ctermfg=81 in molokai
+hi Define          guifg=#5fd7ff
+hi SpecialKey      guifg=#5fd7ff
+hi PmenuThumb      guifg=#5fd7ff
+hi Question        guifg=#5fd7ff
+hi Special         guifg=#5fd7ff
+hi Structure       guifg=#5fd7ff
+hi Typedef         guifg=#5fd7ff
+hi Type            guifg=#5fd7ff
+hi WildMenu        guifg=#5fd7ff
