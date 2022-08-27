@@ -1,3 +1,7 @@
+inoremap <silent> <C-F> <Esc>:FloatermNew<CR>
+nnoremap <silent> <C-F> :FloatermNew<CR>
+vnoremap <silent> <C-F> :<C-U>FloatermNew<CR>
+
 " Floaterm seems to ignore termwinkey override
 tnoremap <C-w> <C-w>.
 
