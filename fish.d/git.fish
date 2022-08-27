@@ -379,7 +379,3 @@ function gv --wraps='git-number -c vim' --description 'git-number -c vim'
   git-number -c vim $argv
 end
 
-function grm --wraps='git-number -c rm' --description 'git-number -c rm'
-  git-number -c rm $argv
-end
-
