@@ -3,6 +3,7 @@
   email = code@sartak.org
 [core]
   whitespace=-blank-at-eof
+  pager=delta
 [commit]
   verbose=true
 [alias]
@@ -18,3 +19,10 @@
   statusHints = false
 [interactive]
   singlekey = true
+  diffFilter = delta --color-only
+[delta]
+  navigate = true
+  line-numbers = true
+  hyperlinks = true
+[diff]
+  colorMoved = default
