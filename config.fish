@@ -58,3 +58,5 @@ end
 if not status --is-interactive
   set PATH /usr/local/bin $PATH
 end
+
+zoxide init fish | source
