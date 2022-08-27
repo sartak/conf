@@ -25,6 +25,25 @@ hi CocSnippetVisual ctermfg=206 guifg=#ff5fd7
 hi SneakLabel ctermfg=15 guifg=#161616 ctermbg=161 guibg=#d7005f
 
 hi FloatermBorder guibg=#000000 guifg=#222222
+let g:fzf_colors =
+\ { 'fg':         ['fg', 'Normal'],
+  \ 'fg+':        ['fg', 'Normal'],
+  \ 'bg':         ['bg', 'Normal'],
+  \ 'bg+':        ['bg', 'Normal'],
+  \ 'hl':         ['bg', 'IncSearch'],
+  \ 'hl+':        ['bg', 'IncSearch'],
+  \ 'preview-fg': ['fg', 'Normal'],
+  \ 'preview-bg': ['bg', 'Normal'],
+  \ 'gutter':     ['bg', 'Normal'],
+  \ 'pointer':    ['fg', 'Structure'],
+  \ 'marker':     ['fg', 'Conditional'],
+  \ 'query':      ['fg', 'Type'],
+  \ 'disabled':   ['bg', 'Normal'],
+  \ 'border':     ['fg', 'FloatermBorder'],
+  \ 'info':       ['fg', 'Comment'],
+  \ 'prompt':     ['fg', 'Exception'],
+  \ 'spinner':    ['fg', 'Exception'],
+  \ 'header':     ['fg', 'Normal'] }
 
 " fix gui blue for ctermfg=81 in molokai
 hi Define          guifg=#5fd7ff
