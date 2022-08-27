@@ -88,7 +88,7 @@ function git --wraps=git
 end
 
 function gs --wraps='git-number --column' --description 'alias gs=git-number --column'
-  git-number --column -uall $argv
+  git-number -uall $argv
 end
 
 function ga --wraps='git-number add' --description 'alias ga=git-number add'
