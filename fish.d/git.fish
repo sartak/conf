@@ -67,3 +67,14 @@ end
 function gv --wraps='git-number -c vim' --description 'alias gv=git-number -c vim'
   git-number -c vim $argv
 end
+
+function gg
+  set -l GIT (which git)
+  $GIT add -p
+  if not set -q argv[1]
+    $GIT commit --amend --no-edit
+  else
+    $GIT commit --amend -m "$argv"
+  end
+  $GIT push -f
+end
