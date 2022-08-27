@@ -14,5 +14,9 @@
   "snippets.excludePatterns": ["$HOME/.config/coc/extensions/node_modules/**"],
   "coc.preferences.snippetHighlight": true,
   "css.completion.completePropertyWithSemicolon": false,
-  "colors.filetypes": ["css", "html"]
+  "colors.filetypes": ["css", "html"],
+  "javascript.disableProgressNotifications": true,
+  "typescript.disableProgressNotifications": true,
+  "rust-analyzer.disableProgressNotifications": true,
+  "go.disableProgressNotifications": true
 }
