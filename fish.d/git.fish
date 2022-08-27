@@ -17,6 +17,15 @@ function git --wraps=git
     return 1
   end
 
+  if [ $argv[1] = "commit" ]
+    echo -n "use " 1>&2
+    set_color -o yellow
+    echo -n "gc" 1>&2
+    set_color -o normal
+    echo " instead" 1>&2
+    return 1
+  end
+
   set -l GIT (which git)
   $GIT $argv
 end
@@ -31,6 +40,15 @@ function ga --wraps='git-number add' --description 'alias ga=git-number add'
     $GIT add -p
   else
     git-number add $argv
+  end
+end
+
+function gc --wraps='git commit' --description 'alias gc=git commit'
+  set -l GIT (which git)
+  if not set -q argv[1]
+    $GIT commit
+  else
+    $GIT commit -m "$argv"
   end
 end
 
