@@ -69,6 +69,19 @@ function git --wraps=git
     return 1
   end
 
+  if [ $argv[1] = "log" ]
+    echo -n "use " 1>&2
+    set_color -o yellow
+    echo -n "gl" 1>&2
+    set_color -o normal
+    echo -n " or " 1>&2
+    set_color -o yellow
+    echo -n "glp" 1>&2
+    set_color -o normal
+    echo " instead" 1>&2
+    return 1
+  end
+
   set -l GIT (which git)
   $GIT $argv
 end
@@ -195,6 +208,34 @@ function gx --wraps='git rebase -i' --description 'alias gx=git rebase -i'
   end
 
   $GIT rebase -i $BASE
+end
+
+function gl --wraps='git log' --description 'alias gl=git log'
+  set -l GIT (which git)
+  $GIT log $argv
+end
+
+function glp --wraps='git log -p' --description 'alias glp=git log -p'
+  set -l GIT (which git)
+  if not set -q argv[1]
+    set -l BRANCH ($GIT branch --show-current)
+    if test "$BRANCH" = "master"; or test "$BRANCH" = "main"
+      # if the user gave no input and we're already on master or main, then
+      # just git log -p
+      $GIT log -p
+    else
+      # user gave no input but we're on a branch, so compare to master or main
+      $GIT rev-parse --verify main >/dev/null 2>&1
+      if test $status -eq 0
+        set BASE main
+      else
+        set BASE master
+      end
+      $GIT log -p --reverse $BASE..HEAD
+    end
+  else
+    $GIT log -p $argv
+  end
 end
 
 function gv --wraps='git-number -c vim' --description 'alias gv=git-number -c vim'
