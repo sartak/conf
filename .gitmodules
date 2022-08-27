@@ -82,3 +82,6 @@
 [submodule "vim/bundle/vim-mundo"]
 	path = vim/bundle/vim-mundo
 	url = git@github.com:simnalamburt/vim-mundo.git
+[submodule "vim/bundle/splitjoin.vim"]
+	path = vim/bundle/splitjoin.vim
+	url = git@github.com:AndrewRadev/splitjoin.vim.git
