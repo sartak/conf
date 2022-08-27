@@ -46,6 +46,15 @@ function git --wraps=git
     return 1
   end
 
+  if [ $argv[1] = "rebase" ]
+    echo -n "use " 1>&2
+    set_color -o yellow
+    echo -n "gx" 1>&2
+    set_color -o normal
+    echo " instead" 1>&2
+    return 1
+  end
+
   set -l GIT (which git)
   $GIT $argv
 end
@@ -115,6 +124,36 @@ function grh --wraps='git reset --hard' --description 'alias grh=git reset --har
   else
     $GIT reset --hard $argv
   end
+end
+
+function gx --wraps='git rebase -i' --description 'alias gx=git rebase -i'
+  set -l GIT (which git)
+
+  if not set -q argv[1]
+    set -l BRANCH ($GIT branch --show-current)
+    if test "$BRANCH" = "master"; or test "$BRANCH" = "main"
+      # if we're on master, then let's rebase back 20 commits if possible
+      $GIT rev-parse --verify HEAD~20 >/dev/null 2>&1
+      if test $status -eq 0
+        set BASE HEAD~20
+      else
+        set BASE --root
+      end
+    else
+      # if the user gave no input, we'll rebase off whichever of master or main
+      # that exists
+      $GIT rev-parse --verify main >/dev/null 2>&1
+      if test $status -eq 0
+        set BASE main
+      else
+        set BASE master
+      end
+    end
+  else
+    set BASE $argv
+  end
+
+  $GIT rebase -i $BASE
 end
 
 function gv --wraps='git-number -c vim' --description 'alias gv=git-number -c vim'
