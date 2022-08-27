@@ -9,3 +9,7 @@ function ga --wraps='git-number add' --description 'alias ga=git-number add'
     git-number add $argv
   end
 end
+
+function gv --wraps='git-number -c vim' --description 'alias gv=git-number -c vim'
+  git-number -c vim $argv
+end
