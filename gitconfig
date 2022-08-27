@@ -16,3 +16,5 @@
   conflictstyle = zdiff3
 [advice]
   statusHints = false
+[interactive]
+  singlekey = true
