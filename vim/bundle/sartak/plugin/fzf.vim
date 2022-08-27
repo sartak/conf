@@ -2,7 +2,7 @@ inoremap <C-T> <Esc>:Files<CR>
 nnoremap <C-T> :Files<CR>
 vnoremap <C-T> :<C-U>Files<CR>
 
-cabbrev e USE CTRL-T!
-cabbrev ed USE CTRL-T!
-cabbrev edi USE CTRL-T!
-cabbrev edit USE CTRL-T!
+cnoreabbrev <expr> e getcmdtype() == ":" && getcmdline() == 'e' ? 'USE CTRL-T!' : 'e'
+cnoreabbrev <expr> ed getcmdtype() == ":" && getcmdline() == 'ed' ? 'USE CTRL-T!' : 'ed'
+cnoreabbrev <expr> edi getcmdtype() == ":" && getcmdline() == 'edi' ? 'USE CTRL-T!' : 'edi'
+cnoreabbrev <expr> edit getcmdtype() == ":" && getcmdline() == 'edit' ? 'USE CTRL-T!' : 'edit'
