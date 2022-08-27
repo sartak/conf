@@ -354,6 +354,17 @@ function glp --wraps='git log -p' --description 'git log -p'
   end
 end
 
+function gu --wraps 'git pull' --description 'git pull'
+  set -l GIT (which git)
+  $GIT pull $argv
+end
+
+function guh --wraps 'git fetch' --description 'git fetch && git reset --hard'
+  set -l GIT (which git)
+  $GIT fetch $argv
+  $GIT reset --hard @{u}
+end
+
 function gn --wraps='git-number -c' --description 'git-number -c'
   git-number -c $argv
 end
