@@ -18,3 +18,5 @@
 	defaultBranch = master
 [merge]
 	conflictstyle = zdiff3
+[advice]
+	statusHints = false
