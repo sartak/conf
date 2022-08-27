@@ -239,6 +239,10 @@ function glp --wraps='git log -p' --description 'alias glp=git log -p'
   end
 end
 
+function gn --wraps='git-number -c' --description 'alias gn=git-number -c'
+  git-number -c $argv
+end
+
 function gv --wraps='git-number -c vim' --description 'alias gv=git-number -c vim'
   git-number -c vim $argv
 end
