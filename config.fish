@@ -22,8 +22,11 @@ function fish_prompt
       switch $host
         case giedi-prime mana hydra
           set_color B300FF
-        case newyork maui hongkong junction phuket waikiki miami shiver meteor nova
+        case newyork maui waikiki miami meteor nova
           set_color FFB400
+        case hongkong phuket shiver
+          set_color FFB400
+          echo -n (whoami)'@'
         case vagrant
           set_color 2E00E6
         case '*'
@@ -34,7 +37,7 @@ function fish_prompt
           set host $HOST_OVERRIDE
       end
 
-      echo -n (whoami)'@'$host' '
+      echo -n $host' '
 
       set_color $fish_color_cwd
       echo -n (prompt_pwd)
