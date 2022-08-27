@@ -73,3 +73,9 @@
 [submodule "vim/bundle/vim-fish-syntax"]
 	path = vim/bundle/vim-fish-syntax
 	url = git@github.com:khaveesh/vim-fish-syntax.git
+[submodule "vim/bundle/fzf.vim"]
+	path = vim/bundle/fzf.vim
+	url = git@github.com:junegunn/fzf.vim.git
+[submodule "vim/bundle/fzf"]
+	path = vim/bundle/fzf
+	url = git@github.com:junegunn/fzf.git
