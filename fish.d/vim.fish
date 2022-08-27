@@ -11,3 +11,9 @@ function v --wraps=vim --description 'alias v=vim'
   set -l VIM (which vim)
   $VIM $argv
 end
+
+# we need this wrapper to avoid executing our vim retrain
+function edit_command
+  set -xl VISUAL vi
+  edit_command_buffer
+end
