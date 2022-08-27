@@ -79,3 +79,6 @@
 [submodule "vim/bundle/fzf"]
 	path = vim/bundle/fzf
 	url = git@github.com:junegunn/fzf.git
+[submodule "vim/bundle/vim-mundo"]
+	path = vim/bundle/vim-mundo
+	url = git@github.com:simnalamburt/vim-mundo.git
