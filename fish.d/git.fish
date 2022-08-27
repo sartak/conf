@@ -87,11 +87,11 @@ function git --wraps=git
   echo "consider adding a retrain or an alias for this git command"
 end
 
-function gs --wraps='git-number --column' --description 'alias gs=git-number --column'
+function gs --wraps='git-number --column' --description 'git status'
   git-number -uall $argv
 end
 
-function ga --wraps='git-number add' --description 'alias ga=git-number add'
+function ga --wraps='git-number add' --description 'git add'
   if not set -q argv[1]
     set -l GIT (which git)
     $GIT add -p
@@ -100,7 +100,7 @@ function ga --wraps='git-number add' --description 'alias ga=git-number add'
   end
 end
 
-function gco --wraps='git checkout' --description 'alias gco=git-checkout'
+function gco --wraps='git checkout' --description 'git checkout'
   if not set -q argv[1]
     set -l GIT (which git)
     $GIT checkout -p
@@ -109,7 +109,7 @@ function gco --wraps='git checkout' --description 'alias gco=git-checkout'
   end
 end
 
-function gc --wraps='git commit' --description 'alias gc=git commit'
+function gc --description 'git commit'
   set -l GIT (which git)
   if not set -q argv[1]
     $GIT commit
@@ -118,7 +118,38 @@ function gc --wraps='git commit' --description 'alias gc=git commit'
   end
 end
 
-function gca --wraps='git commit --amend' --description 'alias gca=git commit --amend'
+function gcp --description 'git commit; git push'
+  set -l GIT (which git)
+  if not set -q argv[1]
+    $GIT commit
+  else
+    $GIT commit -m "$argv"
+  end
+  $GIT push
+end
+
+function gac --description 'git add; git commit'
+  set -l GIT (which git)
+  $GIT add -p
+  if not set -q argv[1]
+    $GIT commit
+  else
+    $GIT commit -m "$argv"
+  end
+end
+
+function gacp --description 'git add; git commit; git push'
+  set -l GIT (which git)
+  $GIT add -p
+  if not set -q argv[1]
+    $GIT commit
+  else
+    $GIT commit -m "$argv"
+  end
+  $GIT push
+end
+
+function gca --description 'git commit --amend'
   set -l GIT (which git)
   if not set -q argv[1]
     $GIT commit --amend
@@ -127,23 +158,106 @@ function gca --wraps='git commit --amend' --description 'alias gca=git commit --
   end
 end
 
-function gcn --wraps='git commit --amend --no-edit' --description 'alias gcn=git commit --amend --no-edit'
+function gcap --description 'git commit --amend; git push -f'
   set -l GIT (which git)
   if not set -q argv[1]
-    $GIT add -p
+    $GIT commit --amend
+  else
+    $GIT commit --amend -m "$argv"
+  end
+  $GIT push -f
+end
+
+function gaca --description 'git add; git commit --amend'
+  set -l GIT (which git)
+  $GIT add -p
+  if not set -q argv[1]
+    $GIT commit --amend
+  else
+    $GIT commit --amend -m "$argv"
+  end
+end
+
+function gacap --description 'git add; git commit --amend; git push -f'
+  set -l GIT (which git)
+  $GIT add -p
+  if not set -q argv[1]
+    $GIT commit --amend
+  else
+    $GIT commit --amend -m "$argv"
+  end
+  $GIT push -f
+end
+
+function gcn --description 'git commit --amend --no-edit'
+  set -l GIT (which git)
+  if not set -q argv[1]
     $GIT commit --amend --no-edit
   else
     echo -n "use " 1>&2
-    set_color -o yellow
-    echo -n "gc" 1>&2
-    set_color -o normal
-    echo -n " or " 1>&2
     set_color -o yellow
     echo -n "gca" 1>&2
     set_color -o normal
     echo " instead" 1>&2
     return 1
   end
+end
+
+function gcnp --description 'git commit --amend --no-edit; git push -f'
+  set -l GIT (which git)
+  if not set -q argv[1]
+    $GIT commit --amend --no-edit
+    $GIT push -f
+  else
+    echo -n "use " 1>&2
+    set_color -o yellow
+    echo -n "gcap" 1>&2
+    set_color -o normal
+    echo " instead" 1>&2
+    return 1
+  end
+end
+
+function gacn --description 'git add; git commit --amend --no-edit'
+  set -l GIT (which git)
+  $GIT add -p
+  if not set -q argv[1]
+    $GIT commit --amend --no-edit
+  else
+    echo -n "use " 1>&2
+    set_color -o yellow
+    echo -n "gaca" 1>&2
+    set_color -o normal
+    echo " instead" 1>&2
+    return 1
+  end
+end
+
+function gacnp --description 'git add; git commit --amend --no-edit; git push -f'
+  set -l GIT (which git)
+  $GIT add -p
+  if not set -q argv[1]
+    $GIT commit --amend --no-edit
+    $GIT push -f
+  else
+    echo -n "use " 1>&2
+    set_color -o yellow
+    echo -n "gacap" 1>&2
+    set_color -o normal
+    echo " instead" 1>&2
+    return 1
+  end
+end
+
+function gq --description 'git add; git commit --amend [--no-edit]; git push -f'
+  set -l GIT (which git)
+  $GIT add -p
+  if not set -q argv[1]
+    $GIT commit --amend --no-edit
+  else
+    $GIT commit --amend -m "$argv"
+  end
+  $GIT push -f
 end
 
 function gr --wraps='git reset' --description 'alias gr=git reset'
@@ -252,13 +366,3 @@ function grm --wraps='git-number -c rm' --description 'alias grm=git-number -c r
   git-number -c rm $argv
 end
 
-function gg
-  set -l GIT (which git)
-  $GIT add -p
-  if not set -q argv[1]
-    $GIT commit --amend --no-edit
-  else
-    $GIT commit --amend -m "$argv"
-  end
-  $GIT push -f
-end
