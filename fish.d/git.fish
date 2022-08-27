@@ -282,6 +282,8 @@ function grm --wraps='git reset --mixed' --description 'git reset --mixed'
   set -l GIT (which git)
   if not set -q argv[1]
     $GIT reset --mixed @{u}
+  else if string match -qr '^[0-9]+$' -- "$argv[1]"
+    $GIT reset --mixed HEAD~$argv[1]
   else
     $GIT reset --mixed $argv
   end
@@ -291,6 +293,8 @@ function grh --wraps='git reset --hard' --description 'git reset --hard'
   set -l GIT (which git)
   if not set -q argv[1]
     $GIT reset --hard @{u}
+  else if string match -qr '^[0-9]+$' -- "$argv[1]"
+    $GIT reset --hard HEAD~$argv[1]
   else
     $GIT reset --hard $argv
   end
