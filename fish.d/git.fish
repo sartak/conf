@@ -17,6 +17,15 @@ function git --wraps=git
     return 1
   end
 
+  if [ $argv[1] = "checkout" ]
+    echo -n "use " 1>&2
+    set_color -o yellow
+    echo -n "gco" 1>&2
+    set_color -o normal
+    echo " instead" 1>&2
+    return 1
+  end
+
   if [ $argv[1] = "commit" ]
     echo -n "use " 1>&2
     set_color -o yellow
@@ -74,6 +83,15 @@ function ga --wraps='git-number add' --description 'alias ga=git-number add'
     $GIT add -p
   else
     git-number add $argv
+  end
+end
+
+function gco --wraps='git checkout' --description 'alias gco=git-checkout'
+  if not set -q argv[1]
+    set -l GIT (which git)
+    $GIT checkout -p
+  else
+    git-number checkout $argv
   end
 end
 
