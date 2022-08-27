@@ -1,0 +1,5 @@
+startup_message off
+bell_msg ""
+maptimeout 50
+defutf8 on
+truecolor on
