@@ -247,6 +247,10 @@ function gv --wraps='git-number -c vim' --description 'alias gv=git-number -c vi
   git-number -c vim $argv
 end
 
+function grm --wraps='git-number -c rm' --description 'alias grm=git-number -c rm'
+  git-number -c rm $argv
+end
+
 function gg
   set -l GIT (which git)
   $GIT add -p
