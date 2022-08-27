@@ -260,7 +260,7 @@ function gq --description 'git add; git commit --amend [--no-edit]; git push -f'
   $GIT push -f
 end
 
-function gr --wraps='git reset' --description 'alias gr=git reset'
+function gr --wraps='git reset' --description 'git reset'
   if not set -q argv[1]
     set -l GIT (which git)
     $GIT reset
@@ -278,7 +278,7 @@ function gr --wraps='git reset' --description 'alias gr=git reset'
   end
 end
 
-function grm --wraps='git reset --mixed' --description 'alias grm=git reset --mixed'
+function grm --wraps='git reset --mixed' --description 'git reset --mixed'
   set -l GIT (which git)
   if not set -q argv[1]
     $GIT reset --mixed @{u}
@@ -287,7 +287,7 @@ function grm --wraps='git reset --mixed' --description 'alias grm=git reset --mi
   end
 end
 
-function grh --wraps='git reset --hard' --description 'alias grh=git reset --hard'
+function grh --wraps='git reset --hard' --description 'git reset --hard'
   set -l GIT (which git)
   if not set -q argv[1]
     $GIT reset --hard @{u}
@@ -296,7 +296,7 @@ function grh --wraps='git reset --hard' --description 'alias grh=git reset --har
   end
 end
 
-function gx --wraps='git rebase -i' --description 'alias gx=git rebase -i'
+function gx --wraps='git rebase -i' --description 'git rebase -i'
   set -l GIT (which git)
 
   if not set -q argv[1]
@@ -326,12 +326,12 @@ function gx --wraps='git rebase -i' --description 'alias gx=git rebase -i'
   $GIT rebase -i $BASE
 end
 
-function gl --wraps='git log' --description 'alias gl=git log'
+function gl --wraps='git log' --description 'git log'
   set -l GIT (which git)
   $GIT log $argv
 end
 
-function glp --wraps='git log -p' --description 'alias glp=git log -p'
+function glp --wraps='git log -p' --description 'git log -p'
   set -l GIT (which git)
   if not set -q argv[1]
     set -l BRANCH ($GIT branch --show-current)
@@ -354,15 +354,15 @@ function glp --wraps='git log -p' --description 'alias glp=git log -p'
   end
 end
 
-function gn --wraps='git-number -c' --description 'alias gn=git-number -c'
+function gn --wraps='git-number -c' --description 'git-number -c'
   git-number -c $argv
 end
 
-function gv --wraps='git-number -c vim' --description 'alias gv=git-number -c vim'
+function gv --wraps='git-number -c vim' --description 'git-number -c vim'
   git-number -c vim $argv
 end
 
-function grm --wraps='git-number -c rm' --description 'alias grm=git-number -c rm'
+function grm --wraps='git-number -c rm' --description 'git-number -c rm'
   git-number -c rm $argv
 end
 
