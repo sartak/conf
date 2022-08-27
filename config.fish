@@ -60,3 +60,5 @@ if not status --is-interactive
 end
 
 zoxide init fish | source
+
+fzf_configure_bindings --directory=\ct --git_log= --git_status= --history= --variables= --processes=\cp
