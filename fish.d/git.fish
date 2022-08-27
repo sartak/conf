@@ -29,6 +29,23 @@ function git --wraps=git
     return 1
   end
 
+  if [ $argv[1] = "reset" ]
+    echo -n "use " 1>&2
+    set_color -o yellow
+    echo -n "gr" 1>&2
+    set_color -o normal
+    echo -n " or " 1>&2
+    set_color -o yellow
+    echo -n "grm" 1>&2
+    set_color -o normal
+    echo -n " or " 1>&2
+    set_color -o yellow
+    echo -n "grh" 1>&2
+    set_color -o normal
+    echo " instead" 1>&2
+    return 1
+  end
+
   set -l GIT (which git)
   $GIT $argv
 end
@@ -61,6 +78,42 @@ function gca --wraps='git commit --amend' --description 'alias gca=git commit --
     $GIT commit --amend
   else
     $GIT commit --amend -m "$argv"
+  end
+end
+
+function gr --wraps='git reset' --description 'alias gr=git reset'
+  if not set -q argv[1]
+    set -l GIT (which git)
+    $GIT reset
+  else
+    echo -n "use " 1>&2
+    set_color -o yellow
+    echo -n "grm" 1>&2
+    set_color -o normal
+    echo -n " or " 1>&2
+    set_color -o yellow
+    echo -n "grh" 1>&2
+    set_color -o normal
+    echo " instead" 1>&2
+    return 1
+  end
+end
+
+function grm --wraps='git reset --mixed' --description 'alias grm=git reset --mixed'
+  set -l GIT (which git)
+  if not set -q argv[1]
+    $GIT reset --mixed @{u}
+  else
+    $GIT reset --mixed $argv
+  end
+end
+
+function grh --wraps='git reset --hard' --description 'alias grh=git reset --hard'
+  set -l GIT (which git)
+  if not set -q argv[1]
+    $GIT reset --hard @{u}
+  else
+    $GIT reset --hard $argv
   end
 end
 
