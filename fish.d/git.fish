@@ -1,10 +1,26 @@
+function git --wraps=git
+  if [ $argv[1] = "status" ]
+    echo "use gs instead" 1>&2
+    return 1
+  end
+
+  if [ $argv[1] = "add" ]
+    echo "use ga instead" 1>&2
+    return 1
+  end
+
+  set -l GIT (which git)
+  $GIT $argv
+end
+
 function gs --wraps='git-number --column' --description 'alias gs=git-number --column'
   git-number --column -uall $argv
 end
 
 function ga --wraps='git-number add' --description 'alias ga=git-number add'
   if not set -q argv[1]
-    git add -p
+    set -l GIT (which git)
+    $GIT add -p
   else
     git-number add $argv
   end
