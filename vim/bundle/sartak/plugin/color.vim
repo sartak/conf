@@ -4,7 +4,10 @@ colorscheme molokai
 
 hi Normal ctermbg=none guibg=#000000
 
-hi Comment cterm=italic
+" macOS isn't telling latest vim about italics correctly
+let &t_ZH="\e[3m"
+let &t_ZR="\e[23m"
+hi Comment term=bold cterm=italic ctermfg=59 gui=italic guifg=#5f5f5f
 
 hi Pmenu ctermfg=8 guifg=#555555 ctermbg=0 guibg=#000000
 hi CocMenuSel ctermfg=white guifg=#FFFFFF ctermbg=17 guibg=#00005f
