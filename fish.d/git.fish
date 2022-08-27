@@ -1,11 +1,19 @@
 function git --wraps=git
   if [ $argv[1] = "status" ]
-    echo "use gs instead" 1>&2
+    echo -n "use " 1>&2
+    set_color -o yellow
+    echo -n "gs" 1>&2
+    set_color -o normal
+    echo " instead" 1>&2
     return 1
   end
 
   if [ $argv[1] = "add" ]
-    echo "use ga instead" 1>&2
+    echo -n "use " 1>&2
+    set_color -o yellow
+    echo -n "ga" 1>&2
+    set_color -o normal
+    echo " instead" 1>&2
     return 1
   end
 
