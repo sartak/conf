@@ -61,5 +61,15 @@ end
 
 zoxide init fish | source
 
+# this retrain has to go here, after loading zoxide
+function cd --wraps cd
+  echo -n "use " 1>&2
+  set_color -o yellow
+  echo -n "z" 1>&2
+  set_color -o normal
+  echo " instead" 1>&2
+  return 1
+end
+
 fzf_configure_bindings --directory=\ct --git_log= --git_status= --history= --variables= --processes=\cp
 set -x fzf_preview_dir_cmd exa --git-ignore -l --color=always --no-time --no-user --no-permissions --git
