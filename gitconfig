@@ -1,22 +1,18 @@
 [user]
-    name = Shawn M Moore
-    email = code@sartak.org
-
+  name = Shawn M Moore
+  email = code@sartak.org
 [core]
-    whitespace=-blank-at-eof
-
+  whitespace=-blank-at-eof
 [commit]
-    verbose=true
-
+  verbose=true
 [alias]
-    freebase = rebase -i @{u}
-    ship = "!git push -fu origin HEAD && perl -e '$origin = `git remote get-url origin`; $origin =~ s!^git\\@github.com:(.*)\\.git$!! or exit; $branch = `git rev-parse --abbrev-ref HEAD`; system qq{open https://github.com/$1/pull/new/$branch}'"
+  ship = "!git push -fu origin HEAD && perl -e '$origin = `git remote get-url origin`; $origin =~ s!^git\\@github.com:(.*)\\.git$!! or exit; $branch = `git rev-parse --abbrev-ref HEAD`; system qq{open https://github.com/$1/pull/new/$branch}'"
 [pull]
-	rebase = false
-	ff = only
+  rebase = false
+  ff = only
 [init]
-	defaultBranch = master
+  defaultBranch = master
 [merge]
-	conflictstyle = zdiff3
+  conflictstyle = zdiff3
 [advice]
-	statusHints = false
+  statusHints = false
