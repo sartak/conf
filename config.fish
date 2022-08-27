@@ -62,3 +62,4 @@ end
 zoxide init fish | source
 
 fzf_configure_bindings --directory=\ct --git_log= --git_status= --history= --variables= --processes=\cp
+set -x fzf_preview_dir_cmd exa --git-ignore -l --color=always --no-time --no-user --no-permissions --git
