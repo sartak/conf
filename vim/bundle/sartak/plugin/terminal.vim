@@ -1,6 +1,6 @@
-inoremap <silent> <C-F> <Esc>:FloatermNew<CR>
-nnoremap <silent> <C-F> :FloatermNew<CR>
-vnoremap <silent> <C-F> :<C-U>FloatermNew<CR>
+inoremap <silent> <C-F> <Esc>:FloatermToggle<CR>
+nnoremap <silent> <C-F> :FloatermToggle<CR>
+vnoremap <silent> <C-F> :<C-U>FloatermToggle<CR>
 
 " Floaterm seems to ignore termwinkey override
 tnoremap <C-w> <C-w>.
