@@ -49,9 +49,9 @@ function git --wraps=git
     if not set -q argv[2]
       echo -n "gr" 1>&2
     else if [ $argv[2] = "--hard" ]
-      echo -n "ghr" 1>&2
+      echo -n "grh" 1>&2
     else if [ $argv[2] = "--mixed" ]
-      echo -n "gmr" 1>&2
+      echo -n "grm" 1>&2
     else
       echo -n "gr" 1>&2
     end
@@ -382,7 +382,7 @@ function gr --wraps='git reset' --description 'git reset'
   end
 end
 
-function gmr --wraps='git reset --mixed' --description 'git reset --mixed'
+function grm --wraps='git reset --mixed' --description 'git reset --mixed'
   set -l GIT (which git)
   if not set -q argv[1]
     $GIT reset --mixed @{u}
@@ -393,7 +393,7 @@ function gmr --wraps='git reset --mixed' --description 'git reset --mixed'
   end
 end
 
-function ghr --wraps='git reset --hard' --description 'git reset --hard'
+function grh --wraps='git reset --hard' --description 'git reset --hard'
   set -l GIT (which git)
   if not set -q argv[1]
     $GIT reset --hard @{u}
@@ -489,7 +489,7 @@ function gv --wraps='git-number -c vim' --description 'git-number -c vim'
   git-number -c vim $argv
 end
 
-function grm --wraps='git-number -c rm' --description 'git-number -c rm'
+function gnr --wraps='git-number -c rm' --description 'git-number -c rm'
   git-number -c rm $argv
 end
 
