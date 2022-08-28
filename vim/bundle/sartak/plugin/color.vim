@@ -36,3 +36,6 @@ hi Structure       guifg=#5fd7ff
 hi Typedef         guifg=#5fd7ff
 hi Type            guifg=#5fd7ff
 hi WildMenu        guifg=#5fd7ff
+
+hi link gitcommitParentHash	Comment
+hi link gitcommitParentSummary String
