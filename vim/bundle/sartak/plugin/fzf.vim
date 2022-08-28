@@ -17,7 +17,7 @@ let g:coc_fzf_preview = 'down:75%,wrap,border-horizontal'
 let g:coc_fzf_opts = []
 
 function! RipgrepFzf(query, fullscreen)
-  let command_fmt = 'rg --no-heading --color=always -- %s'
+  let command_fmt = 'rg --column --no-heading --color=always -- %s'
   let initial_command = printf(command_fmt, shellescape(a:query))
   let reload_command = printf(command_fmt, '{q}')
   let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
