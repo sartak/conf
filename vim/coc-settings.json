@@ -14,7 +14,9 @@
     "typescriptreact": ["typescript", "javascriptreact"]
   },
   "snippets.excludePatterns": ["$HOME/.config/coc/extensions/node_modules/**"],
-  "coc.preferences.snippetHighlight": true,
+  "snippet.highlight": true,
+  "coc.preferences.nextPlaceholderOnDelete": true,
+  "snippet.nextPlaceholderOnDelete": true,
   "colors.filetypes": ["css", "html"],
   "javascript.disableProgressNotifications": true,
   "typescript.disableProgressNotifications": true,
