@@ -130,6 +130,16 @@ function gcp --description 'git commit; git push'
   $GIT push
 end
 
+function gcpf --description 'git commit; git push -f'
+  set -l GIT (which git)
+  if not set -q argv[1]
+    $GIT commit
+  else
+    $GIT commit -m "$argv"
+  end
+  $GIT push -f
+end
+
 function gac --description 'git add; git commit'
   set -l GIT (which git)
   $GIT add -p
@@ -151,6 +161,17 @@ function gacp --description 'git add; git commit; git push'
   $GIT push
 end
 
+function gacpf --description 'git add; git commit; git push -f'
+  set -l GIT (which git)
+  $GIT add -p
+  if not set -q argv[1]
+    $GIT commit
+  else
+    $GIT commit -m "$argv"
+  end
+  $GIT push -f
+end
+
 function gca --description 'git commit --amend'
   set -l GIT (which git)
   if not set -q argv[1]
@@ -168,6 +189,10 @@ function gcap --description 'git commit --amend; git push -f'
     $GIT commit --amend -m "$argv"
   end
   $GIT push -f
+end
+
+function gcapf --description 'git commit --amend; git push -f'
+  gcap $argv
 end
 
 function gaca --description 'git add; git commit --amend'
@@ -189,6 +214,10 @@ function gacap --description 'git add; git commit --amend; git push -f'
     $GIT commit --amend -m "$argv"
   end
   $GIT push -f
+end
+
+function gacapf --description 'git add; git commit --amend; git push -f'
+  gacap $argv
 end
 
 function gcn --description 'git commit --amend --no-edit'
@@ -220,6 +249,10 @@ function gcnp --description 'git commit --amend --no-edit; git push -f'
   end
 end
 
+function gcnpf --description 'git commit --amend --no-edit; git push -f'
+  gcnp $argv
+end
+
 function gacn --description 'git add; git commit --amend --no-edit'
   set -l GIT (which git)
   $GIT add -p
@@ -249,6 +282,10 @@ function gacnp --description 'git add; git commit --amend --no-edit; git push -f
     echo " instead" 1>&2
     return 1
   end
+end
+
+function gacnpf --description 'git add; git commit --amend --no-edit; git push -f'
+  gacnp $argv
 end
 
 function gq --description 'git add; git commit --amend [--no-edit]; git push -f'
