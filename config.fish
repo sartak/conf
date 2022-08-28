@@ -89,6 +89,7 @@ set -x FZF_DEFAULT_OPTS '--cycle --layout=reverse --border --height=90% --previe
 set -x RIPGREP_CONFIG_PATH ~/.config/ripgreprc
 
 bind \cg fzf_grep
+bind \cz fzf_z
 
 # this has to go late as well
 bind \cv edit_command
