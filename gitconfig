@@ -29,3 +29,5 @@
   hyperlinks = true
 [diff]
   colorMoved = default
+[include]
+  path = "~/.local/gitconfig"
