@@ -2,7 +2,7 @@ function fzf_grep --description "Grep the current directory. Replace the current
     set rg_opts --no-heading --line-number --color=always $fzf_rg_opts --
     set rg_bin (which rg)
 
-    set fzf_arguments --multi --ansi --phony --delimiter=':' $fzf_grep_opts
+    set fzf_arguments --multi --ansi --phony --delimiter=':' --preview-window='+{2}-/2' $fzf_grep_opts
     set token (commandline --current-token)
     # expand any variables or leading tilde (~) in the token
     set expanded_token (eval echo -- $token)
