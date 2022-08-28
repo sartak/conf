@@ -167,16 +167,7 @@ function gacpf --description 'git add; git commit; git push -f'
   $GIT push -f
 end
 
-function gca --description 'git commit --amend'
-  set -l GIT (which git)
-  if not set -q argv[1]
-    $GIT commit --amend
-  else
-    $GIT commit --amend -m "$argv"
-  end
-end
-
-function gcap --description 'git commit --amend; git push -f'
+function gep --description 'git commit --amend; git push -f'
   set -l GIT (which git)
   if not set -q argv[1]
     $GIT commit --amend
@@ -186,11 +177,16 @@ function gcap --description 'git commit --amend; git push -f'
   $GIT push -f
 end
 
-function gcapf --description 'git commit --amend; git push -f'
-  gcap $argv
+function gepf
+  echo -n "use " 1>&2
+  set_color -o yellow
+  echo -n "gep" 1>&2
+  set_color -o normal
+  echo " instead" 1>&2
+  return 1
 end
 
-function gaca --description 'git add; git commit --amend'
+function gae --description 'git add; git commit --amend'
   set -l GIT (which git)
   $GIT add -p
   if not set -q argv[1]
@@ -200,7 +196,7 @@ function gaca --description 'git add; git commit --amend'
   end
 end
 
-function gacap --description 'git add; git commit --amend; git push -f'
+function gaep --description 'git add; git commit --amend; git push -f'
   set -l GIT (which git)
   $GIT add -p
   if not set -q argv[1]
@@ -211,8 +207,13 @@ function gacap --description 'git add; git commit --amend; git push -f'
   $GIT push -f
 end
 
-function gacapf --description 'git add; git commit --amend; git push -f'
-  gacap $argv
+function gaepf
+  echo -n "use " 1>&2
+  set_color -o yellow
+  echo -n "gaep" 1>&2
+  set_color -o normal
+  echo " instead" 1>&2
+  return 1
 end
 
 function gcn --description 'git commit --amend --no-edit'
