@@ -216,18 +216,7 @@ function gaepf
   return 1
 end
 
-function gcn --description 'git commit --amend --no-edit'
-  set -l GIT (which git)
-  if not set -q argv[1]
-    $GIT commit --amend --no-edit
-  else
-    set_color -o yellow
-    echo -n "this command takes no args" 1>&2
-    return 1
-  end
-end
-
-function gcnp --description 'git commit --amend --no-edit; git push -f'
+function gnp --description 'git commit --amend --no-edit; git push -f'
   set -l GIT (which git)
   if not set -q argv[1]
     $GIT commit --amend --no-edit
@@ -239,11 +228,16 @@ function gcnp --description 'git commit --amend --no-edit; git push -f'
   end
 end
 
-function gcnpf --description 'git commit --amend --no-edit; git push -f'
-  gcnp $argv
+function gnpf
+  echo -n "use " 1>&2
+  set_color -o yellow
+  echo -n "gnp" 1>&2
+  set_color -o normal
+  echo " instead" 1>&2
+  return 1
 end
 
-function gacn --description 'git add; git commit --amend --no-edit'
+function gan --description 'git add; git commit --amend --no-edit'
   set -l GIT (which git)
   $GIT add -p
   if not set -q argv[1]
@@ -255,7 +249,7 @@ function gacn --description 'git add; git commit --amend --no-edit'
   end
 end
 
-function gacnp --description 'git add; git commit --amend --no-edit; git push -f'
+function ganp --description 'git add; git commit --amend --no-edit; git push -f'
   set -l GIT (which git)
   $GIT add -p
   if not set -q argv[1]
@@ -268,8 +262,13 @@ function gacnp --description 'git add; git commit --amend --no-edit; git push -f
   end
 end
 
-function gacnpf --description 'git add; git commit --amend --no-edit; git push -f'
-  gacnp $argv
+function ganpf --description 'git add; git commit --amend --no-edit; git push -f'
+  echo -n "use " 1>&2
+  set_color -o yellow
+  echo -n "ganp" 1>&2
+  set_color -o normal
+  echo " instead" 1>&2
+  return 1
 end
 
 function gq --description 'git add; git commit --amend [--no-edit]; git push -f'
