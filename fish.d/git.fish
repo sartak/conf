@@ -50,11 +50,11 @@ function git --wraps=git
     set_color -o normal
     echo -n " or " 1>&2
     set_color -o yellow
-    echo -n "grm" 1>&2
+    echo -n "gmr" 1>&2
     set_color -o normal
     echo -n " or " 1>&2
     set_color -o yellow
-    echo -n "grh" 1>&2
+    echo -n "ghr" 1>&2
     set_color -o normal
     echo " instead" 1>&2
     return 1
@@ -269,18 +269,18 @@ function gr --wraps='git reset' --description 'git reset'
   else
     echo -n "use " 1>&2
     set_color -o yellow
-    echo -n "grm" 1>&2
+    echo -n "gmr" 1>&2
     set_color -o normal
     echo -n " or " 1>&2
     set_color -o yellow
-    echo -n "grh" 1>&2
+    echo -n "ghr" 1>&2
     set_color -o normal
     echo " instead" 1>&2
     return 1
   end
 end
 
-function grm --wraps='git reset --mixed' --description 'git reset --mixed'
+function gmr --wraps='git reset --mixed' --description 'git reset --mixed'
   set -l GIT (which git)
   if not set -q argv[1]
     $GIT reset --mixed @{u}
@@ -291,7 +291,7 @@ function grm --wraps='git reset --mixed' --description 'git reset --mixed'
   end
 end
 
-function grh --wraps='git reset --hard' --description 'git reset --hard'
+function ghr --wraps='git reset --hard' --description 'git reset --hard'
   set -l GIT (which git)
   if not set -q argv[1]
     $GIT reset --hard @{u}
@@ -377,5 +377,9 @@ end
 
 function gv --wraps='git-number -c vim' --description 'git-number -c vim'
   git-number -c vim $argv
+end
+
+function grm --wraps='git-number -c rm' --description 'git-number -c rm'
+  git-number -c rm $argv
 end
 
