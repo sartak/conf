@@ -1,0 +1,11 @@
+--colors=match:none
+--colors=match:fg:0x00,0x00,0x00
+--colors=match:bg:0xFF,0xD7,0x00
+
+--colors=path:none
+--colors=path:fg:39
+
+--colors=line:none
+--colors=line:fg:0xA6,0xE2,0x2E
+--colors=column:none
+--colors=column:fg:0xA6,0xE2,0x2E
