@@ -11,8 +11,9 @@ set scrolloff=3
 " When editing a file, always jump to the last cursor position
 autocmd BufReadPost *
 \  if line("'\"") > 0 && line("'\"") <= line("$") |
-\    exe "normal g`\"" |
+\    exe "normal! g`\"" |
 \  endif
 
 " Stay at top of the file for git commit
-autocmd BufReadPost */.git/COMMIT_EDITMSG exe "normal gg0"
+autocmd BufReadPost */.git/COMMIT_EDITMSG exe "normal! gg0"
+autocmd BufReadPost */.git/rebase-merge/git-rebase-todo exe "normal! gg0}k"
