@@ -7,7 +7,8 @@
 [commit]
   verbose=true
 [alias]
-  ship = "!git push -fu origin HEAD && perl -e '$origin = `git remote get-url origin`; $origin =~ s!^git\\@github.com:(.*)\\.git$!! or exit; $branch = `git rev-parse --abbrev-ref HEAD`; system qq{open https://github.com/$1/pull/new/$branch}'"
+  pr = "!perl -e '$origin = `git remote get-url origin`; $origin =~ s!^git\\@github.com:(.*)\\.git$!! or exit; $branch = `git rev-parse --abbrev-ref HEAD`; system qq{open https://github.com/$1/pull/new/$branch}'"
+  ship = !git push -fu origin HEAD && git pr
 [pull]
   rebase = false
   ff = only
