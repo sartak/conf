@@ -15,4 +15,4 @@ autocmd BufReadPost *
 \  endif
 
 " Stay at top of the file for git commit
-autocmd BufReadPost */.git/COMMIT_EDITMSG exe "normal gg"
+autocmd BufReadPost */.git/COMMIT_EDITMSG exe "normal gg0"
