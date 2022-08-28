@@ -1,18 +1,20 @@
 function ls --wraps=exa
-  if not set -q argv[1]
-    exa
-  else if test "$argv[1]" = "-l"; or test "$argv[1]" = "-la"
-    echo -n "use " 1>&2
-    set_color -o yellow
-    echo -n "ll" 1>&2
-    set_color -o normal
-    echo " instead" 1>&2
-    return 1
-  else
-    exa $argv
-  end
+  echo -n "use " 1>&2
+  set_color -o yellow
+  echo -n "l" 1>&2
+  set_color -o normal
+  echo -n " or " 1>&2
+  set_color -o yellow
+  echo -n "ll" 1>&2
+  set_color -o normal
+  echo " instead" 1>&2
+  return 1
 end
 
-function ll --wraps='exa' --description 'alias ll=exa -l --git'
+function l --wraps='exa' --description 'exa'
+  exa $argv
+end
+
+function ll --wraps='exa' --description 'exa -l'
   exa -l --git $argv
 end
