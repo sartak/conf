@@ -94,3 +94,6 @@
 [submodule "vim/bundle/vim-speeddating"]
 	path = vim/bundle/vim-speeddating
 	url = git@github.com:tpope/vim-speeddating.git
+[submodule "vim/bundle/coc-fzf"]
+	path = vim/bundle/coc-fzf
+	url = git@github.com:antoinemadec/coc-fzf.git
