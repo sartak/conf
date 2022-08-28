@@ -91,3 +91,6 @@
 [submodule "vim/bundle/vim-test"]
 	path = vim/bundle/vim-test
 	url = git@github.com:vim-test/vim-test.git
+[submodule "vim/bundle/vim-speeddating"]
+	path = vim/bundle/vim-speeddating
+	url = git@github.com:tpope/vim-speeddating.git
