@@ -1,4 +1,10 @@
 function grep --wraps=grep
+  if set -q VIMRUNTIME
+    set -l GREP (which grep)
+    $GREP $argv
+    return
+  end
+
   echo -n "use " 1>&2
   set_color -o yellow
   echo -n "g" 1>&2
@@ -8,6 +14,12 @@ function grep --wraps=grep
 end
 
 function rg --wraps=rg
+  if set -q VIMRUNTIME
+    set -l RG (which rg)
+    $RG $argv
+    return
+  end
+
   echo -n "use " 1>&2
   set_color -o yellow
   echo -n "g" 1>&2
