@@ -31,31 +31,26 @@ function git --wraps=git
     set_color -o yellow
     echo -n "gc" 1>&2
     set_color -o normal
-    echo -n " or " 1>&2
-    set_color -o yellow
-    echo -n "gca" 1>&2
-    set_color -o normal
-    echo -n " or " 1>&2
-    set_color -o yellow
-    echo -n "gcn" 1>&2
-    set_color -o normal
-    echo " instead" 1>&2
+    echo " (etc) instead" 1>&2
     return 1
   end
 
   if [ $argv[1] = "reset" ]
     echo -n "use " 1>&2
+
     set_color -o yellow
-    echo -n "gr" 1>&2
+
+    if not set -q argv[2]
+      echo -n "gr" 1>&2
+    else if [ $argv[2] = "--hard" ]
+      echo -n "ghr" 1>&2
+    else if [ $argv[2] = "--mixed" ]
+      echo -n "gmr" 1>&2
+    else
+      echo -n "gr" 1>&2
+    end
     set_color -o normal
-    echo -n " or " 1>&2
-    set_color -o yellow
-    echo -n "gmr" 1>&2
-    set_color -o normal
-    echo -n " or " 1>&2
-    set_color -o yellow
-    echo -n "ghr" 1>&2
-    set_color -o normal
+
     echo " instead" 1>&2
     return 1
   end
@@ -225,11 +220,8 @@ function gcn --description 'git commit --amend --no-edit'
   if not set -q argv[1]
     $GIT commit --amend --no-edit
   else
-    echo -n "use " 1>&2
     set_color -o yellow
-    echo -n "gca" 1>&2
-    set_color -o normal
-    echo " instead" 1>&2
+    echo -n "this command takes no args" 1>&2
     return 1
   end
 end
@@ -240,11 +232,8 @@ function gcnp --description 'git commit --amend --no-edit; git push -f'
     $GIT commit --amend --no-edit
     $GIT push -f
   else
-    echo -n "use " 1>&2
     set_color -o yellow
-    echo -n "gcap" 1>&2
-    set_color -o normal
-    echo " instead" 1>&2
+    echo -n "this command takes no args" 1>&2
     return 1
   end
 end
@@ -259,11 +248,8 @@ function gacn --description 'git add; git commit --amend --no-edit'
   if not set -q argv[1]
     $GIT commit --amend --no-edit
   else
-    echo -n "use " 1>&2
     set_color -o yellow
-    echo -n "gaca" 1>&2
-    set_color -o normal
-    echo " instead" 1>&2
+    echo -n "this command takes no args" 1>&2
     return 1
   end
 end
@@ -275,11 +261,8 @@ function gacnp --description 'git add; git commit --amend --no-edit; git push -f
     $GIT commit --amend --no-edit
     $GIT push -f
   else
-    echo -n "use " 1>&2
     set_color -o yellow
-    echo -n "gacap" 1>&2
-    set_color -o normal
-    echo " instead" 1>&2
+    echo -n "this command takes no args" 1>&2
     return 1
   end
 end
@@ -304,15 +287,8 @@ function gr --wraps='git reset' --description 'git reset'
     set -l GIT (which git)
     $GIT reset
   else
-    echo -n "use " 1>&2
     set_color -o yellow
-    echo -n "gmr" 1>&2
-    set_color -o normal
-    echo -n " or " 1>&2
-    set_color -o yellow
-    echo -n "ghr" 1>&2
-    set_color -o normal
-    echo " instead" 1>&2
+    echo -n "this command takes no args" 1>&2
     return 1
   end
 end
