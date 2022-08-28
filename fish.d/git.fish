@@ -62,13 +62,31 @@ function git --wraps=git
   end
 
   if [ $argv[1] = "rebase" ]
-    echo -n "use " 1>&2
-    set_color -o yellow
-    echo -n "gx" 1>&2
-    set_color -o normal
-    echo " instead" 1>&2
-    return 1
+    if not set -q argv[2]
+    else if [ $argv[2] = "-i" ]
+      echo -n "use " 1>&2
+      set_color -o yellow
+      echo -n "gx" 1>&2
+      set_color -o normal
+      echo " (etc) instead" 1>&2
+      return 1
+    else if [ $argv[2] = "--abort" ]
+      echo -n "use " 1>&2
+      set_color -o yellow
+      echo -n "gxa" 1>&2
+      set_color -o normal
+      echo " (etc) instead" 1>&2
+      return 1
+    else if [ $argv[2] = "--continue" ]
+      echo -n "use " 1>&2
+      set_color -o yellow
+      echo -n "gxc" 1>&2
+      set_color -o normal
+      echo " (etc) instead" 1>&2
+      return 1
+    end
   end
+
 
   if [ $argv[1] = "log" ]
     echo -n "use " 1>&2
@@ -414,6 +432,14 @@ function gx --wraps='git rebase -i' --description 'git rebase -i'
   end
 
   $GIT rebase -i $BASE
+end
+
+function gxa --wraps='git rebase --abort' --description 'git rebase --abort'
+  $GIT rebase --abort $argv
+end
+
+function gxc --wraps='git rebase --continue' --description 'git rebase --continue'
+  $GIT rebase --continue $argv
 end
 
 function gl --wraps='git log' --description 'git log'
