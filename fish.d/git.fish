@@ -297,7 +297,7 @@ function gnp --description 'git commit --amend --no-edit; git push -f'
     $GIT push -f
   else
     set_color -o yellow
-    echo -n "this command takes no args" 1>&2
+    echo "this command takes no args" 1>&2
     return 1
   end
 end
@@ -309,7 +309,7 @@ function gns --description 'git commit --amend --no-edit; git ship'
     $GIT ship
   else
     set_color -o yellow
-    echo -n "this command takes no args" 1>&2
+    echo "this command takes no args" 1>&2
     return 1
   end
 end
@@ -325,7 +325,7 @@ function gan --description 'git add; git commit --amend --no-edit'
     $GIT commit --amend --no-edit
   else
     set_color -o yellow
-    echo -n "this command takes no args" 1>&2
+    echo "this command takes no args" 1>&2
     return 1
   end
 end
@@ -338,7 +338,7 @@ function ganp --description 'git add; git commit --amend --no-edit; git push -f'
     $GIT push -f
   else
     set_color -o yellow
-    echo -n "this command takes no args" 1>&2
+    echo "this command takes no args" 1>&2
     return 1
   end
 end
@@ -351,7 +351,7 @@ function gans --description 'git add; git commit --amend --no-edit; git ship'
     $GIT ship
   else
     set_color -o yellow
-    echo -n "this command takes no args" 1>&2
+    echo "this command takes no args" 1>&2
     return 1
   end
 end
@@ -377,7 +377,18 @@ function gr --wraps='git reset' --description 'git reset'
     $GIT reset
   else
     set_color -o yellow
-    echo -n "this command takes no args" 1>&2
+    echo "this command takes no args" 1>&2
+    return 1
+  end
+end
+
+function grmu --wraps='git reset --mixed @{u}' --description 'git reset --mixed @{u}'
+  if not set -q argv[1]
+    set -l GIT (which git)
+    $GIT reset --mixed @{u}
+  else
+    set_color -o yellow
+    echo "this command takes no args" 1>&2
     return 1
   end
 end
@@ -385,20 +396,45 @@ end
 function grm --wraps='git reset --mixed' --description 'git reset --mixed'
   set -l GIT (which git)
   if not set -q argv[1]
-    $GIT reset --mixed @{u}
+    $GIT reset --mixed
   else if string match -qr '^[0-9]+$' -- "$argv[1]"
     $GIT reset --mixed HEAD~$argv[1]
+  else if test "$argv[1]" = "@{u}"
+    echo -n "use " 1>&2
+    set_color -o yellow
+    echo -n "grmu" 1>&2
+    set_color -o normal
+    echo " instead" 1>&2
+    return 1
   else
     $GIT reset --mixed $argv
+  end
+end
+
+function grhu --wraps='git reset --hard @{u}' --description 'git reset --hard @{u}'
+  if not set -q argv[1]
+    set -l GIT (which git)
+    $GIT reset --hard @{u}
+  else
+    set_color -o yellow
+    echo "this command takes no args" 1>&2
+    return 1
   end
 end
 
 function grh --wraps='git reset --hard' --description 'git reset --hard'
   set -l GIT (which git)
   if not set -q argv[1]
-    $GIT reset --hard @{u}
+    $GIT reset --hard
   else if string match -qr '^[0-9]+$' -- "$argv[1]"
     $GIT reset --hard HEAD~$argv[1]
+  else if test "$argv[1]" = "@{u}"
+    echo -n "use " 1>&2
+    set_color -o yellow
+    echo -n "grhu" 1>&2
+    set_color -o normal
+    echo " instead" 1>&2
+    return 1
   else
     $GIT reset --hard $argv
   end
