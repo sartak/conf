@@ -125,6 +125,16 @@ function gcp --description 'git commit; git push'
   $GIT push
 end
 
+function gcs --description 'git commit; git ship'
+  set -l GIT (which git)
+  if not set -q argv[1]
+    $GIT commit
+  else
+    $GIT commit -m "$argv"
+  end
+  $GIT ship
+end
+
 function gcpf --description 'git commit; git push -f'
   set -l GIT (which git)
   if not set -q argv[1]
@@ -156,6 +166,17 @@ function gacp --description 'git add; git commit; git push'
   $GIT push
 end
 
+function gacs --description 'git add; git commit; git ship'
+  set -l GIT (which git)
+  $GIT add -p
+  if not set -q argv[1]
+    $GIT commit
+  else
+    $GIT commit -m "$argv"
+  end
+  $GIT ship
+end
+
 function gacpf --description 'git add; git commit; git push -f'
   set -l GIT (which git)
   $GIT add -p
@@ -175,6 +196,16 @@ function gep --description 'git commit --amend; git push -f'
     $GIT commit --amend -m "$argv"
   end
   $GIT push -f
+end
+
+function ges --description 'git commit --amend; git ship'
+  set -l GIT (which git)
+  if not set -q argv[1]
+    $GIT commit --amend
+  else
+    $GIT commit --amend -m "$argv"
+  end
+  $GIT ship
 end
 
 function gepf
@@ -207,6 +238,17 @@ function gaep --description 'git add; git commit --amend; git push -f'
   $GIT push -f
 end
 
+function gaes --description 'git add; git commit --amend; git ship'
+  set -l GIT (which git)
+  $GIT add -p
+  if not set -q argv[1]
+    $GIT commit --amend
+  else
+    $GIT commit --amend -m "$argv"
+  end
+  $GIT ship
+end
+
 function gaepf
   echo -n "use " 1>&2
   set_color -o yellow
@@ -221,6 +263,18 @@ function gnp --description 'git commit --amend --no-edit; git push -f'
   if not set -q argv[1]
     $GIT commit --amend --no-edit
     $GIT push -f
+  else
+    set_color -o yellow
+    echo -n "this command takes no args" 1>&2
+    return 1
+  end
+end
+
+function gns --description 'git commit --amend --no-edit; git ship'
+  set -l GIT (which git)
+  if not set -q argv[1]
+    $GIT commit --amend --no-edit
+    $GIT ship
   else
     set_color -o yellow
     echo -n "this command takes no args" 1>&2
@@ -255,6 +309,19 @@ function ganp --description 'git add; git commit --amend --no-edit; git push -f'
   if not set -q argv[1]
     $GIT commit --amend --no-edit
     $GIT push -f
+  else
+    set_color -o yellow
+    echo -n "this command takes no args" 1>&2
+    return 1
+  end
+end
+
+function gans --description 'git add; git commit --amend --no-edit; git ship'
+  set -l GIT (which git)
+  $GIT add -p
+  if not set -q argv[1]
+    $GIT commit --amend --no-edit
+    $GIT ship
   else
     set_color -o yellow
     echo -n "this command takes no args" 1>&2
