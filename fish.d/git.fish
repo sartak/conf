@@ -1,4 +1,10 @@
 function git --wraps=git
+  if set -q VIMRUNTIME
+    set -l GIT (which git)
+    $GIT $argv
+    return
+  end
+
   if [ $argv[1] = "status" ]
     echo -n "use " 1>&2
     set_color -o yellow
