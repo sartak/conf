@@ -83,6 +83,24 @@ function git --wraps=git
     return 1
   end
 
+  if [ $argv[1] = "push" ]
+    if not set -q argv[2]
+      echo -n "use " 1>&2
+      set_color -o yellow
+      echo -n "gcp" 1>&2
+      set_color -o normal
+      echo " (etc) instead" 1>&2
+      return 1
+    else if [ $argv[2] = "-f" ]
+      echo -n "use " 1>&2
+      set_color -o yellow
+      echo -n "gcf" 1>&2
+      set_color -o normal
+      echo " (etc) instead" 1>&2
+      return 1
+    end
+  end
+
   set -l GIT (which git)
   $GIT $argv
   echo "consider adding a retrain or an alias for this git command"
@@ -141,7 +159,7 @@ function gcs --description 'git commit; git ship'
   $GIT ship
 end
 
-function gcpf --description 'git commit; git push -f'
+function gcf --description 'git commit; git push -f'
   set -l GIT (which git)
   if not set -q argv[1]
     $GIT commit
@@ -183,7 +201,7 @@ function gacs --description 'git add; git commit; git ship'
   $GIT ship
 end
 
-function gacpf --description 'git add; git commit; git push -f'
+function gacf --description 'git add; git commit; git push -f'
   set -l GIT (which git)
   $GIT add -p
   if not set -q argv[1]
@@ -204,6 +222,10 @@ function gep --description 'git commit --amend; git push -f'
   $GIT push -f
 end
 
+function gef
+  gep $argv
+end
+
 function ges --description 'git commit --amend; git ship'
   set -l GIT (which git)
   if not set -q argv[1]
@@ -212,15 +234,6 @@ function ges --description 'git commit --amend; git ship'
     $GIT commit --amend -m "$argv"
   end
   $GIT ship
-end
-
-function gepf
-  echo -n "use " 1>&2
-  set_color -o yellow
-  echo -n "gep" 1>&2
-  set_color -o normal
-  echo " instead" 1>&2
-  return 1
 end
 
 function gae --description 'git add; git commit --amend'
@@ -255,13 +268,8 @@ function gaes --description 'git add; git commit --amend; git ship'
   $GIT ship
 end
 
-function gaepf
-  echo -n "use " 1>&2
-  set_color -o yellow
-  echo -n "gaep" 1>&2
-  set_color -o normal
-  echo " instead" 1>&2
-  return 1
+function gaef
+  gaep $argv
 end
 
 function gnp --description 'git commit --amend --no-edit; git push -f'
@@ -288,13 +296,8 @@ function gns --description 'git commit --amend --no-edit; git ship'
   end
 end
 
-function gnpf
-  echo -n "use " 1>&2
-  set_color -o yellow
-  echo -n "gnp" 1>&2
-  set_color -o normal
-  echo " instead" 1>&2
-  return 1
+function gnf
+  gnp $argv
 end
 
 function gan --description 'git add; git commit --amend --no-edit'
@@ -335,13 +338,8 @@ function gans --description 'git add; git commit --amend --no-edit; git ship'
   end
 end
 
-function ganpf --description 'git add; git commit --amend --no-edit; git push -f'
-  echo -n "use " 1>&2
-  set_color -o yellow
-  echo -n "ganp" 1>&2
-  set_color -o normal
-  echo " instead" 1>&2
-  return 1
+function ganf --description 'git add; git commit --amend --no-edit; git push -f'
+  ganp $argv
 end
 
 function gq --description 'git add; git commit --amend [--no-edit]; git push -f'
