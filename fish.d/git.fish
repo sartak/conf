@@ -557,3 +557,14 @@ function gbda --wraps='git branch -D' --description 'git branch -D'
     return 1
   end
 end
+
+function gua --wraps='git un-amend' --description 'git un-amend'
+  if not set -q argv[1]
+    set -l GIT (which git)
+    $GIT un-amend
+  else
+    set_color -o yellow
+    echo "this command takes no args" 1>&2
+    return 1
+  end
+end

@@ -11,6 +11,7 @@
   ship = !git push -fu origin HEAD && git pr
   choose-branch = "!f() { git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)' | fzf --no-sort --preview='git show {} -q --format=medium'; }; f"
   choose-branches = "!f() { git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)' | fzf --no-sort --multi --preview='git show {} -q --format=medium'; }; f"
+  un-amend = reset --mixed HEAD@{1}
 [pull]
   rebase = false
   ff = only
