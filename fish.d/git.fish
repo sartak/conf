@@ -529,3 +529,31 @@ function gnr --wraps='git-number -c rm' --description 'git-number -c rm'
   git-number -c rm $argv
 end
 
+function gb --wraps='git checkout -b' --description 'git checkout -b'
+  set -l GIT (which git)
+  if not set -q argv[1]
+    $GIT choose-branch | xargs --no-run-if-empty $GIT checkout
+  else
+    $GIT checkout -b $argv
+  end
+end
+
+function gbd --wraps='git branch -D' --description 'git branch -D'
+  set -l GIT (which git)
+  if not set -q argv[1]
+    $GIT choose-branches | xargs --no-run-if-empty $GIT branch -D
+  else
+    $GIT branch -D $argv
+  end
+end
+
+function gbda --wraps='git branch -D' --description 'git branch -D'
+  if not set -q argv[1]
+    set -l GIT (which git)
+    $GIT branch --merged master --format='%(refname:short)' | grep -v '^master$' | xargs $GIT branch -d
+  else
+    set_color -o yellow
+    echo "this command takes no args" 1>&2
+    return 1
+  end
+end
