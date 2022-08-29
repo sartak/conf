@@ -1,8 +1,8 @@
-inoremap <C-T> <Esc>:Files<CR>
-nnoremap <C-T> :Files<CR>
-vnoremap <C-T> :<C-U>Files<CR>
+inoremap <silent> <C-T> <Esc>:Files<CR>
+nnoremap <silent> <C-T> :Files<CR>
+vnoremap <silent> <C-T> :<C-U>Files<CR>
 
-" todo: pass the content of the buffer into fzf
+" todo: pass the content of the command buffer into fzf
 cnoremap <silent> <C-R> <C-E><C-U>History:<CR>
 
 cnoreabbrev <expr> e getcmdtype() == ":" && getcmdline() == 'e' ? 'USE CTRL-T!' : 'e'
