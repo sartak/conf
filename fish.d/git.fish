@@ -525,8 +525,8 @@ function gv --wraps='git-number -c vim' --description 'git-number -c vim'
   git-number -c vim $argv
 end
 
-function gnr --wraps='git-number -c rm' --description 'git-number -c rm'
-  git-number -c rm $argv
+function gnr --wraps='git-number -c rm -r' --description 'git-number -c rm -r'
+  git-number -c rm -r $argv
 end
 
 function gb --wraps='git checkout -b' --description 'git checkout -b'
