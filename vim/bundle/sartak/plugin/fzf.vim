@@ -2,6 +2,8 @@ inoremap <silent> <C-T> <Esc>:Files<CR>
 nnoremap <silent> <C-T> :Files<CR>
 vnoremap <silent> <C-T> :<C-U>Files<CR>
 
+nnoremap <silent> <C-B> :<C-U>Buffers<CR>
+
 " todo: pass the content of the command buffer into fzf
 cnoremap <silent> <C-R> <C-E><C-U>History:<CR>
 
