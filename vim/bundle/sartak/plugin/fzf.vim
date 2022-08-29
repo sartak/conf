@@ -26,3 +26,5 @@ function! RipgrepFzf(query, fullscreen)
   call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
 endfunction
 command! -nargs=* -bang Rg call RipgrepFzf(<q-args>, <bang>0)
+
+nnoremap <silent> <C-G> :<C-U>Rg<CR>
