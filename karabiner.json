@@ -1,0 +1,133 @@
+{
+  "rules": [
+    {
+      "description": "Parentheses on shift keys (JIS)",
+      "manipulators": [
+        {
+          "from": { "key_code": "left_shift" },
+          "to": [{ "key_code": "left_shift" }],
+          "to_if_alone": [{ "key_code": "8", "modifiers": ["left_shift"] }],
+          "type": "basic"
+        },
+        {
+          "from": { "key_code": "right_shift" },
+          "to": [{ "key_code": "right_shift" }],
+          "to_if_alone": [{ "key_code": "9", "modifiers": ["right_shift"] }],
+          "type": "basic"
+        }
+      ]
+    },
+    {
+      "description": "Disable original parentheses (JIS)",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "8",
+            "modifiers": { "mandatory": ["left_shift"] }
+          },
+          "to": [{ "key_code": "vk_none" }],
+          "type": "basic"
+        },
+        {
+          "from": {
+            "key_code": "9",
+            "modifiers": { "mandatory": ["left_shift"] }
+          },
+          "to": [{ "key_code": "vk_none" }],
+          "type": "basic"
+        },
+        {
+          "from": {
+            "key_code": "8",
+            "modifiers": { "mandatory": ["right_shift"] }
+          },
+          "to": [{ "key_code": "vk_none" }],
+          "type": "basic"
+        },
+        {
+          "from": {
+            "key_code": "9",
+            "modifiers": { "mandatory": ["right_shift"] }
+          },
+          "to": [{ "key_code": "vk_none" }],
+          "type": "basic"
+        }
+      ]
+    },
+    {
+      "description": "Parentheses on shift keys (ANSI)",
+      "manipulators": [
+        {
+          "from": { "key_code": "left_shift" },
+          "to": [{ "key_code": "left_shift" }],
+          "to_if_alone": [{ "key_code": "9", "modifiers": ["left_shift"] }],
+          "type": "basic"
+        },
+        {
+          "from": { "key_code": "right_shift" },
+          "to": [{ "key_code": "right_shift" }],
+          "to_if_alone": [{ "key_code": "0", "modifiers": ["right_shift"] }],
+          "type": "basic"
+        }
+      ]
+    },
+    {
+      "description": "Disable original parentheses (ANSI)",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "9",
+            "modifiers": { "mandatory": ["left_shift"] }
+          },
+          "to": [{ "key_code": "vk_none" }],
+          "type": "basic"
+        },
+        {
+          "from": {
+            "key_code": "0",
+            "modifiers": { "mandatory": ["left_shift"] }
+          },
+          "to": [{ "key_code": "vk_none" }],
+          "type": "basic"
+        },
+        {
+          "from": {
+            "key_code": "9",
+            "modifiers": { "mandatory": ["right_shift"] }
+          },
+          "to": [{ "key_code": "vk_none" }],
+          "type": "basic"
+        },
+        {
+          "from": {
+            "key_code": "0",
+            "modifiers": { "mandatory": ["right_shift"] }
+          },
+          "to": [{ "key_code": "vk_none" }],
+          "type": "basic"
+        }
+      ]
+    },
+    {
+      "description": "Escape → Hyper (⌃⌥⇧⌘)",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "escape",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_shift",
+              "modifiers": ["left_command", "left_control", "left_option"]
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    }
+  ],
+  "title": "Personal rules"
+}
