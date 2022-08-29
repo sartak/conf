@@ -97,3 +97,6 @@
 [submodule "vim/bundle/coc-fzf"]
 	path = vim/bundle/coc-fzf
 	url = git@github.com:antoinemadec/coc-fzf.git
+[submodule "vim/bundle/sessionman.vim"]
+	path = vim/bundle/sessionman.vim
+	url = git@github.com:vim-scripts/sessionman.vim.git
