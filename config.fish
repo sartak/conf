@@ -93,7 +93,7 @@ function f --wraps=fzf --description 'fzf'
   fzf $argv
 end
 
-set -x FZF_DEFAULT_OPTS '--cycle --layout=reverse --border --height=90% --preview-window=down:75%,nowrap,border-top --marker="*" --color=bg+:#000000,border:#222222,fg+:#F8F8F2,preview-bg:#000000,info:italic:#5f5f5f,bg:#000000,spinner:#A6E22E,gutter:#000000,prompt:#A6E22E,preview-fg:#F8F8F2,fg:#F8F8F2,disabled:#5fd7ff,header:#F8F8F2,marker:#F92672,hl+:#ffd700,query:#5fd7ff,hl:#ffd700,pointer:#5fd7ff'
+set -x FZF_DEFAULT_OPTS '--cycle --layout=reverse --border --height=90% --ellipsis=… --tabstop=2 --bind backward-eof:abort --preview-window=down:75%,nowrap,border-top --marker="*" --color=bg+:#000000,border:#222222,fg+:#F8F8F2,preview-bg:#000000,info:italic:#5f5f5f,bg:#000000,spinner:#A6E22E,gutter:#000000,prompt:#A6E22E,preview-fg:#F8F8F2,fg:#F8F8F2,disabled:#5fd7ff,header:#F8F8F2,marker:#F92672,hl+:#ffd700,query:#5fd7ff,hl:#ffd700,pointer:#5fd7ff'
 
 set -x RIPGREP_CONFIG_PATH ~/.config/ripgreprc
 
