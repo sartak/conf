@@ -67,6 +67,15 @@ zoxide init fish | source
 
 # this retrain has to go here, after loading zoxide
 function cd --wraps cd
+  if not status is-interactive
+    functions -c cd cd_tmp
+    functions -e cd
+    cd $argv
+    functions -c cd_tmp cd
+    functions -e cd_tmp
+    return
+  end
+
   echo -n "use " 1>&2
   set_color -o yellow
   echo -n "z" 1>&2

@@ -1,7 +1,10 @@
 function grep --wraps=grep
-  if set -q VIMRUNTIME
-    set -l GREP (which grep)
-    $GREP $argv
+  if not status is-interactive
+    functions -c grep grep_tmp
+    functions -e grep
+    grep $argv
+    functions -c grep_tmp grep
+    functions -e grep_tmp
     return
   end
 
@@ -14,9 +17,12 @@ function grep --wraps=grep
 end
 
 function rg --wraps=rg
-  if set -q VIMRUNTIME
-    set -l RG (which rg)
-    $RG $argv
+  if not status is-interactive
+    functions -c rg rg_tmp
+    functions -e rg
+    rg $argv
+    functions -c rg_tmp rg
+    functions -e rg_tmp
     return
   end
 

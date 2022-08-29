@@ -1,4 +1,13 @@
 function vim --wraps=vim
+  if not status is-interactive
+    functions -c vim vim_tmp
+    functions -e vim
+    vim $argv
+    functions -c vim_tmp vim
+    functions -e vim_tmp
+    return
+  end
+
   echo -n "use " 1>&2
   set_color -o yellow
   echo -n "v" 1>&2

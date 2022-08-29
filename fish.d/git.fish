@@ -1,7 +1,10 @@
 function git --wraps=git
-  if set -q VIMRUNTIME
-    set -l GIT (which git)
-    $GIT $argv
+  if not status is-interactive
+    functions -c git git_tmp
+    functions -e git
+    git $argv
+    functions -c git_tmp git
+    functions -e git_tmp
     return
   end
 

@@ -1,4 +1,13 @@
 function ssh --wraps='ssh'
+  if not status is-interactive
+    functions -c ssh ssh_tmp
+    functions -e ssh
+    ssh $argv
+    functions -c ssh_tmp ssh
+    functions -e ssh_tmp
+    return
+  end
+
   echo -n "use " 1>&2
   set_color -o yellow
   echo -n $argv[1] 1>&2
