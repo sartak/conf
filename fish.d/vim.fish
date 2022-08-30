@@ -27,6 +27,25 @@ function edit_command
   edit_command_buffer
 end
 
+function vs- --description 'launch most recent vim session'
+  if set -q argv[1]
+    set_color -o yellow
+    echo "this command takes no args" 1>&2
+    return 1
+  else
+    set session (
+      exa -1 --sort modified --reverse ~/.vim/sessions/ | head -n1
+    )
+    if test "$session" = ""
+      echo "no sessions exist; run `vs <session>` or `\\sc` in vim to create" 1>&2
+      return
+    end
+
+    set -l VIM (which vim)
+    $VIM -c ":silent SessionOpen $session"
+  end
+end
+
 function vs --description 'launch vim session'
   set newsession 0
 
@@ -45,13 +64,8 @@ function vs --description 'launch vim session'
       return
     end
   else if test "$argv[1]" = "-"
-    set session (
-      exa -1 --sort modified --reverse ~/.vim/sessions/ | head -n1
-    )
-    if test "$session" = ""
-      echo "no sessions exist; run `vs <session>` or `\\sc` in vim to create" 1>&2
-      return
-    end
+    vs-
+    return
   else
     set session $argv[1]
     if not test -e "$HOME/.vim/sessions/$argv[1]"
