@@ -9,8 +9,8 @@
 [alias]
   pr = "!perl -e '$origin = `git remote get-url origin`; $origin =~ s!^git\\@github.com:(.*)\\.git$!! or exit; $branch = `git rev-parse --abbrev-ref HEAD`; system qq{open https://github.com/$1/pull/new/$branch}'"
   ship = !git push -fu origin HEAD && git pr
-  choose-branch = "!f() { git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)' | fzf --no-sort --preview='git show {} -q --format=medium'; }; f"
-  choose-branches = "!f() { git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)' | fzf --no-sort --multi --preview='git show {} -q --format=medium'; }; f"
+  choose-branch = "!f() { git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)' | fzf --no-sort --preview='git show --color=always {} -q --format=medium'; }; f"
+  choose-branches = "!f() { git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)' | fzf --no-sort --multi --preview='git show --color=always {} -q --format=medium'; }; f"
   un-amend = reset --mixed HEAD@{1}
 [pull]
   rebase = false
