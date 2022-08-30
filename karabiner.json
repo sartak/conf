@@ -114,7 +114,7 @@
         {
           "from": {
             "key_code": "escape",
-            "modifiers": { "optional": ["left_shift"] }
+            "modifiers": { "optional": ["left_shift", "right_shift"] }
           },
           "to": [
             {
