@@ -1,57 +1,58 @@
 let g:airline_theme='deusfork'
-let g:airline#extensions#whitespace#enabled = 0
+
+function SmartLines()
+  let currentMode = mode()
+  if currentMode == "v" || currentMode == "V" || currentMode == ""
+    let s = line(".")
+    let e = line("v")
+    if s > e
+      let t = s
+      let s = e
+      let e = t
+    end
+    return s . ":" . e . "(" . (e-s+1) . ")"
+  else
+    return line(".") . "/" . line("$")
+  end
+endfunction
+
+function CurrentSession()
+  if v:this_session == ''
+    return ''
+  endif
+
+  let session = v:this_session
+  return substitute(session, ".*/", "", "")
+endfunction
 
 function! AirlineInit()
-      " let g:airline_skip_empty_sections = 1
- 
-      " keep a
-      "     let g:airline_section_a = airline#section#create_left(['mode', 'crypt', 'paste', 'keymap', 'spell', 'capslock', 'xkblayout', 'iminsert'])
-      " keep b
-      "     let g:airline_section_b = airline#section#create(['hunks', 'branch'])
- 
-      " truncate c, add read-only flag
-      "     let g:airline_section_c = airline#section#create(['%<', 'file', spc, 'readonly'])
-      let g:airline_section_c = airline#section#create(['%t',' ','readonly'])
+  let g:airline_section_a = airline#section#create_left(['mode', 'paste', 'spell'])
+  let g:airline_section_b = airline#section#create([])
+  let g:airline_section_c = airline#section#create(['%<', '%t', 'readonly'])
+  let g:airline_section_gutter = airline#section#create(['%='])
 
-      " leave gutter
-      "     let g:airline_section_gutter = airline#section#create(['%='])
+  " section y never seems to get rendered, which is where I'd prefer
+  " CurrentSession to go
+  let g:airline_section_x = airline#section#create_right(['%{CurrentSession()}'])
+  let g:airline_section_y = airline#section#create([])
 
-      " remove x
-      "     let g:airline_section_x = airline#section#create_right(['tagbar', 'filetype'])
-      let g:airline_section_x = ''
+  let g:airline_section_z = airline#section#create(['%{SmartLines()}'])
+  let g:airline_section_error = airline#section#create(['coc_error_count'])
+  let g:airline_section_warning = airline#section#create(['coc_warning_count'])
 
-      " remove y
-      "     let g:airline_section_y = airline#section#create_right(['ffenc'])
-      let g:airline_section_y = ''
+  let g:airline_mode_map = {
+    \ '__' : '-',
+    \ 'n'  : 'N',
+    \ 'i'  : 'I',
+    \ 'R'  : 'R',
+    \ 'c'  : 'C',
+    \ 'v'  : 'v',
+    \ 'V'  : 'V',
+    \ '' : 'V',
+    \ 's'  : 'S',
+    \ 'S'  : 'S',
+    \ '' : 'S',
+    \ }
+endfunction
 
-      " keep z
-      "     if winwidth(0) > 80
-      "       let g:airline_section_z = airline#section#create(['windowswap', 'obsession', '%3p%%'.spc, 'linenr', 'maxlinenr', spc.':%3v'])
-      "     else
-      "       let g:airline_section_z = airline#section#create(['%3p%%'.spc, 'linenr',  ':%3v'])
-      "     endif
-
-      " keep error
-      "     let g:airline_section_error = airline#section#create(['ycm_error_count', 'syntastic-err', 'eclim', 'neomake_error_count', 'ale_error_count'])
-
-      " keep warning
-        "     let g:airline_section_warning = airline#section#create(['ycm_warning_count',  'syntastic-warn', 'neomake_warning_count', 'ale_warning_count', 'whitespace'])
-
-      " use single-letter mode descriptions
-      let g:airline_mode_map = {
-          \ '__' : '-',
-          \ 'n'  : 'N',
-          \ 'i'  : 'I',
-          \ 'R'  : 'R',
-          \ 'c'  : 'C',
-          \ 'v'  : 'V',
-          \ 'V'  : 'V',
-          \ '' : 'V',
-          \ 's'  : 'S',
-          \ 'S'  : 'S',
-          \ '' : 'S',
-          \ }
-
-  endfunction
-
-  autocmd User AirlineAfterInit call AirlineInit()
+autocmd User AirlineAfterInit call AirlineInit()
