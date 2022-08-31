@@ -6,7 +6,7 @@ nnoremap <leader>sx :SessionClose<CR>
 nnoremap <leader>ss :SessionList<CR>
 
 function SessionIfEmpty()
-  if argc() is 0
+  if v:this_session == '' && argc() is 0
     SessionList
   endif
 endfunc
