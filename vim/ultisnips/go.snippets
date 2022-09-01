@@ -32,3 +32,9 @@ if err != nil {
 	return ${0}err
 }
 endsnippet
+
+snippet for "for-range loop"
+for ${1:_}${2/(.+)/, /}${2:_} := range ${3:LIST} {
+  ${0:${VISUAL}}
+}
+endsnippet
