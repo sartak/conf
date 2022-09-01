@@ -1,13 +1,7 @@
 {
   "coc.preferences.formatOnSaveFiletypes": ["*"],
-  "sql.formatOptions": {
-    "linesBetweenQueries": 2
-  },
-  "javascript.suggest.autoImports": true,
-  "typescript.suggest.autoImports": true,
-  "javascript.autoClosingTags": false,
-  "typescript.autoClosingTags": false,
   "eslint.autoFixOnSave": true,
+
   "snippets.extends": {
     "javascriptreact": ["javascript"],
     "typescript": ["javascript"],
@@ -17,9 +11,51 @@
   "snippet.highlight": true,
   "coc.preferences.nextPlaceholderOnDelete": true,
   "snippet.nextPlaceholderOnDelete": true,
+
   "colors.filetypes": ["css", "html"],
+
   "javascript.disableProgressNotifications": true,
   "typescript.disableProgressNotifications": true,
   "rust-analyzer.disableProgressNotifications": true,
-  "go.disableProgressNotifications": true
+  "go.disableProgressNotifications": true,
+
+  "sql.formatOptions": {
+    "linesBetweenQueries": 2
+  },
+
+  "javascript.suggest.autoImports": true,
+  "typescript.suggest.autoImports": true,
+  "javascript.autoClosingTags": false,
+  "typescript.autoClosingTags": false,
+
+  "diagnostic.refreshOnInsertMode": true,
+  "inlayHint.refreshOnInsertMode": true,
+
+  "typescript.inlayHints.variableTypes.enabled": true,
+  "typescript.inlayHints.parameterNames.enabled": "all",
+  "typescript.inlayHints.parameterTypes.enabled": true,
+  "typescript.inlayHints.enumMemberValues.enabled": true,
+  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "typescript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": false,
+  "javascript.inlayHints.variableTypes.enabled": true,
+  "javascript.inlayHints.parameterNames.enabled": "all",
+  "javascript.inlayHints.parameterTypes.enabled": true,
+  "javascript.inlayHints.enumMemberValues.enabled": true,
+  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "javascript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": false,
+  "rust-analyzer.inlayHints.enable": true,
+  "go.goplsOptions": {
+    "hints": {
+      "assignVariableTypes": true,
+      "compositeLiteralFields": true,
+      "compositeLiteralTypes": true,
+      "constantValues": true,
+      "functionTypeParameters": true,
+      "parameterNames": true,
+      "rangeVariableTypes": true
+    },
+    "usePlaceholders": true
+  }
 }
