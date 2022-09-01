@@ -8,6 +8,7 @@ hi Normal ctermbg=none guibg=#000000
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
 hi Comment term=bold cterm=italic ctermfg=59 gui=italic guifg=#5f5f5f
+hi CocInlayHint term=bold cterm=italic ctermfg=245 gui=italic guifg=#8a8a8a ctermbg=235 guibg=#262626
 
 hi Pmenu ctermfg=8 guifg=#555555 ctermbg=0 guibg=#000000
 hi CocMenuSel ctermfg=white guifg=#FFFFFF ctermbg=17 guibg=#00005f
