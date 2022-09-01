@@ -52,7 +52,15 @@ function vs --description 'launch vim session'
   if not set -q argv[1]
     set exa_opts -1 --sort accessed --reverse ~/.vim/sessions/
     set session (
-      exa $exa_opts | fzf --prompt="vim session > " --exit-0 --header \e"[38;5;240;3mctrl-x to delete" --preview-window='bottom:50%' --info=hidden --preview='cd ~/.vim/sessions/; stat -f "Accessed: %Sa%nModified: %Sm%nCreated:  %SB" {}; echo; set_color 23A5FA; g --color=never "^cd (.+)" -r \'$1\' {}; set_color -o normal; g --color=never "^badd \+\d+ (.+)" -r \'  - $1\' {}' --bind "ctrl-x:execute-silent(rm ~/.vim/sessions/{})+reload(exa $exa_opts)"
+      exa $exa_opts | \
+        fzf \
+          --prompt="vim session > " \
+          --exit-0 \
+          --header \e"[38;5;240;3mctrl-x to delete, ctrl-c to quit" \
+          --preview-window='bottom:50%' \
+          --info=hidden \
+          --preview='cd ~/.vim/sessions/; stat -f "Accessed: %Sa%nModified: %Sm%nCreated:  %SB" {}; echo; set_color 23A5FA; g --color=never "^cd (.+)" -r \'$1\' {}; set_color -o normal; g --color=never "^badd \+\d+ (.+)" -r \'  - $1\' {}' \
+          --bind "ctrl-x:execute-silent(rm ~/.vim/sessions/{})+reload(exa $exa_opts)"
     )
     if test $status -ne 0
         set session (
