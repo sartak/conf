@@ -28,7 +28,7 @@ end
 
 function mana --wraps='ssh mana' --description='ssh mana'
   set -l SSH (which ssh)
-  $SSH mana
+  $SSH mana-tailscale
 end
 
 function hongkong-tailscale --wraps='ssh hongkong-tailscale' --description='ssh hongkong-tailscale'
@@ -43,7 +43,7 @@ end
 
 function hongkong --wraps='ssh hongkong' --description='ssh hongkong'
   set -l SSH (which ssh)
-  $SSH hongkong
+  $SSH hongkong-tailscale
 end
 
 function miami-tailscale --wraps='ssh miami-tailscale' --description='ssh miami-tailscale'
@@ -58,7 +58,7 @@ end
 
 function miami --wraps='ssh miami' --description='ssh miami'
   set -l SSH (which ssh)
-  $SSH miami
+  $SSH miami-tailscale
 end
 
 function phuket-tailscale --wraps='ssh phuket-tailscale' --description='ssh phuket-tailscale'
@@ -73,7 +73,7 @@ end
 
 function phuket --wraps='ssh phuket' --description='ssh phuket'
   set -l SSH (which ssh)
-  $SSH phuket
+  $SSH phuket-tailscale
 end
 
 function shiver-tailscale --wraps='ssh shiver-tailscale' --description='ssh shiver-tailscale'
@@ -88,7 +88,7 @@ end
 
 function shiver --wraps='ssh shiver' --description='ssh shiver'
   set -l SSH (which ssh)
-  $SSH shiver
+  $SSH shiver-tailscale
 end
 
 function maui-tailscale --wraps='ssh maui-tailscale' --description='ssh maui-tailscale'
@@ -103,7 +103,7 @@ end
 
 function maui --wraps='ssh maui' --description='ssh maui'
   set -l SSH (which ssh)
-  $SSH maui
+  $SSH maui-tailscale
 end
 
 function hydra-tailscale --wraps='ssh hydra-tailscale' --description='ssh hydra-tailscale'
@@ -118,7 +118,7 @@ end
 
 function hydra --wraps='ssh hydra' --description='ssh hydra'
   set -l SSH (which ssh)
-  $SSH hydra
+  $SSH hydra-tailscale
 end
 
 function newyork --wraps='ssh newyork' --description='ssh newyork'
@@ -138,7 +138,7 @@ end
 
 function waikiki --wraps='ssh waikiki' --description='ssh waikiki'
   set -l SSH (which ssh)
-  $SSH waikiki
+  $SSH waikiki-tailscale
 end
 
 function meteor --wraps='ssh meteor' --description='ssh meteor'
