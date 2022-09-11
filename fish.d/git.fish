@@ -474,10 +474,12 @@ function gx --wraps='git rebase -i' --description 'git rebase -i'
 end
 
 function gxa --wraps='git rebase --abort' --description 'git rebase --abort'
+  set -l GIT (which git)
   $GIT rebase --abort $argv
 end
 
 function gxc --wraps='git rebase --continue' --description 'git rebase --continue'
+  set -l GIT (which git)
   $GIT rebase --continue $argv
 end
 
