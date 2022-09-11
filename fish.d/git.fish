@@ -579,3 +579,45 @@ function gua --wraps='git un-amend' --description 'git un-amend'
     return 1
   end
 end
+
+function gvd --description 'edit uncommitted changes'
+  set -l GIT (which git)
+  set -l VIM (which vim)
+
+  set -l FILES ($GIT diff HEAD --name-only; $GIT ls-files --others --exclude-standard)
+  if [ "$FILES" = "" ]
+    set_color -o yellow
+    echo "no uncommitted files" 1>&2
+    return 1
+  end
+
+  $VIM $FILES
+end
+
+function gvu --description 'edit files changed since upstream'
+  set -l GIT (which git)
+  set -l VIM (which vim)
+
+  set -l FILES ($GIT diff @{u} --name-only; $GIT ls-files --others --exclude-standard)
+  if [ "$FILES" = "" ]
+    set_color -o yellow
+    echo "no unchanged files" 1>&2
+    return 1
+  end
+
+  $VIM $FILES
+end
+
+function gvm --description 'edit files changed since branch'
+  set -l GIT (which git)
+  set -l VIM (which vim)
+
+  set -l FILES ($GIT diff master --name-only; $GIT ls-files --others --exclude-standard)
+  if [ "$FILES" = "" ]
+    set_color -o yellow
+    echo "no unchanged files" 1>&2
+    return 1
+  end
+
+  $VIM $FILES
+end
