@@ -516,6 +516,12 @@ function gu --wraps 'git pull' --description 'git pull'
   $GIT pull $argv
 end
 
+function gus --wraps 'git pull && git submodule update --init --recursive' --description 'git pull'
+  set -l GIT (which git)
+  $GIT pull $argv
+  $GIT submodule update --init --recursive
+end
+
 function guh --wraps 'git fetch' --description 'git fetch && git reset --hard'
   set -l GIT (which git)
   $GIT fetch $argv
