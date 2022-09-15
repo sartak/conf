@@ -1,0 +1,10 @@
+# copy, don't symlink, into /etc/sudoers.d/prompt and restrict permissions
+
+# primary
+Defaults passprompt="[1;37m[[0;38;5;129m%h[1;37m] sudo %p → %U: [m"
+
+# secondary
+# Defaults passprompt="[1;37m[[0;38;5;214m%h[1;37m] sudo %p → %U: [m"
+
+# tertiary
+# Defaults passprompt="[1;37m[[0;38;2;246;81;29m%h[1;37m] sudo %p → %U: [m"
