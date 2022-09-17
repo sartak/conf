@@ -16,13 +16,18 @@ function v --wraps=vim --description 'alias v=vim'
   command vim $argv
 end
 
+# shout out to https://github.com/tsibley/g
 function vg --wraps=rg --description 'vim ripgrep'
   set -l FILES (command rg -l $argv)
   set -l st $status
   if test $st -ne 0; or test "$FILES" = ""
     return $st
   end
-  command vim $FILES
+
+  # TODO https://github.com/tsibley/g/blob/master/g#L184
+  set -l REGEX $argv[1]
+
+  command vim +1 "+/\v$REGEX" $FILES
 end
 
 function edit_command
