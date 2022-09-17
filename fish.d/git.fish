@@ -540,7 +540,7 @@ function git-choose-branches
   end
 end
 
-function gb --wraps='git checkout -b' --description 'git checkout -b'
+function gb --wraps='git switch' --description 'git switch'
   if not set -q argv[1]
     set BRANCH (git-choose-branch)
     if test $status -eq 0; and test "$BRANCH" != ""
