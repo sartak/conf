@@ -528,7 +528,7 @@ function git-choose-branch
   set -l IFS
   set BRANCHES (command git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)')
   if test $status -eq 0
-    echo $BRANCHES | fzf --no-sort --preview='git log --color=always {} | delta'
+    echo $BRANCHES | fzf --no-sort --preview='git log --color=always {} -- | delta'
   end
 end
 
@@ -536,7 +536,7 @@ function git-choose-branches
   set -l IFS
   set BRANCHES (command git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)')
   if test $status -eq 0
-    echo $BRANCHES | fzf --multi --no-sort --preview='git log --color=always {} | delta'
+    echo $BRANCHES | fzf --multi --no-sort --preview='git log --color=always {} -- | delta'
   end
 end
 
