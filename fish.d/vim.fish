@@ -1,10 +1,6 @@
 function vim --wraps=vim
   if not status is-interactive
-    functions -c vim vim_tmp
-    functions -e vim
-    vim $argv
-    functions -c vim_tmp vim
-    functions -e vim_tmp
+    command vim $argv
     return
   end
 

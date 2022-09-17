@@ -1,10 +1,6 @@
 function git --wraps=git
   if not status is-interactive
-    functions -c git git_tmp
-    functions -e git
-    git $argv
-    functions -c git_tmp git
-    functions -e git_tmp
+    command git $argv
     return
   end
 

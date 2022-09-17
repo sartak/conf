@@ -1,10 +1,6 @@
 function grep --wraps=grep
   if not status is-interactive
-    functions -c grep grep_tmp
-    functions -e grep
-    grep $argv
-    functions -c grep_tmp grep
-    functions -e grep_tmp
+    command grep $argv
     return
   end
 
@@ -18,11 +14,7 @@ end
 
 function rg --wraps=rg
   if not status is-interactive
-    functions -c rg rg_tmp
-    functions -e rg
-    rg $argv
-    functions -c rg_tmp rg
-    functions -e rg_tmp
+    command rg $argv
     return
   end
 

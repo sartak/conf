@@ -1,10 +1,6 @@
 function ssh --wraps='ssh'
   if not status is-interactive
-    functions -c ssh ssh_tmp
-    functions -e ssh
-    ssh $argv
-    functions -c ssh_tmp ssh
-    functions -e ssh_tmp
+    command ssh $argv
     return
   end
 

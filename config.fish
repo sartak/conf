@@ -68,11 +68,7 @@ zoxide init fish | source
 # this retrain has to go here, after loading zoxide
 function cd --wraps cd
   if not status is-interactive
-    functions -c cd cd_tmp
-    functions -e cd
-    cd $argv
-    functions -c cd_tmp cd
-    functions -e cd_tmp
+    command cd $argv
     return
   end
 

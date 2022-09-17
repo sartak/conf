@@ -1,10 +1,6 @@
 function ls --wraps=ls
   if not status is-interactive
-    functions -c ls ls_tmp
-    functions -e ls
-    ls $argv
-    functions -c ls_tmp ls
-    functions -e ls_tmp
+    command ls $argv
     return
   end
 
