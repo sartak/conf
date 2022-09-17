@@ -13,8 +13,7 @@ function vim --wraps=vim
 end
 
 function v --wraps=vim --description 'alias v=vim'
-  set -l VIM (which vim)
-  $VIM $argv
+  command vim $argv
 end
 
 function edit_command
@@ -36,8 +35,7 @@ function vs- --description 'launch most recent vim session'
       return
     end
 
-    set -l VIM (which vim)
-    $VIM -c ":silent SessionOpen $session"
+    command vim -c ":silent SessionOpen $session"
   end
 end
 
@@ -76,11 +74,9 @@ function vs --description 'launch vim session'
     end
   end
 
-  set -l VIM (which vim)
-
   if test $newsession -eq 1
-    $VIM -c ":silent SessionSaveAs $session"
+    command vim -c ":silent SessionSaveAs $session"
   else
-    $VIM -c ":silent SessionOpen $session"
+    command vim -c ":silent SessionOpen $session"
   end
 end

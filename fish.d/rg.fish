@@ -27,7 +27,6 @@ function rg --wraps=rg
 end
 
 function g --wraps='rg' --description 'alias g=rg'
-  set -l RG (which rg)
-  $RG $argv
+  command rg $argv
 end
 

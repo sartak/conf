@@ -118,20 +118,17 @@ function git --wraps=git
     end
   end
 
-  set -l GIT (which git)
-  $GIT $argv
+  command git $argv
 end
 
 function gs --wraps='git-number --column' --description 'git status'
-  set -l GIT (which git)
-  $GIT log -1 --format='format:%C(Yellow)%h%Creset %s'
+  command git log -1 --format='format:%C(Yellow)%h%Creset %s'
   git-number -uall $argv
 end
 
 function ga --wraps='git-number add' --description 'git add'
   if not set -q argv[1]
-    set -l GIT (which git)
-    $GIT add -p
+    command git add -p
   else
     git-number add $argv
   end
@@ -139,103 +136,93 @@ end
 
 function gco --wraps='git checkout' --description 'git checkout'
   if not set -q argv[1]
-    set -l GIT (which git)
-    $GIT checkout -p
+    command git checkout -p
   else
     git-number checkout $argv
   end
 end
 
 function gc --description 'git commit'
-  set -l GIT (which git)
   if not set -q argv[1]
-    $GIT commit
+    command git commit
   else
-    $GIT commit -m "$argv"
+    command git commit -m "$argv"
   end
 end
 
 function gcp --description 'git commit; git push'
-  set -l GIT (which git)
   if not set -q argv[1]
-    $GIT commit
+    command git commit
   else
-    $GIT commit -m "$argv"
+    command git commit -m "$argv"
   end
-  $GIT push
+  command git push
 end
 
 function gcs --description 'git commit; git ship'
-  set -l GIT (which git)
   if not set -q argv[1]
-    $GIT commit
+    command git commit
   else
-    $GIT commit -m "$argv"
+    command git commit -m "$argv"
   end
-  $GIT ship
+  command git ship
 end
 
 function gcf --description 'git commit; git push -f'
-  set -l GIT (which git)
   if not set -q argv[1]
-    $GIT commit
+    command git commit
   else
-    $GIT commit -m "$argv"
+    command git commit -m "$argv"
   end
-  $GIT push -f
+  command git push -f
 end
 
 function gac --description 'git add; git commit'
-  set -l GIT (which git)
-  $GIT add -p
+  command git add -p
   if not set -q argv[1]
-    $GIT commit
+    command git commit
   else
-    $GIT commit -m "$argv"
+    command git commit -m "$argv"
   end
 end
 
 function gacp --description 'git add; git commit; git push'
-  set -l GIT (which git)
-  $GIT add -p
+  command git add -p
   if not set -q argv[1]
-    $GIT commit
+    command git commit
   else
-    $GIT commit -m "$argv"
+    command git commit -m "$argv"
   end
-  $GIT push
+  command git push
 end
 
 function gacs --description 'git add; git commit; git ship'
-  set -l GIT (which git)
-  $GIT add -p
+  command git add -p
   if not set -q argv[1]
-    $GIT commit
+    command git commit
   else
-    $GIT commit -m "$argv"
+    command git commit -m "$argv"
   end
-  $GIT ship
+  command git ship
 end
 
 function gacf --description 'git add; git commit; git push -f'
-  set -l GIT (which git)
-  $GIT add -p
+  command git add -p
   if not set -q argv[1]
-    $GIT commit
+    command git commit
   else
-    $GIT commit -m "$argv"
+    command git commit -m "$argv"
   end
-  $GIT push -f
+  command git push -f
 end
 
 function gep --description 'git commit --amend; git push -f'
-  set -l GIT (which git)
   if not set -q argv[1]
-    $GIT commit --amend
+    command git commit --amend
   else
-    $GIT commit --amend -m "$argv"
+    command git commit --amend -m "$argv"
   end
-  $GIT push -f
+  command git push -f
 end
 
 function gef
@@ -243,45 +230,41 @@ function gef
 end
 
 function ges --description 'git commit --amend; git ship'
-  set -l GIT (which git)
   if not set -q argv[1]
-    $GIT commit --amend
+    command git commit --amend
   else
-    $GIT commit --amend -m "$argv"
+    command git commit --amend -m "$argv"
   end
-  $GIT ship
+  command git ship
 end
 
 function gae --description 'git add; git commit --amend'
-  set -l GIT (which git)
-  $GIT add -p
+  command git add -p
   if not set -q argv[1]
-    $GIT commit --amend
+    command git commit --amend
   else
-    $GIT commit --amend -m "$argv"
+    command git commit --amend -m "$argv"
   end
 end
 
 function gaep --description 'git add; git commit --amend; git push -f'
-  set -l GIT (which git)
-  $GIT add -p
+  command git add -p
   if not set -q argv[1]
-    $GIT commit --amend
+    command git commit --amend
   else
-    $GIT commit --amend -m "$argv"
+    command git commit --amend -m "$argv"
   end
-  $GIT push -f
+  command git push -f
 end
 
 function gaes --description 'git add; git commit --amend; git ship'
-  set -l GIT (which git)
-  $GIT add -p
+  command git add -p
   if not set -q argv[1]
-    $GIT commit --amend
+    command git commit --amend
   else
-    $GIT commit --amend -m "$argv"
+    command git commit --amend -m "$argv"
   end
-  $GIT ship
+  command git ship
 end
 
 function gaef
@@ -289,10 +272,9 @@ function gaef
 end
 
 function gnp --description 'git commit --amend --no-edit; git push -f'
-  set -l GIT (which git)
   if not set -q argv[1]
-    $GIT commit --amend --no-edit
-    $GIT push -f
+    command git commit --amend --no-edit
+    command git push -f
   else
     set_color -o yellow
     echo "this command takes no args" 1>&2
@@ -301,10 +283,9 @@ function gnp --description 'git commit --amend --no-edit; git push -f'
 end
 
 function gns --description 'git commit --amend --no-edit; git ship'
-  set -l GIT (which git)
   if not set -q argv[1]
-    $GIT commit --amend --no-edit
-    $GIT ship
+    command git commit --amend --no-edit
+    command git ship
   else
     set_color -o yellow
     echo "this command takes no args" 1>&2
@@ -317,10 +298,9 @@ function gnf
 end
 
 function gxp --description 'git rebase --interactive; git push -f'
-  set -l GIT (which git)
   if not set -q argv[1]
     gx
-    $GIT push -f
+    command git push -f
   else
     set_color -o yellow
     echo "this command takes no args" 1>&2
@@ -329,10 +309,9 @@ function gxp --description 'git rebase --interactive; git push -f'
 end
 
 function gxs --description 'git rebase --interactive; git ship'
-  set -l GIT (which git)
   if not set -q argv[1]
     gx
-    $GIT ship
+    command git ship
   else
     set_color -o yellow
     echo "this command takes no args" 1>&2
@@ -345,10 +324,9 @@ function gxf
 end
 
 function gan --description 'git add; git commit --amend --no-edit'
-  set -l GIT (which git)
-  $GIT add -p
+  command git add -p
   if not set -q argv[1]
-    $GIT commit --amend --no-edit
+    command git commit --amend --no-edit
   else
     set_color -o yellow
     echo "this command takes no args" 1>&2
@@ -357,11 +335,10 @@ function gan --description 'git add; git commit --amend --no-edit'
 end
 
 function ganp --description 'git add; git commit --amend --no-edit; git push -f'
-  set -l GIT (which git)
-  $GIT add -p
+  command git add -p
   if not set -q argv[1]
-    $GIT commit --amend --no-edit
-    $GIT push -f
+    command git commit --amend --no-edit
+    command git push -f
   else
     set_color -o yellow
     echo "this command takes no args" 1>&2
@@ -370,11 +347,10 @@ function ganp --description 'git add; git commit --amend --no-edit; git push -f'
 end
 
 function gans --description 'git add; git commit --amend --no-edit; git ship'
-  set -l GIT (which git)
-  $GIT add -p
+  command git add -p
   if not set -q argv[1]
-    $GIT commit --amend --no-edit
-    $GIT ship
+    command git commit --amend --no-edit
+    command git ship
   else
     set_color -o yellow
     echo "this command takes no args" 1>&2
@@ -387,20 +363,18 @@ function ganf --description 'git add; git commit --amend --no-edit; git push -f'
 end
 
 function gq --description 'git add; git commit --amend [--no-edit]; git push -f'
-  set -l GIT (which git)
-  $GIT add -p
+  command git add -p
   if not set -q argv[1]
-    $GIT commit --amend --no-edit
+    command git commit --amend --no-edit
   else
-    $GIT commit --amend -m "$argv"
+    command git commit --amend -m "$argv"
   end
-  $GIT push -f
+  command git push -f
 end
 
 function gr --wraps='git reset' --description 'git reset'
   if not set -q argv[1]
-    set -l GIT (which git)
-    $GIT reset
+    command git reset
   else
     set_color -o yellow
     echo "this command takes no args" 1>&2
@@ -410,8 +384,7 @@ end
 
 function grmu --wraps='git reset --mixed @{u}' --description 'git reset --mixed @{u}'
   if not set -q argv[1]
-    set -l GIT (which git)
-    $GIT reset --mixed @{u}
+    command git reset --mixed @{u}
   else
     set_color -o yellow
     echo "this command takes no args" 1>&2
@@ -420,11 +393,10 @@ function grmu --wraps='git reset --mixed @{u}' --description 'git reset --mixed 
 end
 
 function grm --wraps='git reset --mixed' --description 'git reset --mixed'
-  set -l GIT (which git)
   if not set -q argv[1]
-    $GIT reset --mixed
+    command git reset --mixed
   else if string match -qr '^[0-9]+$' -- "$argv[1]"
-    $GIT reset --mixed HEAD~$argv[1]
+    command git reset --mixed HEAD~$argv[1]
   else if test "$argv[1]" = "@{u}"
     echo -n "use " 1>&2
     set_color -o yellow
@@ -433,14 +405,13 @@ function grm --wraps='git reset --mixed' --description 'git reset --mixed'
     echo " instead" 1>&2
     return 1
   else
-    $GIT reset --mixed $argv
+    command git reset --mixed $argv
   end
 end
 
 function grhu --wraps='git reset --hard @{u}' --description 'git reset --hard @{u}'
   if not set -q argv[1]
-    set -l GIT (which git)
-    $GIT reset --hard @{u}
+    command git reset --hard @{u}
   else
     set_color -o yellow
     echo "this command takes no args" 1>&2
@@ -449,11 +420,10 @@ function grhu --wraps='git reset --hard @{u}' --description 'git reset --hard @{
 end
 
 function grh --wraps='git reset --hard' --description 'git reset --hard'
-  set -l GIT (which git)
   if not set -q argv[1]
-    $GIT reset --hard
+    command git reset --hard
   else if string match -qr '^[0-9]+$' -- "$argv[1]"
-    $GIT reset --hard HEAD~$argv[1]
+    command git reset --hard HEAD~$argv[1]
   else if test "$argv[1]" = "@{u}"
     echo -n "use " 1>&2
     set_color -o yellow
@@ -462,18 +432,16 @@ function grh --wraps='git reset --hard' --description 'git reset --hard'
     echo " instead" 1>&2
     return 1
   else
-    $GIT reset --hard $argv
+    command git reset --hard $argv
   end
 end
 
 function gx --wraps='git rebase -i' --description 'git rebase -i'
-  set -l GIT (which git)
-
   if not set -q argv[1]
-    set -l BRANCH ($GIT branch --show-current)
+    set -l BRANCH (command git branch --show-current)
     if test "$BRANCH" = "master"; or test "$BRANCH" = "main"
       # if we're on master, then let's rebase back 20 commits if possible
-      $GIT rev-parse --verify HEAD~20 >/dev/null 2>&1
+      command git rev-parse --verify HEAD~20 >/dev/null 2>&1
       if test $status -eq 0
         set BASE HEAD~20
       else
@@ -482,7 +450,7 @@ function gx --wraps='git rebase -i' --description 'git rebase -i'
     else
       # if the user gave no input, we'll rebase off whichever of master or main
       # that exists
-      $GIT rev-parse --verify main >/dev/null 2>&1
+      command git rev-parse --verify main >/dev/null 2>&1
       if test $status -eq 0
         set BASE main
       else
@@ -493,62 +461,55 @@ function gx --wraps='git rebase -i' --description 'git rebase -i'
     set BASE $argv
   end
 
-  $GIT rebase -i $BASE
+  command git rebase -i $BASE
 end
 
 function gxa --wraps='git rebase --abort' --description 'git rebase --abort'
-  set -l GIT (which git)
-  $GIT rebase --abort $argv
+  command git rebase --abort $argv
 end
 
 function gxc --wraps='git rebase --continue' --description 'git rebase --continue'
-  set -l GIT (which git)
-  $GIT rebase --continue $argv
+  command git rebase --continue $argv
 end
 
 function gl --wraps='git log' --description 'git log'
-  set -l GIT (which git)
-  $GIT log $argv
+  command git log $argv
 end
 
 function glp --wraps='git log -p' --description 'git log -p'
-  set -l GIT (which git)
   if not set -q argv[1]
-    set -l BRANCH ($GIT branch --show-current)
+    set -l BRANCH (command git branch --show-current)
     if test "$BRANCH" = "master"; or test "$BRANCH" = "main"
       # if the user gave no input and we're already on master or main, then
       # just git log -p
-      $GIT log -p
+      command git log -p
     else
       # user gave no input but we're on a branch, so compare to master or main
-      $GIT rev-parse --verify main >/dev/null 2>&1
+      command git rev-parse --verify main >/dev/null 2>&1
       if test $status -eq 0
         set BASE main
       else
         set BASE master
       end
-      $GIT log -p --reverse $BASE..HEAD
+      command git log -p --reverse $BASE..HEAD
     end
   else
-    $GIT log -p $argv
+    command git log -p $argv
   end
 end
 
 function gu --wraps 'git pull' --description 'git pull'
-  set -l GIT (which git)
-  $GIT pull $argv
+  command git pull $argv
 end
 
 function gus --wraps 'git pull && git submodule update --init --recursive' --description 'git pull'
-  set -l GIT (which git)
-  $GIT pull $argv
-  $GIT submodule update --init --recursive
+  command git pull $argv
+  command git submodule update --init --recursive
 end
 
 function guh --wraps 'git fetch' --description 'git fetch && git reset --hard'
-  set -l GIT (which git)
-  $GIT fetch $argv
-  $GIT reset --hard @{u}
+  command git fetch $argv
+  command git reset --hard @{u}
 end
 
 function gn --wraps='git-number -c' --description 'git-number -c'
@@ -564,52 +525,47 @@ function gnr --wraps='git-number -c rm -r' --description 'git-number -c rm -r'
 end
 
 function git-choose-branch
-  set -l GIT (which git)
   set -l IFS
-  set BRANCHES ($GIT for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)')
+  set BRANCHES (command git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)')
   if test $status -eq 0
     echo $BRANCHES | fzf --no-sort --preview='git log --color=always {} | delta'
   end
 end
 
 function git-choose-branches
-  set -l GIT (which git)
   set -l IFS
-  set BRANCHES ($GIT for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)')
+  set BRANCHES (command git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)')
   if test $status -eq 0
     echo $BRANCHES | fzf --multi --no-sort --preview='git log --color=always {} | delta'
   end
 end
 
 function gb --wraps='git checkout -b' --description 'git checkout -b'
-  set -l GIT (which git)
   if not set -q argv[1]
     set BRANCH (git-choose-branch)
     if test $status -eq 0; and test "$BRANCH" != ""
-      $GIT switch $BRANCH
+      command git switch $BRANCH
     end
   else
-    if $GIT switch $argv 2>/dev/null
+    if command git switch $argv 2>/dev/null
       gs
     else
-      $GIT switch -c $argv
+      command git switch -c $argv
     end
   end
 end
 
 function gbd --wraps='git branch -D' --description 'git branch -D'
-  set -l GIT (which git)
   if not set -q argv[1]
-    git-choose-branches | xargs $GIT branch -D
+    git-choose-branches | xargs command git branch -D
   else
-    $GIT branch -D $argv
+    command git branch -D $argv
   end
 end
 
 function gbda --wraps='git branch -D' --description 'git branch -D'
   if not set -q argv[1]
-    set -l GIT (which git)
-    $GIT branch --merged master --format='%(refname:short)' | grep -v '^master$' | xargs $GIT branch -d
+    command git branch --merged master --format='%(refname:short)' | grep -v '^master$' | xargs command git branch -d
   else
     set_color -o yellow
     echo "this command takes no args" 1>&2
@@ -619,8 +575,7 @@ end
 
 function gua --wraps='git un-amend' --description 'git un-amend'
   if not set -q argv[1]
-    set -l GIT (which git)
-    $GIT un-amend
+    command git un-amend
   else
     set_color -o yellow
     echo "this command takes no args" 1>&2
@@ -629,43 +584,34 @@ function gua --wraps='git un-amend' --description 'git un-amend'
 end
 
 function gvd --description 'edit uncommitted changes'
-  set -l GIT (which git)
-  set -l VIM (which vim)
-
-  set -l FILES ($GIT diff HEAD --name-only; $GIT ls-files --others --exclude-standard)
+  set -l FILES (command git diff HEAD --name-only; command git ls-files --others --exclude-standard)
   if [ "$FILES" = "" ]
     set_color -o yellow
     echo "no uncommitted files" 1>&2
     return 1
   end
 
-  $VIM $FILES
+  command vim $FILES
 end
 
 function gvu --description 'edit files changed since upstream'
-  set -l GIT (which git)
-  set -l VIM (which vim)
-
-  set -l FILES ($GIT diff @{u} --name-only; $GIT ls-files --others --exclude-standard)
+  set -l FILES (command git diff @{u} --name-only; command git ls-files --others --exclude-standard)
   if [ "$FILES" = "" ]
     set_color -o yellow
     echo "no unchanged files" 1>&2
     return 1
   end
 
-  $VIM $FILES
+  command vim $FILES
 end
 
 function gvm --description 'edit files changed since branch'
-  set -l GIT (which git)
-  set -l VIM (which vim)
-
-  set -l FILES ($GIT diff master --name-only; $GIT ls-files --others --exclude-standard)
+  set -l FILES (command git diff master --name-only; command git ls-files --others --exclude-standard)
   if [ "$FILES" = "" ]
     set_color -o yellow
     echo "no unchanged files" 1>&2
     return 1
   end
 
-  $VIM $FILES
+  command vim $FILES
 end
