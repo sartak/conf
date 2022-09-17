@@ -544,6 +544,15 @@ function git-choose-branch
   end
 end
 
+function git-choose-branches
+  set -l GIT (which git)
+  set -l IFS
+  set BRANCHES ($GIT for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)')
+  if test $status -eq 0
+    echo $BRANCHES | fzf --multi --no-sort --preview='git log --color=always {} | delta'
+  end
+end
+
 function gb --wraps='git checkout -b' --description 'git checkout -b'
   set -l GIT (which git)
   if not set -q argv[1]
@@ -563,7 +572,7 @@ end
 function gbd --wraps='git branch -D' --description 'git branch -D'
   set -l GIT (which git)
   if not set -q argv[1]
-    $GIT choose-branches | xargs --no-run-if-empty $GIT branch -D
+    git-choose-branches | xargs $GIT branch -D
   else
     $GIT branch -D $argv
   end
