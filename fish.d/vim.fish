@@ -16,6 +16,15 @@ function v --wraps=vim --description 'alias v=vim'
   command vim $argv
 end
 
+function vg --wraps=rg --description 'vim ripgrep'
+  set -l FILES (command rg -l $argv)
+  set -l st $status
+  if test $st -ne 0; or test "$FILES" = ""
+    return $st
+  end
+  command vim $FILES
+end
+
 function edit_command
   set -xl VISUAL /usr/local/bin/vim
   edit_command_buffer
