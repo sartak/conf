@@ -25,11 +25,36 @@ function ls --wraps=ls
 end
 
 function l --wraps='exa' --description 'exa'
-  exa $argv
+  if test "$argv[1]" = "-l"
+    echo -n "use " 1>&2
+    set_color -o yellow
+    echo -n "ll" 1>&2
+    set_color -o normal
+    echo " instead" 1>&2
+    return 1
+  else if test "$argv[1]" = "-a"; or test "$argv[1]" = "-la"; or test "$argv[1]" = "-al"
+    echo -n "use " 1>&2
+    set_color -o yellow
+    echo -n "la" 1>&2
+    set_color -o normal
+    echo " instead" 1>&2
+    return 1
+  else
+    exa $argv
+  end
 end
 
 function ll --wraps='exa' --description 'exa -l'
-  exa -l --git $argv
+  if test "$argv[1]" = "-a"
+    echo -n "use " 1>&2
+    set_color -o yellow
+    echo -n "la" 1>&2
+    set_color -o normal
+    echo " instead" 1>&2
+    return 1
+  else
+    exa -l --git $argv
+  end
 end
 
 function la --wraps='exa' --description 'exa -la'
