@@ -539,9 +539,13 @@ end
 function gb --wraps='git checkout -b' --description 'git checkout -b'
   set -l GIT (which git)
   if not set -q argv[1]
-    $GIT choose-branch | xargs --no-run-if-empty $GIT checkout
+    $GIT choose-branch | xargs --no-run-if-empty $GIT switch
   else
-    $GIT checkout -b $argv
+    if $GIT switch $argv 2>/dev/null
+      gs
+    else
+      $GIT switch -c $argv
+    end
   end
 end
 
