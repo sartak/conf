@@ -316,6 +316,34 @@ function gnf
   gnp $argv
 end
 
+function gxp --description 'git rebase --interactive; git push -f'
+  set -l GIT (which git)
+  if not set -q argv[1]
+    gx
+    $GIT push -f
+  else
+    set_color -o yellow
+    echo "this command takes no args" 1>&2
+    return 1
+  end
+end
+
+function gxs --description 'git rebase --interactive; git ship'
+  set -l GIT (which git)
+  if not set -q argv[1]
+    gx
+    $GIT ship
+  else
+    set_color -o yellow
+    echo "this command takes no args" 1>&2
+    return 1
+  end
+end
+
+function gxf
+  gxp $argv
+end
+
 function gan --description 'git add; git commit --amend --no-edit'
   set -l GIT (which git)
   $GIT add -p
