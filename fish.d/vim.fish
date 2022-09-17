@@ -45,6 +45,15 @@ function vg --wraps=rg --description 'vim ripgrep'
   command vim +1 "+/\v$REGEX" $FILES
 end
 
+function vf --wraps=vim --description 'vim fzf'
+  set -l FILES (fzf --query "$argv" --multi --preview='if test {} = ""; echo; else if test -f {}; bat --color=always {}; else; echo "File does not exist"; end')
+  set -l st $status
+  if test $st -ne 0; or test "$FILES" = ""
+    return $st
+  end
+  command vim $FILES
+end
+
 function edit_command
   set -xl VISUAL /usr/local/bin/vim
   edit_command_buffer
