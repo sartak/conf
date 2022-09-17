@@ -18,14 +18,29 @@ end
 
 # shout out to https://github.com/tsibley/g
 function vg --wraps=rg --description 'vim ripgrep'
-  set -l FILES (command rg -l $argv)
-  set -l st $status
-  if test $st -ne 0; or test "$FILES" = ""
-    return $st
+  if set -q argv[1]
+    set REGEX $argv[1]
+    set FILES (command rg -l $argv)
+    set -l st $status
+    if test $st -ne 0; or test "$FILES" = ""
+        return $st
+    end
+  else
+    set -l RESULT (echo | fzf --print-query --ansi --phony --prompt="rg > " --delimiter=':' --preview-window='+{2}-/2' --bind="change:reload:if test {q} = \"\"; echo; else; rg --no-heading --line-number --color=always 2>/dev/null {q}; end" --preview='if test {1} = ""; echo; else if test -f {1}; bat --color=always --highlight-line={2} {1}; else; echo "File does not exist"; end')
+    set -l st $status
+    if test $st -ne 0; or test "$RESULT" = ""; or test "$RESULT[1]" = ""
+        return $st
+    end
+    set REGEX $RESULT[1]
+
+    set FILES (command rg -l "$REGEX")
+    set -l st $status
+    if test $st -ne 0; or test "$FILES" = ""
+        return $st
+    end
   end
 
   # TODO https://github.com/tsibley/g/blob/master/g#L184
-  set -l REGEX $argv[1]
 
   command vim +1 "+/\v$REGEX" $FILES
 end
