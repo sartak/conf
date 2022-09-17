@@ -120,7 +120,6 @@ function git --wraps=git
 
   set -l GIT (which git)
   $GIT $argv
-  echo "consider adding a retrain or an alias for this git command"
 end
 
 function gs --wraps='git-number --column' --description 'git status'
