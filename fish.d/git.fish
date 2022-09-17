@@ -535,10 +535,22 @@ function gnr --wraps='git-number -c rm -r' --description 'git-number -c rm -r'
   git-number -c rm -r $argv
 end
 
+function git-choose-branch
+  set -l GIT (which git)
+  set -l IFS
+  set BRANCHES ($GIT for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)')
+  if test $status -eq 0
+    echo $BRANCHES | fzf --no-sort --preview='git log --color=always {} | delta'
+  end
+end
+
 function gb --wraps='git checkout -b' --description 'git checkout -b'
   set -l GIT (which git)
   if not set -q argv[1]
-    $GIT choose-branch | xargs --no-run-if-empty $GIT switch
+    set BRANCH (git-choose-branch)
+    if test $status -eq 0; and test "$BRANCH" != ""
+      $GIT switch $BRANCH
+    end
   else
     if $GIT switch $argv 2>/dev/null
       gs
