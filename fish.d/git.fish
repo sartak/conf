@@ -528,7 +528,7 @@ function git-choose-branch
   set -l IFS
   set BRANCHES (command git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)')
   if test $status -eq 0
-    echo $BRANCHES | fzf --no-sort --preview='git log --color=always {} -- | delta'
+    echo $BRANCHES | fzf --no-sort --preview='git log --color=always {} -- | delta' --info=hidden --bind "ctrl-x:execute-silent(git branch -D {})+reload(command git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)')" --header \e"[38;5;240;3mctrl-x to delete"
   end
 end
 
