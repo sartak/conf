@@ -77,6 +77,16 @@ function vs- --description 'launch most recent vim session'
   end
 end
 
+function v- --description 'launch transient vim session'
+  if set -q argv[1]
+    set_color -o yellow
+    echo "this command takes no args" 1>&2
+    return 1
+  else
+    command vim -c ":silent call LoadTransientSession()"
+  end
+end
+
 function vs --description 'launch vim session'
   set newsession 0
 

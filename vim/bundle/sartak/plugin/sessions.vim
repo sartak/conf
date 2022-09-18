@@ -33,5 +33,49 @@ function SessionIfEmpty()
   endif
 endfunc
 
+let s:transient_session_path = $HOME . '/.vim/.transient.session'
+function LoadTransientSession()
+  if has('cscope')
+    silent! cscope kill -1
+  endif
+  try
+    set eventignore=all
+    execute 'silent! %bwipeout!'
+    let n = bufnr('%')
+    execute 'silent! so ' . s:transient_session_path
+    execute 'silent! bwipeout! ' . n
+  finally
+    set eventignore=
+    doautoall BufRead
+    doautoall FileType
+    doautoall BufEnter
+    doautoall BufWinEnter
+    doautoall TabEnter
+    doautoall SessionLoadPost
+	endtry
+	if has('cscope')
+		silent! cscope add .
+	endif
+
+	unlet! g:LAST_SESSION
+	let v:this_session = ''
+endfunc
+
+function MaybeSaveTransientSession()
+  " We already have a session
+  if v:this_session != ''
+    return
+  endif
+
+  " Avoid creating transient session for git commit or git rebase -i
+  if $GIT_EXEC_PATH != ''
+    return
+  endif
+
+  execute 'silent mksession! ' . s:transient_session_path
+endfunc
+
 autocmd VimEnter * call SessionIfEmpty()
 
+" If there's no session then save a transient session
+autocmd VimLeavePre * call MaybeSaveTransientSession()
