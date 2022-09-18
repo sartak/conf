@@ -3,3 +3,4 @@ set softtabstop=2
 set shiftround
 set shiftwidth=2
 set expandtab
+set smarttab
