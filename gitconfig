@@ -30,6 +30,7 @@
   hyperlinks = true
   theme = Monokai Extended Bright
   zero-style = dim syntax
+  tabs=2
 [diff]
   colorMoved = default
 [github]
