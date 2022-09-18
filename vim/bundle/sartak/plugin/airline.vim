@@ -28,7 +28,7 @@ endfunction
 function! AirlineInit()
   let g:airline_section_a = airline#section#create_left(['mode', 'paste', 'spell'])
   let g:airline_section_b = airline#section#create([])
-  let g:airline_section_c = airline#section#create(['%<', '%t', 'readonly'])
+  let g:airline_section_c = airline#section#create(["%{expand('%:p:~:h:h:t')}/%{expand('%:p:h:t')}/%{expand('%:t')}", "readonly"])
   let g:airline_section_gutter = airline#section#create(['%='])
 
   " section y never seems to get rendered, which is where I'd prefer
