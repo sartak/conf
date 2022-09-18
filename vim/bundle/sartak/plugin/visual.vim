@@ -6,3 +6,5 @@ vnoremap K :m '<-2<CR>gv=gv
 nnoremap v V
 nnoremap V <C-V>
 nnoremap <C-V> v
+
+set virtualedit=block
