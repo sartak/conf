@@ -18,6 +18,7 @@
   "typescript.disableProgressNotifications": true,
   "rust-analyzer.disableProgressNotifications": true,
   "go.disableProgressNotifications": true,
+  "rust-analyzer.updates.prompt": false,
 
   "sql.formatOptions": {
     "linesBetweenQueries": 2
