@@ -28,6 +28,7 @@
   navigate = true
   line-numbers = true
   hyperlinks = true
+  theme = Monokai Extended Bright
 [diff]
   colorMoved = default
 [github]
