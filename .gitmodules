@@ -112,3 +112,6 @@
 [submodule "vim/bundle/traces.vim"]
 	path = vim/bundle/traces.vim
 	url = https://github.com/markonm/traces.vim
+[submodule "vim/bundle/vim-fetch"]
+	path = vim/bundle/vim-fetch
+	url = git@github.com:wsdjeg/vim-fetch.git
