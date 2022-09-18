@@ -7,3 +7,6 @@ set nojoinspaces
 " make tilde (flip case) an operator instead of always operating on the next char
 set tildeop
 
+" Y behaves like C and D
+let g:yankring_n_keys = 'D x X'
+nnoremap Y y$
