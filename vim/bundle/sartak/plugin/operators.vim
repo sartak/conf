@@ -10,3 +10,6 @@ set tildeop
 " Y behaves like C and D
 let g:yankring_n_keys = 'D x X'
 nnoremap Y y$
+
+" Delete comment character when joining commented lines
+set formatoptions+=j
