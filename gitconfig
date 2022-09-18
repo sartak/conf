@@ -29,6 +29,7 @@
   line-numbers = true
   hyperlinks = true
   theme = Monokai Extended Bright
+  zero-style = dim syntax
 [diff]
   colorMoved = default
 [github]
