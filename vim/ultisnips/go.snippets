@@ -38,3 +38,7 @@ for ${1:_}${2/(.+)/, /}${2:_} := range ${3:LIST} {
   ${0:${VISUAL}}
 }
 endsnippet
+
+snippet append "append to a slice"
+${1:SLICE} = append($1, ${2:VALUE})${0}
+endsnippet
