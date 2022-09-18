@@ -392,6 +392,16 @@ function grmu --wraps='git reset --mixed @{u}' --description 'git reset --mixed 
   end
 end
 
+function grm1 --wraps='git reset --mixed HEAD~1' --description 'git reset --mixed HEAD~1'
+  if not set -q argv[1]
+    grm 1
+  else
+    set_color -o yellow
+    echo "this command takes no args" 1>&2
+    return 1
+  end
+end
+
 function grm --wraps='git reset --mixed' --description 'git reset --mixed'
   if not set -q argv[1]
     command git reset --mixed
@@ -412,6 +422,16 @@ end
 function grhu --wraps='git reset --hard @{u}' --description 'git reset --hard @{u}'
   if not set -q argv[1]
     command git reset --hard @{u}
+  else
+    set_color -o yellow
+    echo "this command takes no args" 1>&2
+    return 1
+  end
+end
+
+function grh1 --wraps='git reset --hard HEAD~1' --description 'git reset --hard HEAD~1'
+  if not set -q argv[1]
+    grh 1
   else
     set_color -o yellow
     echo "this command takes no args" 1>&2
