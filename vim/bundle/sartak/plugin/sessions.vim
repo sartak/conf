@@ -1,4 +1,5 @@
 set sessionoptions-=blank sessionoptions-=options sessionoptions+=tabpages
+set viewoptions-=options
 
 function FzfSession()
   call fzf#run({
