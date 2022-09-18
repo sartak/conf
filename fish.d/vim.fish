@@ -90,7 +90,7 @@ function vs --description 'launch vim session'
           --header \e"[38;5;240;3mctrl-x to delete, ctrl-c to quit" \
           --preview-window='bottom:50%' \
           --info=hidden \
-          --preview='cd ~/.vim/sessions/; stat -f "Accessed: %Sa%nModified: %Sm%nCreated:  %SB" {}; echo; set_color 23A5FA; g --color=never "^cd (.+)" -r \'$1\' {}; set_color -o normal; g --color=never "^badd \+\d+ (.+)" -r \'  - $1\' {}' \
+          --preview='z $HOME/.vim/sessions/; stat -f "Accessed: %Sa%nModified: %Sm%nCreated:  %SB" {}; echo; set_color 23A5FA; g --color=never "^cd (.+)" -r \'$1\' {}; set_color -o normal; g --color=never "^badd \+\d+ (.+)" -r \'  - $1\' {}' \
           --bind "ctrl-x:execute-silent(rm ~/.vim/sessions/{})+reload(exa $exa_opts)"
     )
     if test $status -ne 0
