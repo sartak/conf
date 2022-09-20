@@ -641,3 +641,10 @@ function gvm --description 'edit files changed since branch'
 
   command vim $FILES
 end
+
+function gz --description 'jump to the top of the git repo'
+  set top (git rev-parse --show-toplevel)
+  if test $status -eq 0; and test "$top" != ""
+    z $top $argv
+  end
+end
