@@ -1,5 +1,5 @@
 set tide_left_prompt_items myhost mygit mykubectl mypwd newline character
-set tide_right_prompt_items myjobs myduration mybattery mystatus
+set tide_right_prompt_items mycontext myduration mybattery mystatus
 
 set tide_prompt_add_newline_before true
 set tide_prompt_color_separator_same_color 949494
@@ -49,9 +49,10 @@ set tide_mygit_truncation_length 24
 set tide_mykubectl_bg_color 660000
 set tide_mykubectl_color FFFFFF
 
-set tide_myjobs_bg_color 222222
-set tide_myjobs_color FFFFFF
-set tide_myjobs_icon …
+set tide_mycontext_bg_color 222222
+set tide_mycontext_color FFFFFF
+set tide_mycontext_jobs_icon %
+set tide_mycontext_shlvl_threshold 1
 
 set tide_myduration_bg_color 3465A4
 set tide_myduration_color FFFFFF
@@ -225,11 +226,21 @@ function _tide_item_myduration
   end
 end
 
-function _tide_item_myjobs
+function _tide_item_mycontext
+  set -l items
+
   if set -q _tide_jobs
-    _tide_print_item myjobs " $tide_myjobs_icon "
+    set -a items $tide_mycontext_jobs_icon
+  end
+
+  if test $SHLVL -gt $tide_mycontext_shlvl_threshold
+    set -a items $SHLVL
+  end
+
+  if test (count $items) -gt 0
+    _tide_print_item mycontext " $items "
   else
-    _tide_print_item myjobs
+    _tide_print_item mycontext
   end
 end
 
