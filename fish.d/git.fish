@@ -532,6 +532,12 @@ function guh --wraps 'git fetch' --description 'git fetch && git reset --hard'
   command git reset --hard @{u}
 end
 
+function guhs --wraps 'git pull && git submodule update --init --recursive' --description 'git pull'
+  command git pull $argv
+  command git submodule update --init --recursive
+  command git reset --hard @{u}
+end
+
 function gn --wraps='git-number -c' --description 'git-number -c'
   git-number -c $argv
 end
