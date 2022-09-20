@@ -4,3 +4,5 @@ vim/.netrwhist
 vim/.yankring_history_v2.txt
 vim/.transient.session
 vim/sessions/
+
+fish.d/puffer_fish_key_bindings.fish
