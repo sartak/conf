@@ -183,7 +183,12 @@ function _tide_item_mykubectl
     if test -z "$context"
       _tide_print_item mykubectl
     else
-      _tide_print_item mykubectl ' '(string replace -r '/(|default)$' '' $context)' '
+      set context (string replace -r '/(|default)$' '' $context)
+      if test -z "$context"; or test "$context" = "$tide_default_kubectl_context"
+        _tide_print_item mykubectl
+      else
+        _tide_print_item mykubectl ' '$context' '
+      end
     end
   end
 end
