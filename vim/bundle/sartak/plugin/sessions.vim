@@ -80,6 +80,7 @@ function MaybeSaveTransientSession()
     return
   endif
 
+  call delete(fnameescape(s:transient_session_path))
   execute 'silent mksession! ' . s:transient_session_path
 endfunc
 
