@@ -69,6 +69,16 @@ function LoadTransientSession()
 	let v:this_session = ''
 endfunc
 
+function HasLegitimateFile()
+  for b in getbufinfo()
+    if filereadable(b.name)
+      return 1
+    endif
+  endfor
+
+  return 0
+endfunc
+
 function MaybeSaveTransientSession()
   " We already have a session
   if v:this_session != ''
@@ -77,6 +87,11 @@ function MaybeSaveTransientSession()
 
   " Avoid creating transient session for git commit or git rebase -i
   if $GIT_EXEC_PATH != ''
+    return
+  endif
+
+  " Avoid creating transient session if we only have empty buffers
+  if !HasLegitimateFile()
     return
   endif
 
