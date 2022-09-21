@@ -11,7 +11,7 @@ function FzfSession()
     \   '--header', "\e[38;5;240;3mctrl-x to delete, ctrl-c to keep vim empty",
     \   '--preview-window', 'bottom:50%',
     \   '--info', 'hidden',
-    \   '--preview', 'cd ~/.vim/sessions/; stat -f "Accessed: %Sa%nModified: %Sm%nCreated:  %SB" {}; echo; set_color 23A5FA; g --color=never "^cd (.+)" -r ' . "'\$1'" . ' {}; set_color -o normal; g --color=never "^badd \+\d+ (.+)" -r ' . "'  - \$1'" . ' {}',
+    \   '--preview', 'z ~/.vim/sessions/; stat -f "Accessed: %Sa%nModified: %Sm%nCreated:  %SB" {}; echo; set_color 23A5FA; g --color=never "^cd (.+)" -r ' . "'\$1'" . ' {}; set_color -o normal; g --color=never "^badd \+\d+ (.+)" -r ' . "'  - \$1'" . ' {}',
     \   '--bind', "ctrl-x:execute-silent(rm ~/.vim/sessions/{})+reload(exa -1 --sort accessed --reverse ~/.vim/sessions/)",
     \ ]
     \ })
