@@ -173,7 +173,7 @@ function _tide_item_mygit
         set_color $tide_mygit_color_upstream; echo -ns "$upstream"
         set_color $tide_mygit_color_conflicted; echo -ns ' !'$conflicted
         set_color $tide_mygit_color_staged; echo -ns ' →'$staged
-        set_color $tide_mygit_color_dirty; echo -ns ' ~'$dirty
+        set_color $tide_mygit_color_dirty; echo -ns ' *'$dirty
         set_color $tide_mygit_color_untracked; echo -ns ' …'$untracked;
         echo ' ')
 end
