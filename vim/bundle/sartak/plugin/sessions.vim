@@ -1,17 +1,25 @@
 set sessionoptions-=blank sessionoptions-=options sessionoptions+=tabpages
 set viewoptions-=options
 
+function s:FzfSessionOpen(name)
+  if a:name == '(transient)'
+    call LoadTransientSession()
+  else
+    SessionOpen(a:name)
+  end
+endfunc
+
 function FzfSession()
   call fzf#run({
-    \ 'source': 'exa -1 --sort accessed --reverse ~/.vim/sessions/',
-    \ 'sink': "SessionOpen",
+    \ 'source': 'echo "(transient)"; exa -1 --sort accessed --reverse ~/.vim/sessions/',
+    \ 'sink': function('s:FzfSessionOpen'),
     \ 'options': [
     \   '--prompt', 'vim session > ',
     \   '--exit-0',
     \   '--header', "\e[38;5;240;3mctrl-x to delete, ctrl-c to keep vim empty",
     \   '--preview-window', 'bottom:50%',
     \   '--info', 'hidden',
-    \   '--preview', 'z ~/.vim/sessions/; stat -f "Accessed: %Sa%nModified: %Sm%nCreated:  %SB" {}; echo; set_color 23A5FA; g --color=never "^cd (.+)" -r ' . "'\$1'" . ' {}; set_color -o normal; g --color=never "^badd \+\d+ (.+)" -r ' . "'  - \$1'" . ' {}',
+    \   '--preview', 'set file {}; if test {} = "(transient)"; z ~/.vim; set file ".transient.session"; else; z ~/.vim/sessions/; end; stat -f "Accessed: %Sa%nModified: %Sm%nCreated:  %SB" $file; echo; set_color 23A5FA; g --color=never "^cd (.+)" -r ' . "'\$1'" . ' $file; set_color -o normal; g --color=never "^badd \+\d+ (.+)" -r ' . "'  - \$1'" . ' $file',
     \   '--bind', "ctrl-x:execute-silent(rm ~/.vim/sessions/{})+reload(exa -1 --sort accessed --reverse ~/.vim/sessions/)",
     \ ]
     \ })

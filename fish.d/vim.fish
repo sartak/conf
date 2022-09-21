@@ -92,15 +92,19 @@ function vs --description 'launch vim session'
 
   if not set -q argv[1]
     set exa_opts -1 --sort accessed --reverse ~/.vim/sessions/
+    set sessions (
+      echo "(transient)"
+      exa $exa_opts
+    )
     set session (
-      exa $exa_opts | \
+      printf "%s\n" $sessions | \
         fzf \
           --prompt="vim session > " \
           --exit-0 \
           --header \e"[38;5;240;3mctrl-x to delete, ctrl-c to quit" \
           --preview-window='bottom:50%' \
           --info=hidden \
-          --preview='z $HOME/.vim/sessions/; stat -f "Accessed: %Sa%nModified: %Sm%nCreated:  %SB" {}; echo; set_color 23A5FA; g --color=never "^cd (.+)" -r \'$1\' {}; set_color -o normal; g --color=never "^badd \+\d+ (.+)" -r \'  - $1\' {}' \
+          --preview='set file {}; if test {} = "(transient)"; z $HOME/.vim; set file .transient.session; else; z $HOME/.vim/sessions/; end; stat -f "Accessed: %Sa%nModified: %Sm%nCreated:  %SB" $file; echo; set_color 23A5FA; g --color=never "^cd (.+)" -r \'$1\' $file; set_color -o normal; g --color=never "^badd \+\d+ (.+)" -r \'  - $1\' $file' \
           --bind "ctrl-x:execute-silent(rm ~/.vim/sessions/{})+reload(exa $exa_opts)"
     )
     if test $status -ne 0
@@ -122,7 +126,9 @@ function vs --description 'launch vim session'
     end
   end
 
-  if test $newsession -eq 1
+  if test "$session" = "(transient)"
+    command vim -c ":silent call LoadTransientSession()"
+  else if test $newsession -eq 1
     command vim -c ":silent SessionSaveAs $session"
   else
     command vim -c ":silent SessionOpen $session"
