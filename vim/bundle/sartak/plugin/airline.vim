@@ -3,16 +3,25 @@ let g:airline_theme='deusfork'
 function SmartLines()
   let currentMode = mode()
   if currentMode == "v" || currentMode == "V" || currentMode == ""
-    let s = line(".")
-    let e = line("v")
-    if s > e
-      let t = s
-      let s = e
-      let e = t
+    let sc = charcol(".")
+    let ec = charcol("v")
+    if sc > ec
+      let tc = sc
+      let sc = ec
+      let ec = tc
     end
-    return s . ":" . e . "(" . (e-s+1) . ")"
+
+    let sl = line(".")
+    let el = line("v")
+    if sl > el
+      let tl = sl
+      let sl = el
+      let el = tl
+    end
+
+    return sc . "-" . ec . "(" . (ec-sc+1) . "):" . sl . "-" . el . "(" . (el-sl+1) . ")"
   else
-    return line(".") . "/" . line("$")
+    return charcol('.') . ":" . line(".") . "/" . line("$")
   end
 endfunction
 
