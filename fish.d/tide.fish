@@ -169,6 +169,7 @@ function _tide_item_mygit
 
     _tide_print_item mygit (set_color white; echo -ns ' '$location
         set_color $tide_mygit_color_operation; echo -ns ' '$operation ' '$step/$total_steps
+        echo -ns \e'[1m'
         set_color $tide_mygit_color_upstream; echo -ns "$upstream"
         set_color $tide_mygit_color_conflicted; echo -ns ' !'$conflicted
         set_color $tide_mygit_color_staged; echo -ns ' →'$staged
