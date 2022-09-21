@@ -115,3 +115,6 @@
 [submodule "vim/bundle/vim-fetch"]
 	path = vim/bundle/vim-fetch
 	url = git@github.com:wsdjeg/vim-fetch.git
+[submodule "vim/bundle/vim-markdown"]
+	path = vim/bundle/vim-markdown
+	url = git@github.com:preservim/vim-markdown.git
