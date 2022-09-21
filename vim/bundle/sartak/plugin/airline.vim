@@ -34,16 +34,24 @@ function CurrentSession()
   return substitute(session, ".*/", "", "")
 endfunction
 
+" https://github.com/vim-airline/vim-airline/issues/2574
+let g:airline#extensions#default#section_truncate_width = {
+  \ 'b': 79,
+  \ 'x': 60,
+  \ 'y': 80,
+  \ 'z': 45,
+  \ 'warning': 80,
+  \ 'error': 80,
+  \ }
+
 function! AirlineInit()
   let g:airline_section_a = airline#section#create_left(['mode', 'paste', 'spell'])
   let g:airline_section_b = airline#section#create([])
   let g:airline_section_c = airline#section#create(["%{expand('%:p:~:h:h:t')}/%{expand('%:p:h:t')}/%{expand('%:t')}", "readonly"])
   let g:airline_section_gutter = airline#section#create(['%='])
 
-  " section y never seems to get rendered, which is where I'd prefer
-  " CurrentSession to go
-  let g:airline_section_x = airline#section#create_right(['%{CurrentSession()}'])
-  let g:airline_section_y = airline#section#create([])
+  let g:airline_section_x = airline#section#create([])
+  let g:airline_section_y = airline#section#create(['%{CurrentSession()}'])
 
   let g:airline_section_z = airline#section#create(['%{SmartLines()}'])
   let g:airline_section_error = airline#section#create(['coc_error_count'])
