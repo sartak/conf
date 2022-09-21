@@ -552,23 +552,39 @@ end
 
 function git-choose-branch
   set -l IFS
-  set BRANCHES (command git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)')
+  set -l header \e'[38;5;240;3mctrl-x to delete'
+  if set -q argv[1]
+    set CURRENT (command git branch --show-current)
+    set BRANCHES (command git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)' | command grep -vxF $CURRENT)
+    set header $header\n\e'[0;3mcurrent: '$CURRENT
+  else
+    set BRANCHES (command git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)')
+  end
+
   if test $status -eq 0
-    echo $BRANCHES | fzf --no-sort --preview='git log --color=always {} -- | delta' --info=hidden --bind "ctrl-x:execute-silent(git branch -D {})+reload(command git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)')" --header \e"[38;5;240;3mctrl-x to delete"
+    echo $BRANCHES | fzf --no-sort --preview='git log --color=always {} -- | delta' --info=hidden --bind "ctrl-x:execute-silent(git branch -D {})+reload(command git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)')" --header $header
   end
 end
 
 function git-choose-branches
   set -l IFS
-  set BRANCHES (command git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)')
+  set -l header \e'[38;5;240;3mctrl-x to delete'
+  if set -q argv[1]
+    set CURRENT (command git branch --show-current)
+    set BRANCHES (command git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)' | command grep -vxF $CURRENT)
+    set header $header\n\e'[0;3mcurrent: '$CURRENT
+  else
+    set BRANCHES (command git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)')
+  end
+
   if test $status -eq 0
-    echo $BRANCHES | fzf --multi --no-sort --preview='git log --color=always {} -- | delta'
+    echo $BRANCHES | fzf --multi --no-sort --preview='git log --color=always {} -- | delta' --info=hidden --bind "ctrl-x:execute-silent(git branch -D {})+reload(command git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)')" --header $header
   end
 end
 
 function gb --wraps='git switch' --description 'git switch'
   if not set -q argv[1]
-    set BRANCH (git-choose-branch)
+    set BRANCH (git-choose-branch 1)
     if test $status -eq 0; and test "$BRANCH" != ""
       command git switch $BRANCH
     end
@@ -583,7 +599,7 @@ end
 
 function gbd --wraps='git branch -D' --description 'git branch -D'
   if not set -q argv[1]
-    git-choose-branches | xargs command git branch -D
+    git-choose-branches 1 | xargs command git branch -D
   else
     command git branch -D $argv
   end
