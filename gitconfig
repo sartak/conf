@@ -21,6 +21,7 @@
   conflictstyle = zdiff3
 [advice]
   statusHints = false
+  detachedHead = false
 [interactive]
   singlekey = true
   diffFilter = delta --color-only
