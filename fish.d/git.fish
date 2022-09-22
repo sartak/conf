@@ -690,6 +690,13 @@ function gd --wraps 'git diff' --description 'git diff'
     set_color -o normal
     echo " instead" 1>&2
     return 1
+  else if test "$argv[1]" = "@{u}"; or test "$argv[1]" = "@{u}..HEAD"
+    echo -n "use " 1>&2
+    set_color -o yellow
+    echo -n "gdu" 1>&2
+    set_color -o normal
+    echo " instead" 1>&2
+    return 1
   else
     command git diff $argv
   end
@@ -697,4 +704,8 @@ end
 
 function gdc --wraps 'git diff --cached' --description 'git diff --cached'
   command git diff --cached $argv
+end
+
+function gdu --wraps 'git diff @{u}' --description 'git diff @{u}'
+  command git diff @{u} $argv
 end
