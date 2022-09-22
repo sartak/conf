@@ -570,10 +570,15 @@ function git-choose-branch
   set -l header \e'[38;5;240;3mctrl-x to delete'
   if set -q argv[1]
     set CURRENT (command git branch --show-current)
-    set BRANCHES (command git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)' | command grep -vxF $CURRENT)
     set header $header\n\e'[0;3mcurrent: '$CURRENT
+    set BRANCHES (command git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)' | command grep -vxF $CURRENT)
   else
     set BRANCHES (command git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)')
+  end
+
+  if test (count $BRANCHES) -eq 0
+    echo "no branches to choose from" 1>&2
+    return 1
   end
 
   if test $status -eq 0
@@ -586,10 +591,15 @@ function git-choose-branches
   set -l header \e'[38;5;240;3mctrl-x to delete'
   if set -q argv[1]
     set CURRENT (command git branch --show-current)
-    set BRANCHES (command git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)' | command grep -vxF $CURRENT)
     set header $header\n\e'[0;3mcurrent: '$CURRENT
+    set BRANCHES (command git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)' | command grep -vxF $CURRENT)
   else
     set BRANCHES (command git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)')
+  end
+
+  if test (count $BRANCHES) -eq 0
+    echo "no branches to choose from" 1>&2
+    return 1
   end
 
   if test $status -eq 0
