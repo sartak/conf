@@ -1,3 +1,3 @@
 function ps --wraps=procs --description 'alias ps=procs'
-  procs $argv; 
+  sudo procs $argv
 end
