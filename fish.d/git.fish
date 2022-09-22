@@ -679,3 +679,22 @@ function gz --description 'jump to the top of the git repo'
     z $top $argv
   end
 end
+
+function gd --wraps 'git diff' --description 'git diff'
+  if not set -q argv[1]
+    command git diff
+  else if test "$argv[1]" = "--cached"
+    echo -n "use " 1>&2
+    set_color -o yellow
+    echo -n "gdc" 1>&2
+    set_color -o normal
+    echo " instead" 1>&2
+    return 1
+  else
+    command git diff $argv
+  end
+end
+
+function gdc --wraps 'git diff --cached' --description 'git diff --cached'
+  command git diff --cached $argv
+end
