@@ -64,7 +64,7 @@ set tide_mybattery_bg_color_warn C4A000
 set tide_mybattery_bg_color_danger 440000
 set tide_mybattery_color_warn 000000
 set tide_mybattery_color_danger FF0000
-set tide_mybattery_threshold 25
+set tide_mybattery_threshold 40
 set tide_mybattery_threshold_danger 20
 
 set tide_mystatus_bg_color 2E3436
