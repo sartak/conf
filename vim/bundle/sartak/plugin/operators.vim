@@ -13,3 +13,5 @@ nnoremap Y y$
 
 " Delete comment character when joining commented lines
 set formatoptions+=j
+
+nnoremap ZZ :wqa<CR>
