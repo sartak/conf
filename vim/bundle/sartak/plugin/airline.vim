@@ -1,4 +1,5 @@
-let g:airline_theme='deusfork'
+let g:airline_theme = 'deusfork'
+let g:airline_powerline_fonts = 1
 
 function SmartLines()
   let currentMode = mode()
