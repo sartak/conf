@@ -118,3 +118,6 @@
 [submodule "vim/bundle/vim-markdown"]
 	path = vim/bundle/vim-markdown
 	url = git@github.com:preservim/vim-markdown.git
+[submodule "vim/bundle/vim-star"]
+	path = vim/bundle/vim-star
+	url = git@github.com:linjiX/vim-star.git
