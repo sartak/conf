@@ -19,6 +19,7 @@
   "rust-analyzer.disableProgressNotifications": true,
   "go.disableProgressNotifications": true,
   "rust-analyzer.updates.prompt": false,
+  "notification.disabledProgressSources": ["*"],
 
   "sql.formatOptions": {
     "linesBetweenQueries": 2
