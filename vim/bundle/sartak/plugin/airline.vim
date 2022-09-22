@@ -39,7 +39,12 @@ function CurrentSession()
 endfunction
 
 function CurrentBuffer()
-  return ''
+  let l:idx = get(g:sartak_filetoindex, expand("%:p"), "missing")
+  if l:idx == "missing"
+    return l:idx
+  endif
+
+  return l:idx . ":" . len(keys(g:sartak_filetoindex))
 endfunction
 
 " https://github.com/vim-airline/vim-airline/issues/2574
