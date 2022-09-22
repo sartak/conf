@@ -38,6 +38,10 @@ function CurrentSession()
   return substitute(session, ".*/", "", "")
 endfunction
 
+function CurrentBuffer()
+  return ''
+endfunction
+
 " https://github.com/vim-airline/vim-airline/issues/2574
 let g:airline#extensions#default#section_truncate_width = {
   \ 'b': 79,
@@ -50,7 +54,7 @@ let g:airline#extensions#default#section_truncate_width = {
 
 function! AirlineInit()
   let g:airline_section_a = airline#section#create_left(['mode', 'paste', 'spell'])
-  let g:airline_section_b = airline#section#create([])
+  let g:airline_section_b = airline#section#create(['%{CurrentBuffer()}'])
   let g:airline_section_c = airline#section#create(["%{expand('%:p:~:h:h:t')}/%{expand('%:p:h:t')}/%{expand('%:t')}", "readonly"])
   let g:airline_section_gutter = airline#section#create(['%='])
 

@@ -1,7 +1,3 @@
-" in normal mode, right and left arrow keys switch buffers
-nmap <Right> :bn<CR>
-nmap <Left>  :bp<CR>
-
 " don't move the cursor to the start of the line when changing buffers
 set nostartofline
 
