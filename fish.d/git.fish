@@ -539,15 +539,30 @@ function guhs --wraps 'git pull && git submodule update --init --recursive' --de
 end
 
 function gn --wraps='git-number -c' --description 'git-number -c'
-  git-number -c $argv
+  if set -q argv[1]
+    git-number -c $argv
+  else
+    echo "usage: gn …" 1>&2
+    return 1
+  end
 end
 
 function gv --wraps='git-number -c vim' --description 'git-number -c vim'
-  git-number -c vim $argv
+  if set -q argv[1]
+    git-number -c vim $argv
+  else
+    echo "usage: gv …" 1>&2
+    return 1
+  end
 end
 
 function gnr --wraps='git-number -c rm -r' --description 'git-number -c rm -r'
-  git-number -c rm -r $argv
+  if set -q argv[1]
+    git-number -c rm -r $argv
+  else
+    echo "usage: gnr …" 1>&2
+    return 1
+  end
 end
 
 function git-choose-branch
