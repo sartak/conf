@@ -50,5 +50,10 @@ set -x RIPGREP_CONFIG_PATH ~/.config/ripgreprc
 bind \cg fzf_grep
 bind \cz fzf_z
 
+set -g man_blink red
+set -g man_bold green
+set -g man_standout -o yellow
+set -g man_underline -u blue
+
 # this has to go late as well
 bind \cv edit_command
