@@ -572,6 +572,7 @@ function git-choose-branch
     set CURRENT (command git branch --show-current)
     set header $header\n\e'[0;3mcurrent: '$CURRENT
     set BRANCHES (command git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)' | command grep -vxF $CURRENT)
+    set RELOAD_TAIL "| command grep -vxF $CURRENT"
   else
     set BRANCHES (command git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)')
   end
@@ -582,7 +583,7 @@ function git-choose-branch
   end
 
   if test $status -eq 0
-    echo $BRANCHES | fzf --no-sort --preview='git log --color=always {} -- | delta' --info=hidden --bind "ctrl-x:execute-silent(git branch -D {})+reload(command git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)')" --header $header
+    echo $BRANCHES | fzf --no-sort --preview='git log --color=always {} -- | delta' --info=hidden --bind "ctrl-x:execute-silent(git branch -D {})+reload:command git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)' $RELOAD_TAIL" --header $header
   end
 end
 
@@ -593,6 +594,7 @@ function git-choose-branches
     set CURRENT (command git branch --show-current)
     set header $header\n\e'[0;3mcurrent: '$CURRENT
     set BRANCHES (command git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)' | command grep -vxF $CURRENT)
+    set RELOAD_TAIL "| command grep -vxF $CURRENT"
   else
     set BRANCHES (command git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)')
   end
@@ -603,7 +605,7 @@ function git-choose-branches
   end
 
   if test $status -eq 0
-    echo $BRANCHES | fzf --multi --no-sort --preview='git log --color=always {} -- | delta' --info=hidden --bind "ctrl-x:execute-silent(git branch -D {})+reload(command git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)')" --header $header
+    echo $BRANCHES | fzf --multi --no-sort --preview='git log --color=always {} -- | delta' --info=hidden --bind "ctrl-x:execute-silent(git branch -D {})+reload:command git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)' $RELOAD_TAIL" --header $header
   end
 end
 
