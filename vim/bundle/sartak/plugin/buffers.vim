@@ -30,6 +30,8 @@ endfor
 nmap <leader>0  :<C-U>echoerr "not implemented yet"<CR>
 nmap <leader>b0 :<C-U>echoerr "not implemented yet"<CR>
 
+nmap <leader>B :<C-U>call FzfJumpBuffer()<CR>
+
 func GoToBufferIndex(number)
   let l:file = get(g:sartak_indextofile, a:number, "")
   if l:file == ""
@@ -40,6 +42,39 @@ func GoToBufferIndex(number)
     return
   end
   exe "buffer " . l:file
+endfunc
+
+let s:delimiter = ' '
+
+func FzfJumpBufferSource()
+  let l:res = []
+  for idx in sort(keys(g:sartak_indextofile), 'n')
+    let l:file = get(g:sartak_indextofile, idx)
+    let l:file = fnamemodify(l:file, ':.')
+    call add(l:res, idx . s:delimiter . l:file)
+  endfor
+  return l:res
+endfunc
+
+func FzfJumpBufferSink(res)
+  let l:parts = split(a:res, s:delimiter)
+  let l:idx = l:parts[0]
+  call GoToBufferIndex(l:idx)
+endfunc
+
+func FzfJumpBuffer()
+  call fzf#run({
+    \ 'source': FzfJumpBufferSource(),
+    \ 'sink': function('FzfJumpBufferSink'),
+    \ 'options': [
+    \   '--prompt', 'buffer> ',
+    \   '--exit-0',
+    \   '--delimiter=' . s:delimiter,
+    \   '--preview-window', 'bottom:50%',
+    \   '--info', 'hidden',
+    \   '--preview', 'bat --color=always {2..}'
+    \ ]
+    \ })
 endfunc
 
 func SetBufferIndex(desired_idx)
