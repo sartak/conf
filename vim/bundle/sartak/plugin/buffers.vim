@@ -1,6 +1,14 @@
-" in normal mode, right and left arrow keys switch buffers
-nmap <Right> :bn<CR>
-nmap <Left>  :bp<CR>
+" retrain my fingers for buffer jump commands
+nmap <Right> :<C-U>echoerr "use buffer jumps instead"<CR>
+nmap <Left>  :<C-U>echoerr "use buffer jumps instead"<CR>
+cnoreabbrev <expr> bn getcmdtype() == ":" && getcmdline() == 'bn' ? 'USE BUFFER JUMPS' : 'bn'
+cnoreabbrev <expr> bne getcmdtype() == ":" && getcmdline() == 'bne' ? 'USE BUFFER JUMPS' : 'bne'
+cnoreabbrev <expr> bnex getcmdtype() == ":" && getcmdline() == 'bnex' ? 'USE BUFFER JUMPS' : 'bnex'
+cnoreabbrev <expr> bnext getcmdtype() == ":" && getcmdline() == 'bnext' ? 'USE BUFFER JUMPS' : 'bnext'
+cnoreabbrev <expr> bp getcmdtype() == ":" && getcmdline() == 'bp' ? 'USE BUFFER JUMPS' : 'bp'
+cnoreabbrev <expr> bpr getcmdtype() == ":" && getcmdline() == 'bpr' ? 'USE BUFFER JUMPS' : 'bpr'
+cnoreabbrev <expr> bpre getcmdtype() == ":" && getcmdline() == 'bpre' ? 'USE BUFFER JUMPS' : 'bpre'
+cnoreabbrev <expr> bprev getcmdtype() == ":" && getcmdline() == 'bprev' ? 'USE BUFFER JUMPS' : 'bprev'
 
 " save and load buffer map in session
 set sessionoptions+=globals
