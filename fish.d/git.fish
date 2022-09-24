@@ -1,6 +1,6 @@
-function git --wraps=git
+function git --wraps=hub
   if not status is-interactive
-    command git $argv
+    command hub $argv
     return
   end
 
@@ -118,7 +118,7 @@ function git --wraps=git
     end
   end
 
-  command git $argv
+  command hub $argv
 end
 
 function gs --wraps='git-number --column' --description 'git status'
