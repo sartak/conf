@@ -30,7 +30,7 @@ endfor
 nmap <leader>0  :<C-U>echoerr "not implemented yet"<CR>
 nmap <leader>b0 :<C-U>echoerr "not implemented yet"<CR>
 
-nmap <leader>B :<C-U>call FzfJumpBuffer()<CR>
+nmap <silent> <leader>B :<C-U>call FzfJumpBuffer()<CR>
 
 func GoToBufferIndex(number)
   let l:file = get(g:sartak_indextofile, a:number, "")
