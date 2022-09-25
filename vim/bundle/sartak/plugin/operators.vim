@@ -15,3 +15,9 @@ nnoremap Y y$
 set formatoptions+=j
 
 nnoremap ZZ :wqa<CR>
+
+" Swap motions for {} and (). Nop until I retrain my fingers
+noremap ( {
+noremap ) }
+noremap { <Nop>
+noremap } <Nop>
