@@ -13,6 +13,8 @@
 [pull]
   rebase = false
   ff = only
+[fetch]
+  recurseSubmodules = on-demand
 [rebase]
   autoStash = true
 [init]
