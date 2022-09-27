@@ -21,6 +21,9 @@
   defaultBranch = master
 [merge]
   conflictstyle = zdiff3
+[status]
+  submoduleSummary = true
+  showUntrackedFiles = all
 [advice]
   statusHints = false
   detachedHead = false
