@@ -123,7 +123,9 @@ end
 
 function gs --wraps='git-number --column' --description 'git status'
   command git log -1 --format='format:%C(Yellow)%h%Creset %s'
-  git-number -uall $argv
+  if test $status -eq 0
+    git-number -uall $argv
+  end
 end
 
 function ga --wraps='git-number add' --description 'git add'
