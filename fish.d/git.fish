@@ -626,6 +626,16 @@ function gb --wraps='git switch' --description 'git switch'
   end
 end
 
+function gb- --wraps='git switch -' --description 'git switch -'
+  if not set -q argv[1]
+    command git switch -
+  else
+    set_color -o yellow
+    echo "this command takes no args" 1>&2
+    return 1
+  end
+end
+
 function gbd --wraps='git branch -D' --description 'git branch -D'
   if not set -q argv[1]
     git-choose-branches 1 | xargs command git branch -D
