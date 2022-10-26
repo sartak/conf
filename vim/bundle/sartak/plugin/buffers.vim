@@ -41,7 +41,7 @@ func GoToBufferIndex(number)
     echohl None
     return
   end
-  exe "buffer " . l:file
+  exe "buffer! " . l:file
 endfunc
 
 let s:delimiter = ' '
