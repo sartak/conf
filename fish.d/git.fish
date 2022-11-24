@@ -862,6 +862,17 @@ function gvd --description 'edit uncommitted changes'
   command vim $FILES
 end
 
+function gvc --description 'edit files changed in last commit'
+  set -l FILES (command git diff HEAD~1..HEAD --name-only; command git ls-files --others --exclude-standard)
+  if [ "$FILES" = "" ]
+    set_color -o yellow
+    echo "no unchanged files" 1>&2
+    return 1
+  end
+
+  command vim $FILES
+end
+
 function gvu --description 'edit files changed since upstream'
   set -l FILES (command git diff @{u} --name-only; command git ls-files --others --exclude-standard)
   if [ "$FILES" = "" ]
