@@ -152,20 +152,32 @@ function gc --description 'git commit'
   end
 end
 
+function gc_amend --description 'git commit'
+  if not set -q argv[1]
+    command git commit --amend
+  else
+    command git commit --amend -m "$argv"
+  end
+end
+
+function gc_edit --description 'git commit'
+  command git commit --amend --no-edit
+end
+
 function gcx --description 'git commit; gx'
   if not set -q argv[1]
-    command git commit -m "@@@ Temporary commit"
+    gc "@@@ Temporary commit"
   else
-    command git commit -m "$argv"
+    gc "$argv"
   end
   gx
 end
 
 function gcp --description 'git commit; git push'
   if not set -q argv[1]
-    command git commit
+    gc
   else
-    command git commit -m "$argv"
+    gc "$argv"
   end
   command git push
 end
@@ -176,18 +188,18 @@ end
 
 function gcs --description 'git commit; git ship'
   if not set -q argv[1]
-    command git commit
+    gc
   else
-    command git commit -m "$argv"
+    gc "$argv"
   end
   command git ship
 end
 
 function gcxs --description 'git commit; gx; git ship'
   if not set -q argv[1]
-    command git commit -m '@@@ Temporary commit'
+    gc '@@@ Temporary commit'
   else
-    command git commit -m "$argv"
+    gc "$argv"
   end
   gx
   command git ship
@@ -195,18 +207,18 @@ end
 
 function gcf --description 'git commit; git push -f'
   if not set -q argv[1]
-    command git commit
+    gc
   else
-    command git commit -m "$argv"
+    gc "$argv"
   end
   command git push -f
 end
 
 function gcxf --description 'git commit; gx; git push -f'
   if not set -q argv[1]
-    command git commit -m "@@@ Temporary commit"
+    gc "@@@ Temporary commit"
   else
-    command git commit -m "$argv"
+    gc "$argv"
   end
   gx
   command git push -f
@@ -215,18 +227,18 @@ end
 function gac --description 'git add; git commit'
   command git add -p
   if not set -q argv[1]
-    command git commit
+    gc
   else
-    command git commit -m "$argv"
+    gc "$argv"
   end
 end
 
 function gacx --description 'git add; git commit; gx'
   command git add -p
   if not set -q argv[1]
-    command git commit -m "@@@ Temporary commit"
+    gc "@@@ Temporary commit"
   else
-    command git commit -m "$argv"
+    gc "$argv"
   end
   gx
 end
@@ -238,9 +250,9 @@ end
 function gacp --description 'git add; git commit; git push'
   command git add -p
   if not set -q argv[1]
-    command git commit
+    gc
   else
-    command git commit -m "$argv"
+    gc "$argv"
   end
   command git push
 end
@@ -256,9 +268,9 @@ end
 function gacs --description 'git add; git commit; git ship'
   command git add -p
   if not set -q argv[1]
-    command git commit
+    gc
   else
-    command git commit -m "$argv"
+    gc "$argv"
   end
   command git ship
 end
@@ -266,9 +278,9 @@ end
 function gacxs --description 'git add; git commit; gx; git ship'
   command git add -p
   if not set -q argv[1]
-    command git commit -m "@@@ Temporary commit"
+    gc "@@@ Temporary commit"
   else
-    command git commit -m "$argv"
+    gc "$argv"
   end
   gx
   command git ship
@@ -281,9 +293,9 @@ end
 function gacf --description 'git add; git commit; git push -f'
   command git add -p
   if not set -q argv[1]
-    command git commit
+    gc
   else
-    command git commit -m "$argv"
+    gc "$argv"
   end
   command git push -f
 end
@@ -291,9 +303,9 @@ end
 function gacxf --description 'git add; git commit; gx; git push -f'
   command git add -p
   if not set -q argv[1]
-    command git commit -m "@@@ Temporary commit"
+    gc "@@@ Temporary commit"
   else
-    command git commit -m "$argv"
+    gc "$argv"
   end
   gx
   command git push -f
@@ -301,9 +313,9 @@ end
 
 function gep --description 'git commit --amend; git push -f'
   if not set -q argv[1]
-    command git commit --amend
+    gc_amend
   else
-    command git commit --amend -m "$argv"
+    gc_amend "$argv"
   end
   command git push -f
 end
@@ -314,9 +326,9 @@ end
 
 function ges --description 'git commit --amend; git ship'
   if not set -q argv[1]
-    command git commit --amend
+    gc_amend
   else
-    command git commit --amend -m "$argv"
+    gc_amend "$argv"
   end
   command git ship
 end
@@ -324,18 +336,18 @@ end
 function gae --description 'git add; git commit --amend'
   command git add -p
   if not set -q argv[1]
-    command git commit --amend
+    gc_amend
   else
-    command git commit --amend -m "$argv"
+    gc_amend "$argv"
   end
 end
 
 function gaex --description 'git add; git commit --amend; gx'
   command git add -p
   if not set -q argv[1]
-    command git commit --amend
+    gc_amend
   else
-    command git commit --amend -m "$argv"
+    gc_amend "$argv"
   end
   gx
 end
@@ -343,9 +355,9 @@ end
 function gaep --description 'git add; git commit --amend; git push -f'
   command git add -p
   if not set -q argv[1]
-    command git commit --amend
+    gc_amend
   else
-    command git commit --amend -m "$argv"
+    gc_amend "$argv"
   end
   command git push -f
 end
@@ -353,9 +365,9 @@ end
 function gaexp --description 'git add; git commit --amend; gx; git push -f'
   command git add -p
   if not set -q argv[1]
-    command git commit --amend
+    gc_amend
   else
-    command git commit --amend -m "$argv"
+    gc_amend "$argv"
   end
   gx
   command git push -f
@@ -364,9 +376,9 @@ end
 function gaes --description 'git add; git commit --amend; git ship'
   command git add -p
   if not set -q argv[1]
-    command git commit --amend
+    gc_amend
   else
-    command git commit --amend -m "$argv"
+    gc_amend "$argv"
   end
   command git ship
 end
@@ -374,9 +386,9 @@ end
 function gaexs --description 'git add; git commit --amend; gx; git ship'
   command git add -p
   if not set -q argv[1]
-    command git commit --amend
+    gc_amend
   else
-    command git commit --amend -m "$argv"
+    gc_amend "$argv"
   end
   gx
   command git ship
@@ -392,7 +404,7 @@ end
 
 function gnp --description 'git commit --amend --no-edit; git push -f'
   if not set -q argv[1]
-    command git commit --amend --no-edit
+    gc_edit
     command git push -f
   else
     set_color -o yellow
@@ -403,7 +415,7 @@ end
 
 function gnxp --description 'git commit --amend --no-edit; gx; git push -f'
   if not set -q argv[1]
-    command git commit --amend --no-edit
+    gc_edit
     gx
     command git push -f
   else
@@ -415,7 +427,7 @@ end
 
 function gns --description 'git commit --amend --no-edit; git ship'
   if not set -q argv[1]
-    command git commit --amend --no-edit
+    gc_edit
     command git ship
   else
     set_color -o yellow
@@ -426,7 +438,7 @@ end
 
 function gnxs --description 'git commit --amend --no-edit; gx; git ship'
   if not set -q argv[1]
-    command git commit --amend --no-edit
+    gc_edit
     gx
     command git ship
   else
@@ -473,7 +485,7 @@ end
 function gan --description 'git add; git commit --amend --no-edit'
   command git add -p
   if not set -q argv[1]
-    command git commit --amend --no-edit
+    gc_edit
   else
     set_color -o yellow
     echo "this command takes no args" 1>&2
@@ -484,7 +496,7 @@ end
 function ganx --description 'git add; git commit --amend --no-edit; gx'
   command git add -p
   if not set -q argv[1]
-    command git commit --amend --no-edit
+    gc_edit
     gx
   else
     set_color -o yellow
@@ -496,7 +508,7 @@ end
 function ganp --description 'git add; git commit --amend --no-edit; git push -f'
   command git add -p
   if not set -q argv[1]
-    command git commit --amend --no-edit
+    gc_edit
     command git push -f
   else
     set_color -o yellow
@@ -508,7 +520,7 @@ end
 function ganxp --description 'git add; git commit --amend --no-edit; gx; git push -f'
   command git add -p
   if not set -q argv[1]
-    command git commit --amend --no-edit
+    gc_edit
     gx
     command git push -f
   else
@@ -521,7 +533,7 @@ end
 function gans --description 'git add; git commit --amend --no-edit; git ship'
   command git add -p
   if not set -q argv[1]
-    command git commit --amend --no-edit
+    gc_edit
     command git ship
   else
     set_color -o yellow
@@ -533,7 +545,7 @@ end
 function ganxs --description 'git add; git commit --amend --no-edit; gx; git ship'
   command git add -p
   if not set -q argv[1]
-    command git commit --amend --no-edit
+    gc_edit
     gx
     command git ship
   else
@@ -554,9 +566,9 @@ end
 function gq --description 'git add; git commit --amend [--no-edit]; git push -f'
   command git add -p
   if not set -q argv[1]
-    command git commit --amend --no-edit
+    gc_edit
   else
-    command git commit --amend -m "$argv"
+    gc_amend "$argv"
   end
   command git push -f
 end
