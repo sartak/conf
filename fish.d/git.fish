@@ -145,6 +145,12 @@ function gco --wraps='git checkout' --description 'git checkout'
 end
 
 function gc --description 'git commit'
+  set -l STAGED (command command git diff --cached --name-only)
+  if test "$STAGED" = ""
+    gs
+    return 0
+  end
+
   if not set -q argv[1]
     command git commit
   else
@@ -153,6 +159,12 @@ function gc --description 'git commit'
 end
 
 function gc_amend --description 'git commit'
+  set -l STAGED (command command git diff --cached --name-only)
+  if test "$STAGED" = ""
+    gs
+    return 0
+  end
+
   if not set -q argv[1]
     command git commit --amend
   else
@@ -161,6 +173,12 @@ function gc_amend --description 'git commit'
 end
 
 function gc_edit --description 'git commit'
+  set -l STAGED (command command git diff --cached --name-only)
+  if test "$STAGED" = ""
+    gs
+    return 0
+  end
+
   command git commit --amend --no-edit
 end
 
