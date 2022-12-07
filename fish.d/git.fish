@@ -159,12 +159,6 @@ function gc --description 'git commit'
 end
 
 function gc_amend --description 'git commit'
-  set -l STAGED (command command git diff --cached --name-only)
-  if test "$STAGED" = ""
-    gs
-    return 0
-  end
-
   if not set -q argv[1]
     command git commit --amend
   else
