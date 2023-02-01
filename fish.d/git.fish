@@ -270,7 +270,7 @@ function gacp --description 'git add; git commit; git push'
 end
 
 function gaxp --description 'git add; git commit; gx; git push'
-  gacxf $argv
+  gacxp $argv
 end
 
 function gacxp --description 'git add; git commit; gx; git push'
@@ -321,6 +321,10 @@ function gacxf --description 'git add; git commit; gx; git push -f'
   end
   gx
   command git push -f
+end
+
+function gaxf --description 'git add; git commit; gx; git push -f'
+  gacxf $argv
 end
 
 function gep --description 'git commit --amend; git push -f'
