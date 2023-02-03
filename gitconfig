@@ -29,6 +29,7 @@
 [advice]
   statusHints = false
   detachedHead = false
+  skippedCherryPicks = false
 [interactive]
   singlekey = true
   diffFilter = delta --color-only
