@@ -31,6 +31,7 @@ nmap <leader>0  :<C-U>echoerr "not implemented yet"<CR>
 nmap <leader>b0 :<C-U>echoerr "not implemented yet"<CR>
 
 nmap <silent> <leader>B :<C-U>call FzfJumpBuffer()<CR>
+nmap <silent> <leader>br :<C-U>call RenumberBuffers()<CR>
 
 func GoToBufferIndex(number)
   let l:file = get(g:sartak_indextofile, a:number, "")
@@ -145,6 +146,12 @@ function SyncBuffers(event)
   endfor
 
   call SerializeMaps()
+endfunction
+
+function RenumberBuffers()
+  let g:sartak_filetoindex = {}
+  let g:sartak_indextofile = {}
+  call SyncBuffers("")
 endfunction
 
 " https://groups.google.com/g/vim_dev/c/azjxSX4Z5Io
