@@ -959,3 +959,8 @@ end
 function gdu --wraps 'git diff @{u}' --description 'git diff @{u}'
   command git diff @{u} $argv
 end
+
+function gwip --description 'git add; git commit -m WIP'
+  command git add .
+  command git commit --no-verify -m '@@@ WIP'
+end
