@@ -21,3 +21,6 @@ noremap ( {
 noremap ) }
 noremap { <Nop>
 noremap } <Nop>
+
+" s///g is what I usually want
+set gdefault
