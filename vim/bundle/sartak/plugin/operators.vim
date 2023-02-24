@@ -16,11 +16,9 @@ set formatoptions+=j
 
 nnoremap ZZ :wqa<CR>
 
-" Swap motions for {} and (). Nop until I retrain my fingers
+" () jumps paragraphs, {} mapped in coc.vim jumps errors
 noremap ( {
 noremap ) }
-noremap { <Nop>
-noremap } <Nop>
 
 " s///g is what I usually want
 set gdefault
