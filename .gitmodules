@@ -121,3 +121,6 @@
 [submodule "hammerspoon/Spoons/VimMode.spoon"]
 	path = hammerspoon/Spoons/VimMode.spoon
 	url = https://github.com/dbalatero/VimMode.spoon
+[submodule "vim/bundle/rust.vim"]
+	path = vim/bundle/rust.vim
+	url = git@github.com:rust-lang/rust.vim.git
