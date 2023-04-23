@@ -48,6 +48,18 @@ function miami --wraps='ssh miami' --description='ssh miami'
   command ssh miami-tailscale $argv
 end
 
+function tequesta-tailscale --wraps='ssh tequesta-tailscale' --description='ssh tequesta-tailscale'
+  command ssh tequesta-tailscale $argv
+end
+
+function tequesta-local --wraps='ssh tequesta-local' --description='ssh tequesta-local'
+  command ssh tequesta-local $argv
+end
+
+function tequesta --wraps='ssh tequesta' --description='ssh tequesta'
+  command ssh tequesta-tailscale $argv
+end
+
 function phuket-tailscale --wraps='ssh phuket-tailscale' --description='ssh phuket-tailscale'
   command ssh phuket-tailscale $argv
 end
