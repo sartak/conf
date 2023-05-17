@@ -14,11 +14,13 @@ function qraw --description 'ask openai'
     -H "Authorization: Bearer $apikey" \
     -d $payload)
 
-  echo $output | jq -r '.choices[0].text'
-  if test $status -ne 0
+  set text (echo $output | jq -r '.choices[0].text')
+  if test $status -ne 0; or test "$text" = "null"
     echo "output:"
     echo $output
     return 1
+  else
+    echo $output | jq -r '.choices[0].text'
   end
 end
 
