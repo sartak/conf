@@ -1,4 +1,6 @@
-set termguicolors
+if !empty($COLORTERM)
+  set termguicolors
+endif
 
 colorscheme molokai
 
