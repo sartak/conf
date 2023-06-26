@@ -185,13 +185,22 @@ function gcx --description 'git commit; gx'
   gx
 end
 
+function _gitpush
+  set -l NEEDSROOT (command git config --local --bool --get fish.needsroot)
+  if test "$NEEDSROOT" = "true"
+    command sudo git push $argv
+  else
+    command git push $argv
+  end
+end
+
 function gcp --description 'git commit; git push'
   if not set -q argv[1]
     gc
   else
     gc "$argv"
   end
-  command git push
+  _gitpush
 end
 
 function gcxp --description 'git commit; gx; git push'
@@ -223,7 +232,7 @@ function gcf --description 'git commit; git push -f'
   else
     gc "$argv"
   end
-  command git push -f
+  _gitpush -f
 end
 
 function gcxf --description 'git commit; gx; git push -f'
@@ -233,7 +242,7 @@ function gcxf --description 'git commit; gx; git push -f'
     gc "$argv"
   end
   gx
-  command git push -f
+  _gitpush -f
 end
 
 function gac --description 'git add; git commit'
@@ -266,7 +275,7 @@ function gacp --description 'git add; git commit; git push'
   else
     gc "$argv"
   end
-  command git push
+  _gitpush
 end
 
 function gaxp --description 'git add; git commit; gx; git push'
@@ -309,7 +318,7 @@ function gacf --description 'git add; git commit; git push -f'
   else
     gc "$argv"
   end
-  command git push -f
+  _gitpush -f
 end
 
 function gacxf --description 'git add; git commit; gx; git push -f'
@@ -320,7 +329,7 @@ function gacxf --description 'git add; git commit; gx; git push -f'
     gc "$argv"
   end
   gx
-  command git push -f
+  _gitpush -f
 end
 
 function gaxf --description 'git add; git commit; gx; git push -f'
@@ -333,7 +342,7 @@ function gep --description 'git commit --amend; git push -f'
   else
     gc_amend "$argv"
   end
-  command git push -f
+  _gitpush -f
 end
 
 function gef
@@ -375,7 +384,7 @@ function gaep --description 'git add; git commit --amend; git push -f'
   else
     gc_amend "$argv"
   end
-  command git push -f
+  _gitpush -f
 end
 
 function gaexp --description 'git add; git commit --amend; gx; git push -f'
@@ -386,7 +395,7 @@ function gaexp --description 'git add; git commit --amend; gx; git push -f'
     gc_amend "$argv"
   end
   gx
-  command git push -f
+  _gitpush -f
 end
 
 function gaes --description 'git add; git commit --amend; git ship'
@@ -421,7 +430,7 @@ end
 function gnp --description 'git commit --amend --no-edit; git push -f'
   if not set -q argv[1]
     gc_edit
-    command git push -f
+    _gitpush -f
   else
     set_color -o yellow
     echo "this command takes no args" 1>&2
@@ -433,7 +442,7 @@ function gnxp --description 'git commit --amend --no-edit; gx; git push -f'
   if not set -q argv[1]
     gc_edit
     gx
-    command git push -f
+    _gitpush -f
   else
     set_color -o yellow
     echo "this command takes no args" 1>&2
@@ -475,7 +484,7 @@ end
 function gxp --description 'git rebase --interactive; git push -f'
   if not set -q argv[1]
     gx
-    command git push -f
+    _gitpush -f
   else
     set_color -o yellow
     echo "this command takes no args" 1>&2
@@ -525,7 +534,7 @@ function ganp --description 'git add; git commit --amend --no-edit; git push -f'
   command git add -p
   if not set -q argv[1]
     gc_edit
-    command git push -f
+    _gitpush -f
   else
     set_color -o yellow
     echo "this command takes no args" 1>&2
@@ -538,7 +547,7 @@ function ganxp --description 'git add; git commit --amend --no-edit; gx; git pus
   if not set -q argv[1]
     gc_edit
     gx
-    command git push -f
+    _gitpush -f
   else
     set_color -o yellow
     echo "this command takes no args" 1>&2
@@ -586,7 +595,7 @@ function gq --description 'git add; git commit --amend [--no-edit]; git push -f'
   else
     gc_amend "$argv"
   end
-  command git push -f
+  _gitpush -f
 end
 
 function gr --wraps='git reset' --description 'git reset'
