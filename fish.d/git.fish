@@ -257,7 +257,7 @@ end
 function gacx --description 'git add; git commit; gx'
   command git add -p
   if not set -q argv[1]
-    gc "@@@ Temporary commit"
+    gc
   else
     gc "$argv"
   end
@@ -265,7 +265,13 @@ function gacx --description 'git add; git commit; gx'
 end
 
 function gax --description 'git add; git commit'
-  gacx $argv
+  command git add -p
+  if not set -q argv[1]
+    gc "@@@ Temporary commit"
+  else
+    gc "$argv"
+  end
+  gx
 end
 
 function gacp --description 'git add; git commit; git push'
