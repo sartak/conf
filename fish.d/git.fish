@@ -750,6 +750,26 @@ function glp --wraps='git log -p' --description 'git log -p'
   end
 end
 
+function glu --wraps='git log @{u}' --description 'git log @{u}'
+  if not set -q argv[1]
+    command git log @{u}
+  else
+    set_color -o yellow
+    echo "this command takes no args" 1>&2
+    return 1
+  end
+end
+
+function glpu --wraps='git log -p @{u}' --description 'git log -p @{u}'
+  if not set -q argv[1]
+    command git log -p @{u}
+  else
+    set_color -o yellow
+    echo "this command takes no args" 1>&2
+    return 1
+  end
+end
+
 function gu --wraps 'git pull' --description 'git pull'
   command git pull $argv
 end
