@@ -203,6 +203,15 @@ function gcp --description 'git commit; git push'
   _gitpush
 end
 
+function gcpu --description 'git commit; git push --set-upstream origin'
+  if not set -q argv[1]
+    gc
+  else
+    gc "$argv"
+  end
+  _gitpush --set-upstream origin (command git branch --show-current)
+end
+
 function gcxp --description 'git commit; gx; git push'
   gcxf $argv
 end
