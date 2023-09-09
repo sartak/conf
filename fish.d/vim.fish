@@ -66,7 +66,7 @@ function vs- --description 'launch most recent vim session'
     return 1
   else
     set session (
-      exa -1 --sort modified --reverse ~/.vim/sessions/ | head -n1
+      eza -1 --sort modified --reverse ~/.vim/sessions/ | head -n1
     )
     if test "$session" = ""
       echo "no sessions exist; run `vs <session>` or `\\sc` in vim to create" 1>&2
@@ -91,10 +91,10 @@ function vs --description 'launch vim session'
   set newsession 0
 
   if not set -q argv[1]
-    set exa_opts -1 --sort accessed --reverse ~/.vim/sessions/
+    set eza_opts -1 --sort accessed --reverse ~/.vim/sessions/
     set sessions (
       echo "(transient)"
-      exa $exa_opts
+      eza $eza_opts
     )
     set session (
       printf "%s\n" $sessions | \
@@ -105,11 +105,11 @@ function vs --description 'launch vim session'
           --preview-window='bottom:50%' \
           --info=hidden \
           --preview='set file {}; if test {} = "(transient)"; z $HOME/.vim; set file .transient.session; else; z $HOME/.vim/sessions/; end; stat -f "Accessed: %Sa%nModified: %Sm%nCreated:  %SB" $file; echo; set_color 23A5FA; g --color=never "^cd (.+)" -r \'$1\' $file; set_color -o normal; g --color=never "^badd \+\d+ (.+)" -r \'  - $1\' $file' \
-          --bind "ctrl-x:execute-silent(rm ~/.vim/sessions/{})+reload(exa $exa_opts)"
+          --bind "ctrl-x:execute-silent(rm ~/.vim/sessions/{})+reload(eza $eza_opts)"
     )
     if test $status -ne 0
         set session (
-          exa ~/.vim/sessions/ | head -n1
+          eza ~/.vim/sessions/ | head -n1
         )
         if test "$session" = ""
           echo "no sessions exist; run `vs <session>` or `\\sc` in vim to create" 1>&2

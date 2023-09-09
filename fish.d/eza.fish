@@ -20,7 +20,7 @@ function ls --wraps=ls
   return 1
 end
 
-function l --wraps='exa' --description 'exa'
+function l --wraps='eza' --description 'eza'
   if test "$argv[1]" = "-l"
     echo -n "use " 1>&2
     set_color -o yellow
@@ -36,11 +36,11 @@ function l --wraps='exa' --description 'exa'
     echo " instead" 1>&2
     return 1
   else
-    exa $argv
+    eza $argv
   end
 end
 
-function ll --wraps='exa' --description 'exa -l'
+function ll --wraps='eza' --description 'eza -l'
   if test "$argv[1]" = "-a"
     echo -n "use " 1>&2
     set_color -o yellow
@@ -49,10 +49,10 @@ function ll --wraps='exa' --description 'exa -l'
     echo " instead" 1>&2
     return 1
   else
-    exa -l --git $argv
+    eza -l --git $argv
   end
 end
 
-function la --wraps='exa' --description 'exa -la'
-  exa -la --git $argv
+function la --wraps='eza' --description 'eza -la'
+  eza -la --git $argv
 end

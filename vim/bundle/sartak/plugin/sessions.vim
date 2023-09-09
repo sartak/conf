@@ -11,7 +11,7 @@ endfunc
 
 function FzfSession()
   call fzf#run({
-    \ 'source': 'echo "(transient)"; exa -1 --sort accessed --reverse ~/.vim/sessions/',
+    \ 'source': 'echo "(transient)"; eza -1 --sort accessed --reverse ~/.vim/sessions/',
     \ 'sink': function('s:FzfSessionOpen'),
     \ 'options': [
     \   '--prompt', 'vim session > ',
@@ -20,7 +20,7 @@ function FzfSession()
     \   '--preview-window', 'bottom:50%',
     \   '--info', 'hidden',
     \   '--preview', 'set file {}; if test {} = "(transient)"; z ~/.vim; set file ".transient.session"; else; z ~/.vim/sessions/; end; stat -f "Accessed: %Sa%nModified: %Sm%nCreated:  %SB" $file; echo; set_color 23A5FA; g --color=never "^cd (.+)" -r ' . "'\$1'" . ' $file; set_color -o normal; g --color=never "^badd \+\d+ (.+)" -r ' . "'  - \$1'" . ' $file',
-    \   '--bind', "ctrl-x:execute-silent(rm ~/.vim/sessions/{})+reload(exa -1 --sort accessed --reverse ~/.vim/sessions/)",
+    \   '--bind', "ctrl-x:execute-silent(rm ~/.vim/sessions/{})+reload(eza -1 --sort accessed --reverse ~/.vim/sessions/)",
     \ ]
     \ })
 endfunc
