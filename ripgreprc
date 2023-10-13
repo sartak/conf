@@ -9,3 +9,8 @@
 --colors=line:fg:0xA6,0xE2,0x2E
 --colors=column:none
 --colors=column:fg:0xA6,0xE2,0x2E
+
+--hidden
+--glob=!*.{lock,git}
+
+--smart-case
