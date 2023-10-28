@@ -30,10 +30,16 @@ inoremap <silent><expr> <c-@> coc#refresh()
 " notify coc.nvim to format on enter, <cr> could be remapped by other vim plugin
 inoremap <silent><expr> <CR> "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-" Use `{` and `}` to navigate diagnostics
-" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-nmap <silent> { <Plug>(coc-diagnostic-prev)
-nmap <silent> } <Plug>(coc-diagnostic-next)
+function! JumpDiagnostic(forward) abort
+  let cmd = a:forward ? 'diagnosticNext' : 'diagnosticPrevious'
+  let diags = get(b:, 'coc_diagnostic_info', {})
+  let param = get(diags, 'error', 0) ? 'error' : ''
+  call CocActionAsync(cmd, param)
+endfunc
+
+" Use `{` and `}` to navigate diagnostics, prioritizing errors
+nmap <silent> { :<C-u>call JumpDiagnostic(0)<CR>
+nmap <silent> } :<C-u>call JumpDiagnostic(1)<CR>
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
