@@ -14,3 +14,5 @@
 --glob=!*.{lock,git}
 
 --smart-case
+
+--engine=auto
