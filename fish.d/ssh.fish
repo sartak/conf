@@ -131,3 +131,16 @@ end
 function nova --wraps='ssh nova' --description='ssh nova'
   command ssh nova $argv
 end
+
+function blaze-tailscale --wraps='ssh blaze-tailscale' --description='ssh blaze-tailscale'
+  command ssh blaze-tailscale $argv
+end
+
+function blaze-remote --wraps='ssh blaze-remote' --description='ssh blaze-remote'
+  command ssh blaze-remote $argv
+end
+
+function blaze --wraps='ssh blaze' --description='ssh blaze'
+  command ssh blaze $argv
+end
+
