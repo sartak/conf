@@ -21,6 +21,7 @@
   "notification.disabledProgressSources": ["*"],
 
   "rust-analyzer.server.path": "rust-analyzer",
+  "rust-analyzer.checkOnSave.command": "clippy",
 
   "sql.formatOptions": {
     "linesBetweenQueries": 2
