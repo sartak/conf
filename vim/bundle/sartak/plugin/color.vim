@@ -42,3 +42,5 @@ hi WildMenu        guifg=#5fd7ff
 
 hi link gitcommitParentHash	Comment
 hi link gitcommitParentSummary String
+
+hi Conceal guifg=#5f5f5f guibg=#111111
