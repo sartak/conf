@@ -8,7 +8,7 @@ set autoread
 set autowriteall
 
 " when I wander away, write to disk
-autocmd FocusLost * if &readonly == 0 && filereadable(bufname('%')) | silent write | endif
+autocmd FocusLost * if &readonly == 0 && filereadable(bufname('%')) | silent update | endif
 
 " swapfiles have been nothing but a nuisance to me
 set noswapfile
