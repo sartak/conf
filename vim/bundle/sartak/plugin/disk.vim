@@ -14,3 +14,6 @@ autocmd FocusLost * if &readonly == 0 && filereadable(bufname('%')) | silent upd
 set noswapfile
 set nobackup
 set nowritebackup
+
+" ctrl-s saves all
+nmap <C-s> :wall<CR>
