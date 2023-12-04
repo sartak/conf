@@ -17,3 +17,4 @@ set nowritebackup
 
 " ctrl-s saves all
 nmap <C-s> :wall<CR>
+imap <C-s> <Esc>:wall<CR>a
