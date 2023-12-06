@@ -1,3 +1,3 @@
-function top --wraps=htop --wraps=btm --description 'alias top=btm'
-  btm $argv; 
+function top --wraps=btop
+  btop $argv
 end
