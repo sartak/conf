@@ -23,6 +23,21 @@ require("lazy").setup({
     end
   },
   {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    config = function () 
+      local configs = require("nvim-treesitter.configs")
+
+      configs.setup({
+        ensure_installed = { "c", "lua", "query", "rust", "vim", "vimdoc" },
+        auto_install = false,
+        highlight = {
+          enable = true,
+        },
+      })
+    end
+  },
+  {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.5',
     dependencies = { 'nvim-lua/plenary.nvim' },
