@@ -30,6 +30,7 @@
   statusHints = false
   detachedHead = false
   skippedCherryPicks = false
+	diverging = false
 [interactive]
   singlekey = true
   diffFilter = delta --color-only
