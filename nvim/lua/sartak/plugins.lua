@@ -25,11 +25,11 @@ require("lazy").setup({
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
-    config = function () 
+    config = function ()
       local configs = require("nvim-treesitter.configs")
 
       configs.setup({
-        ensure_installed = { "c", "lua", "query", "rust", "vim", "vimdoc" },
+        ensure_installed = { "bash", "c", "comment", "css", "csv", "devicetree", "diff", "dockerfile", "fish", "gitcommit", "git_config", "gitignore", "git_rebase", "go", "graphql", "html", "javascript", "json", "latex", "lua", "make", "markdown_inline", "perl", "pod", "proto", "query", "regex", "rust", "sql", "ssh_config", "starlark", "toml", "tsv", "tsx", "typescript", "vim", "vimdoc", "yaml" },
         auto_install = false,
         highlight = {
           enable = true,
