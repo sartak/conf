@@ -20,3 +20,5 @@ require('lspconfig').eslint.setup({
     })
   end,
 })
+
+vim.opt.signcolumn = 'no'
