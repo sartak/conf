@@ -16,6 +16,11 @@ require("lazy").setup({
         annotation = { italic = false },
         tag_attribute = { italic = false },
       },
+      override = function()
+        return {
+          String = { bg = "#1c1c1c", fg = "#ffaf5f" }
+        }
+      end,
     },
     config = function(_, opts)
       require("monokai-pro").setup(opts)
