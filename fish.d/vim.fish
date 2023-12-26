@@ -1,6 +1,6 @@
-function vim --wraps=vim
+function vim --wraps=nvim
   if not status is-interactive
-    command vim $argv
+    command nvim $argv
     return
   end
 
@@ -12,12 +12,12 @@ function vim --wraps=vim
   return 1
 end
 
-function v --wraps=vim --description 'alias v=vim'
-  command vim $argv
+function v --wraps=nvim --description 'alias v=nvim'
+  command nvim $argv
 end
 
 # shout out to https://github.com/tsibley/g
-function vg --wraps=rg --description 'vim ripgrep'
+function vg --wraps=rg --description 'nvim ripgrep'
   if set -q argv[1]
     set REGEX $argv[1]
     set FILES (command rg -l $argv)
@@ -42,19 +42,19 @@ function vg --wraps=rg --description 'vim ripgrep'
 
   # TODO https://github.com/tsibley/g/blob/master/g#L184
 
-  command vim +1 "+/\v$REGEX" $FILES
+  command nvim +1 "+/\v$REGEX" $FILES
 end
 
-function vf --wraps=vim --description 'vim fzf'
+function vf --wraps=nvim --description 'nvim fzf'
   set -l FILES (fzf --query "$argv" --multi --preview='if test {} = ""; echo; else if test -f {}; bat --color=always {}; else; echo "File does not exist"; end')
   set -l st $status
   if test $st -ne 0; or test "$FILES" = ""
     return $st
   end
-  command vim $FILES
+  command nvim $FILES
 end
 
 function edit_command
-  set -xl VISUAL /usr/local/bin/vim
+  set -xl VISUAL /usr/local/bin/nvim
   edit_command_buffer
 end
