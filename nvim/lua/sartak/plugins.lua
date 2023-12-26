@@ -50,4 +50,13 @@ require("lazy").setup({
     tag = '0.1.5',
     dependencies = { 'nvim-lua/plenary.nvim' },
   },
+  {
+    'vladdoster/remember.nvim',
+    tag = 'v1.4.1',
+    config = function()
+      require("remember").setup {
+        dont_center = true,
+      }
+    end,
+  },
 })
