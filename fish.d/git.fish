@@ -819,7 +819,7 @@ end
 
 function gnr --wraps='git-number -c rm -r' --description 'git-number -c rm -r'
   if set -q argv[1]
-    git-number -c rm -r $argv
+    git-number -c rm -rf $argv
   else
     echo "usage: gnr …" 1>&2
     return 1
