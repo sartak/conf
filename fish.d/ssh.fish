@@ -144,3 +144,14 @@ function blaze --wraps='ssh blaze' --description='ssh blaze'
   command ssh blaze $argv
 end
 
+function might-tailscale --wraps='ssh might-tailscale' --description='ssh might-tailscale'
+  command ssh might-tailscale $argv
+end
+
+function might-remote --wraps='ssh might-remote' --description='ssh might-remote'
+  command ssh might-remote $argv
+end
+
+function might --wraps='ssh might' --description='ssh might'
+  command ssh might $argv
+end
