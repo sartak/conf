@@ -108,10 +108,6 @@ function hydra --wraps='ssh hydra' --description='ssh hydra'
   command ssh hydra-tailscale $argv
 end
 
-function newyork --wraps='ssh newyork' --description='ssh newyork'
-  command ssh newyork $argv
-end
-
 function waikiki-tailscale --wraps='ssh waikiki-tailscale' --description='ssh waikiki-tailscale'
   command ssh waikiki-tailscale $argv
 end

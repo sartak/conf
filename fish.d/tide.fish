@@ -82,7 +82,7 @@ function _tide_item_myhost
     switch $host
       case hydra
         # no effect
-      case mana newyork maui waikiki miami meteor lightning blaze might
+      case mana maui waikiki miami meteor lightning blaze might
         set -g tide_myhost_bg_color $tide_myhost_bg_color_secondary
         set -g tide_myhost_color $tide_myhost_color_secondary
       case hongkong phuket shiver
