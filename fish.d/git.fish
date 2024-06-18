@@ -123,7 +123,7 @@ end
 
 function gs --wraps='git-number --column' --description 'git status'
   command git log -1 --format='format:%C(Yellow)%h%Creset %s'
-  if test $status -eq 0
+  if test $status -eq 0 -o $status -eq 128
     git-number -uall $argv
   end
 end
