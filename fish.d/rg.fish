@@ -33,3 +33,12 @@ function g --wraps='rg' --description 'alias g=rg'
     command rg $argv
   end
 end
+
+function gf --description 'rg into fzf'
+  command rg --line-number --no-heading "$argv" |
+    fzf --ansi \
+      --delimiter ':' \
+      --preview "bat --color=always {1} --highlight-line {2}" \
+      --preview-window '+{2}+3/3' \
+      --bind "enter:become($EDITOR +{2} {1})"
+end
