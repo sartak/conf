@@ -18,9 +18,12 @@ end
 
 # shout out to https://github.com/tsibley/g
 function vg --wraps=rg --description 'nvim ripgrep'
+  set -l args $argv
+  argparse 'w/word-regexp' -- $argv
+
   if set -q argv[1]
     set REGEX $argv[1]
-    set FILES (command rg -l $argv)
+    set FILES (command rg -l $args)
     set -l st $status
     if test $st -ne 0; or test "$FILES" = ""
         return $st
@@ -41,6 +44,10 @@ function vg --wraps=rg --description 'nvim ripgrep'
   end
 
   # TODO https://github.com/tsibley/g/blob/master/g#L184
+
+  if set --query _flag_word_regexp
+    set REGEX "<$REGEX>"
+  end
 
   command nvim +1 "+/\v$REGEX" $FILES
 end
