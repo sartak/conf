@@ -7,7 +7,7 @@ function git --wraps=hub
   if [ $argv[1] = "status" ]
     echo -n "use " 1>&2
     set_color -o yellow
-    echo -n "gs" 1>&2
+    echo -n "g" 1>&2
     set_color -o normal
     echo " instead" 1>&2
     return 1
@@ -121,7 +121,7 @@ function git --wraps=hub
   command hub $argv
 end
 
-function gs --wraps='git-number --column' --description 'git status'
+function _gs --wraps='git-number --column' --description 'git status'
   command git log -1 --format='format:%C(Yellow)%h%Creset %s'
   if test $status -eq 0 -o $status -eq 128
     git-number -uall $argv
@@ -147,7 +147,7 @@ end
 function gc --description 'git commit'
   set -l STAGED (command git diff --cached --name-only)
   if test "$STAGED" = ""
-    gs
+    g
     return 0
   end
 
@@ -169,7 +169,7 @@ end
 function gc_edit --description 'git commit'
   set -l STAGED (command git diff --cached --name-only)
   if test "$STAGED" = ""
-    gs
+    g
     return 0
   end
 
@@ -878,7 +878,7 @@ function gb --wraps='git switch' --description 'git switch'
     end
   else
     if command git switch $argv 2>/dev/null
-      gs
+      g
     else
       command git switch -c $argv
     end

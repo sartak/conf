@@ -27,6 +27,9 @@ function rg --wraps=rg
 end
 
 function g --wraps='rg' --description 'alias g=rg'
-  command rg $argv
+  if not set -q argv[1]
+    _gs
+  else
+    command rg $argv
+  end
 end
-
