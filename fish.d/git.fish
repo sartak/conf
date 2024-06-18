@@ -122,7 +122,15 @@ function git --wraps=hub
 end
 
 function _gs --wraps='git-number --column' --description 'git status'
-  command git log -1 --format='format:%C(Yellow)%h%Creset %s'
+  set -l COMMIT (command git rev-parse HEAD 2>&1)
+  if string match -q '*not a git*' $COMMIT
+    echo $COMMIT >&2
+    return 1
+  end
+
+  if not string match -q '*fatal:*' $COMMIT
+    command git log -1 --format='format:%C(Yellow)%h%Creset %s'
+  end
   if test $status -eq 0 -o $status -eq 128
     git-number -uall $argv
   end
