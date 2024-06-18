@@ -15,4 +15,6 @@
 
 --smart-case
 
+--max-columns=1000
+
 --engine=auto
