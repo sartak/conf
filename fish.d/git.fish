@@ -144,6 +144,14 @@ function ga --wraps='git-number add' --description 'git add'
   end
 end
 
+function gap --wraps='git-number add' --description 'git add'
+  if not set -q argv[1]
+    command git add -p
+  else
+    git-number add -p $argv
+  end
+end
+
 function gco --wraps='git checkout' --description 'git checkout'
   if not set -q argv[1]
     command git checkout -p
