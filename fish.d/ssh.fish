@@ -21,7 +21,7 @@ function mana-local --wraps='ssh mana-local' --description='ssh mana-local'
 end
 
 function mana --wraps='ssh mana' --description='ssh mana'
-  command ssh mana-tailscale $argv
+  command ssh mana $argv
 end
 
 function hongkong-tailscale --wraps='ssh hongkong-tailscale' --description='ssh hongkong-tailscale'
@@ -33,7 +33,7 @@ function hongkong-local --wraps='ssh hongkong-local' --description='ssh hongkong
 end
 
 function hongkong --wraps='ssh hongkong' --description='ssh hongkong'
-  command ssh hongkong-tailscale $argv
+  command ssh hongkong $argv
 end
 
 function miami-tailscale --wraps='ssh miami-tailscale' --description='ssh miami-tailscale'
@@ -45,7 +45,7 @@ function miami-local --wraps='ssh miami-local' --description='ssh miami-local'
 end
 
 function miami --wraps='ssh miami' --description='ssh miami'
-  command ssh miami-tailscale $argv
+  command ssh miami $argv
 end
 
 function tequesta-tailscale --wraps='ssh tequesta-tailscale' --description='ssh tequesta-tailscale'
@@ -57,7 +57,7 @@ function tequesta-local --wraps='ssh tequesta-local' --description='ssh tequesta
 end
 
 function tequesta --wraps='ssh tequesta' --description='ssh tequesta'
-  command ssh tequesta-tailscale $argv
+  command ssh tequesta $argv
 end
 
 function phuket-tailscale --wraps='ssh phuket-tailscale' --description='ssh phuket-tailscale'
@@ -69,7 +69,7 @@ function phuket-local --wraps='ssh phuket-local' --description='ssh phuket-local
 end
 
 function phuket --wraps='ssh phuket' --description='ssh phuket'
-  command ssh phuket-tailscale $argv
+  command ssh phuket $argv
 end
 
 function shiver-tailscale --wraps='ssh shiver-tailscale' --description='ssh shiver-tailscale'
@@ -81,7 +81,7 @@ function shiver-local --wraps='ssh shiver-local' --description='ssh shiver-local
 end
 
 function shiver --wraps='ssh shiver' --description='ssh shiver'
-  command ssh shiver-tailscale $argv
+  command ssh shiver $argv
 end
 
 function maui-tailscale --wraps='ssh maui-tailscale' --description='ssh maui-tailscale'
@@ -93,7 +93,7 @@ function maui-local --wraps='ssh maui-local' --description='ssh maui-local'
 end
 
 function maui --wraps='ssh maui' --description='ssh maui'
-  command ssh maui-tailscale $argv
+  command ssh maui $argv
 end
 
 function hydra-tailscale --wraps='ssh hydra-tailscale' --description='ssh hydra-tailscale'
@@ -105,7 +105,7 @@ function hydra-local --wraps='ssh hydra-local' --description='ssh hydra-local'
 end
 
 function hydra --wraps='ssh hydra' --description='ssh hydra'
-  command ssh hydra-tailscale $argv
+  command ssh hydra $argv
 end
 
 function waikiki-tailscale --wraps='ssh waikiki-tailscale' --description='ssh waikiki-tailscale'
@@ -117,7 +117,7 @@ function waikiki-local --wraps='ssh waikiki-local' --description='ssh waikiki-lo
 end
 
 function waikiki --wraps='ssh waikiki' --description='ssh waikiki'
-  command ssh waikiki-tailscale $argv
+  command ssh waikiki $argv
 end
 
 function meteor --wraps='ssh meteor' --description='ssh meteor'
