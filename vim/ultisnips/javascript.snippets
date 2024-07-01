@@ -1,9 +1,0 @@
-snippet fn "function (arrow)"
-${1/(.+)/const /}${1:NAME}${1/(.+)/ = /}(${2:PARAMS}) => {
-	${VISUAL}$0
-}${1/(.+)/(?1:;)/}
-endsnippet
-
-snippet function "" A
-use-fn-snippet
-endsnippet
