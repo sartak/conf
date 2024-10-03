@@ -40,7 +40,7 @@ require("lazy").setup({
       local configs = require("nvim-treesitter.configs")
 
       configs.setup({
-        ensure_installed = { "bash", "c", "comment", "css", "csv", "devicetree", "diff", "dockerfile", "fish", "gitcommit", "git_config", "gitignore", "git_rebase", "go", "graphql", "html", "javascript", "json", "latex", "lua", "make", "markdown_inline", "perl", "pod", "proto", "query", "regex", "rust", "sql", "ssh_config", "starlark", "toml", "tsv", "tsx", "typescript", "vim", "vimdoc", "yaml" },
+        ensure_installed = { "bash", "c", "comment", "css", "csv", "c_sharp", "devicetree", "diff", "dockerfile", "fish", "gitcommit", "git_config", "gitignore", "git_rebase", "go", "graphql", "html", "javascript", "json", "latex", "lua", "make", "markdown_inline", "perl", "pod", "proto", "query", "regex", "rust", "sql", "ssh_config", "starlark", "toml", "tsv", "tsx", "typescript", "vim", "vimdoc", "yaml" },
         auto_install = false,
         highlight = {
           enable = true,
