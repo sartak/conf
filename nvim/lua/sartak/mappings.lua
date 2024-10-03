@@ -3,11 +3,10 @@ vim.keymap.set("v", "(", "{", { noremap = true })
 vim.keymap.set("n", ")", "}", { noremap = true })
 vim.keymap.set("v", ")", "}", { noremap = true })
 
--- TODO: integrate with LSP
-vim.keymap.set("n", "{", "")
-vim.keymap.set("v", "{", "")
-vim.keymap.set("n", "}", "")
-vim.keymap.set("v", "}", "")
+vim.keymap.set("n", "{", function() vim.diagnostic.goto_prev({_highest=true}) end, opts)
+vim.keymap.set("v", "{", function() vim.diagnostic.goto_prev({_highest=true}) end, opts)
+vim.keymap.set("n", "}", function() vim.diagnostic.goto_next({_highest=true}) end, opts)
+vim.keymap.set("v", "}", function() vim.diagnostic.goto_next({_highest=true}) end, opts)
 
 vim.keymap.set("n", "v", "V", { noremap = true })
 vim.keymap.set("v", "v", "V", { noremap = true })
