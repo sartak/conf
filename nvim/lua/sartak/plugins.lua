@@ -68,4 +68,9 @@ require("lazy").setup({
   {
     'github/copilot.vim',
   },
+  {
+    "sartak/roslyn.nvim",
+    ft = "cs",
+    opts = {},
+  },
 })
