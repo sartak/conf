@@ -18,7 +18,7 @@ return {
       },
       override = function()
         return {
-          String = { bg = "#1c1c1c", fg = "#ffaf5f" }
+          ["@string"] = { bg = "#1c1c1c", fg = "#ffaf5f" },
         }
       end,
     },
