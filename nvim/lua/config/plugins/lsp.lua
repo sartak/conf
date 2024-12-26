@@ -23,6 +23,9 @@ return {
         filetypes = { "ruby" }, -- eruby doesn't work great
       }
       require("lspconfig").rust_analyzer.setup {}
+      require("lspconfig").sorbet.setup {
+        cmd = { "srb", "tc", "--lsp", "--disable-watchman" },
+      }
       require("lspconfig").tailwindcss.setup {}
       require("lspconfig").ts_ls.setup {}
 
