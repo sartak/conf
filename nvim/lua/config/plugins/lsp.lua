@@ -19,6 +19,9 @@ return {
       require("lspconfig").eslint.setup {}
       require("lspconfig").jsonls.setup {}
       require("lspconfig").lua_ls.setup {}
+      require("lspconfig").ruby_lsp.setup {
+        filetypes = { "ruby" }, -- eruby doesn't work great
+      }
       require("lspconfig").rust_analyzer.setup {}
       require("lspconfig").tailwindcss.setup {}
       require("lspconfig").ts_ls.setup {}
