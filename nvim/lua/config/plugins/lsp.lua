@@ -2,6 +2,7 @@ return {
   {
     "neovim/nvim-lspconfig",
     dependencies = {
+      "saghen/blink.cmp",
       {
         "folke/lazydev.nvim",
         ft = "lua",
@@ -13,21 +14,43 @@ return {
       },
     },
     config = function()
-      require("lspconfig").bashls.setup {}
-      require("lspconfig").cssls.setup {}
-      require("lspconfig").dockerls.setup {}
-      require("lspconfig").eslint.setup {}
-      require("lspconfig").jsonls.setup {}
-      require("lspconfig").lua_ls.setup {}
+      local capabilities = require("blink.cmp").get_lsp_capabilities()
+
+      require("lspconfig").bashls.setup {
+        capabilities = capabilities,
+      }
+      require("lspconfig").cssls.setup {
+        capabilities = capabilities,
+      }
+      require("lspconfig").dockerls.setup {
+        capabilities = capabilities,
+      }
+      require("lspconfig").eslint.setup {
+        capabilities = capabilities,
+      }
+      require("lspconfig").jsonls.setup {
+        capabilities = capabilities,
+      }
+      require("lspconfig").lua_ls.setup {
+        capabilities = capabilities,
+      }
       require("lspconfig").ruby_lsp.setup {
+        capabilities = capabilities,
         filetypes = { "ruby" }, -- eruby doesn't work great
       }
-      require("lspconfig").rust_analyzer.setup {}
+      require("lspconfig").rust_analyzer.setup {
+        capabilities = capabilities,
+      }
       require("lspconfig").sorbet.setup {
+        capabilities = capabilities,
         cmd = { "srb", "tc", "--lsp", "--disable-watchman" },
       }
-      require("lspconfig").tailwindcss.setup {}
-      require("lspconfig").ts_ls.setup {}
+      require("lspconfig").tailwindcss.setup {
+        capabilities = capabilities,
+      }
+      require("lspconfig").ts_ls.setup {
+        capabilities = capabilities,
+      }
 
       vim.api.nvim_create_autocmd('LspAttach', {
         callback = function(args)
