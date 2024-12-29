@@ -40,6 +40,13 @@ return {
       }
       require("lspconfig").rust_analyzer.setup {
         capabilities = capabilities,
+        settings = {
+          ["rust-analyzer"] = {
+            checkOnSave = {
+              command = "clippy",
+            },
+          },
+        },
       }
       require("lspconfig").sorbet.setup {
         capabilities = capabilities,
