@@ -30,3 +30,5 @@ vim.opt.undodir = os.getenv("HOME") .. "/.cache/nvim/undo"
 vim.opt.undofile = true
 
 vim.opt.scrolloff = 3
+
+vim.g.undotree_SetFocusWhenToggle = 1
