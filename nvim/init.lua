@@ -1,4 +1,3 @@
-vim.g.mapleader = " "
-
+require("config.early")
 require("config.lazy")
 require("config.sartak")
