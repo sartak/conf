@@ -824,9 +824,9 @@ function gn --wraps='git-number -c' --description 'git-number -c'
   end
 end
 
-function gv --wraps='git-number -c vim' --description 'git-number -c vim'
+function gv --wraps='git-number -c nvim' --description 'git-number -c nvim'
   if set -q argv[1]
-    git-number -c vim $argv
+    git-number -c nvim $argv
   else
     echo "usage: gv …" 1>&2
     return 1
@@ -947,7 +947,7 @@ function gvd --description 'edit uncommitted changes'
     return 1
   end
 
-  command vim $FILES
+  command nvim $FILES
 end
 
 function gvc --description 'edit files changed in last commit'
@@ -958,7 +958,7 @@ function gvc --description 'edit files changed in last commit'
     return 1
   end
 
-  command vim $FILES
+  command nvim $FILES
 end
 
 function gvu --description 'edit files changed since upstream'
@@ -969,7 +969,7 @@ function gvu --description 'edit files changed since upstream'
     return 1
   end
 
-  command vim $FILES
+  command nvim $FILES
 end
 
 function gvm --description 'edit files changed since branch'
@@ -980,7 +980,7 @@ function gvm --description 'edit files changed since branch'
     return 1
   end
 
-  command vim $FILES
+  command nvim $FILES
 end
 
 function gz --description 'jump to the top of the git repo'
