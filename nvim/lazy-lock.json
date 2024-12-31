@@ -6,6 +6,7 @@
   "lazydev.nvim": { "branch": "main", "commit": "8620f82ee3f59ff2187647167b6b47387a13a018" },
   "lualine.nvim": { "branch": "master", "commit": "2a5bae925481f999263d6f5ed8361baef8df4f83" },
   "monokai-pro.nvim": { "branch": "master", "commit": "6c15e36834a624a32f46c6db8f9fc063995b24b6" },
+  "nvim-colorizer.lua": { "branch": "master", "commit": "8a65c448122fc8fac9c67b2e857b6e830a4afd0b" },
   "nvim-lspconfig": { "branch": "master", "commit": "ff2b85abaa810f6611233dbe6d31c07510ebf43d" },
   "nvim-treesitter": { "branch": "master", "commit": "ac6a72a6f83218216948e898362f09029b8035dc" },
   "nvim-web-devicons": { "branch": "master", "commit": "63f552a7f59badc6e6b6d22e603150f0d5abebb7" },
