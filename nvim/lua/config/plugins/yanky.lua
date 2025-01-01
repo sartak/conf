@@ -6,6 +6,9 @@ return {
         on_put = false,
         on_yank = false,
       },
+      system_clipboard = {
+        sync_with_ring = false,
+      },
     },
     keys = {
       { "<leader>p", function() require("telescope").extensions.yank_history.yank_history({}) end, desc = "Open Yank History" },
