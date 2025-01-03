@@ -893,7 +893,14 @@ function gb --wraps='git switch' --description 'git switch'
       command git switch $BRANCH
     end
   else
-    if command git switch $argv 2>/dev/null
+    if test "$argv" = "main"; or test "$argv" = "master"
+      echo -n "use " 1>&2
+      set_color -o yellow
+      echo -n "gm" 1>&2
+      set_color -o normal
+      echo " instead" 1>&2
+      return 1
+    else if command git switch $argv 2>/dev/null
       g
     else
       command git switch -c $argv
@@ -1023,4 +1030,13 @@ end
 function gwip --description 'git add; git commit -m WIP'
   command git add .
   command git commit --no-verify -m '@@@ WIP'
+end
+
+function gm --description 'switch to main or master'
+  command git rev-parse --verify --quiet master >/dev/null 2>&1
+  if test $status -eq 0
+    command git switch master
+  else
+    command git switch main
+  end
 end
