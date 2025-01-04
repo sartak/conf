@@ -9,6 +9,9 @@ return {
       system_clipboard = {
         sync_with_ring = false,
       },
+      preserve_cursor_position = {
+        enabled = false,
+      },
     },
     keys = {
       { "<leader>p", function() require("telescope").extensions.yank_history.yank_history({}) end, desc = "Open Yank History" },
