@@ -34,7 +34,7 @@ function cd --wraps cd
   return 1
 end
 
-fzf_configure_bindings --directory=\ct --git_log= --git_status= --history=\cr --variables= --processes=
+# fzf_configure_bindings --directory=\ct --git_log= --git_status= --history=\cr --variables= --processes=
 set -x BAT_STYLE plain
 set -x fzf_preview_file_cmd bat --color=always
 set -x fzf_preview_dir_cmd eza --git-ignore -l --color=always --no-time --no-user --no-permissions --git
@@ -47,8 +47,8 @@ set -x FZF_DEFAULT_OPTS '--cycle --layout=reverse --border --height=90% --ellips
 
 set -x RIPGREP_CONFIG_PATH ~/.config/ripgreprc
 
-bind \cg fzf_grep
-bind \cz fzf_z
+# bind \cg fzf_grep
+# bind \cz fzf_z
 
 set -g man_blink red
 set -g man_bold green

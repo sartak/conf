@@ -13,11 +13,27 @@ function vim --wraps=nvim
 end
 
 function v --wraps=nvim --description 'alias v=nvim'
+  if set -q argv[1]
+    echo -n "use " 1>&2
+    set_color -o yellow
+    echo -n "ctrl-t" 1>&2
+    set_color -o normal
+    echo " inside vim instead" 1>&2
+    return 1
+  end
+
   command nvim $argv
 end
 
 # shout out to https://github.com/tsibley/g
 function vg --wraps=rg --description 'nvim ripgrep'
+  echo -n "use " 1>&2
+  set_color -o yellow
+  echo -n "ctrl-g" 1>&2
+  set_color -o normal
+  echo " inside vim instead" 1>&2
+  return 1
+
   set -l args $argv
   argparse 'w/word-regexp' -- $argv
 
@@ -53,6 +69,13 @@ function vg --wraps=rg --description 'nvim ripgrep'
 end
 
 function vf --wraps=nvim --description 'nvim fzf'
+  echo -n "use " 1>&2
+  set_color -o yellow
+  echo -n "ctrl-g" 1>&2
+  set_color -o normal
+  echo " inside vim instead" 1>&2
+  return 1
+
   set -l FILES (fzf --query "$argv" --multi --preview='if test {} = ""; echo; else if test -f {}; bat --color=always {}; else; echo "File does not exist"; end')
   set -l st $status
   if test $st -ne 0; or test "$FILES" = ""
