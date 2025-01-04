@@ -40,6 +40,7 @@ return {
     },
     opts = {
       options = {
+        globalstatus = true,
         theme = {
           normal = {
             a = { bg = colors.normal, fg = colors.mode, gui = "bold" },
