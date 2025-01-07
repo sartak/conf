@@ -30,15 +30,16 @@ if is_new then
 else
   local command
   if is_amend then
-    command = [[git log -1 HEAD~1 --format='format:%h %s']]
+    command = [[git log -1 HEAD~1 --format='format:%H %s']]
     offset = 3
   else
-    command = [[git log -1 --format='format:%h %s']]
+    command = [[git log -1 --format='format:%H %s']]
     offset = 1
   end
   local handle = io.popen(command)
   local parent = handle:read("*a")
   handle:close()
+  parent = parent:gsub("(%x%x%x%x%x%x%x%x)%x* ", "%1 ", 1)
   replacement = { "# Parent: " .. indent .. parent }
 end
 
