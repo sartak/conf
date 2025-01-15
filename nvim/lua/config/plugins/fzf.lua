@@ -19,8 +19,16 @@ return {
           },
         },
       },
+      files = {
+        winopts = {
+          title = false,
+        },
+      },
       grep = {
         prompt = "rg> ",
+        winopts = {
+          title = false,
+        },
       },
     },
   },
