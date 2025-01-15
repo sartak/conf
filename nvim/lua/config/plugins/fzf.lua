@@ -2,6 +2,7 @@ return {
   {
     "ibhagwan/fzf-lua",
     opts = {
+      "border-fused",
       defaults = {
         header = false,
       },
@@ -12,10 +13,7 @@ return {
         col = 0.5,
         preview = {
           vertical = 'down:75%',
-          layout = 'vertical',
           title = false,
-          -- https://github.com/ibhagwan/fzf-lua/issues/1668
-          border = 'border-top',
           winopts = {
             number = false,
           },
