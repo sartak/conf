@@ -14,3 +14,6 @@ vim.keymap.set("n", "V", "<C-V>", { noremap = true })
 vim.keymap.set("v", "V", "<C-V>", { noremap = true })
 vim.keymap.set("n", "<C-V>", "v", { noremap = true })
 vim.keymap.set("i", "<C-V>", "v", { noremap = true })
+
+vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv")
