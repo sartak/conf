@@ -39,7 +39,17 @@ return {
         },
         sections = {
           { section = "keys" },
-          { section = "recent_files", cwd = true, limit = 16 },
+          {
+            section = "recent_files",
+            cwd = true,
+            limit = 16,
+            filter = function(file)
+              if file:match("/.git/") then
+                return false
+              end
+              return true
+            end,
+          },
         },
       },
     },
