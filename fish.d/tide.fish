@@ -1,4 +1,4 @@
-set tide_left_prompt_items myhost mygit mykubectl mypwd newline character
+set tide_left_prompt_items myhost mygit mypwd newline character
 set tide_right_prompt_items mycontext myduration mybattery mystatus
 
 set tide_prompt_add_newline_before true
@@ -45,9 +45,6 @@ set tide_mygit_color_untracked FFFFFF
 set tide_mygit_color_upstream FFFFFF
 set_color $tide_mygit_color_branch | read -gx _tide_location_color
 set tide_mygit_truncation_length 24
-
-set tide_mykubectl_bg_color 660000
-set tide_mykubectl_color FFFFFF
 
 set tide_mycontext_bg_color 222222
 set tide_mycontext_color FFFFFF
@@ -176,22 +173,6 @@ function _tide_item_mygit
         set_color $tide_mygit_color_dirty; echo -ns ' *'$dirty
         set_color $tide_mygit_color_untracked; echo -ns ' …'$untracked;
         echo ' ')
-end
-
-function _tide_item_mykubectl
-  if type -q kubectl
-    kubectl config view --minify --output 'jsonpath={.current-context}/{..namespace}' 2>/dev/null | read -l context
-    if test -z "$context"
-      _tide_print_item mykubectl
-    else
-      set context (string replace -r '/(|default)$' '' $context)
-      if test -z "$context"; or test "$context" = "$tide_default_kubectl_context"
-        _tide_print_item mykubectl
-      else
-        _tide_print_item mykubectl ' '$context' '
-      end
-    end
-  end
 end
 
 function _tide_item_mystatus
