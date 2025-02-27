@@ -1033,10 +1033,16 @@ function gwip --description 'git add; git commit -m WIP'
 end
 
 function gm --description 'switch to main or master'
-  command git rev-parse --verify --quiet master >/dev/null 2>&1
-  if test $status -eq 0
-    command git switch master
+  if not set -q argv[1]
+    command git rev-parse --verify --quiet master >/dev/null 2>&1
+    if test $status -eq 0
+      command git switch master
+    else
+      command git switch main
+    end
   else
-    command git switch main
+    set_color -o yellow
+    echo "this command takes no args" 1>&2
+    return 1
   end
 end
