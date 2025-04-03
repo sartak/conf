@@ -14,8 +14,13 @@ function fish_title
 end
 
 if not status --is-interactive
-  set PATH /usr/local/bin $PATH
+  fish_add_path --path /usr/local/bin
 end
+
+fish_add_path --path /opt/homebrew/bin
+fish_add_path --path ~/.cargo/bin
+fish_add_path --path ~/.local/bin
+fish_add_path --path ~/.bun/bin
 
 zoxide init fish | source
 
@@ -54,6 +59,19 @@ set -g man_blink red
 set -g man_bold green
 set -g man_standout -o yellow
 set -g man_underline -u blue
+
+set -x EDITOR /usr/local/bin/nvim
+set -x VISUAL /usr/local/bin/nvim
+
+set -x CARGO_NET_GIT_FETCH_WITH_CLI true
+set -x RUSTFLAGS '-C target-cpu=native'
+
+set -x BUN_INSTALL ~/.bun
+set -x nvm_default_version lts
+
+set -x HOMEBREW_NO_ENV_HINTS 1
+
+set -x LS_COLORS 'no=00;38;5;250:rs=0:di=01;38;5;39:ln=01;38;5;37:mh=00:pi=48;5;230;38;5;136;01:so=48;5;230;38;5;136;01:do=48;5;230;38;5;136;01:bd=48;5;230;38;5;244;01:cd=48;5;230;38;5;244;01:or=48;5;235;38;5;160:su=48;5;160;38;5;230:sg=48;5;136;38;5;230:ca=30;41:tw=48;5;64;38;5;230:ow=48;5;235;38;5;33:st=48;5;33;38;5;230:ex=01;38;5;82:'
 
 # this has to go late as well
 bind \cv edit_command
