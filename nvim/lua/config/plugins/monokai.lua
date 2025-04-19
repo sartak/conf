@@ -19,6 +19,7 @@ return {
       override = function()
         return {
           ["@string"] = { bg = "#1c1c1c", fg = "#ffaf5f" },
+          NormalFloat = { bg = "#111111" },
         }
       end,
     },
