@@ -151,3 +151,16 @@ end
 function might --wraps='ssh might' --description='ssh might'
   command ssh might $argv
 end
+
+function towerknight-tailscale --wraps='ssh towerknight-tailscale' --description='ssh towerknight-tailscale'
+  command ssh towerknight-tailscale $argv
+end
+
+function towerknight-local --wraps='ssh towerknight-local' --description='ssh towerknight-local'
+  command ssh towerknight-local $argv
+end
+
+function towerknight --wraps='ssh towerknight' --description='ssh towerknight'
+  command ssh towerknight $argv
+end
+
