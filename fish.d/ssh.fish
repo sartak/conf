@@ -152,15 +152,15 @@ function might --wraps='ssh might' --description='ssh might'
   command ssh might $argv
 end
 
-function towerknight-tailscale --wraps='ssh towerknight-tailscale' --description='ssh towerknight-tailscale'
-  command ssh towerknight-tailscale $argv
+function armorspider-tailscale --wraps='ssh armorspider-tailscale' --description='ssh armorspider-tailscale'
+  command ssh armorspider-tailscale $argv
 end
 
-function towerknight-local --wraps='ssh towerknight-local' --description='ssh towerknight-local'
-  command ssh towerknight-local $argv
+function armorspider-local --wraps='ssh armorspider-local' --description='ssh armorspider-local'
+  command ssh armorspider-local $argv
 end
 
-function towerknight --wraps='ssh towerknight' --description='ssh towerknight'
-  command ssh towerknight $argv
+function armorspider --wraps='ssh armorspider' --description='ssh armorspider'
+  command ssh armorspider $argv
 end
 
