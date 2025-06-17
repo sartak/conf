@@ -37,10 +37,6 @@ return {
       require("lspconfig").lua_ls.setup {
         capabilities = capabilities,
       }
-      require("lspconfig").ruby_lsp.setup {
-        capabilities = capabilities,
-        filetypes = { "ruby" }, -- eruby doesn't work great
-      }
       require("lspconfig").rust_analyzer.setup {
         capabilities = capabilities,
         settings = {
